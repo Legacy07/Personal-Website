@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture10: Comparison 03 - normal map - moving light</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <script type="text/javascript" src="../libs/stats.js"></script>
+        <script type="text/javascript" src="../libs/dat.gui.js"></script>
+        <style>
+            body {
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="Stats-output">
+        </div>
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                var stats = initStats();
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+                renderer.setClearColor(0xEEEEEE, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+
+                var loader = new THREE.TextureLoader();
+                var plasterTexture = loader.load("../assets/textures/general/plaster.jpg");
+                var plasterNormalMap = loader.load("../assets/textures/general/plaster-normal.jpg");
+                var bathroomTexture = loader.load("../assets/textures/general/bathroom.jpg");
+                var bathroomNormalMap = loader.load("../assets/textures/general/bathroom-normal.jpg");
+                var metalFloorTexture = loader.load("../assets/textures/general/metal-floor.jpg");
+                var metalFloorNormalMap = loader.load("../assets/textures/general/metal-floor-normal.jpg");
+
+                var geom = new THREE.CubeGeometry(15, 15, 15);
+
+                var cubeMaterial = new THREE.MeshPhongMaterial();
+                cubeMaterial.map = plasterTexture;
+                cubeMaterial.normalMap = plasterNormalMap;
+                cubeMaterial.normalScale.set(1, 1);
+
+                var cube = new THREE.Mesh(geom, cubeMaterial);
+                cube.rotation.y = 0.5;
+                cube.position.x = -12;
+                scene.add(cube);
+
+                var cubeBasicMaterial = new THREE.MeshPhongMaterial();
+                cubeBasicMaterial.map = plasterTexture;
+
+                var cubeBasic = new THREE.Mesh(geom, cubeBasicMaterial);
+                cubeBasic.rotation.y = -0.5;
+                cubeBasic.position.x = 12;
+                scene.add(cubeBasic);
+
+                var floorTex = loader.load("../assets/textures/general/floor-wood.jpg");
+                var plane = new THREE.Mesh(new THREE.CubeGeometry(200, 100, 0.1, 30), new THREE.MeshPhongMaterial({color: 0x3c3c3c, map: floorTex}));
+                plane.position.y = -7.5;
+                plane.rotation.x = -0.5 * Math.PI;
+                scene.add(plane);
+
+                // position and point the camera to the center of the scene
+                camera.position.y = 12;
+                camera.position.z = 38;
+                camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+                var ambiLight = new THREE.AmbientLight(0x242424);
+                scene.add(ambiLight);
+
+                var light = new THREE.SpotLight();
+                light.position.set(0, 30, 30);
+                light.intensity = 1.2;
+                scene.add(light);
+
+                var pointLight = new THREE.PointLight("#ff5808");
+                scene.add(pointLight);
+
+                // add a small sphere simulating the pointlight
+                var sphereLight = new THREE.SphereGeometry(0.2);
+                var sphereLightMaterial = new THREE.MeshPhongMaterial({color: 0xac6c25, emissive: 0xac3d25});
+                var sphereLightMesh = new THREE.Mesh(sphereLight, sphereLightMaterial);
+                sphereLightMesh.position.y = 3;
+                scene.add(sphereLightMesh);
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+                // setup the control gui
+                var controls = new function() {
+                    this.normalScale = 1;
+                    this.changeTexture = "plaster";
+                    this.rotate = false;
+
+                    this.changeTexture = function(e) {
+                        switch (e) {
+                            case "plaster":
+                                setTextures(plasterTexture, plasterNormalMap);
+                                break;
+                            case "bathroom":
+                                setTextures(bathroomTexture, bathroomNormalMap);
+                                break;
+                            case "metal-floor":
+                                setTextures(metalFloorTexture, metalFloorNormalMap);
+                                break;
+                        }
+                    };
+
+                    function setTextures(texture, normalMap) {
+                        cubeBasic.material.map = texture;
+                        cube.material.map = texture;
+                        cube.material.normalMap = normalMap;
+                        cube.material.normalScale.set(controls.normalScale, controls.normalScale);
+                    }
+
+                    this.updateScale = function(e) {
+                        cube.material.normalScale.set(e, e);
+                    };
+                };
+
+                var gui = new dat.GUI();
+                gui.add(controls, "normalScale", -2, 2).onChange(controls.updateScale);
+                gui.add(controls, "changeTexture", ['plaster', 'bathroom', 'metal-floor']).onChange(controls.changeTexture);
+                gui.add(controls, "rotate");
+
+                // call the render function
+                var phase = 1;
+                var angle = 0;
+                var radius = 12;
+                render();
+
+                function render() {
+                    stats.update();
+
+                    if (controls.rotate) {
+                        cube.rotation.y += 0.01;
+                        cubeBasic.rotation.y -= 0.01;
+                    }
+
+                    angle += 0.03;
+                    if (angle > 2 * Math.PI) {
+                        phase *= -1;
+                        angle -= 2 * Math.PI;
+                    }
+
+                    sphereLightMesh.position.z = radius * Math.sin(angle);
+                    sphereLightMesh.position.x = phase * (radius * Math.cos(angle) - radius);
+
+                    pointLight.position.copy(sphereLightMesh.position);
+
+                    // render using requestAnimationFrame
+                    requestAnimationFrame(render);
+                    renderer.render(scene, camera);
+                }
+
+                function initStats() {
+
+                    var stats = new Stats();
+                    stats.setMode(0); // 0: fps, 1: ms
+
+                    // Align top-left
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.left = '0px';
+                    stats.domElement.style.top = '0px';
+
+                    $("#Stats-output").append(stats.domElement);
+
+                    return stats;
+                }
+            });
+
+        </script>
+    </body>
+</html>

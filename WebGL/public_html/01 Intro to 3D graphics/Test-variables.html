@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lecture01: Test - variables</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript">
+            function testJS() {
+                // the infinite flexibility of JS data types
+                var firstVariable = 1; // an integer
+                alert(firstVariable);
+                firstVariable = 1.5; // now it's a float
+                alert(firstVariable);
+                firstVariable = "I'm a string"; // now it's a string
+                alert(firstVariable);
+                firstVariable = true; // now it's a boolean
+                alert(firstVariable);
+                myFirstVarable = 2; // a new variable (misspelt)
+                alert(firstVariable);
+
+                // the relationship between objects and arrays
+                var myFirstObject = new Object();
+                myFirstObject.name = "my object";
+                myFirstObject.number = 1;
+                myFirstObject.exists = true;
+
+                alert(myFirstObject.name + " is the same as " + myFirstObject["name"]);
+
+                alert(myFirstObject.number + " is the same as " + myFirstObject["number"]);
+            }
+        </script>
+    </head>
+    <body onload="testJS();">
+    </body>
+</html>

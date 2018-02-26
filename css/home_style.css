@@ -1,0 +1,138 @@
+html {
+
+    background-image: url("b2.jpg");
+}
+
+/* ---- Navigation Bar ----
+defining unordered list, with a banner using overflow etc*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/*custom list items, text size and alignment*/
+li a{
+    font-family: sans-serif;
+    font-size: 23px;
+    display: flow-root;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    border-right:1px solid #bbb;
+}
+/*user visually can see the mouse hover on the text values*/
+li a:hover:not(.active) {
+    /*    background-image: url(b3.jpg);*/
+    color: darkgray;
+    font-family: sans-serif;
+    font-size: 23px;
+    transition-duration: 0.4s;
+
+}
+
+/*header customisation*/
+h1 { color: #000000; font-family: "Helvetica"; font-size: 30px; font-weight: 700; line-height: 0px; margin: 0 0 0; padding: 0px 0px; text-align: right; text-transform: none; transform: translate(23%, 0px);
+}
+h1.logo {text-align: left; text-transform: none;  transform: translate(-23%, -50px);
+}
+/*body style*/
+body {
+    color: #000000;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+/* text tyle */
+.text{
+    text-align: justify;
+    color: black;
+}
+
+div.Description{
+    height: 0px;
+    font-size: 21px;
+    width: 50%;
+    position: relative;
+}
+div.Description p {
+    font-family: "Georgia";
+    margin: 0;
+    color: #FFFFFF;
+    position: absolute;
+    text-align: left;
+    margin-top: 25%;
+    margin-right: -110%;
+
+}
+
+p.FirstLine {
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 3em;
+    left: 50%;
+    margin: 0;
+    color: #000000;
+    position: relative;
+}
+p.SecondLine {
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 1em;
+    margin: 0;
+    left: 50%;
+    color: #000000;
+    position: relative;
+}
+p.ThirdLine {
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 1.2em;
+    left: 50%;
+    right: 50%;
+    margin: 0;
+    color: #000000;
+    position: relative;
+}
+
+/* button custom */
+input[type=submit] {
+    font-weight: 700;
+    font-size: 1em;
+    position: relative;
+    color: black;
+    /*    background-image: url(b5.png);*/
+    padding: 12px 20px;
+    border-radius: 4px;
+    left: 50%;
+    border: none;
+    cursor: pointer;
+
+}
+
+/*check for animated button -- https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate1*/
+input[type=submit]:hover {
+    text-decoration: none;
+    background: darkgray;
+    transition-duration: 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

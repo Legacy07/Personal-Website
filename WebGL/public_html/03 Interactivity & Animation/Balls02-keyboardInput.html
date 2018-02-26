@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture03: Balls 02 - keyboard input</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <script type="text/javascript" src="../libs/stats.js"></script>
+        <script type="text/javascript" src="../libs/dat.gui.js"></script>
+        <script type="text/javascript" src="../libs/keypress.js"></script>
+        <style>
+            body{
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="Stats-output">
+        </div>
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                var stats = initStats();
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+
+                renderer.setClearColor(0xEEEEEE, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+
+                // create the walls
+                var limit = 10;
+                var planeGeometry = new THREE.PlaneGeometry(limit * 2, limit * 2, 1, 1);
+                var planeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
+
+                var backWall = new THREE.Mesh(planeGeometry, planeMaterial);
+                backWall.receiveShadow = true;
+
+                // rotate and position the wall
+                backWall.position.x = 0;
+                backWall.position.y = 0;
+                backWall.position.z = -limit;
+
+                // add the wall to the scene
+                scene.add(backWall);
+
+                var floor = new THREE.Mesh(planeGeometry, planeMaterial);
+                floor.receiveShadow = true;
+
+                // rotate and position the floor
+                floor.rotation.x = -0.5 * Math.PI;
+                floor.position.x = 0;
+                floor.position.y = -limit;
+                floor.position.z = 0;
+
+                // add the floor to the scene
+                scene.add(floor);
+
+                var ceiling = new THREE.Mesh(planeGeometry, planeMaterial);
+                ceiling.receiveShadow = true;
+
+                // rotate and position the ceiling
+                ceiling.rotation.x = 0.5 * Math.PI;
+                ceiling.position.x = 0;
+                ceiling.position.y = limit;
+                ceiling.position.z = 0;
+
+                // add the ceiling to the scene
+                scene.add(ceiling);
+
+                var wallLeft = new THREE.Mesh(planeGeometry, planeMaterial);
+                wallLeft.receiveShadow = true;
+
+                // rotate and position the left wall
+                wallLeft.rotation.y = 0.5 * Math.PI;
+                wallLeft.position.x = -limit;
+                wallLeft.position.y = 0;
+                wallLeft.position.z = 0;
+
+                // add the left wall to the scene
+                scene.add(wallLeft);
+
+                var wallRight = new THREE.Mesh(planeGeometry, planeMaterial);
+                wallRight.receiveShadow = true;
+
+                // rotate and position the right wall
+                wallRight.rotation.y = -0.5 * Math.PI;
+                wallRight.position.x = limit;
+                wallRight.position.y = 0;
+                wallRight.position.z = 0;
+
+                // add the right wall to the scene
+                scene.add(wallRight);
+
+                // position and point the camera to the center of the scene
+                camera.position.x = 0;
+                camera.position.y = 0;
+                camera.position.z = 50;
+                camera.lookAt(scene.position);
+
+                // add subtle ambient lighting
+                var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+                scene.add(ambientLight);
+
+                // add spotlight for the shadows
+                var spotLight = new THREE.SpotLight(0xffffff);
+                spotLight.position.set(-5, 60, 30);
+                spotLight.castShadow = true;
+                scene.add(spotLight);
+
+                var sphereRadius = 1.0;
+                var nSpheres = 10;
+                var spheres = [];
+                createSpheres();
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+                var controls = new function () {
+                    this.control1 = 's = stop';
+                    this.control2 = 'r = change direction';
+                    this.speed = 0.1;
+                };
+
+                var gui = new dat.GUI();
+                var keys = gui.addFolder('Keyboard controls');
+                keys.add(controls, 'control1');
+                keys.add(controls, 'control2');
+                keys.open();
+                gui.add(controls, 'speed', 0, 1.0);
+
+                // call the render function
+                render();
+
+                function createSpheres() {
+                    var sphereGeometry = new THREE.SphereGeometry(sphereRadius, 20, 20);
+                    var sphereMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff});
+                    for (var i = 0; i < nSpheres; ++i) {
+                        // create a mesh representing the sphere
+//                        sphereMaterial = new THREE.MeshLambertMaterial({color: Math.random() * 0xffffff});
+                        var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+                        sphere.position.x = (Math.random() - 0.5) * 2.0 * (limit - sphereRadius);
+                        sphere.position.y = (Math.random() - 0.5) * 2.0 * (limit - sphereRadius);
+                        sphere.position.z = (Math.random() - 0.5) * 2.0 * (limit - sphereRadius);
+                        sphere.castShadow = true;
+
+                        // new variables
+                        sphere.translateX = Math.random() - 0.5;
+                        sphere.translateY = Math.random() - 0.5;
+                        sphere.translateZ = Math.random() - 0.5;
+                        sphere.radius = sphereRadius;
+
+                        // add the sphere to the scene
+                        scene.add(sphere);
+
+                        // add the sphere to the array of spheres
+                        spheres.push(sphere);
+                    }
+                }
+
+                function render() {
+                    stats.update();
+                    for (var i = 0; i < spheres.length; ++i) {
+                        var sphere = spheres[i];
+
+                        // move the sphere
+                        sphere.position.x += sphere.translateX * controls.speed;
+                        sphere.position.y += sphere.translateY * controls.speed;
+                        sphere.position.z += sphere.translateZ * controls.speed;
+
+                        // bounce the sphere off the wall
+                        if (Math.abs(sphere.position.x) + sphere.radius > limit) {
+                            sphere.translateX = -sphere.translateX;
+                        }
+                        if (Math.abs(sphere.position.y) + sphere.radius > limit) {
+                            sphere.translateY = -sphere.translateY;
+                        }
+                        if (Math.abs(sphere.position.z) + sphere.radius > limit) {
+                            sphere.translateZ = -sphere.translateZ;
+                        }
+                    }
+
+                    // render using requestAnimationFrame
+                    requestAnimationFrame(render);
+                    renderer.render(scene, camera);
+                }
+
+                function initStats() {
+
+                    var stats = new Stats();
+
+                    stats.setMode(0); // 0: fps, 1: ms
+
+                    // Align top-left
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.left = '0px';
+                    stats.domElement.style.top = '0px';
+
+                    $("#Stats-output").append(stats.domElement);
+
+                    return stats;
+                }
+
+                var keypress = new window.keypress.Listener();
+
+                keypress.simple_combo("r", function () {
+                    for (var i = 0; i < nSpheres; ++i) {
+                        var sphere = spheres[i];
+                        // change the sphere's direction
+                        sphere.translateX = Math.random() - 0.5;
+                        sphere.translateY = Math.random() - 0.5;
+                        sphere.translateZ = Math.random() - 0.5;
+                    }
+                });
+
+                keypress.simple_combo("s", function () {
+                    for (var i = 0; i < nSpheres; ++i) {
+                        var sphere = spheres[i];
+                        // stop the sphere
+                        sphere.translateX = 0;
+                        sphere.translateY = 0;
+                        sphere.translateZ = 0;
+                    }
+                });
+            });
+
+        </script>
+    </body>
+</html>

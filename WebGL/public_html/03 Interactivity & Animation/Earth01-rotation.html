@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture03: Earth 01 - rotation</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <style>
+            body {
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+                renderer.setClearColor(0x000, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+
+                var sphere = createMesh(new THREE.SphereGeometry(20, 40, 40));
+                // add the sphere to the scene
+                scene.add(sphere);
+
+                // position and point the camera to the center of the scene
+                camera.position.x = -20;
+                camera.position.y = 30;
+                camera.position.z = 40;
+                camera.lookAt(new THREE.Vector3(00, 0, 0));
+
+                var ambiLight = new THREE.AmbientLight(0x111111);
+                scene.add(ambiLight);
+                var spotLight = new THREE.DirectionalLight(0xffffff);
+                spotLight.position.set(-20, 30, 40);
+                spotLight.intensity = 1.5;
+                scene.add(spotLight);
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+                // call the render function
+                var angle = 0;
+                render();
+
+                function render() {
+
+                    angle += 0.002;
+                    sphere.rotation.y = angle;
+
+                    // render using requestAnimationFrame
+                    requestAnimationFrame(render);
+                    renderer.render(scene, camera);
+                }
+
+                function createMesh(geom) {
+                    var loader = new THREE.TextureLoader();
+                    var planetTexture = loader.load("../assets/textures/planets/Earth.png");
+                    var normalTexture = loader.load("../assets/textures/planets/EarthNormal.png");
+
+                    var planetMaterial = new THREE.MeshPhongMaterial({map: planetTexture, bumpMap: normalTexture});
+
+                    // create a multimaterial
+                    var mesh = THREE.SceneUtils.createMultiMaterialObject(geom, [planetMaterial]);
+
+                    return mesh;
+                }
+            });
+
+        </script>
+    </body>
+</html>

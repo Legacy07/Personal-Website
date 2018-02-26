@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture07: City 01 - arrow controls</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <script type="text/javascript" src="../libs/stats.js"></script>
+        <script type="text/javascript" src="../libs/dat.gui.js"></script>
+        <script type="text/javascript" src="../libs/keypress.js"></script>
+        <script type="text/javascript" src="../libs/chroma.js"></script>
+        <style>
+            body{
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="Stats-output">
+        </div>
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                var stats = initStats();
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+                scene.fog = new THREE.Fog(0xE09090, 20, 80);
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+
+                renderer.setClearColor(0xE09090, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+
+                // create the ground plane
+                var groundGeometry = new THREE.CircleGeometry(200, 40);
+                var groundMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
+                var ground = new THREE.Mesh(groundGeometry, groundMaterial);
+                ground.receiveShadow = true;
+
+                // rotate and position the plane
+                ground.rotation.x = -0.5 * Math.PI;
+
+                // add the plane to the scene
+                scene.add(ground);
+
+                // position and point the camera to the center of the scene
+                camera.position.x = 0;
+                camera.position.y = 10;
+                camera.position.z = 75;
+
+                var orbitGroup = new THREE.Object3D();
+                scene.add(orbitGroup);
+                orbitGroup.add(camera);
+
+                // add subtle ambient lighting
+                var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+                scene.add(ambientLight);
+
+                // add spotlight for the shadows
+                var spotLight = new THREE.SpotLight(0xff0000);
+                spotLight.position.set(75, 50, 75);
+                spotLight.castShadow = true;
+                spotLight.angle = Math.PI / 2;
+                scene.add(spotLight);
+
+                var cubeGeometry = new THREE.CubeGeometry(1, 1, 1);
+                var nBlocks = 500;
+                var scale = chroma.scale(['white', 'black']);
+                for (var i = 0; i < nBlocks; ++i) {
+                    var cubeMaterial = new THREE.MeshLambertMaterial({color: scale(Math.random()).hex()});
+                    var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+                    cube.castShadow = true;
+
+                    // position the cube randomly in the scene
+                    var cubeSize = Math.ceil((Math.random() * 3));
+                    var cubeHeight = Math.ceil((Math.random() * 3));
+                    cube.scale.x = cubeSize;
+                    cube.scale.y = cubeHeight;
+                    cube.scale.z = cubeSize;
+                    cube.position.x = (Math.random() - 0.5) * 100;
+                    cube.position.y = cubeHeight / 2;
+                    cube.position.z = (Math.random() - 0.5) * 100;
+
+                    // add the cube to the scene
+                    scene.add(cube);
+                }
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+                var controls = new function() {
+                    this.control1 = 'arrow keys to navigate';
+                    this.height = camera.position.y;
+                    this.orbitAngle = 0;
+                };
+
+                var gui = new dat.GUI();
+                var keys = gui.addFolder('Keyboard controls');
+                keys.add(controls, 'control1');
+                keys.open();
+                gui.add(controls, 'height').listen();
+                gui.add(controls, 'orbitAngle').listen();
+
+                function updateGUI() {
+                    controls.height = camera.position.y;
+                    controls.orbitAngle = orbitGroup.rotation.y * 180 / Math.PI;
+                }
+
+                render();
+
+                function render() {
+                    stats.update();
+
+                    // render using requestAnimationFrame
+                    requestAnimationFrame(render);
+                    renderer.render(scene, camera);
+                }
+
+                var keypress = new window.keypress.Listener();
+
+                keypress.simple_combo("left", function() {
+                    orbitGroup.rotation.y -= 0.02;
+                    updateGUI();
+                });
+
+                keypress.simple_combo("right", function() {
+                    orbitGroup.rotation.y += 0.02;
+                    updateGUI();
+                });
+
+                keypress.simple_combo("up", function() {
+                    camera.position.y += 0.5;
+                    if (camera.position.y > 20) {
+                        camera.position.y = 20;
+                    }
+                    updateGUI();
+                });
+
+                keypress.simple_combo("down", function() {
+                    camera.position.y -= 0.5;
+                    if (camera.position.y < 1) {
+                        camera.position.y = 1;
+                    }
+                    updateGUI();
+                });
+
+                function initStats() {
+
+                    var stats = new Stats();
+
+                    stats.setMode(0); // 0: fps, 1: ms
+
+                    // Align top-left
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.left = '0px';
+                    stats.domElement.style.top = '0px';
+
+                    $("#Stats-output").append(stats.domElement);
+
+                    return stats;
+                }
+            });
+
+        </script>
+    </body>
+</html>

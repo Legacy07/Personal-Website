@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture05: Icosahedron 03 - rotating and revolving</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <script type="text/javascript" src="../libs/stats.js"></script>
+        <style>
+            body{
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="Stats-output">
+        </div>
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                var stats = initStats();
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+
+                renderer.setClearColor(0xEEEEEE, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+
+                // create the ground plane
+                var planeGeometry = new THREE.PlaneGeometry(50, 50, 1, 1);
+                var planeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
+                var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+                plane.receiveShadow = true;
+
+                // rotate and position the plane
+                plane.rotation.x = -0.5 * Math.PI;
+
+                // add the plane to the scene
+                scene.add(plane);
+
+                // create an icosahedron
+                var icosahedronMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff});
+                var icosahedronGeometry = new THREE.IcosahedronGeometry(4);
+                var icosahedron = new THREE.Mesh(icosahedronGeometry, icosahedronMaterial);
+                icosahedron.castShadow = true;
+
+                // position the icosahedron
+                icosahedron.position.y = 4;
+
+                // add the icosahedron to the scene
+                scene.add(icosahedron);
+
+                // position and point the camera to the center of the scene
+                camera.position.x = -40;
+                camera.position.y = 20;
+                camera.position.z = 30;
+                camera.lookAt(scene.position);
+
+                // add subtle ambient lighting
+                var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+                scene.add(ambientLight);
+
+                // add spotlight for the shadows
+                var spotLight = new THREE.SpotLight(0xffffff);
+                spotLight.position.set(0, 60, 0);
+                spotLight.castShadow = true;
+                scene.add(spotLight);
+
+                // call the render function
+                var angle = 0;
+                render();
+
+                function render() {
+                    stats.update();
+
+                    // revolve the icosahedron around the origin, radius 10
+                    angle += 0.02;
+                    icosahedron.position.x = 10 * Math.cos(angle);
+                    icosahedron.position.z = 10 * Math.sin(angle);
+
+                    // rotate the icosahedron around the y-axis
+                    icosahedron.rotation.y += 0.1;
+
+                    // render using requestAnimationFrame
+                    requestAnimationFrame(render);
+                    renderer.render(scene, camera);
+                }
+
+                function initStats() {
+
+                    var stats = new Stats();
+
+                    stats.setMode(0); // 0: fps, 1: ms
+
+                    // Align top-left
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.left = '0px';
+                    stats.domElement.style.top = '0px';
+
+                    $("#Stats-output").append(stats.domElement);
+
+                    return stats;
+                }
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+            });
+
+        </script>
+    </body>
+</html>

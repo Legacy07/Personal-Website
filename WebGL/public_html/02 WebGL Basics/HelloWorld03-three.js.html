@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture02: Hello world 03 - three.js</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <style>
+            body{
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                // create a scene
+                var scene = new THREE.Scene();
+
+                var whiteMaterial = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
+
+                // create a triangle
+                var triangularShape = new THREE.Shape();
+                triangularShape.moveTo(0, 1);
+                triangularShape.lineTo(1, -1);
+                triangularShape.lineTo(-1, -1);
+                var triangle = new THREE.Mesh(triangularShape.makeGeometry(), whiteMaterial);
+                triangle.position.x = -1.5;
+                scene.add(triangle);
+
+                // create a square
+                var squareGeometry = new THREE.PlaneGeometry(2, 2);
+                var square = new THREE.Mesh(squareGeometry, whiteMaterial);
+                square.position.x = 1.5;
+                scene.add(square);
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera.position.z = 5;
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+                renderer.setClearColor(0x000000);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+
+                // call the render function
+                renderer.render(scene, camera);
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+            });
+
+        </script>
+    </body>
+</html>

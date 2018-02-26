@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture04: Geometry 08 - torus knot</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <script type="text/javascript" src="../libs/stats.js"></script>
+        <script type="text/javascript" src="../libs/dat.gui.js"></script>
+        <style>
+            body {
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="Stats-output">
+        </div>
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                var stats = initStats();
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+                renderer.setClearColor(0xEEEEEE, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+
+                var mesh = createMesh(new THREE.TorusKnotGeometry(10, 1, 64, 8, 2, 3, 1));
+                // add the mesh to the scene
+                scene.add(mesh);
+
+                // position and point the camera to the center of the scene
+                camera.position.x = -30;
+                camera.position.y = 40;
+                camera.position.z = 50;
+                camera.lookAt(new THREE.Vector3(10, 0, 0));
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+                // setup the control gui
+                var controls = new function() {
+                    // we need the first child, since it's a multimaterial
+                    this.radius = mesh.children[0].geometry.parameters.radius;
+                    this.tube = 0.3;
+                    this.radialSegments = mesh.children[0].geometry.parameters.radialSegments;
+                    this.tubularSegments = mesh.children[0].geometry.parameters.tubularSegments;
+                    this.p = mesh.children[0].geometry.parameters.p;
+                    this.q = mesh.children[0].geometry.parameters.q;
+                    this.heightScale = mesh.children[0].geometry.parameters.heightScale;
+
+                    this.redraw = function() {
+                        // remove the old mesh
+                        scene.remove(mesh);
+                        // create a new one
+                        mesh = createMesh(new THREE.TorusKnotGeometry(controls.radius, controls.tube, Math.round(controls.radialSegments), Math.round(controls.tubularSegments), Math.round(controls.p), Math.round(controls.q), controls.heightScale));
+                        // add it to the scene.
+                        scene.add(mesh);
+                    };
+                };
+
+                var gui = new dat.GUI();
+                gui.add(controls, 'radius', 0, 40).onChange(controls.redraw);
+                gui.add(controls, 'tube', 0, 40).onChange(controls.redraw);
+                gui.add(controls, 'radialSegments', 0, 400).step(1).onChange(controls.redraw);
+                gui.add(controls, 'tubularSegments', 1, 20).step(1).onChange(controls.redraw);
+                gui.add(controls, 'p', 1, 10).step(1).onChange(controls.redraw);
+                gui.add(controls, 'q', 1, 15).step(1).onChange(controls.redraw);
+                gui.add(controls, 'heightScale', 0, 5).onChange(controls.redraw);
+
+                // call the render function
+                var step = 0;
+                render();
+
+                function createMesh(geom) {
+
+                    // assign two materials
+                    var meshMaterial = new THREE.MeshNormalMaterial({});
+                    meshMaterial.side = THREE.DoubleSide;
+
+                    // create a multimaterial
+                    var mesh = THREE.SceneUtils.createMultiMaterialObject(geom, [meshMaterial]);
+
+                    return mesh;
+                }
+
+                function render() {
+                    stats.update();
+
+                    step += 0.01;
+                    mesh.rotation.y = step;
+
+                    // render using requestAnimationFrame
+                    requestAnimationFrame(render);
+                    renderer.render(scene, camera);
+                }
+
+                function initStats() {
+
+                    var stats = new Stats();
+                    stats.setMode(0); // 0: fps, 1: ms
+
+                    // Align top-left
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.left = '0px';
+                    stats.domElement.style.top = '0px';
+
+                    $("#Stats-output").append(stats.domElement);
+
+                    return stats;
+                }
+            });
+        </script>
+    </body>
+</html>

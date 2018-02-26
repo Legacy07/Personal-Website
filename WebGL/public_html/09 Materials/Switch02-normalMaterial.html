@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture09: Switch 02 - normal material</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <script type="text/javascript" src="../libs/stats.js"></script>
+        <script type="text/javascript" src="../libs/dat.gui.js"></script>
+        <style>
+            body {
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="Stats-output">
+        </div>
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                var stats = initStats();
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+                renderer.setClearColor(0xEEEEEE, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+
+                var groundGeom = new THREE.PlaneGeometry(100, 100, 4, 4);
+                var groundMesh = new THREE.Mesh(groundGeom, new THREE.MeshBasicMaterial({color: 0x555555}));
+                groundMesh.rotation.x = -Math.PI / 2;
+                groundMesh.position.y = -20;
+                groundMesh.receiveShadow = true;
+                scene.add(groundMesh);
+
+                var meshMaterial = new THREE.MeshNormalMaterial();
+                meshMaterial.transparent = true;
+                var sphere;
+                var cube;
+                var plane;
+                createMeshes();
+
+                function createMeshes() {
+                    // create the sphere
+                    var sphereGeometry = new THREE.SphereGeometry(14, 20, 20);
+                    sphere = new THREE.Mesh(sphereGeometry, meshMaterial);
+                    sphere.position.set(0, 3, 2);
+                    sphere.castShadow = true;
+                    // create the cube
+                    var cubeGeometry = new THREE.CubeGeometry(15, 15, 15);
+                    cube = new THREE.Mesh(cubeGeometry, meshMaterial);
+                    cube.position.set(0, 3, 2);
+                    cube.castShadow = true;
+                    // create the plane
+                    var planeGeometry = new THREE.PlaneGeometry(14, 14, 4, 4);
+                    plane = new THREE.Mesh(planeGeometry, meshMaterial);
+                    plane.position.set(0, 3, 2);
+                }
+
+                // add the sphere to the scene
+                var currentMesh = sphere;
+                scene.add(currentMesh);
+
+                // position and point the camera to the center of the scene
+                camera.position.x = -20;
+                camera.position.y = 30;
+                camera.position.z = 40;
+                camera.lookAt(new THREE.Vector3(10, 0, 0));
+
+                // add subtle ambient lighting
+                var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+                scene.add(ambientLight);
+
+                // add spotlight for the shadows
+                var spotLight = new THREE.SpotLight(0xffffff);
+                spotLight.position.set(-30, 50, 40);
+                spotLight.target = currentMesh;
+                spotLight.castShadow = true;
+                scene.add(spotLight);
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+                // call the render function
+                var angle = 0;
+
+                var controls = new function () {
+                    this.rotationSpeed = 0.01;
+
+                    this.opacity = meshMaterial.opacity;
+                    this.transparent = meshMaterial.transparent;
+                    this.visible = meshMaterial.visible;
+                    this.wireframe = meshMaterial.wireframe;
+                    this.showNormals = false;
+                    this.side = "front";
+                    this.selectedMesh = "sphere";
+                };
+
+                var gui = new dat.GUI();
+                gui.add(controls, 'opacity', 0, 1).onChange(function (e) {
+                    meshMaterial.opacity = e;
+                });
+                gui.add(controls, 'transparent').onChange(function (e) {
+                    meshMaterial.transparent = e;
+                });
+                gui.add(controls, 'visible').onChange(function (e) {
+                    meshMaterial.visible = e;
+                });
+                gui.add(controls, 'wireframe').onChange(function (e) {
+                    meshMaterial.wireframe = e;
+                });
+                gui.add(controls, 'showNormals').onChange(function (e) {
+                    showNormals(e);
+                });
+                gui.add(controls, 'side', ["front", "back", "double"]).onChange(function (e) {
+                    switch (e) {
+                        case "front":
+                            meshMaterial.side = THREE.FrontSide;
+                            break;
+                        case "back":
+                            meshMaterial.side = THREE.BackSide;
+                            break;
+                        case "double":
+                            meshMaterial.side = THREE.DoubleSide;
+                            break;
+                    }
+                    meshMaterial.needsUpdate = true;
+                });
+                gui.add(controls, 'selectedMesh', ["cube", "sphere", "plane"]).onChange(function (e) {
+                    scene.remove(currentMesh);
+                    switchMesh(e);
+                    scene.add(currentMesh);
+                });
+
+                function switchMesh(name) {
+                    switch (name) {
+                        case "cube":
+                            currentMesh = cube;
+                            break;
+                        case "sphere":
+                            currentMesh = sphere;
+                            break;
+                        case "plane":
+                            currentMesh = plane;
+                            break;
+                    }
+                    showNormals(controls.showNormals);
+                }
+
+                function showNormals(show) {
+                    if (show) { // show normals
+                        for (var f = 0; f < currentMesh.geometry.faces.length; f++) {
+                            var face = currentMesh.geometry.faces[f];
+                            computeCentroid(face, currentMesh.geometry.vertices);
+                            var arrow = new THREE.ArrowHelper(face.normal, face.centroid, 4, 0x3333FF); // arrow needs to be at least 3 in length or the head doesn't show up
+                            currentMesh.add(arrow);
+                        }
+                    } else { // remove normals
+                        var children = currentMesh.children;
+                        for (var c = children.length - 1; c >= 0; c--) {
+                            if (children[c] instanceof THREE.ArrowHelper) {
+                                currentMesh.remove(children[c]);
+                            }
+                        }
+                    }
+                }
+
+                function computeCentroid(face, vertices) {
+                    if (face.centroid === undefined) {
+                        face.centroid = new THREE.Vector3();
+                        face.centroid.add(vertices[ face.a ]);
+                        face.centroid.add(vertices[ face.b ]);
+                        face.centroid.add(vertices[ face.c ]);
+                        if (face instanceof THREE.Face3) {
+                            face.centroid.divideScalar(3);
+                        } else if (face instanceof THREE.Face4) {
+                            face.centroid.add(vertices[ face.d ]);
+                            face.centroid.divideScalar(4);
+                        }
+                    }
+                }
+
+                render();
+
+                function render() {
+                    stats.update();
+
+                    angle += controls.rotationSpeed;
+                    cube.rotation.y = angle;
+                    plane.rotation.y = angle;
+                    sphere.rotation.y = angle;
+
+                    // render using requestAnimationFrame
+                    requestAnimationFrame(render);
+                    renderer.render(scene, camera);
+                }
+
+                function initStats() {
+
+                    var stats = new Stats();
+
+                    stats.setMode(0); // 0: fps, 1: ms
+
+                    // Align top-left
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.left = '0px';
+                    stats.domElement.style.top = '0px';
+
+                    $("#Stats-output").append(stats.domElement);
+
+                    return stats;
+                }
+            });
+
+        </script>
+    </body>
+</html>

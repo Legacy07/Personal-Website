@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lecture05: Table 01</title>
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script type="text/javascript" src="../libs/three.js"></script>
+        <script type="text/javascript" src="../libs/jquery.js"></script>
+        <script type="text/javascript" src="../libs/stats.js"></script>
+        <style>
+            body{
+                /* set margin to 0 and overflow to hidden, to go fullscreen */
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="Stats-output">
+        </div>
+        <!-- Div which will hold the Output -->
+        <div id="WebGL-output">
+        </div>
+
+        <!-- Javascript code that runs our Three.js examples -->
+        <script type="text/javascript">
+
+            // once everything is loaded, we run our Three.js stuff.
+            $(function() {
+
+                var stats = initStats();
+
+                // create a scene, that will hold all our elements such as objects, cameras and lights.
+                var scene = new THREE.Scene();
+
+                // create a camera, which defines where we're looking at.
+                var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+                // create a render and set the size
+                var renderer = new THREE.WebGLRenderer();
+
+                renderer.setClearColor(0xEEEEEE, 1.0);
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.shadowMap.enabled = true;
+
+                // create the ground plane
+                var planeGeometry = new THREE.PlaneGeometry(50, 50, 1, 1);
+                var planeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
+                var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+                plane.receiveShadow = true;
+
+                // rotate and position the plane
+                plane.rotation.x = -0.5 * Math.PI;
+
+                // add the plane to the scene
+                scene.add(plane);
+
+                var tableMaterial = new THREE.MeshLambertMaterial({color: 0x802020});
+
+                // create a table top
+                var tableTopGeometry = new THREE.CubeGeometry(10, 0.5, 10);
+                var tableTop = new THREE.Mesh(tableTopGeometry, tableMaterial);
+                tableTop.castShadow = true;
+                tableTop.position.y = 5;
+                scene.add(tableTop);
+
+                var tableLegGeometry = new THREE.CubeGeometry(0.5, 5, 0.5);
+
+                // create the legs
+                var tableLegs = [];
+                for (var i = 0; i < 4; ++i) {
+                    tableLegs[i] = new THREE.Mesh(tableLegGeometry, tableMaterial);
+                    tableLegs[i].castShadow = true;
+                    if (i % 2 === 0) { // i = 0 or 2
+                        tableLegs[i].position.x = 4.5;
+                    } else { // i = 1 or 3
+                        tableLegs[i].position.x = -4.5;
+                    }
+                    tableLegs[i].position.y = 2.5;
+                    if (i < 2) { // i = 0 or 1
+                        tableLegs[i].position.z = 4.5;
+                    } else { // i = 2 or 3
+                        tableLegs[i].position.z = -4.5;
+                    }
+                    scene.add(tableLegs[i]);
+                }
+
+                // position and point the camera to the center of the scene
+                camera.position.x = -40;
+                camera.position.y = 20;
+                camera.position.z = 30;
+                camera.lookAt(scene.position);
+
+                // add subtle ambient lighting
+                var ambientLight = new THREE.AmbientLight(0x0c0c0c);
+                scene.add(ambientLight);
+
+                // add spotlight for the shadows
+                var spotLight = new THREE.SpotLight(0xffffff);
+                spotLight.position.set(-40, 60, -10);
+                spotLight.castShadow = true;
+                scene.add(spotLight);
+
+                // add the output of the renderer to the html element
+                $("#WebGL-output").append(renderer.domElement);
+
+                // call the render function
+                renderer.render(scene, camera);
+
+                function initStats() {
+
+                    var stats = new Stats();
+
+                    stats.setMode(0); // 0: fps, 1: ms
+
+                    // Align top-left
+                    stats.domElement.style.position = 'absolute';
+                    stats.domElement.style.left = '0px';
+                    stats.domElement.style.top = '0px';
+
+                    $("#Stats-output").append(stats.domElement);
+
+                    return stats;
+                }
+            });
+
+        </script>
+    </body>
+</html>
