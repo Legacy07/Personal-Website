@@ -89,18 +89,150 @@ p.Paragraph {
 
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 p a{
-	color: black;
-	font-weight: bold;
-	border-bottom: 1px solid #FF0000;
-	transition: background-color 0.4s;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid #FF0000;
+    transition: background-color 0.4s;
 }
 p a:hover{
-	border-bottom: 3px solid #FF0000;
-	background-color: white;
+    border-bottom: 3px solid #FF0000;
+    background-color: white;
 }
+
+p.boxHeader {
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 1.5em;
+    /*    border-radius: 1em;*/
+    background-color: #f2f2f2;
+    padding: 0.8em;
+    margin: 0;
+    text-align: center;
+    color: black;
+    position: relative;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+section {
+    width: 50%;
+    height: 20em;
+    margin: auto;
+    padding: 1em;
+    display: flex;
+
+}
+
+div.githubBox {
+    /*    border-radius: 1px;*/
+    background-color: #f2f2f2;
+
+    height: 20em;
+    position: relative;
+    /*    margin-top: 1%;*/
+    width: 15em;
+    /*
+    margin-right: 60%;
+    margin-left: 25%;
+    */
+    float: left;
+    border: 0.5em solid white;
+    cursor:pointer;
+    display: block;
+}
+.githubBox:hover {
+    background-color:darkgray;
+    text-decoration:none;
+    color:white;
+}
+
+div.githubBox p {
+    font-family: "Georgia";
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    top: 1%;
+    text-align: center;
+    color: black;
+    position: absolute;
+}
+
+div.emailBox {
+    /*    border-radius: 1px;*/
+    background-color: #f2f2f2;
+    height: 20em;
+    position: relative;
+    width: 15em;
+    /*    margin-right: 40%;*/
+    margin-left: 50%;
+
+    cursor:pointer;
+    display: block;
+}
+.emailBox:hover {
+    background-color:darkgray;
+    text-decoration:none;
+    color:white;
+}
+
+div.emailBox p {
+    font-family: "Georgia";
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    top: 1%;
+    text-align: center;
+    color: black;
+    position: absolute;
+}
+div.linkedinBox {
+    /*    border-radius: 1px;*/
+    background-color: #f2f2f2;
+    height: 20em;
+    position: relative;
+    width: 15em;
+    /*    left: 15%; */
+
+    /*
+    margin-right: 40%;
+    margin-left: 45%;
+    */
+    border: 0.5em solid white;
+
+    /*    float: right;*/
+
+    cursor:pointer;
+    display: block;
+}
+.linkedinBox:hover {
+    background-color:darkgray;
+    text-decoration:none;
+    color:white;
+}
+
+div.linkedinBox p {
+    font-family: "Georgia";
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    top: 1%;
+    text-align: center;
+    color: black;
+    position: absolute;
+}
+
+p.Header{    
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-left: 35%;
+    margin-top: -5%;
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
 
 
 input[type=submit] {
@@ -108,7 +240,7 @@ input[type=submit] {
     position: relative;
     color: white;
     padding: 12px 10px;
-    border-radius: 1px;
+    border-radius: 1em;
     border: none;
     cursor: pointer;
     width: 100%;
