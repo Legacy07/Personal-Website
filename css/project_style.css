@@ -1,0 +1,218 @@
+
+html {
+
+    background: #e6e8ed;
+
+}
+
+body {
+    color: #000000;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+/*header customisation*/
+h1 { color: #000000; font-family: "Helvetica"; font-size: 30px; font-weight: 700; line-height: 0px; margin: 0 0 0; padding: 0px 0px; text-align: right; text-transform: none; transform: translate(23%, 0px);
+}
+
+/* ---- Navigation Bar ----
+defining unordered list, with a banner using overflow etc*/
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    list-style: none;
+
+}
+
+
+/*custom list items, text size and alignment*/
+li a{
+    font-family: sans-serif;
+    font-size: 23px;
+    display: flow-root;
+    color: black;
+    text-align: center;
+    padding: 1em 2em;
+    text-decoration: none;
+
+
+}
+
+/*user visually can see the mouse hover*/
+li a:hover:not(.active) {
+    /*    background-image: url(b3.jpg);*/
+    color: darkgray;
+    font-family: sans-serif;
+    font-size: 20px;
+    transition-duration: 0.4s;
+
+}
+p.Header{
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 2em;
+
+    display: inline-block;
+    margin: 0;
+
+}
+
+p.BoxHeader{    
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 1.1em;
+    color: black;
+    display: inline-block;
+    margin: 0;
+}
+
+p.BoxHeader:after{
+    content: '';
+    display: block;
+    margin: auto;
+    height: 0.15em;
+    width: 0px;
+/*    background: transparent;*/
+    -webkit-transition: width .35s ease, background-color .35s ease;
+    transition: width .35s ease, background-color .35s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover p.BoxHeader:after{
+    width: 100%;
+	background: black;
+}
+
+
+p.BoxDescription {
+    font-family: "Georgia";
+    font-size: 1.2em;
+    width: 50%;
+    color: black;
+}
+
+section {
+    z-index: 0;
+    margin: auto;
+    padding: 1em;
+    width: 50%;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+
+}
+
+.flex:nth-of-type(n) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+/*    width: 50%;*/
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    background-color: #f2f2f2;
+    border: 0.5em solid white;
+    cursor:pointer;
+}
+
+ul.Skills {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+ul.Skills li {
+    display: inline-block;
+    background-color: #a9a9a9;
+    border: 0.2em solid #a9a9a9;
+    border-radius: 0.6em;
+    margin-right: 0.2em;
+    /*    margin-top: 1em;*/
+    color: #fff;
+    padding: 0 0.2em;
+}
+
+
+
+div.StockControlSimuationBox {
+    /*    border-radius: 1px;*/
+    background-color: #f2f2f2;
+
+    height: 20em;
+    position: relative;
+    /*    margin-top: 1%;*/
+    width: 15em;
+    /*
+    margin-right: 60%;
+    margin-left: 25%;
+    */
+    float: left;
+    border: 0.5em solid white;
+    cursor:pointer;
+    display: block;
+}
+
+div.StockControlSimuationBox p {
+    font-family: "Georgia";
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    top: 1%;
+    text-align: center;
+    color: black;
+    position: absolute;
+}
+
+
+div.StatisticalModelBox {
+    /*    border-radius: 1px;*/
+    background-color: #f2f2f2;
+    height: 20em;
+    position: relative;
+    width: 15em;
+    /*    margin-right: 40%;*/
+    margin-left: 50%;
+
+    cursor:pointer;
+    display: block;
+}
+
+
+input[type=submit] {
+    background-color: chocolate;
+    position: relative;
+    color: white;
+    padding: 12px 10px;
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+/*close button */
+.closeButton {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
