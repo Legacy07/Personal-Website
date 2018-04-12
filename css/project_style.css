@@ -75,7 +75,7 @@ p.BoxHeader:after{
     margin: auto;
     height: 0.15em;
     width: 0px;
-/*    background: transparent;*/
+    /*    background: transparent;*/
     -webkit-transition: width .35s ease, background-color .35s ease;
     transition: width .35s ease, background-color .35s ease;
 }
@@ -86,9 +86,8 @@ a {
 
 a:hover p.BoxHeader:after{
     width: 100%;
-	background: black;
+    background: black;
 }
-
 
 p.BoxDescription {
     font-family: "Georgia";
@@ -96,6 +95,44 @@ p.BoxDescription {
     width: 50%;
     color: black;
 }
+
+div.sideSection{
+    margin: auto;
+    float: left;
+    margin-left: 10%;
+    margin-top: 4%;
+}
+
+p.sideHeader{
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 1.1em;
+    padding-bottom: 1em;
+    display: inline-block;
+    margin: 0;
+    color: black;
+}
+
+p.sideHeader:after{
+    content: '';
+    display: block;
+    margin: auto;
+    height: 0.15em;
+    width: 0px;
+    /*    background: transparent;*/
+    -webkit-transition: width .35s ease, background-color .35s ease;
+    transition: width .35s ease, background-color .35s ease;
+}
+
+a.side {
+    text-decoration: none;
+}
+
+a.side:hover p.sideHeader:after{
+    width: 100%;
+    background: black;
+}
+
 
 section {
     z-index: 0;
@@ -117,7 +154,7 @@ section {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-/*    width: 50%;*/
+    /*    width: 50%;*/
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 
@@ -145,48 +182,32 @@ ul.Skills li {
 
 
 
-div.StockControlSimuationBox {
-    /*    border-radius: 1px;*/
-    background-color: #f2f2f2;
+#autoScrollButton {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    /*left: 50%;*/
+    z-index: 99;
+    font-size: 1em;
 
-    height: 20em;
-    position: relative;
-    /*    margin-top: 1%;*/
-    width: 15em;
-    /*
-    margin-right: 60%;
-    margin-left: 25%;
-    */
-    float: left;
-    border: 0.5em solid white;
-    cursor:pointer;
-    display: block;
+    border: none;
+    outline: none;
+
+    background-color: coral;
+    color: white;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    transition: background-color 0.4s;
+
 }
 
-div.StockControlSimuationBox p {
-    font-family: "Georgia";
-    font-size: 1.5em;
-    padding-top: 0.5em;
-    top: 1%;
-    text-align: center;
-    color: black;
-    position: absolute;
+#autoScrollButton:hover {
+    background-color: #555;
+    color: white;
 }
-
-
-div.StatisticalModelBox {
-    /*    border-radius: 1px;*/
-    background-color: #f2f2f2;
-    height: 20em;
-    position: relative;
-    width: 15em;
-    /*    margin-right: 40%;*/
-    margin-left: 50%;
-
-    cursor:pointer;
-    display: block;
-}
-
 
 input[type=submit] {
     background-color: chocolate;
