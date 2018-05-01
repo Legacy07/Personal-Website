@@ -16,41 +16,6 @@ body {
 h1 { color: #000000; font-family: "Helvetica"; font-size: 30px; font-weight: 700; line-height: 0px; margin: 0 0 0; padding: 0px 0px; text-align: right; text-transform: none; transform: translate(23%, 0px);
 }
 
-/* ---- Navigation Bar ----
-defining unordered list, with a banner using overflow etc*/
-ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    list-style: none;
-
-}
-
-
-/*custom list items, text size and alignment*/
-li a{
-    font-family: sans-serif;
-    font-size: 23px;
-    display: flow-root;
-    color: black;
-    text-align: center;
-    padding: 1em 2em;
-    text-decoration: none;
-
-
-}
-
-/*user visually can see the mouse hover*/
-li a:hover:not(.active) {
-    /*    background-image: url(b3.jpg);*/
-    color: darkgray;
-    font-family: sans-serif;
-    font-size: 20px;
-    transition-duration: 0.4s;
-
-}
-
 div.Description{
     height: 0px;
     font-size: 21px;
