@@ -56,8 +56,8 @@ a:hover p.BoxHeader:after{
 
 p.BoxDescription {
     font-family: "Georgia";
-    font-size: 1.2em;
-    width: 50%;
+    font-size: 1em;
+    width: 100%;
     color: black;
 }
 

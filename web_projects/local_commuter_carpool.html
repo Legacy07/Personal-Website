@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+    <head>
+        <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- using the custom css -->    
+        <link rel="stylesheet" href="../css/project_style.css"/>
+        <link rel="stylesheet" href="../css/nav_bar.css"/>
+        <link rel="stylesheet" href="../css/magnific-popup.css"/>
+
+        <title>Local Commuter Carpool</title>
+    </head>
+
+    <body>
+        <!-- header -->
+
+        <ul>
+            <!--navigation banner-->
+            <li><a href="../home.html" title="">Home</a></li>  
+            <li><a href="../projects.html" title="">Project</a></li>  
+            <!--            <li><a href="memberposts.php" title="Post">Blog</a></li> -->
+            <li><a href="../about.html" title="">About</a></li>  
+            <li><a href="../contact.html" title="">Contact</a></li>  
+
+        </ul>
+
+        <section>
+            <p class="Header">Local Commuter Carpool</p>
+
+            <div class="imagesDiv">
+                <!--            images -->
+                <img class="slideShow" href="local_commuter_carpool_img/home.png" src="local_commuter_carpool_img/home.png" title= "Home Page" width="500" height="400"> 
+                <img class="slideShow" href="local_commuter_carpool_img/registration.png" src="local_commuter_carpool_img/registration.png" title= "Registration Page" width="500" height="400"> 
+                <img class="slideShow" href="local_commuter_carpool_img/login.png" src="local_commuter_carpool_img/login.png" title= "Login Page" width="500" height="400"> 
+                <img class="slideShow" href="local_commuter_carpool_img/posting.png" src="local_commuter_carpool_img/posting.png" title= "Post journey" width="500" height="400"> 
+                <img class="slideShow" href="local_commuter_carpool_img/own_posts.png" src="local_commuter_carpool_img/own_posts.png" title= "Display own Posts" width="500" height="400"> 
+                <img class="slideShow" href="local_commuter_carpool_img/search.png" src="local_commuter_carpool_img/search.png" title= "Search for Posts" width="500" height="400"> 
+
+                <!--            left and right buttons -->
+                <button class="leftArrow" id="left" onclick="plusDivs(-1)"></button>
+                <button class="rightArrow" id="right" onclick="plusDivs(1)"></button>
+            </div>
+
+            <!--            overview-->
+            <p class="Header">Overview</p>
+
+            <p class="overviewDescription">This is a website for local residents to find commuter carpool. The website allows for;</p>
+            <ul class="overviewList">
+                <li>Casual users to Search for commutes only</li>
+                <li>Registered users to Post Journey and Edit/Delete posts</li>
+                <li>Registered users to View detailed search results</li>
+
+            </ul>
+            <br><br>
+            <br>
+            <!--            listing used technologies-->
+            <p class="Header">Technologies</p>
+            <br><br>
+
+            <ul class="overviewList">
+                <li>XHTML</li>
+                <li>PHP</li>
+                <li>CSS</li>
+            </ul>
+
+            <!--            github resource-->
+            <br><br>
+            <br>
+            <p class="Header">Resources</p>
+            <p class="overviewDescription">The project is online at <strong><a class="githubLink" href="https://github.com/Legacy07/Local_Commuter_Carpool">Github</a></strong>.</p>
+
+
+        </section>
+
+        <!--        image slideshow -->
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("slideShow");
+                if (n > x.length) {slideIndex = 1}    
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                x[slideIndex-1].style.display = "block";  
+            }
+
+        </script>
+
+        <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- Magnific Popup core JS file -->
+        <script src="../js/jquery.magnific-popup.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('img').magnificPopup({type:'image'});
+            });
+        </script>
+    </body>
+</html>

@@ -197,7 +197,17 @@ p.Header{
     text-decoration: underline;
 
 }
+p.linkedInHeader{    
+    font-family: "Helvetica";
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-left: 30%;
+    margin-top: -5%;
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
 
+}
 
 
 input[type=submit] {
