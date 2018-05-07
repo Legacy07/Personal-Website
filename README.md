@@ -1,2 +1,2 @@
-# Personal-Website
+# Personal Website
 Personal Website for showcasing portfolio.
