@@ -12,7 +12,7 @@ ul {
 
 /*custom list items, text size and alignment*/
 li a{
-    font-family: sans-serif;
+    font-family: 'Poppins' sans-serif;
     font-size: 23px;
     display: flow-root;
     color: black;
@@ -27,7 +27,7 @@ li a{
 li a:hover:not(.active) {
     /*    background-image: url(b3.jpg);*/
     color: darkgray;
-    font-family: sans-serif;
+    font-family: 'Poppins' sans-serif;
     font-size: 20px;
     transition-duration: 0.4s;
 

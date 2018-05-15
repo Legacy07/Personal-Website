@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../css/project_style.css"/>
         <link rel="stylesheet" href="../css/nav_bar.css"/>
         <link rel="stylesheet" href="../css/magnific-popup.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
 
         <title>SOS Contact</title>
     </head>
@@ -31,9 +32,9 @@
 
             <div class="imagesDiv">
                 <!--            images -->
-                <img class="slideShow" href="sos_contact_img/first_time_screen.jpg" src="sos_contact_img/first_time_screen.jpg" title= "Start Screen at first time use" width="500" height="400"> 
-                <img class="slideShow" href="sos_contact_img/permissions_screen.jpg" src="sos_contact_img/permissions_screen.jpg" title= "Permissions screen of why its needed" width="500" height="400">
-<!--                <img class="slideShow" href="sos_contact_img/home_screen.jpg" src="sos_contact_img/home_screen.jpg" title= "Home Screen" width="500" height="400"> -->
+                <img class="sosContactSlideShow" href="sos_contact_img/first_time_screen.jpg" src="sos_contact_img/first_time_screen.jpg" title= "Start Screen at first time use" width="200" height="400"> 
+                <img class="sosContactSlideShow" href="sos_contact_img/permissions_screen.jpg" src="sos_contact_img/permissions_screen.jpg" title= "Permissions screen of why its needed" width="200" height="400">
+                <img class="sosContactSlideShow" href="sos_contact_img/home_screen.jpg" src="sos_contact_img/home_screen.jpg" title= "Home Screen" width="200" height="400"> 
                 
                 <!--            left and right buttons -->
                 <button class="leftArrow" id="left" onclick="plusDivs(-1)"></button>
@@ -47,7 +48,7 @@
             <ul class="overviewList">
                 <li>Allows the user to send the SOS message by clicking on a notification</li>
                 <li>Once the initial message is sent, update messages within every interval will be sent including updated location as suppose to 'tracking'</li>
-                <li>Initiate Fall-Back Mechanism if the initial message couldn't be sent for such reasons.</li>
+                <li>Initiate Fall-Back Mechanism if the initial message couldn't be sent for such reasons using Wi-Fi to send via Whatsapp or P2P connection to build notification on peer's device. </li>
 
             </ul>
             <br><br>
@@ -82,7 +83,7 @@
 
             function showDivs(n) {
                 var i;
-                var x = document.getElementsByClassName("slideShow");
+                var x = document.getElementsByClassName("sosContactSlideShow");
                 if (n > x.length) {slideIndex = 1}    
                 if (n < 1) {slideIndex = x.length}
                 for (i = 0; i < x.length; i++) {

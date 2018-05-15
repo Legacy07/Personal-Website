@@ -1,13 +1,13 @@
 
 html {
 
-    background: #e6e8ed;
-
+    background: white;
+    
 }
 
 body {
     color: #000000;
-    font-family: "Helvetica Neue";
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
@@ -23,7 +23,7 @@ div.Description{
     position: relative;
 }
 div.Description p {
-    font-family: "Georgia";
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     position: absolute;
     text-align: left;
@@ -33,7 +33,7 @@ div.Description p {
 }
 
 p.Question {
-    font-family: "Helvetica";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
     left: 50%;
@@ -43,7 +43,7 @@ p.Question {
 }
 
 p.Paragraph {
-    font-family: "Helvetica";
+    font-family: 'Poppins', sans-serif;
     font-size: 1em;
     margin: 0;
     left: 50%;
@@ -59,16 +59,17 @@ a {
 p a{
     color: black;
     font-weight: bold;
-    border-bottom: 1px solid #FF0000;
+    border-bottom: 0.1em solid #FF0000;
     transition: background-color 0.4s;
 }
 p a:hover{
-    border-bottom: 3px solid #FF0000;
-    background-color: white;
+    border-bottom: 0.2em solid #FF0000;
+    background-color: #282828;
+    color: white;
 }
 
 p.boxHeader {
-    font-family: "Helvetica";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
     /*    border-radius: 1em;*/
@@ -115,7 +116,7 @@ div.githubBox {
 }
 
 div.githubBox p {
-    font-family: "Georgia";
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5em;
     padding-top: 0.5em;
     top: 1%;
@@ -143,7 +144,7 @@ div.emailBox {
 }
 
 div.emailBox p {
-    font-family: "Georgia";
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5em;
     padding-top: 0.5em;
     top: 1%;
@@ -177,7 +178,7 @@ div.linkedinBox {
 }
 
 div.linkedinBox p {
-    font-family: "Georgia";
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5em;
     padding-top: 0.5em;
     top: 1%;
@@ -187,7 +188,7 @@ div.linkedinBox p {
 }
 
 p.Header{    
-    font-family: "Helvetica";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
     margin-left: 35%;
@@ -198,7 +199,7 @@ p.Header{
 
 }
 p.linkedInHeader{    
-    font-family: "Helvetica";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
     margin-left: 30%;

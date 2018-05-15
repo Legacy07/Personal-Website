@@ -14,7 +14,7 @@ ul {
 
 /*custom list items, text size and alignment*/
 li a{
-    font-family: sans-serif;
+    font-family: 'Poppins' sans-serif;
     font-size: 23px;
     display: flow-root;
     color: white;
@@ -27,7 +27,7 @@ li a{
 li a:hover:not(.active) {
     /*    background-image: url(b3.jpg);*/
     color: darkgray;
-    font-family: sans-serif;
+    font-family: 'Poppins' sans-serif;
     font-size: 23px;
     transition-duration: 0.4s;
 
@@ -41,7 +41,7 @@ h1.logo {text-align: left; text-transform: none;  transform: translate(-23%, -50
 /*body style*/
 body {
     color: #000000;
-    font-family: "Helvetica Neue";
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
@@ -59,7 +59,7 @@ div.Description{
     position: relative;
 }
 div.Description p {
-    font-family: "Georgia";
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     color: #FFFFFF;
     position: absolute;
@@ -70,7 +70,7 @@ div.Description p {
 }
 
 p.FirstLine {
-    font-family: "Helvetica";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 3em;
     left: 50%;
@@ -78,8 +78,16 @@ p.FirstLine {
     color: #000000;
     position: relative;
 }
+/*
+@media screen and ( max-width: 480px) {
+    p.FirstLine{
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+}
+*/
 p.SecondLine {
-    font-family: "Helvetica";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1em;
     margin: 0;
@@ -87,8 +95,9 @@ p.SecondLine {
     color: #000000;
     position: relative;
 }
+
 p.ThirdLine {
-    font-family: "Helvetica";
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.2em;
     left: 50%;
@@ -105,10 +114,11 @@ input[type=submit] {
     position: relative;
     color: black;
     /*    background-image: url(b5.png);*/
-    padding: 12px 20px;
+    padding: 0.4em 0.5em;
     border-radius: 4px;
     left: 50%;
     border: none;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
 
 }
@@ -116,7 +126,8 @@ input[type=submit] {
 /*check for animated button -- https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate1*/
 input[type=submit]:hover {
     text-decoration: none;
-    background: darkgray;
+    background: #282828;
+    color: white;
     transition-duration: 0.4s;
 }
 

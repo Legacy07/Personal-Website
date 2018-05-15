@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="../css/project_style.css"/>
         <link rel="stylesheet" href="../css/nav_bar.css"/>
         <link rel="stylesheet" href="../css/magnific-popup.css"/>
-
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+        
         <title>Stock Control Simulation</title>
     </head>
 
@@ -31,17 +32,17 @@
 
             <div class="imagesDiv">
                 <!--            images -->
-                <img class="slideShow" href="stock_control_simulation_img/main.png" src="stock_control_simulation_img/main.png" title= "Main menu" width="500" height="400"> 
-                <img class="slideShow" href="stock_control_simulation_img/check_stock.png" src="stock_control_simulation_img/check_stock.png" title= "Check Stock" width="500" height="400"> 
-                <img class="slideShow"  href="stock_control_simulation_img/purchase_item.png" src="stock_control_simulation_img/purchase_item.png" title= "Purchase item" width="500" height="400"> 
-                <img class="slideShow"  href="stock_control_simulation_img/change_stock.png" src="stock_control_simulation_img/change_stock.png" title= "Admin" width="500" height="400"> 
+                <img class="stockControlSlideShow" href="stock_control_simulation_img/main.png" src="stock_control_simulation_img/main.png" title= "Main menu" width="500" height="400"> 
+                <img class="stockControlSlideShow" href="stock_control_simulation_img/check_stock.png" src="stock_control_simulation_img/check_stock.png" title= "Check Stock" width="500" height="400"> 
+                <img class="stockControlSlideShow"  href="stock_control_simulation_img/purchase_item.png" src="stock_control_simulation_img/purchase_item.png" title= "Purchase item" width="500" height="400"> 
+                <img class="stockControlSlideShow"  href="stock_control_simulation_img/change_stock.png" src="stock_control_simulation_img/change_stock.png" title= "Admin" width="500" height="400"> 
 
                 <!--            left and right buttons -->
                 <button class="leftArrow" id="left" onclick="plusDivs(-1)"></button>
                 <button class="rightArrow" id="right" onclick="plusDivs(1)"></button>
             </div>
 
-<!--            overview-->
+            <!--            overview-->
             <p class="Header">Overview</p>
 
             <p class="overviewDescription">The program is a simulation of a small <b>stock control system</b> for a store. The system allows to;</p>
@@ -54,7 +55,7 @@
             <br><br>
             <br>
 
-<!--            listing used technologies-->
+            <!--            listing used technologies-->
             <p class="Header">Technologies</p>
             <br><br>
 
@@ -65,7 +66,7 @@
                 <li>SQL</li>
             </ul>
 
-<!--            github resource-->
+            <!--            github resource-->
             <br><br>
             <br><br>
             <p class="Header">Resources</p>
@@ -85,7 +86,7 @@
 
             function showDivs(n) {
                 var i;
-                var x = document.getElementsByClassName("slideShow");
+                var x = document.getElementsByClassName("stockControlSlideShow");
                 if (n > x.length) {slideIndex = 1}    
                 if (n < 1) {slideIndex = x.length}
                 for (i = 0; i < x.length; i++) {
@@ -101,7 +102,7 @@
 
         <!-- Magnific Popup core JS file -->
         <script src="../js/jquery.magnific-popup.min.js"></script>
-        
+
         <script>
             $(document).ready(function() {
                 $('img').magnificPopup({type:'image'});
