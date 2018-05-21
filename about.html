@@ -9,29 +9,32 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/nav_bar.css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-
+        
+        <script src="js/nav_bar.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Project</title>
+        <title>About | Ahmet Ince</title>
     </head>
 
     <body>
-        <!-- header -->
+        <!--        Navigation bar-->
+        <div class="dropdown">
+            <!--            <div class="search" id="WebGL-output">-->
+            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>
+            <!--        </div>-->
 
-        <ul>
-            <!--            check it out -- https://envato.com/blog/css-snippets-responsive-menus/-->
-            <!--            animated dropdowns -- https://www.w3schools.com/w3css/w3css_dropdowns.asp-->
-            <!--            http://candpgeneration.com/toys/CSS3-dropdown-tut.php-->
+            <div id="myDropdown1" class="dropdown-content menu-one">
+                <a href="home.html" title="">Home</a>  
+                <a href="projects.html" title="">Project</a>  
+                <!--                <a href="#" title="Post">Blog</a> -->
+                <a href="about.html" title="">About</a> 
+                <a href="contact.html" title="">Contact</a> 
+                <a href="cv.html" target="_blank" title="">CV</a>  
 
-            <!--            WHAT IM LOOKING for -- https://stackoverflow.com/questions/46803710/how-to-make-a-drop-down-menu-from-an-icon-in-a-navbar-->
-            <!--navigation banner-->
-            <li><a href="home.html" title="">Home</a></li>  
-            <li><a href="projects.html" title="">Project</a></li>  
-            <!--            <li><a href="memberposts.php" title="Post">Blog</a></li> -->
-            <li><a href="about.html" title="">About</a></li>  
-            <li><a href="contact.html" title="">Contact</a></li>  
+            </div>
+        </div>
+  
 
-        </ul>
         <div class="Description" >
 
             <p class="Question" ><strong>Who is Ahmet Ince?</strong></p>
@@ -48,6 +51,15 @@
 
             <p class="Paragraph">Add some skillset with fancy css. can be listed in circle or in a box. Also add a inspirational quoteat the very top or bottom center</p>
             <br><br><p>http://www.goslingo.com/, http://www.ryan-hwang.com/about.php, http://sergiopedercini.com/#/about-me</p>
+            
+<!--
+            https://codepen.io/Muthukrishnan/pen/vGoZVz
+            https://css-tricks.com/making-a-bar-chart-with-css-grid/
+            https://codepen.io/TimRuby/pen/ysfGe
+            https://www.amcharts.com/demos/3d-bar-chart/
+            http://www.cssbakery.com/2009/06/data-visualisation-flexible-bar-graphs.html
+            http://alistapart.com/article/accessibledatavisualization
+-->
         </div>
 
     </body>

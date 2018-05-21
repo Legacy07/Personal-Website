@@ -8,7 +8,7 @@ html {
 body {
     color: #000000;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.5;
     margin: 0 auto;
 }
@@ -64,8 +64,8 @@ p a{
 }
 p a:hover{
     border-bottom: 0.2em solid #FF0000;
-    background-color: #282828;
-    color: white;
+    background-color: bisque;
+/*    color: white;*/
 }
 
 p.boxHeader {
@@ -238,4 +238,9 @@ input[type=submit] {
 .closebtn:hover {
     color: black;
 }
+
+
+
+
+
 

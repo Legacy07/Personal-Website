@@ -10,22 +10,31 @@
         <link rel="stylesheet" href="../css/nav_bar.css"/>
         <link rel="stylesheet" href="../css/magnific-popup.css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-        
+        <script src="../js/nav_bar.js"></script>
+        <script src="../js/back_to_top.js"></script>
+
         <title>Stock Control Simulation</title>
     </head>
 
     <body>
-        <!-- header -->
 
-        <ul>
-            <!--navigation banner-->
-            <li><a href="../home.html" title="">Home</a></li>  
-            <li><a href="../projects.html" title="">Project</a></li>  
-            <!--            <li><a href="memberposts.php" title="Post">Blog</a></li> -->
-            <li><a href="../about.html" title="">About</a></li>  
-            <li><a href="../contact.html" title="">Contact</a></li>  
+        <!--        Navigation bar-->
+        <div class="dropdown">
+            <!--            <div class="search" id="WebGL-output">-->
+            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>
+            <!--        </div>-->
 
-        </ul>
+            <div id="myDropdown1" class="dropdown-content menu-one">
+                <a href="../home.html" title="">Home</a>  
+                <a href="../projects.html" title="">Project</a>  
+                <!--                <a href="#" title="Post">Blog</a> -->
+                <a href="../about.html" title="">About</a> 
+                <a href="../contact.html" title="">Contact</a> 
+                <a href="../cv.html" target="_blank" title="">CV</a>  
+
+            </div>
+        </div>
+
 
         <section>
             <p class="Header" >Stock Control Simulation</p>
@@ -53,7 +62,7 @@
             </ul>
 
             <br><br>
-            <br>
+            <br><br>        
 
             <!--            listing used technologies-->
             <p class="Header">Technologies</p>
@@ -68,7 +77,7 @@
 
             <!--            github resource-->
             <br><br>
-            <br><br>
+            <br><br><br> 
             <p class="Header">Resources</p>
             <p class="overviewDescription">The project is online at <strong><a class="githubLink" href="https://github.com/Legacy07/Stock-Control-Simulation">Github</a></strong>.</p>
 
@@ -108,5 +117,8 @@
                 $('img').magnificPopup({type:'image'});
             });
         </script>
+
+        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
     </body>
 </html>

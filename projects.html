@@ -2,37 +2,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+
     <head>
         <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- using the custom css -->    
         <link rel="stylesheet" href="css/project_style.css"/>
         <link rel="stylesheet" href="css/nav_bar.css"/>
+<!--        google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--        //navigation bar script-->
+        <script src="js/nav_bar.js"></script>
+<!--        back to top script-->
+        <script src="js/back_to_top.js"></script>
+        
+<!--        webgl libraries-->
+        <script type="text/javascript" src="js/three.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/stats.js"></script>
+        <script src="js/rotating_cube.js"></script>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Project</title>
+        <title>Projects | Ahmet Ince</title>
     </head>
 
     <body>
-        <!-- header -->
+        <!--        Navigation bar-->
+        <div class="dropdown">
+            <!--            <div class="search" id="WebGL-output">-->
+            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>
+            <!--        </div>-->
 
-        <ul>
-            <!--            check it out -- https://envato.com/blog/css-snippets-responsive-menus/-->
-            <!--            animated dropdowns -- https://www.w3schools.com/w3css/w3css_dropdowns.asp-->
-            <!--            http://candpgeneration.com/toys/CSS3-dropdown-tut.php-->
+            <div id="myDropdown1" class="dropdown-content menu-one">
+                <a href="home.html" title="">Home</a>  
+                <a href="projects.html" title="">Project</a>  
+                <!--                <a href="#" title="Post">Blog</a> -->
+                <a href="about.html" title="">About</a> 
+                <a href="contact.html" title="">Contact</a> 
+                <a href="cv.html" target="_blank" title="">CV</a>  
 
-            <!--            WHAT IM LOOKING for -- https://stackoverflow.com/questions/46803710/how-to-make-a-drop-down-menu-from-an-icon-in-a-navbar-->
-            <!--navigation banner-->
-            <li><a href="home.html" title="">Home</a></li>  
-            <li><a href="projects.html" title="">Project</a></li>  
-            <!--            <li><a href="memberposts.php" title="Post">Blog</a></li> -->
-            <li><a href="about.html" title="">About</a></li>  
-            <li><a href="contact.html" title="">Contact</a></li>  
+            </div>
+        </div>
 
-        </ul>
+        <!--        //side bar-->
 
         <div class="sideSection">
             <a class="side" href="projects.html#Java-Projects"><p class="sideHeader">Java Projects</p></a>
@@ -44,6 +57,7 @@
             <a class="side" href="projects.html#Android-Projects"><p class="sideHeader">Android Projects</p></a>
 
         </div>
+
 
         <section>
 
@@ -175,24 +189,7 @@
         </section>
 
         <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
-        <script>
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {scrollFunction()};
 
-            function scrollFunction() {
-                if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                    document.getElementById("autoScrollButton").style.display = "block";
-                } else {
-                    document.getElementById("autoScrollButton").style.display = "none";
-                }
-            }
-
-            // When the user clicks on the button, scroll to the top of the document
-            function autoScrollFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-        </script>
 
     </body>
 </html>
