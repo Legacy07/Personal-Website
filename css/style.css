@@ -2,7 +2,7 @@
 html {
 
     background: white;
-    
+
 }
 
 body {
@@ -17,18 +17,19 @@ h1 { color: #000000; font-family: "Helvetica"; font-size: 30px; font-weight: 700
 }
 
 div.Description{
-    height: 0px;
-    font-size: 21px;
-    width: 50%;
-    position: relative;
+    height: 0em;
+    margin-top: 1%; 
+    font-size: 1.2em;
+    width: 75%;
+    position: absolute;
 }
 div.Description p {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     position: absolute;
     text-align: left;
-    margin-top: 10%;
-    margin-right: -110%;
+    margin-right: -25%;
+    margin-left: -25%;
 
 }
 
@@ -36,9 +37,9 @@ p.Question {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
-    left: 50%;
+    left: 49%;
     margin: 0;
-    color: #000000;
+    color: black;
     position: relative;
 }
 
@@ -65,31 +66,35 @@ p a{
 p a:hover{
     border-bottom: 0.2em solid #FF0000;
     background-color: bisque;
-/*    color: white;*/
+    /*    color: white;*/
 }
 
 p.boxHeader {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 2em;
+    width: 75%;
     /*    border-radius: 1em;*/
-    background-color: #f2f2f2;
-    padding: 0.8em;
+    /*    background-color: #f2f2f2;*/
+    /*    padding: 0.8em;*/
     margin: 0;
-    text-align: center;
+    /*    left: 19%;*/
+    /*    text-align: left;*/
+    /*    text-align: center;*/
     color: black;
     position: relative;
-    margin-right: 25%;
+    /*    margin-right: 15%;*/
     margin-left: 25%;
+
 }
 
 section {
-    width: 50%;
-    height: 20em;
+    width: 55%;
+    height: 100%;
     margin: auto;
-    padding: 1em;
+    /*    padding: 1em;*/
     display: flex;
-
+    position: relative;
 }
 
 div.githubBox {
@@ -196,7 +201,6 @@ p.Header{
     position: absolute;
     text-align: center;
     text-decoration: underline;
-
 }
 p.linkedInHeader{    
     font-family: 'Montserrat', sans-serif;
@@ -239,6 +243,75 @@ input[type=submit] {
     color: black;
 }
 
+#chartdiv {
+    position: relative;
+    top: 50%;
+    width: 50%;
+    height: 500px;
+}
+#autoScrollButton {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    /*left: 50%;*/
+    z-index: 99;
+    font-size: 1em;
+
+    border: none;
+    outline: none;
+
+    background-color: coral;
+    color: white;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    transition: background-color 0.4s;
+
+}
+
+#autoScrollButton:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Media Queries */
+@media(max-width: 480px){
+
+    section {
+        width: 80%;
+        height: 0%;
+        margin: 0;
+        display: inline-block;
+        position: relative;
+    }
+
+    div.githubBox {
+        float: none;
+        width: 120%;
+        left: 1%;
+    }
+    div.linkedinBox {
+        float: none;
+        width: 120%;
+        left: 1%;
+    }
+
+    div.linkedinBox p {
+        /*        left: 5%;*/
+    }
+
+    p.Header{
+        margin-left: 40%;
+
+    }
+
+    p.linkedInHeader{
+        margin-left: 38%;
+    }
+
+}
 
 
 

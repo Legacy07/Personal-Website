@@ -331,6 +331,50 @@ p a.githubLink:hover{
     background-color: white;
 }
 
+/* Media Queries */
+@media(max-width: 480px){
+
+    
+    
+/*
+    li {
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+    div.Description p {
+        display: inline-block;
+        text-align: center;
+
+    }
+    p.FirstLine, p.SecondLine, p.ThirdLine
+    {
+        left: 0%;
+        right: 0%;
+        width: 200%;
+
+    }
+    p.FirstLine{
+        font-size: 2.1em;
+        padding-bottom: 1em;
+
+    }
+    p.SecondLine{
+        font-size: 0.8em;
+
+    }
+    p.ThirdLine{
+        font-size: 1em;
+
+    }
+    input[type=submit] {
+                left: 0;
+        right: 0;
+        margin-right: 0;
+
+    }
+*/
+}
 
 
 

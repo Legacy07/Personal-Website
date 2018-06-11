@@ -9,20 +9,27 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/nav_bar.css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="css/footer.css">
 
         <script src="js/nav_bar.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+         <!--        webgl libraries-->
+        <script type="text/javascript" src="js/three.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/stats.js"></script>
+        <script src="js/rotating_cube.js"></script>
+        
         <title>Contact | Ahmet Ince</title>
     </head>
 
     <body>
-        
-         <!--        Navigation bar-->
+
+        <!--        Navigation bar-->
         <div class="dropdown">
-            <!--            <div class="search" id="WebGL-output">-->
-            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>
-            <!--        </div>-->
+            <div class="search" id="WebGL-output">
+                <!--            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>-->
+            </div>
 
             <div id="myDropdown1" class="dropdown-content menu-one">
                 <a href="home.html" title="">Home</a>  
@@ -68,6 +75,31 @@
                 </div>
             </a>
         </section>
+            <br><br>
+        <div class="footer">
+
+            <section class="footerSection">
+                <div class="contactMe">
+                    <h3>Contact me</h3>
+                    <ul class="footerContact">
+                        <li class="github" style="float:right"><a class="contactLinks" href="https://github.com/Legacy07" target="_blank" title="Github"></a></li>
+                        <li class="linkedIn" style="float:right"><a class="contactLinks" href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank" title="LinkedIn"></a></li>
+                        <li class="email" style="float:right"><a class="contactLinks" href="mailto:ahmetince771@gmail.com" target="_blank" title="E-Mail"></a></li>
+                    </ul>
+                </div>                
+
+                <div class="contactMe">
+                    <h3>Site Links</h3>
+                    <ul class="footerContact">
+                        <li style="float:right"><a class="SiteLinks" href="contact.html">Contact</a></li>
+                        <li style="float:right"><a class="SiteLinks" href="about.html">About</a></li>
+                        <li style="float:right"><a class="SiteLinks" href="projects.html">Project</a></li>
+                        <li style="float:right"><a class="SiteLinks" href="home.html">Home</a></li>
+
+                    </ul>
+                </div>
+            </section>       
+        </div>
 
     </body>
 </html>

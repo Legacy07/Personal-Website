@@ -9,19 +9,29 @@
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/nav_bar.css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-        
+
         <script src="js/nav_bar.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="css/graph.css"/>
+        <link rel="stylesheet" href="css/footer.css"/>
+        <script src="js/back_to_top.js"></script>
+
+         <!--        webgl libraries-->
+        <script type="text/javascript" src="js/three.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/stats.js"></script>
+        <script src="js/rotating_cube.js"></script>
+        
         <title>About | Ahmet Ince</title>
     </head>
 
     <body>
         <!--        Navigation bar-->
         <div class="dropdown">
-            <!--            <div class="search" id="WebGL-output">-->
-            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>
-            <!--        </div>-->
+            <div class="search" id="WebGL-output">
+                <!--            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>-->
+            </div>
 
             <div id="myDropdown1" class="dropdown-content menu-one">
                 <a href="home.html" title="">Home</a>  
@@ -33,7 +43,7 @@
 
             </div>
         </div>
-  
+
 
         <div class="Description" >
 
@@ -42,25 +52,143 @@
             <p class="Paragraph">I am a new graduate in BSc (Hons) Computer Science from University of Greenwich. <img src="css/uni_gre_logo.png" width="30" height="20" alt="University of Greenwich Logo"> </p>
             <br><br>
             <p class="Paragraph">For the past three years of my study,
-                I have designed and built projects in various programming languages & technologies.</p>
+                I have designed and built projects in various programming languages &amp; technologies.</p>
             <br><br>
             <p class="Paragraph">Hence i decided to publish it all here and more will be coming soon.</p>
             <br><br>
             <p class="Paragraph">If you wish to contact me or have any queries, just head to <strong><a href="contact.html">Contact Page</a></strong>.</p>
             <br><br>
 
-            <p class="Paragraph">Add some skillset with fancy css. can be listed in circle or in a box. Also add a inspirational quoteat the very top or bottom center</p>
-            <br><br><p>http://www.goslingo.com/, http://www.ryan-hwang.com/about.php, http://sergiopedercini.com/#/about-me</p>
-            
-<!--
-            https://codepen.io/Muthukrishnan/pen/vGoZVz
-            https://css-tricks.com/making-a-bar-chart-with-css-grid/
-            https://codepen.io/TimRuby/pen/ysfGe
-            https://www.amcharts.com/demos/3d-bar-chart/
-            http://www.cssbakery.com/2009/06/data-visualisation-flexible-bar-graphs.html
-            http://alistapart.com/article/accessibledatavisualization
--->
+            <!--            <p class="Paragraph">Add some skillset with fancy css. can be listed in circle or in a box. Also add a inspirational quoteat the very top or bottom center</p>-->
+
+            <span class="chart__title">Technical Skills</span>
+
         </div>
+        <br><br>
+
+        <!--            <br><br><p>http://www.goslingo.com/, http://www.ryan-hwang.com/about.php, http://sergiopedercini.com/#/about-me</p>-->
+
+        <!--            https://foundation.zurb.com/building-blocks/blocks/bar-graph.html-->
+
+        <!--https://speckyboy.com/code-snippets-css3-bar-graphs/-->
+        <!--        //technical skills-->
+
+        <div class="skills">
+            <ul class="lines">
+
+                <li class="line l--20">
+                    <span class="line__label">
+                        Newbie
+                    </span>
+                </li>
+
+                <li class="line l--40">
+                    <span class="line__label">
+                        Working my way up
+                    </span>
+                </li>
+                <li class="line l--60">
+                    <span class="line__label">
+                        Intermediate
+                    </span>
+                </li>
+                <li class="line l--80">
+                    <span class="line__label">
+                        Expert
+                    </span>
+                </li>
+                <li class="line l--100">
+                    <span class="line__label">
+                        Specialised
+                    </span>
+                </li>
+
+                <li class="line l--0">
+                    <span class="line__label">
+
+                    </span>
+                </li>
+
+            </ul>
+
+            <div class="charts">
+                <div class="chart chart--dev">
+                    <!--                    <span class="chart__title">Technical Skills</span>-->
+                    <ul class="chart--horiz">
+                        <li class="chart__bar" style="width: 63%;">
+                            <span class="chart__label">
+                                Java
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 63%;">
+                            <span class="chart__label">
+                                Android Development
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                C#
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                XHTML/CSS
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 21%;">
+                            <span class="chart__label">
+                                PHP/Javascript
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                MySQL/SQLite
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 21%;">
+                            <span class="chart__label">
+                                ASP.NET
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                Github
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="footer">
+
+            <section class="footerSection">
+                <div class="contactMe">
+                    <h3>Contact me</h3>
+                    <ul class="footerContact">
+                        <li class="github" style="float:right"><a class="contactLinks" href="https://github.com/Legacy07" target="_blank" title="Github"></a></li>
+                        <li class="linkedIn" style="float:right"><a class="contactLinks" href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank" title="LinkedIn"></a></li>
+                        <li class="email" style="float:right"><a class="contactLinks" href="mailto:ahmetince771@gmail.com" target="_blank" title="E-Mail"></a></li>
+                    </ul>
+                </div>                
+
+                <div class="contactMe">
+                    <h3>Site Links</h3>
+                    <ul class="footerContact">
+                        <li style="float:right"><a class="SiteLinks" href="contact.html">Contact</a></li>
+                        <li style="float:right"><a class="SiteLinks" href="about.html">About</a></li>
+                        <li style="float:right"><a class="SiteLinks" href="projects.html">Project</a></li>
+                        <li style="float:right"><a class="SiteLinks" href="home.html">Home</a></li>
+
+                    </ul>
+                </div>
+            </section>       
+        </div>
+        
+        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 
     </body>
 </html>

@@ -21,9 +21,9 @@ li a{
     text-align: center;
     padding: 0.9em 0.7em;
     text-decoration: none;
-    border-right:1px solid #bbb;
+    /*    border-right:1px solid #bbb;*/
 }
-/*user visually can see the mouse hover on the text values*/
+/*user visually can see the mouse hover on the text*/
 li a:hover:not(.active) {
     /*    background-image: url(b3.jpg);*/
     color: darkgray;
@@ -53,19 +53,23 @@ body {
 }
 
 div.Description{
-    height: 0em;
+    height: 0;
     font-size: 1.3em;
     width: 50%;
     position: relative;
+    margin-top: 10%;
+    display: inline-block;
 }
 div.Description p {
     font-family: 'Montserrat', sans-serif;
+    height: 0;
     margin: 0;
     color: #FFFFFF;
-    position: absolute;
+    position: relative;
     text-align: left;
-    margin-top: 25%;
-    margin-right: -110%;
+    margin-top: 1%;
+    display: inline-block;
+    /*    margin-right: -110%;*/
 
 }
 
@@ -80,10 +84,10 @@ p.FirstLine {
 }
 /*
 @media screen and ( max-width: 480px) {
-    p.FirstLine{
-        font-weight: 700;
-        font-size: 1.5em;
-    }
+p.FirstLine{
+font-weight: 700;
+font-size: 1.5em;
+}
 }
 */
 p.SecondLine {
@@ -103,6 +107,7 @@ p.ThirdLine {
     left: 50%;
     right: 50%;
     margin: 0;
+/*    margin-top: 10em;*/
     color: #000000;
     position: relative;
 }
@@ -119,6 +124,7 @@ input[type=submit] {
     left: 50%;
     margin-right: 0.3em;
     border: none;
+    margin-top: 5%;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
     display: inline-block;
@@ -134,6 +140,48 @@ input[type=submit]:hover {
 
     transition-duration: 0.4s;
 }
+
+/* Media Queries */
+@media(max-width: 480px){
+    
+    li {
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+    div.Description p {
+        display: inline-block;
+        text-align: center;
+
+    }
+    p.FirstLine, p.SecondLine, p.ThirdLine
+    {
+        left: 0%;
+        right: 0%;
+        width: 200%;
+
+    }
+    p.FirstLine{
+        font-size: 2.1em;
+        padding-bottom: 1em;
+
+    }
+    p.SecondLine{
+        font-size: 0.8em;
+
+    }
+    p.ThirdLine{
+        font-size: 1em;
+
+    }
+    input[type=submit] {
+/*        left: 0;*/
+        right: 0;
+        margin-right: 0;
+        
+    }
+}
+
 
 
 

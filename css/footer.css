@@ -1,0 +1,91 @@
+.footer {
+    /*    position: fixed;*/
+    left: 0;
+    bottom: 0;
+/*    height: 10em;*/
+    width: 100%;
+    color: black;
+    border-top: 0.1em solid black;
+    text-align: center;
+    position: relative;
+}
+
+#footer-inner { 
+    width: 100%; position: relative; margin-left: 0%;
+}
+
+div.contactMe{
+    position: relative;
+    margin-left: 10%;
+    /*    margin-top: 15%;*/
+}
+
+section.footerSection{
+    /*    width: 100%;*/
+    height: 0;
+    left: 5%;
+    margin: auto;
+    /*    padding: 1em;*/
+    display: flex;
+    position: relative;
+    padding-bottom: 8%;
+}
+ul.footerContact {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/*custom list items, text size and alignment*/
+li a.SiteLinks{
+    font-family: 'Poppins' sans-serif;
+    font-size: 1em;
+    display: flow-root;
+    color: black;
+    text-align: center;
+    padding-right: 0.7em;
+    padding: 0.9em;
+    margin-top: -0.9em;
+    text-decoration: none;
+}
+/*user visually can see the mouse hover on the text*/
+li a.SiteLinks:hover:not(.active) {
+    font-family: 'Poppins' sans-serif;
+    transition-duration: 0.4s;
+    border-bottom: 0.2em solid #FF0000;
+    background-color: bisque;
+}
+
+li.email{
+    background: url(../gmail.png);
+    background-size:contain;
+    height: 2em;
+    width: 2em;
+    padding-right: 0.5em;
+    background-repeat: no-repeat;
+}
+
+li.github{
+    background: url(../github-sign.png);
+    background-size:contain;
+    height: 2em;
+    width: 2em;
+    background-repeat: no-repeat;
+}
+
+li.linkedIn{
+    background: url(../linkedin.png);
+    background-size:contain;
+    height: 2em;
+    width: 2em;
+    padding-right: 0.5em;
+    background-repeat: no-repeat;
+}
+li a.contactLinks{
+    display: flow-root;
+    text-align: center;
+    width: 2em;
+    height: 2em;
+    text-decoration: none;
+}
