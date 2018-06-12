@@ -117,7 +117,6 @@ section {
     display: -ms-flexbox;
     display: flex;
 
-
 }
 
 .flex:nth-of-type(n) {
@@ -294,6 +293,7 @@ img.stockControlSlideShow{
     display: block;
     margin-left: auto; 
     margin-right: auto; 
+
 }
 
 p.overviewDescription{
@@ -334,46 +334,57 @@ p a.githubLink:hover{
 /* Media Queries */
 @media(max-width: 480px){
 
-    
-    
-/*
-    li {
-        float:none;
-        text-align:center;
-        width:100%;
-    }
-    div.Description p {
+    section{
+        width: 80%;
         display: inline-block;
+    }
+    .flex:nth-of-type(n) {
+        width: 100%;
+    }
+
+
+    a:hover p.BoxHeader:after{
+        width: 100%;
+        background: none;
+        background: none;
+    }
+    p.BoxHeader {
+        text-decoration: underline;
+    }
+    
+
+    img.stockControlSlideShow{
+        cursor: zoom-in;
+        z-index:0;
+        position: relative;
+        max-width: 100%;
+        background-size: contain;
+
+    }
+
+    div.imagesDiv{
+        /*
+        padding: 0.8em;
+        margin: 0;
         text-align: center;
+        position: relative;
+        border: 0.5em solid ;
+        background-color: #404040;
+        margin-right: 1%;
+        max-width: 100%;
+        */
+        margin-right: 0%;
 
+        width: 100%;
     }
-    p.FirstLine, p.SecondLine, p.ThirdLine
-    {
-        left: 0%;
-        right: 0%;
-        width: 200%;
 
+    button.leftArrow{
+        margin-top: -60%;
     }
-    p.FirstLine{
-        font-size: 2.1em;
-        padding-bottom: 1em;
 
+    button.rightArrow{
+        margin-top: -60%;
     }
-    p.SecondLine{
-        font-size: 0.8em;
-
-    }
-    p.ThirdLine{
-        font-size: 1em;
-
-    }
-    input[type=submit] {
-                left: 0;
-        right: 0;
-        margin-right: 0;
-
-    }
-*/
 }
 
 

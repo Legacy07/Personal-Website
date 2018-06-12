@@ -21,15 +21,18 @@ div.Description{
     margin-top: 1%; 
     font-size: 1.2em;
     width: 75%;
-    position: absolute;
+    position: relative;
+    display: block;
+
 }
 div.Description p {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    position: absolute;
+    position: relative;
     text-align: left;
     margin-right: -25%;
     margin-left: -25%;
+    width: 100%;
 
 }
 
@@ -51,8 +54,20 @@ p.Paragraph {
     color: #000000;
     position: relative;
     max-width: 100%;
+    display: inline-block;
 }
 
+p.highlight {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    /*    font-weight: bold;*/
+    margin: 0;
+    left: 50%;
+    color: dimgrey;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+}
 
 a {
     text-decoration: none;
@@ -276,6 +291,15 @@ input[type=submit] {
     color: white;
 }
 
+div.graph{
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+/*    display: inline-block;*/
+    
+}
+
 /* Media Queries */
 @media(max-width: 480px){
 
@@ -304,11 +328,16 @@ input[type=submit] {
 
     p.Header{
         margin-left: 40%;
-
+        margin-top: -3%;
+    }
+    p.boxHeader {
+        /*        text-align: center;*/
+        margin-left: 2%;        
     }
 
     p.linkedInHeader{
         margin-left: 38%;
+        margin-top: -3%;
     }
 
 }

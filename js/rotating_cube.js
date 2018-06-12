@@ -8,9 +8,9 @@ $(function() {
     var camera = new THREE.PerspectiveCamera(15, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     // create a render and set the size
-    var renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor(0xFFFFFF, 1.0);
-    renderer.setSize(100, 100);
+    var renderer = new THREE.WebGLRenderer({alpha: true});
+    renderer.setClearColor(0x000000, 0);
+    renderer.setSize(120, 100);
 
     var mesh = createMesh(new THREE.CubeGeometry(10, 10, 10));
     // add the mesh to the scene
@@ -45,6 +45,12 @@ $(function() {
     }
 
     function render() {
+
+        if(renderer.domElement.width !== window.innerWidth || renderer.domElement.height !== window.innerHeight) {
+            renderer.setSize(window.innerWidth, window.innerHeight,false); 
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        }
 
         step += 0.01;
         step2 += 0.015

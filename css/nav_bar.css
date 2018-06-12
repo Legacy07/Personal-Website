@@ -51,7 +51,7 @@ transition-duration: 0.4s;
 
 div.search {
     display:inline-block;
-/*    margin-right: auto;*/
+    /*    margin-right: auto;*/
     margin-bottom: auto;
     margin-top: %0;
     /*    cursor: pointer;*/
@@ -143,6 +143,15 @@ button.dropbtn {
 .dropdown-content.menu-one {left: -300%; top: 100%;}
 
 
+/*Media Queries*/
+@media(max-width:480px){
+
+    .dropdown{
+        margin-left: 40%;
+        margin-right: 60%;
+    }
+
+}
 
 
 
