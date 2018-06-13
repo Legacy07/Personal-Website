@@ -82,14 +82,7 @@ p.FirstLine {
     color: #000000;
     position: relative;
 }
-/*
-@media screen and ( max-width: 480px) {
-p.FirstLine{
-font-weight: 700;
-font-size: 1.5em;
-}
-}
-*/
+
 p.SecondLine {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -107,7 +100,7 @@ p.ThirdLine {
     left: 50%;
     right: 50%;
     margin: 0;
-/*    margin-top: 10em;*/
+    /*    margin-top: 10em;*/
     color: #000000;
     position: relative;
 }
@@ -142,17 +135,24 @@ input[type=submit]:hover {
 }
 
 /* Media Queries */
-@media(max-width: 480px){
-    
+@media (min-width:390px) and (max-width: 480px){
+
     li {
+        /*
         float:none;
         text-align:center;
         width:100%;
+        */
+        display: inline-grid;
+    }
+    li a{
+        padding: 0.9em 0.5em;
+        display: inline-grid;
+
     }
     div.Description p {
         display: inline-block;
         text-align: center;
-
     }
     p.FirstLine, p.SecondLine, p.ThirdLine
     {
@@ -175,11 +175,57 @@ input[type=submit]:hover {
 
     }
     input[type=submit] {
-/*        left: 0;*/
+        left: 10%;
         right: 0;
         margin-right: 0;
-        
+
     }
+
+}
+@media (max-width:390px){
+
+    li{
+        /*        margin-left: 10%;*/
+        float: right;
+        /*        display: flex;*/
+    }
+    li a{
+        padding: 0.9em 0.5em;
+        /*        margin-left: 35%;*/
+        display: inline-block;
+    }
+
+    div.Description p {
+        display: inline-block;
+        text-align: center;
+    }
+    p.FirstLine, p.SecondLine, p.ThirdLine
+    {
+        left: 0%;
+        right: 0%;
+        width: 200%;
+
+    }
+    p.FirstLine{
+        font-size: 2.1em;
+        padding-bottom: 1em;
+
+    }
+    p.SecondLine{
+        font-size: 0.8em;
+
+    }
+    p.ThirdLine{
+        font-size: 1em;
+
+    }
+    input[type=submit] {
+        left: 10%;
+        right: 0;
+        margin-right: 0;
+
+    }
+
 }
 
 

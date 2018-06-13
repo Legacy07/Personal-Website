@@ -3,9 +3,10 @@
     max-width: 960px;
     height: 40em;
     margin: auto;
+    margin-left: 44%;
     position: relative;
-/*    margin-top: 60%;*/
-/*    margin-bottom: -10%;*/
+    /*    margin-top: 60%;*/
+    /*    margin-bottom: -10%;*/
 }
 
 .lines {
@@ -143,4 +144,37 @@
         transform: translateX(0);
         opacity: 1;
     }
+}
+
+
+@media(max-width:480px){
+
+    .charts{
+        left: -21%;
+    }
+    .line{
+        margin-left: -10%;
+    }
+
+    .skills{visibility: hidden;
+    height: 0em;}
+    /*
+    .line.l--20 {
+    left: 25%;
+}
+    .line.l--40 {
+    left: 50%;
+}
+    .line.l--60 {
+    left: 75%;
+}
+    .line.l--80 {
+    left: 100%;
+}
+    .line.l--100 {
+    left: calc(125% - 1px);
+}
+    */
+
+
 }

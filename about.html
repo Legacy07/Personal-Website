@@ -17,6 +17,9 @@
         <link rel="stylesheet" href="css/footer.css"/>
         <script src="js/back_to_top.js"></script>
 
+        <!--        responsive version script -->
+        <script src="js/responsive-switch.min.js"></script>
+
         <!--        webgl libraries-->
         <script type="text/javascript" src="js/three.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
@@ -47,7 +50,7 @@
 
         <div class="Description" >
 
-            <p class="Question" ><strong>Who is Ahmet Ince?</strong></p>
+            <p class="subHeader" ><strong>Who is Ahmet Ince?</strong></p>
 
             <p class="highlight">Born in a beautiful city, <b>Istanbul</b>.<img src="turkeyflag.png" width="30" height="30" alt="Turkey Flag"> Graduated in BSc (Hons) Computer Science from <b>University of Greenwich</b>.<img src="css/uni_gre_logo.png" width="30" height="30" alt="University of Greenwich Logo"> Based in <b>London</b>.<img src="united-kingdomflag.png" width="30" height="30" alt="United Kingdom Flag"></p>
             <br><br>
@@ -64,8 +67,13 @@
             <p class="Paragraph">If you wish to contact me or have any queries, just head to <strong><a href="contact.html">Contact Page</a></strong>.</p>
             <br><br>
             <!--            <p class="Paragraph">Add some skillset with fancy css. can be listed in circle or in a box. Also add a inspirational quoteat the very top or bottom center</p>-->
-            <span class="chart__title">Technical Skills</span>
-
+            <p class="subHeader">Technical Skills</p>
+            <div id="desktopVersion">
+                <a href="#"
+                   class="rs-link"
+                   data-link-desktop="Switch to desktop version to view the graph"
+                   data-always-visible="false"></a>
+            </div>
         </div>
 
         <!--            <br><br><p>http://www.goslingo.com/, http://www.ryan-hwang.com/about.php, http://sergiopedercini.com/#/about-me</p>-->
@@ -168,6 +176,12 @@
             </div>
 
         </div>
+
+        <a href="#"
+           class="rs-link"
+           data-link-responsive="Switch to mobile version"
+           data-always-visible="false"></a>
+
 
         <div class="footer">
 

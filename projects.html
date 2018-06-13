@@ -18,7 +18,7 @@
         <script src="js/nav_bar.js"></script>
         <!--        back to top script-->
         <script src="js/back_to_top.js"></script>
-
+        <!--        responsive version script -->
         <script src="js/responsive-switch.min.js"></script>
 
 
@@ -53,13 +53,23 @@
         <!--        //side bar-->
 
         <div class="sideSection">
-            <a class="side" href="projects.html#Java-Projects"><p class="sideHeader">Java Projects</p></a>
-            <br>
-            <a class="side" href="projects.html#C#-Projects"><p class="sideHeader">C# Projects</p></a>
-            <br>
-            <a class="side" href="projects.html#Web-Projects"><p class="sideHeader">Web Projects</p></a>
-            <br>
-            <a class="side" href="projects.html#Android-Projects"><p class="sideHeader">Android Projects</p></a>
+            <!--
+<a class="side" href="projects.html#Java-Projects"><p class="sideHeader">Java Projects</p></a>
+<br>
+<a class="side" href="projects.html#C#-Projects"><p class="sideHeader">C# Projects</p></a>
+<br>
+<a class="side" href="projects.html#Web-Projects"><p class="sideHeader">Web Projects</p></a>
+<br>
+<a class="side" href="projects.html#Android-Projects"><p class="sideHeader">Android Projects</p></a>
+-->
+
+            <ul class="sideul">
+                <!--navigation banner-->
+                <li class="sideHeader" ><a class="side" href="projects.html#Java-Projects" title="">Java Projects</a></li>  
+                <li class="sideHeader" ><a class="side" href="projects.html#C#-Projects" title="">C# Projects</a></li>  
+                <li class="sideHeader" ><a class="side" href="projects.html#Web-Projects" title="">Web Projects</a></li>  
+                <li class="sideHeader" ><a class="side" href="projects.html#Android-Projects" title="">Android Projects</a></li>  
+            </ul>
 
         </div>
 
@@ -148,21 +158,21 @@
 
             <p class="Header" id="Android-Projects">Android Projects</p>
 
-<!--
-            <div class="flex">
-                <a href="android_projects/calorie_counter.html" target="_blank">
+            <!--
+<div class="flex">
+<a href="android_projects/calorie_counter.html" target="_blank">
 
-                    <p class="BoxHeader">Calorie Counter with Nutrition Facts</p>
-                </a>
-                <p class="BoxDescription">Description</p>
-                <ul class="Skills">
-                    <li>JAVA</li>
-                    <li>XML</li>
-                    <li>More...</li>
+<p class="BoxHeader">Calorie Counter with Nutrition Facts</p>
+</a>
+<p class="BoxDescription">Description</p>
+<ul class="Skills">
+<li>JAVA</li>
+<li>XML</li>
+<li>More...</li>
 
-                </ul>
+</ul>
 
-            </div>
+</div>
 -->
 
             <div class="flex">
@@ -180,28 +190,30 @@
 
             </div>
 
-<!--
-            <div class="flex">
-                <a href="android_projects/interview_revision_app.html" target="_blank">
+            <!--
+<div class="flex">
+<a href="android_projects/interview_revision_app.html" target="_blank">
 
-                    <p class="BoxHeader">Interview Revision</p>
-                </a>
-                <p class="BoxDescription">An Android application for revising interview questions on specific areas.</p>
-                <ul class="Skills">
-                    <li>JAVA</li>
-                    <li>XML</li>
-                </ul>
+<p class="BoxHeader">Interview Revision</p>
+</a>
+<p class="BoxDescription">An Android application for revising interview questions on specific areas.</p>
+<ul class="Skills">
+<li>JAVA</li>
+<li>XML</li>
+</ul>
 
-            </div>
+</div>
 -->
 
         </section>
 
-        <a href="#"
-           class="rs-link"
-           data-link-desktop="Switch to desktop version"
-           data-link-responsive="Switch to responsive / mobile version"
-           data-always-visible="false"></a>
+        <!--
+<a href="#"
+class="rs-link"
+data-link-desktop="Switch to desktop version to view the graph"
+data-link-responsive="Switch to responsive / mobile version"
+data-always-visible="false"></a>
+-->
 
         <div class="footer">
 
@@ -227,7 +239,7 @@
                 </div>
             </section>       
         </div>
-        
+
         <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 
     </body>

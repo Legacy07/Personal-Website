@@ -10,16 +10,16 @@ $(function() {
     // create a render and set the size
     var renderer = new THREE.WebGLRenderer({alpha: true});
     renderer.setClearColor(0x000000, 0);
-    renderer.setSize(120, 100);
+    renderer.setSize(200, 180);
 
     var mesh = createMesh(new THREE.CubeGeometry(10, 10, 10));
     // add the mesh to the scene
     scene.add(mesh);
 
     // position and point the camera to the center of the scene
-    camera.position.x = 30;
-    camera.position.y = 50;
-    camera.position.z = 50;
+    camera.position.x = 20;
+    camera.position.y = 70;
+    camera.position.z = 100;
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
     // add the output of the renderer to the html element
@@ -53,7 +53,7 @@ $(function() {
         }
 
         step += 0.01;
-        step2 += 0.015
+        step2 += 0.015;
         mesh.rotation.y = step;
         mesh.rotation.z = step2;
 

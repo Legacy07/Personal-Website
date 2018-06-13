@@ -73,7 +73,48 @@ div.sideSection{
     /*    padding: 1em;*/
 }
 
+/*
 p.sideHeader{
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+font-size: 1.1em;
+padding-bottom: 1em;
+display: inline-block;
+margin: 0;
+padding: 1em;
+color: black;
+}
+
+p.sideHeader:after{
+content: '';
+display: block;
+margin: auto;
+height: 0.15em;
+width: 0px;
+background: transparent;
+-webkit-transition: width .35s ease, background-color .35s ease;
+transition: width .35s ease, background-color .35s ease;
+}
+
+a.side {
+text-decoration: none;
+}
+
+a.side:hover p.sideHeader:after{
+width: 100%;
+background: black;
+}
+*/
+
+ul.sideul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/*side section*/
+li.sideHeader a.side{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.1em;
@@ -83,27 +124,31 @@ p.sideHeader{
     padding: 1em;
     color: black;
 }
-
-p.sideHeader:after{
+/*user visually can see the mouse hover on the text*/
+li.sideHeader a.side:hover{
+    /*
     content: '';
     display: block;
     margin: auto;
     height: 0.15em;
     width: 0px;
+    */
+    text-decoration: underline;
     /*    background: transparent;*/
-    -webkit-transition: width .35s ease, background-color .35s ease;
-    transition: width .35s ease, background-color .35s ease;
+    /*    -webkit-transition: width .35s ease, background-color .35s ease;*/
+    /*    transition: width .35s ease, background-color .35s ease;*/
 }
 
+/*
 a.side {
-    text-decoration: none;
+text-decoration: none;
 }
 
-a.side:hover p.sideHeader:after{
-    width: 100%;
-    background: black;
+a.side:hover {
+width: 100%;
+background: black;    
 }
-
+*/
 
 section {
     z-index: 0;
@@ -351,7 +396,7 @@ p a.githubLink:hover{
     p.BoxHeader {
         text-decoration: underline;
     }
-    
+
 
     img.stockControlSlideShow{
         cursor: zoom-in;
@@ -385,6 +430,30 @@ p a.githubLink:hover{
     button.rightArrow{
         margin-top: -60%;
     }
+
+    div.sideSection{
+        /*        margin: auto;*/
+        /*
+        float: right;
+        margin-left: 10%;
+        margin-top: 5%;
+        border: 0.1em solid black;
+        */
+        /*        display: inline-block;*/
+        /*    padding: 1em;*/
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+    li.sideHeader a.side{
+        padding-bottom: 0.5em;
+        float: left;
+        padding: 0.5em;
+        padding-left: 1em;
+        text-decoration: underline;
+    }
+
 }
 
 
