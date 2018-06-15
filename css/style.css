@@ -23,6 +23,7 @@ div.Description{
     width: 75%;
     position: relative;
     display: block;
+    
 
 }
 div.Description p {
@@ -345,20 +346,20 @@ div.graph{
         margin-left: 38%;
         margin-top: -3%;
     }
-    
+
     div.Description{
-        width: 90%;
+        width: 85%;
     }
 
     div.Description p {
         /*        margin-right: 25%;*/
         margin-left: -35%;
     }
-/*
+    /*
     p.Paragraph {
-        left: 45%;
-    }
-*/
+    left: 45%;
+}
+    */
 
     #desktopVersion{
         margin-left: 10%;
@@ -374,12 +375,25 @@ div.graph{
         margin-left: -35%;
     }
     div.graph{
-        margin-left: -33%;
+        margin-left: -40%;
+/*        width: 100%;*/
 
     }
     div.Description{
         width: 90%;
     }
+    div.Description p {
+        margin-left: -40%;
+    }
+
+    section{
+        left: -15%;        
+    }
+    
+     p.boxHeader {
+        /*        text-align: center;*/
+        margin-left: 11%;        
+    }    
 
 }
 

@@ -387,12 +387,12 @@ p a.githubLink:hover{
         width: 100%;
     }
 
-
     a:hover p.BoxHeader:after{
         width: 100%;
         background: none;
         background: none;
     }
+
     p.BoxHeader {
         text-decoration: underline;
     }
@@ -419,7 +419,6 @@ p a.githubLink:hover{
         max-width: 100%;
         */
         margin-right: 0%;
-
         width: 100%;
     }
 
@@ -454,6 +453,70 @@ p a.githubLink:hover{
         text-decoration: underline;
     }
 
+}
+@media(min-width:481px) and (max-width:1024px){
+
+    div.sideSection{
+        /*        margin: auto;*/
+        /*
+        float: right;
+        margin-left: 10%;
+        margin-top: 5%;
+        border: 0.1em solid black;
+        */
+        /*        display: inline-block;*/
+        /*    padding: 1em;*/
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+    li.sideHeader a.side{
+        padding-bottom: 0.5em;
+        float: left;
+        margin-left: 5%;
+        padding: 0.5em;
+        padding-left: 1em;
+        text-decoration: underline;
+    }
+
+    section{
+        width: 90%;
+        display: inline-block;
+    }
+    /*
+    .flex:nth-of-type(n) {
+    width: 100%;
+}
+
+    a:hover p.BoxHeader:after{
+    width: 100%;
+    background: none;
+    background: none;
+}
+
+    */
+
+    button.leftArrow{
+        margin-top: -25%;
+    }
+
+    button.rightArrow{
+        margin-top: -25%;
+    }
+
+    div.imagesDiv{
+        /*        margin-right: 0%;*/
+        width: 100%;
+    }
+
+    img.slideShow{
+        /*        margin-left: 12%;*/
+        /*        margin-top: 1%;*/
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;        
+    }
 }
 
 

@@ -204,7 +204,6 @@ input[type=submit]:hover {
         left: 0%;
         right: 0%;
         width: 200%;
-
     }
     p.FirstLine{
         font-size: 2.1em;
@@ -225,7 +224,10 @@ input[type=submit]:hover {
         margin-right: 0;
 
     }
-
+}
+@media (min-width:481px) and (max-width:1024px){
+    
+    
 }
 
 

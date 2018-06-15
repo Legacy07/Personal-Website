@@ -131,3 +131,12 @@ li a.contactLinks{
   
 }
 
+@media(min-width: 481px) and (max-width: 1024px){
+     div.contactMe{
+/*        margin-left: 0%;*/
+         
+/*        width: 100%;*/
+    }
+    
+}
+
