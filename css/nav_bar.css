@@ -91,11 +91,11 @@ button.dropbtn {
     margin-right: auto;
     margin-bottom: auto;
     */
-    
-/*
+
+    /*
     height: 10em;
     width: 10em;
-*/    
+    */    
     margin-top: 1%;
     background: white;
     /*    display: inline-block;*/
@@ -148,17 +148,26 @@ button.dropbtn {
 @media(max-width:480px){
 
     .dropdown{
-        margin-left: 30%;
-        margin-right: 70%;
+        margin-left: 27%;
+        margin-right: 73%;
     }
-    
+
     .dropdown-content {
-/*        margin-left: 0em;*/
+        /*        margin-left: 0em;*/
     }
 
 }
 
-@media(min-width: 481px) and (max-width: 1024px){
+@media (min-width:481px) and (max-width:768px){
+    .dropdown{
+        margin-left: 37%;
+        margin-right: 77%;        
+
+    }
+
+}
+
+@media(min-width: 769px) and (max-width: 1024px){
     .dropdown{
         margin-left: 40%;
         margin-right: 80%;        

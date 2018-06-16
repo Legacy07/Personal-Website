@@ -94,7 +94,7 @@ li a.contactLinks{
 @media(max-width: 480px){
 
     div.contactMe{
-        margin-left: 15%;
+/*        margin-left: 15%;*/
         width: 100%;
     }
     li.email{
@@ -131,7 +131,12 @@ li a.contactLinks{
   
 }
 
-@media(min-width: 481px) and (max-width: 1024px){
+@media (min-width:481px) and (max-width:768px){
+    
+    
+}
+
+@media(min-width: 769px) and (max-width: 1024px){
      div.contactMe{
 /*        margin-left: 0%;*/
          

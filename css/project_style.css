@@ -21,11 +21,18 @@ p.Header{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2em;
+    display: block;
+    margin-bottom: 0;
+}
+
+p.subHeader{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
     border-bottom: 0.1em solid gray;
     border-bottom-width: thin;
-    display: inline-block;
-    margin: 0;
-
+    display: block;
+/*    margin-bottom: 1em;*/
 }
 
 p.BoxHeader{    
@@ -356,6 +363,8 @@ ul.overviewList {
     list-style-type: circle;
     margin-top: -1em;
     float: left;
+    /*    padding-bottom:10em;*/
+    display: block;
 }
 
 ul.overviewList li {
@@ -454,8 +463,67 @@ p a.githubLink:hover{
     }
 
 }
-@media(min-width:481px) and (max-width:1024px){
 
+@media (min-width:481px) and (max-width:768px){
+
+    section{
+        width: 85%;
+        display: inline-block;
+    }
+    .flex:nth-of-type(n) {
+        width: 100%;
+    }
+
+    a:hover p.BoxHeader:after{
+        width: 100%;
+        background: none;
+        background: none;
+    }
+
+    p.BoxHeader {
+        text-decoration: underline;
+    }
+
+    div.imagesDiv{
+        /*        margin-right: 0%;*/
+        width: 100%;
+    }
+
+    button.leftArrow{
+        margin-top: -35%;
+    }
+
+    button.rightArrow{
+        margin-top: -35%;
+    }
+
+    div.sideSection{
+        /*        margin: auto;*/
+        /*
+        float: right;
+        margin-left: 10%;
+        margin-top: 5%;
+        border: 0.1em solid black;
+        */
+        /*        display: inline-block;*/
+        /*    padding: 1em;*/
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+    li.sideHeader a.side{
+        padding-bottom: 0.5em;
+        float: left;
+        padding: 0.5em;
+        padding-left: 1em;
+        text-decoration: underline;
+    }
+
+}
+
+@media(min-width:769px) and (max-width:1024px){
+    
     div.sideSection{
         /*        margin: auto;*/
         /*

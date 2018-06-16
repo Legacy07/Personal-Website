@@ -225,10 +225,32 @@ input[type=submit]:hover {
 
     }
 }
-@media (min-width:481px) and (max-width:1024px){
+
+@media (min-width:480px) and (max-width:768px){
     
+     div.Description p {
+        display: inline-block;
+        text-align: center;
+    }
+    p.FirstLine, p.SecondLine, p.ThirdLine
+    {
+        left: 0%;
+        right: 0%;
+        width: 200%;
+    }
     
 }
+
+@media (min-width:769px) and (max-width:1024px){
+
+    p.FirstLine{
+        left: 50%;
+        right: 0%;
+        width: 200%;
+    }
+}
+
+
 
 
 

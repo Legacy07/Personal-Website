@@ -151,13 +151,15 @@
 
     .charts{
         left: -21%;
+        height: 0%;
     }
     .line{
         margin-left: -10%;
     }
 
     .skills{visibility: hidden;
-    height: 0em;}
+        height: 0%;
+    }
     /*
     .line.l--20 {
     left: 25%;
@@ -175,4 +177,19 @@
     left: calc(125% - 1px);
 }
     */
+}
+
+@media (min-width: 481px) and (max-width:768px){
+    
+    .skills{
+        margin-top: -5%;
+        left: 1%;
+        
+    }
+    .line{
+/*        margin-left: 2%;*/
+    }
+    .charts{
+        left: -5%;
+    }
 }

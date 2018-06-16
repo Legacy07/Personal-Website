@@ -23,7 +23,7 @@ div.Description{
     width: 75%;
     position: relative;
     display: block;
-    
+
 
 }
 div.Description p {
@@ -190,7 +190,7 @@ div.linkedinBox {
 
     /*    float: right;*/
 
-    cursor:pointer;
+    cursor: pointer;
     display: block;
 }
 .linkedinBox:hover {
@@ -322,16 +322,17 @@ div.graph{
         float: none;
         width: 120%;
         left: 1%;
+        height: 16em;
+
     }
     div.linkedinBox {
         float: none;
         width: 120%;
         left: 1%;
+        height: 16em;
+
     }
 
-    div.linkedinBox p {
-        /*        left: 5%;*/
-    }
 
     p.Header{
         margin-left: 40%;
@@ -355,11 +356,6 @@ div.graph{
         /*        margin-right: 25%;*/
         margin-left: -35%;
     }
-    /*
-    p.Paragraph {
-    left: 45%;
-}
-    */
 
     #desktopVersion{
         margin-left: 10%;
@@ -368,15 +364,70 @@ div.graph{
 
 }
 
-@media(min-width: 481px) and (max-width: 1024px){
+@media (min-width:481px) and (max-width:768px){
 
-    div.Description p {
-        /*                margin-right: 25%;*/
-        margin-left: -35%;
+    section{
+        width: 90%;
+        height: 0%;
+        margin: 0;
+        display: inline-block;
+        /*        position: relative;*/
     }
+
+    p.boxHeader {
+        margin-left: 5%;        
+    } 
+
+    div.githubBox {
+        float: none;
+        width: 100%;
+        left: 5%;
+        height: 10em;
+    }
+
+    div.linkedinBox {
+
+        float: none;
+        width: 100%;
+        left: 5%;
+        height: 10em;
+    }
+
+    p.Header {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: -2%;
+
+    }
+
+    p.linkedInHeader{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: -2%;
+    }
+
+
     div.graph{
         margin-left: -40%;
-/*        width: 100%;*/
+        /*        width: 100%;*/
+    }
+
+    div.Description{
+        width: 90%;
+    }
+    div.Description p {
+        margin-left: -40%;
+    }
+
+}
+
+@media(min-width: 769px) and (max-width: 1024px){
+
+    div.graph{
+        margin-left: -40%;
+        /*        width: 100%;*/
 
     }
     div.Description{
@@ -387,10 +438,10 @@ div.graph{
     }
 
     section{
-        left: -15%;        
+        width: 80%;
     }
-    
-     p.boxHeader {
+
+    p.boxHeader {
         /*        text-align: center;*/
         margin-left: 11%;        
     }    
