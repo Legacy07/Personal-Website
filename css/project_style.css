@@ -25,6 +25,17 @@ p.Header{
     margin-bottom: 0;
 }
 
+p.Paragraph {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    margin: 0;
+    left: 45%;
+    color: #000000;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+}
+
 p.subHeader{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -78,6 +89,14 @@ div.sideSection{
     margin-top: 5%;
     border: 0.1em solid black;
     /*    padding: 1em;*/
+}
+
+div.sideSectionBlog{
+    margin: auto;
+    float: left;
+    margin-left: 7%;
+    margin-top: 5%;
+    border: 0.1em solid black;
 }
 
 /*
@@ -186,13 +205,13 @@ section {
     cursor:pointer;
 }
 
-ul.Skills {
+ul.Buzz_Words {
     list-style-type: none;
     padding: 0;
     margin-left: 0;
 }
 
-ul.Skills li {
+ul.Buzz_Words li {
     display: inline-block;
     background-color: #a9a9a9;
     border: 0.2em solid #a9a9a9;
@@ -200,7 +219,7 @@ ul.Skills li {
     margin-right: 0.2em;
     /*    margin-top: 1em;*/
     color: #fff;
-    padding: 0 0.2em;
+    padding: 0 0.1em;
 }
 
 

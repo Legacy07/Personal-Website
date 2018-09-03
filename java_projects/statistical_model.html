@@ -29,22 +29,14 @@
 
     <body>
         <!--        Navigation bar-->
-        <div class="dropdown">
-            <div class="search" id="WebGL-output">
-                <!--            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>-->
-            </div>
+       <div id="navigation">
 
-            <div id="myDropdown1" class="dropdown-content menu-one">
-                <a href="../index.html" title="">Home</a>  
-                <a href="../projects.html" title="">Project</a>  
-                <!--                <a href="#" title="Post">Blog</a> -->
-                <a href="../about.html" title="">About</a> 
-                <a href="../contact.html" title="">Contact</a> 
-                <a href="../cv.html" target="_blank" title="">CV</a>  
-
-            </div>
         </div>
-
+        <script> $(function() {
+                $("#navigation").load("../nav_bar_diff_folders.html");
+            });
+        </script>
+        
         <section>
             <p class="Header">Statistical Model using Numerical Integration</p>
 

@@ -86,7 +86,7 @@ button.dropbtn {
 .dropdown {
     position: relative;
     margin-left: 45%;
-    margin-right: 60%;
+    margin-right: 50%;
     /*
     margin-right: auto;
     margin-bottom: auto;
@@ -141,7 +141,7 @@ button.dropbtn {
 
 
 /* Define menu positions */
-.dropdown-content.menu-one {left: -300%; top: 100%;}
+.dropdown-content.menu-one {left: 0%; top: 100%;}
 
 
 /*Media Queries*/

@@ -2,17 +2,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+
     <head>
         <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- using the custom css -->    
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/project_style.css"/>
         <link rel="stylesheet" href="css/nav_bar.css"/>
+        <!--        google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
         <link rel="stylesheet" href="css/footer.css">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--        //navigation bar script-->
         <script src="js/nav_bar.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--        back to top script-->
+        <script src="js/back_to_top.js"></script>
+        <!--        responsive version script -->
+        <script src="js/responsive-switch.min.js"></script>
+
+        <!--        google analytics-->
+        <script src="js/google_analytics.js"></script>
 
         <!--        webgl libraries-->
         <script type="text/javascript" src="js/three.js"></script>
@@ -20,16 +30,14 @@
         <script type="text/javascript" src="js/stats.js"></script>
         <script src="js/rotating_cube.js"></script>
 
-        <!--        google analytics-->
-        <script src="js/google_analytics.js"></script>
 
-        <title>Contact | Ahmet Ince</title>
+        <title>Blog | Ahmet Ince</title>
     </head>
 
     <body>
-
         <!--        Navigation bar-->
-           <div id="navigation">
+
+        <div id="navigation">
 
         </div>
         <script> $(function() {
@@ -37,38 +45,49 @@
             });
         </script>
 
-        <p class="boxHeader">Contact Me</p>
+        <!--        //side bar-->
+
+        <div class="sideSectionBlog">
+
+            <!--            important to auto count divs -->
+            <ul class="sideul">
+                <!--navigation banner-->
+                <li class="sideHeader" ><a class="side" href="blog.html" title="">Book Reviews(1)</a></li>  
+                <!--
+<li class="sideHeader" ><a class="side" href="blogs/personal_thoughts/personal_thoughts.html" title="">Personal Thoughts(0)</a></li>  
+<li class="sideHeader" ><a class="side" href="blogs/java/java.html" title="">Java(0)</a></li>  
+<li class="sideHeader" ><a class="side" href="blogs/android/android.html" title="">Android(0)</a></li>  
+-->
+            </ul>
+
+        </div>
+
 
         <section>
-            <a href="https://github.com/Legacy07" target="_blank">
-                <div class="githubBox"> 
 
-                    <p class="Header">Github</p>
+            <p class="subHeader" id="Book-Reviews">Book Reviews</p>
 
-                    <p>If you wish to see the full source of my projects or ask anything related to any issues, you can use Github.</p>
-                </div>
-            </a>
+            <div class="flex">
 
-            <a href="mailto:ahmetince771@gmail.com">
-                <div class="githubBox"> 
+                <a href="blogs/book_reviews/way_of_the_peaceful_warrior.html" target="_blank">
+                    <p class="BoxHeader">The Way of the Peaceful Warrior by Dan Millman</p>
+                </a>
+                <p class="BoxDescription">The program is a simulation of a small <b>Stock Control System</b> for a store. 
+                </p>
+                <ul class="Buzz_Words">
+                    <li>Philosophy</li>
+                    <li>Spiritual</li>
+                    <li>Inspirational</li>
+                    <li>Journey</li>
+                    <li>Being a Warrior</li>
+                </ul>
+                <p>Posted on 01/09/2018</p>
 
-                    <p class="Header">E-mail</p>
+            </div>
 
-                    <p>If you have any queries or wish to contact me, you can e-mail me for a quicker communication.</p>
-                </div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank">
-                <div class="linkedinBox"> 
-
-                    <p class="linkedInHeader">LinkedIn</p>
-
-                    <p>You can also message me from this platform.</p>
-
-                </div>
-            </a>
         </section>
-        <br><br>
+
+
         <div class="footer">
 
             <section class="footerSection">
@@ -94,14 +113,7 @@
             </section>       
         </div>
 
+        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
     </body>
 </html>
-
-
-
-
-
-
-
-
-

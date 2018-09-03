@@ -20,9 +20,9 @@
         <script src="js/back_to_top.js"></script>
         <!--        responsive version script -->
         <script src="js/responsive-switch.min.js"></script>
-        
-<!--        google analytics-->
-            <script src="js/google_analytics.js"></script>
+
+        <!--        google analytics-->
+        <script src="js/google_analytics.js"></script>
 
         <!--        webgl libraries-->
         <script type="text/javascript" src="js/three.js"></script>
@@ -35,22 +35,15 @@
 
     <body>
         <!--        Navigation bar-->
-        <div class="dropdown">
-            <div class="search" id="WebGL-output">
-                <!--            <button class="dropbtn menu-one" id="dropbtn" width="50" height="50"></button>-->
-            </div>
 
-            <div id="myDropdown1" class="dropdown-content menu-one">
-                <a href="index.html" title="">Home</a>  
-                <a href="projects.html" title="">Project</a>  
-                <!--                <a href="#" title="Post">Blog</a> -->
-                <a href="about.html" title="">About</a> 
-                <a href="contact.html" title="">Contact</a> 
-                <a href="cv.html" target="_blank" title="">CV</a>  
+        <div id="navigation">
 
-            </div>
         </div>
 
+        <script> $(function() {
+                $("#navigation").load("nav_bar.html");
+            });
+        </script>
 
         <!--        //side bar-->
 
@@ -78,7 +71,7 @@
 
         <section>
 
-            <p class="Header" id="Java-Projects">Java Projects</p>
+            <p class="subHeader" id="Java-Projects">Java Projects</p>
 
             <div class="flex">
                 <a href="java_projects/stock_control_simulation.html" target="_blank">
@@ -86,7 +79,7 @@
                 </a>
                 <p class="BoxDescription">The program is a simulation of a small <b>Stock Control System</b> for a store. 
                 </p>
-                <ul class="Skills">
+                <ul class="Buzz_Words">
                     <li>JAVA</li>
                     <li>SWING</li>
                     <li>DERBYDB</li>
@@ -103,7 +96,7 @@
                 <p class="BoxDescription">The program provides calculations of <b>Normal Distribution</b>.                
                 </p>
 
-                <ul class="Skills">
+                <ul class="Buzz_Words">
                     <li>JAVA</li>
                     <li>SWING</li>
                     <li>JFREECHART</li>
@@ -116,7 +109,7 @@
 
         <section>
 
-            <p class="Header" id="C#-Projects">C# Projects</p>
+            <p class="subHeader" id="C#-Projects">C# Projects</p>
 
             <div class="flex">
                 <a href="csharp_projects/calorie_counter.html" target="_blank">
@@ -124,7 +117,7 @@
                 </a>
                 <p class="BoxDescription">A desktop application for adding, viewing and searching for foods which display its <b>Nutrition Facts</b>
                     and <b>Calorie Breakdown</b> in text and visual form.<br></p>
-                <ul class="Skills">
+                <ul class="Buzz_Words">
                     <li>C#</li>
                     <li>SQL</li>
                 </ul>
@@ -136,7 +129,7 @@
 
         <section>
 
-            <p class="Header" id="Web-Projects">Web Projects</p>
+            <p class="subHeader" id="Web-Projects">Web Projects</p>
 
             <div class="flex">
                 <a href="web_projects/local_commuter_carpool.html" target="_blank">
@@ -144,7 +137,7 @@
                     <p class="BoxHeader">Local Commuter Carpool</p>
                 </a>
                 <p class="BoxDescription">It is a website for local residents to find <b>Carpool to Commute</b>.</p>
-                <ul class="Skills">
+                <ul class="Buzz_Words">
                     <li>XHTML</li>
                     <li>PHP</li>
                     <li>CSS</li>
@@ -158,7 +151,7 @@
 
         <section>
 
-            <p class="Header" id="Android-Projects">Android Projects</p>
+            <p class="subHeader" id="Android-Projects">Android Projects</p>
 
             <!--
 <div class="flex">
@@ -167,7 +160,7 @@
 <p class="BoxHeader">Calorie Counter with Nutrition Facts</p>
 </a>
 <p class="BoxDescription">Description</p>
-<ul class="Skills">
+<ul class="Buzz_Words">
 <li>JAVA</li>
 <li>XML</li>
 <li>More...</li>
@@ -183,7 +176,7 @@
                     <p class="BoxHeader">SOS Contact</p>
                 </a>
                 <p class="BoxDescription">An Android application that allows users to send an <b>SOS message</b> via SMS automatically integrated with a <b>Fall-Back Mechanism</b>.</p>
-                <ul class="Skills">
+                <ul class="Buzz_Words">
                     <li>JAVA</li>
                     <li>XML</li>
                     <li>SQLITE</li>
@@ -199,7 +192,7 @@
 <p class="BoxHeader">Interview Revision</p>
 </a>
 <p class="BoxDescription">An Android application for revising interview questions on specific areas.</p>
-<ul class="Skills">
+<ul class="Buzz_Words">
 <li>JAVA</li>
 <li>XML</li>
 </ul>
