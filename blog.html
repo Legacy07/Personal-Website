@@ -36,23 +36,23 @@
 
     <body>
         <!--        Navigation bar-->
-
         <div id="navigation">
-
         </div>
         <script> $(function() {
                 $("#navigation").load("nav_bar.html");
             });
         </script>
 
-        <!--        //side bar-->
 
+        <!--        <script>var numItems = 0;</script>-->
+
+        <!--        //side bar-->
         <div class="sideSectionBlog">
 
             <!--            important to auto count divs -->
             <ul class="sideul">
                 <!--navigation banner-->
-                <li class="sideHeader" ><a class="side" href="blog.html" title="">Book Reviews(1)</a></li>  
+                <li class="sideHeader" ><a class="side" href="blog.html" title="">Book Reviews<script>countArticles();</script></a></li>  
                 <!--
 <li class="sideHeader" ><a class="side" href="blogs/personal_thoughts/personal_thoughts.html" title="">Personal Thoughts(0)</a></li>  
 <li class="sideHeader" ><a class="side" href="blogs/java/java.html" title="">Java(0)</a></li>  
@@ -61,7 +61,6 @@
             </ul>
 
         </div>
-
 
         <section>
 
@@ -72,7 +71,7 @@
                 <a href="blogs/book_reviews/way_of_the_peaceful_warrior.html" target="_blank">
                     <p class="BoxHeader">The Way of the Peaceful Warrior by Dan Millman</p>
                 </a>
-                <p class="BoxDescription">The program is a simulation of a small <b>Stock Control System</b> for a store. 
+                <p class="BoxDescription"><i>“Warriors, warriors we call ourselves. We fight for splendid virtue, for high endeavour, for sublime wisdom, therefore we call ourselves warriors”</i> – Aunguttara Nikaya.
                 </p>
                 <ul class="Buzz_Words">
                     <li>Philosophy</li>
@@ -81,37 +80,34 @@
                     <li>Journey</li>
                     <li>Being a Warrior</li>
                 </ul>
-                <p>Posted on 01/09/2018</p>
+                <p>Posted on 10/09/2018</p>
 
             </div>
 
         </section>
 
+        <!--            count how many articles there are-->
+        <script> 
+            function countArticles() {
+                //              count flex classes which contains articles in each of them
+                numItems = $('.flex').length;
+                //get the side header and append it with the amount of articles there are 
+                var x = document.getElementsByClassName("sideHeader");
+                //append it
+                x[0].innerHTML += "(" + numItems + ")";
+            }
+        </script>
 
-        <div class="footer">
 
-            <section class="footerSection">
-                <div class="contactMe">
-                    <h3>Contact me</h3>
-                    <ul class="footerContact">
-                        <li class="github" style="float:right"><a class="contactLinks" href="https://github.com/Legacy07" target="_blank" title="Github"></a></li>
-                        <li class="linkedIn" style="float:right"><a class="contactLinks" href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank" title="LinkedIn"></a></li>
-                        <li class="email" style="float:right"><a class="contactLinks" href="mailto:ahmetince771@gmail.com" target="_blank" title="E-Mail"></a></li>
-                    </ul>
-                </div>                
-
-                <div class="contactMe">
-                    <h3>Site Links</h3>
-                    <ul class="footerContact">
-                        <li style="float:right"><a class="SiteLinks" href="contact.html">Contact</a></li>
-                        <li style="float:right"><a class="SiteLinks" href="about.html">About</a></li>
-                        <li style="float:right"><a class="SiteLinks" href="projects.html">Project</a></li>
-                        <li style="float:right"><a class="SiteLinks" href="index.html">Home</a></li>
-
-                    </ul>
-                </div>
-            </section>       
+        <!--footer-->
+        <div id="footer">
         </div>
+        <script> 
+            $(function() {
+                $("#footer").load("footer.html");
+            });
+        </script>
+
 
         <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 

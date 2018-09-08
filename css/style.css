@@ -52,8 +52,10 @@ p.Paragraph {
     font-family: 'Poppins', sans-serif;
     font-size: 1em;
     margin: 0;
+    left: 45%;
     color: #000000;
     position: relative;
+    max-width: 100%;
     display: inline-block;
 }
 
