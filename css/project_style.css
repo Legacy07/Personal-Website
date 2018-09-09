@@ -181,6 +181,17 @@ section {
     margin: auto;
     padding: 1em;
     width: 50%;
+/*    margin-top: -1%;*/
+}
+
+section.BlogSection {
+    z-index: 0;
+    margin: auto;
+    padding: 1em;
+    width: 50%;
+/*    margin-top: -1%;*/
+    border-style: ridge;
+    margin-bottom: 1%;
 }
 
 .flex {
@@ -411,6 +422,10 @@ p a.githubLink:hover{
         width: 80%;
         display: inline-block;
     }
+    section.BlogSection{
+        width: 80%;
+        display: inline-block;
+    }
     .flex:nth-of-type(n) {
         width: 100%;
     }
@@ -568,6 +583,10 @@ p a.githubLink:hover{
     }
 
     section{
+        width: 90%;
+        display: inline-block;
+    }
+    section.BlogSection{
         width: 90%;
         display: inline-block;
     }
