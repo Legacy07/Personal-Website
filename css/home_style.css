@@ -182,7 +182,7 @@ input[type=submit]:hover {
     }
 
 }
-@media (max-width:390px){
+@media (max-width:479px){
 
     li{
         /*        margin-left: 10%;*/
@@ -241,7 +241,7 @@ input[type=submit]:hover {
     
 }
 
-@media (min-width:769px) and (max-width:1024px){
+@media (min-width:769px) and (max-width:1023px){
 
     p.FirstLine{
         left: 50%;

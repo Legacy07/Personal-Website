@@ -48,7 +48,6 @@ transition-duration: 0.4s;
 */
 
 
-
 div.search {
     display:inline-block;
     /*    margin-right: auto;*/
@@ -85,8 +84,8 @@ button.dropbtn {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
-    margin-left: 45%;
-    margin-right: 50%;
+    margin-left: 48%;
+    /*    margin-right: 50%;*/
     /*
     margin-right: auto;
     margin-bottom: auto;
@@ -111,7 +110,7 @@ button.dropbtn {
     color: black;
     margin: auto;
     text-align: center;
-    margin-left: -2.5em;
+    margin-left: -6.5em;
     font-size: 1.1em;
     z-index: 100;
     margin-top: -2em;
@@ -152,8 +151,8 @@ button.dropbtn {
         margin-right: 73%;
     }
 
-    .dropdown-content {
-        /*        margin-left: 0em;*/
+     .dropdown-content {
+        margin-left: -2.5em;
     }
 
 }
@@ -164,15 +163,20 @@ button.dropbtn {
         margin-right: 77%;        
 
     }
+     .dropdown-content {
+        margin-left: -2.5em;
+    }
 
 }
 
 @media(min-width: 769px) and (max-width: 1024px){
     .dropdown{
-        margin-left: 40%;
-        margin-right: 80%;        
+        margin-left: 47%;
     }
 
+    .dropdown-content {
+        margin-left: -5em;
+    }
 }
 
 

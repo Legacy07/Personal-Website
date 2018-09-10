@@ -43,7 +43,7 @@ p.subHeader{
     border-bottom: 0.1em solid gray;
     border-bottom-width: thin;
     display: block;
-/*    margin-bottom: 1em;*/
+    /*    margin-bottom: 1em;*/
 }
 
 p.BoxHeader{    
@@ -181,7 +181,7 @@ section {
     margin: auto;
     padding: 1em;
     width: 50%;
-/*    margin-top: -1%;*/
+    /*    margin-top: -1%;*/
 }
 
 section.BlogSection {
@@ -189,7 +189,7 @@ section.BlogSection {
     margin: auto;
     padding: 1em;
     width: 50%;
-/*    margin-top: -1%;*/
+    /*    margin-top: -1%;*/
     border-style: ridge;
     margin-bottom: 1%;
 }
@@ -227,7 +227,8 @@ ul.Buzz_Words li {
     background-color: #a9a9a9;
     border: 0.2em solid #a9a9a9;
     border-radius: 0.6em;
-    margin-right: 0.2em;
+    margin-right: 0.1em;
+    margin-top: 0.2em;
     /*    margin-top: 1em;*/
     color: #fff;
     padding: 0 0.1em;
@@ -423,11 +424,13 @@ p a.githubLink:hover{
         display: inline-block;
     }
     section.BlogSection{
-        width: 80%;
+        width: 93%;
         display: inline-block;
+        margin-left: 3%;
     }
     .flex:nth-of-type(n) {
         width: 100%;
+        margin-left: -1%;
     }
 
     a:hover p.BoxHeader:after{
@@ -504,6 +507,11 @@ p a.githubLink:hover{
         width: 85%;
         display: inline-block;
     }
+    section.BlogSection{
+        width: 92%;
+        display: inline-block;
+        margin-left: 5%;
+    }
     .flex:nth-of-type(n) {
         width: 100%;
     }
@@ -557,7 +565,7 @@ p a.githubLink:hover{
 }
 
 @media(min-width:769px) and (max-width:1024px){
-    
+
     div.sideSection{
         /*        margin: auto;*/
         /*
@@ -587,8 +595,9 @@ p a.githubLink:hover{
         display: inline-block;
     }
     section.BlogSection{
-        width: 90%;
+        width: 95%;
         display: inline-block;
+        margin-left: 3%;
     }
     /*
     .flex:nth-of-type(n) {
