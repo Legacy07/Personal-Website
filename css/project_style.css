@@ -187,7 +187,7 @@ section {
 section.BlogSection {
     z-index: 0;
     margin: auto;
-    padding: 1em;
+/*    padding: 1em;*/
     width: 50%;
     /*    margin-top: -1%;*/
     border-style: ridge;
@@ -402,18 +402,32 @@ ul.overviewList li {
     color: black;
 }
 
-a.githubLink {
+a.link {
     text-decoration: none;
 }
-p a.githubLink{
+p a.link{
     color: black;
     font-weight: bold;
     border-bottom: 1px solid #FF0000;
     transition: background-color 0.4s;
 }
-p a.githubLink:hover{
+p a.link:hover{
     border-bottom: 3px solid #FF0000;
     background-color: white;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /* Media Queries */

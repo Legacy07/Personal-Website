@@ -59,23 +59,6 @@ div.search {
     position: relative;
 }
 
-/* Dropdown Button */
-button.dropbtn {
-    background-color: white;
-    padding: 1em;
-    height: 3em;
-    width: 3em;
-    cursor: pointer;
-    /*    z-index: 2;*/
-    position: relative;
-    background: url(../hamburger.png);
-    /*    display: block;*/
-    background-size:contain;
-    background-repeat:no-repeat;
-    border: none;
-
-}
-
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color:whitesmoke;

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+
+    <head>
+        <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- using the custom css -->    
+        <link rel="stylesheet" href="../css/project_style.css"/>
+        <link rel="stylesheet" href="../css/nav_bar.css"/>
+        <!--        google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="css/footer.css">
+                <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--        //navigation bar script-->
+        <script src="../js/nav_bar.js"></script>
+        <!--        back to top script-->
+        <script src="../js/back_to_top.js"></script>
+        <!--        responsive version script -->
+        <script src="../js/responsive-switch.min.js"></script>
+
+         <!--        webgl libraries-->
+        <script type="text/javascript" src="../../js/three.js"></script>
+        <script type="text/javascript" src="../../js/jquery.js"></script>
+        <script type="text/javascript" src="../../js/stats.js"></script>
+        <script src="../js/rotating_cube.js"></script>
+
+        <!--        google analytics-->
+        <script src="../js/google_analytics.js"></script>
+
+        <title>Blog - Personal Thoughts| Ahmet Ince</title>
+    </head>
+
+    <body>
+        <!--        Navigation bar-->
+        <div id="navigation">
+        </div>
+        <script> $(function() {
+                $("#navigation").load("../nav_bar_diff_folders.html");
+            });
+        </script>
+
+
+        <!--        <script>var numItems = 0;</script>-->
+
+        <!--        //side bar-->
+        <div class="sideSectionBlog">
+
+            <!--            important to auto count divs -->
+            <ul class="sideul">
+                <!--navigation banner-->
+                <li class="sideHeader" ><a class="side" href="blog.html" title="">Book Reviews</a></li>  
+
+                <li class="sideHeader" ><a class="side" href="blogs/personal_thoughts/personal_thoughts.html" title="">Personal Thoughts</a></li>  
+                <!--
+<li class="sideHeader" ><a class="side" href="blogs/java/java.html" title="">Java(0)</a></li>  
+<li class="sideHeader" ><a class="side" href="blogs/android/android.html" title="">Android(0)</a></li>  
+-->
+
+            </ul>
+
+        </div>
+
+        <section>
+
+            <p class="subHeader" id="Personal-Thoughts">Personal Thoughts</p>
+
+            <div class="flex">
+
+                <a href="personal_thoughts/simple_programmers_free_blog_course.html" target="_blank">
+                    <p class="BoxHeader">Simple Programmer's Free Blog Course</p>
+                </a>
+                <p class="BoxDescription">This was the first blog related video I watched of John Sonmez that got me committed first of all developing my website and start writing my blog posts.
+                </p>
+                <ul class="Buzz_Words">
+                    <li>Blog</li>
+                    <li>Commitment</li>
+                    <li>Inspiration</li>
+                    <li>Student</li>
+                </ul>
+                <p>Posted on 16/09/2018</p>
+
+            </div>
+
+        </section>
+
+        <!--            count how many articles there are-->
+        <script> 
+            function countArticles() {
+                //              count flex classes which contains articles in each of them
+                numItems = $('.flex').length;
+                //get the side header and append it with the amount of articles there are 
+                var x = document.getElementsByClassName("sideHeader");
+                //append it
+                x[0].innerHTML += "(" + numItems + ")";
+            }
+        </script>
+
+
+        <!--footer-->
+        <div id="footer">
+        </div>
+        <script> 
+            $(function() {
+                $("#footer").load("../footer_diff_folders.html");
+            });
+        </script>
+
+
+        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
+    </body>
+</html>
