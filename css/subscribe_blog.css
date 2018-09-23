@@ -1,0 +1,51 @@
+div.subscribeBox
+{
+    width: 15em;
+    height 5em;
+    border: 0.1em solid black;
+    box-shadow: 0px 0px 5px rgb(87, 98, 105);
+    display: inline-block;
+    float: right;
+    margin-right: 5%;
+}
+
+div.subscribeBox p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+input[type=submit].subscribeButton {
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    border: none;
+    height: 2em;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 3%; 
+    margin-bottom: 3%;
+    border-radius: 0.1em;
+
+}
+
+input[type=submit].subscribeButton:hover{
+    background-color: green;
+/*    border: 1px solid #BF4A49;*/
+    transition: background-color 0.3s;
+}
+
+input[type=email].subscribeEmail, select {
+    width: 90%;
+    padding: 1em 0.8em;
+    margin-left: 5%;
+    display: inline-block;
+    border: 0.1em solid #ccc;
+    border-radius: 0.1em;
+    box-sizing: border-box;
+}

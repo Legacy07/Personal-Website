@@ -47,7 +47,6 @@ transition-duration: 0.4s;
 }
 */
 
-
 div.search {
     display:inline-block;
     /*    margin-right: auto;*/
@@ -67,7 +66,7 @@ div.search {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
-    margin-left: 43%;
+    margin-left: 45%;
     /*    margin-right: 50%;*/
     /*
     margin-right: auto;
@@ -127,11 +126,24 @@ div.search {
 
 
 /*Media Queries*/
-@media(max-width:480px){
+@media(max-width:425px){
 
     .dropdown{
         margin-left: 27%;
-        margin-right: 73%;
+/*        margin-right: 73%;*/
+    }
+
+    .dropdown-content {
+        margin-left: -2.5em;
+    }
+
+}
+
+@media (min-width:425px) and (max-width:480px){
+
+    .dropdown{
+        margin-left: 30%;
+/*        margin-right: 73%;*/
     }
 
     .dropdown-content {
@@ -143,8 +155,6 @@ div.search {
 @media (min-width:481px) and (max-width:768px){
     .dropdown{
         margin-left: 37%;
-        margin-right: 77%;        
-
     }
     .dropdown-content {
         margin-left: -2.5em;
@@ -154,7 +164,7 @@ div.search {
 
 @media(min-width: 769px) and (max-width: 1024px){
     .dropdown{
-        margin-left: 41%;
+        margin-left: 42%;
     }
 
     .dropdown-content {

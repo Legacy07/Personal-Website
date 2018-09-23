@@ -263,6 +263,7 @@ ul.Buzz_Words li {
     color: white;
 }
 
+/*
 input[type=submit] {
     background-color: chocolate;
     position: relative;
@@ -274,6 +275,7 @@ input[type=submit] {
     width: 100%;
 
 }
+*/
 
 /*close button */
 .closeButton {

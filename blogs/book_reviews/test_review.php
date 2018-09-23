@@ -2,15 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+
+    <!--    https://www.cloudways.com/blog/connect-mysql-with-php/-->
+    <!--    https://madmimi.com/-->
+    <!--    https://mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=ec607a78c8c22d43252e703bd&afl=1-->
     <?php
-//declaring variables
-$message = "";
+    //declaring variables
+    $message = "";
 $verifiedMessage = "";
 // Database Connection 
-$conn = mysqli_connect("http://ahmetince.co.uk","ahmet871_","Mertmert2014","ahmet871_BlogDB");
+$conn = mysqli_connect("ahmetince.co.uk","ahmet871_blog","Mertmert2004","ahmet871_BlogDB");
 if (mysqli_connect_errno($conn)) {
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-exit();
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
 } ?>
 
     <head>
@@ -63,12 +67,84 @@ exit();
 
         <!--            Subscribe for blog-->
         <div class="subscribeBox">
-            <p>
-                Subscribe to my Blog posts
-            </p>
-            <input class="subscribeEmail" type="email" id="subscribe" name="subscribe" placeholder="Enter your e-mail" required>
-            <input class="subscribeButton" type="submit" name="subscribeButton" value="Subscribe">
+            <form name="phpForm" action="test_review.php" method="post">
+                <p>
+                    Subscribe to my Blog posts
+                </p>
+                <input class="subscribeEmail" type="email" id="subscribe" name="subscribe" placeholder="Enter your e-mail" required>
+                <input class="subscribeButton" type="submit" name="subscribeButton" value="Subscribe">
 
+                <?php
+                //if register button is succesfully clicked then send data from textboxes into these variables
+                if (isset($_POST['subscribeButton']))
+                {   
+                    $eM   = $_POST['subscribeEmail'];
+                    $notConfirmed = 0;
+
+
+                    if ( !preg_match('/^([\w\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/',$eM) ){
+                        echo "Please enter a valid e-mail";
+                    }
+                    else{
+
+                        //options for bcrypt uses blowfish encryption, including salt for improving encryption.
+                        $options = [
+                            'cost' => 11,
+                            'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
+                        ];
+                        //hash the email 
+                        $hashEmail = password_hash($eM, PASSWORD_BCRYPT, $options);
+
+                        //DO; if email is found and its confirmed then output else if the email is found but not confirmed then also output a message]
+                        
+                        //finding the email using mysqli_query framework.
+                        $emails = mysqli_query($conn, "SELECT * FROM test_Blog_Subs where email='$eM'");
+                        //return the rows of the search
+                        $rows = mysqli_affected_rows($conn);
+                        //if any email is found then output a message 
+                        if($rows >=1){
+                            $message = "This email is already subscribed.";
+                        }
+//                        else if
+                        //if not insert the data in table
+                        else{
+                            //insert values into rows
+                            $sql = mysqli_query($conn, "INSERT INTO test_Blog_Subs (email, emailHash, isEmailConfirmed)
+                            VALUES ('$eM','$hashEmail', '0')");
+
+                            //adapted to send an email with dynamically created website from - https://code.tutsplus.com/tutorials/how-to-implement-email-verification-for-new-members--net-3824
+
+                            //Sending email with verificaiton link 
+                            $to      = $eM; // email of the registered member
+                            $subject = 'E-mail Confirmation for ahmetince.co.uk/blog'; 
+                            $body = 
+                                '
+                            Hi there,
+                            
+                            In order to complete the subscription, please click on the link below to confirm your e-mail address and start receiving my weekly blog posts.
+                            
+                            ----------------------------------------------------------------------------------------------------------------
+
+                            Please click on this link to confirm:
+                           this link change http://stuweb.cms.gre.ac.uk/~ai6935u/web_cw/email_activation.php?email_address='.$eM.'&email_hash='.$hashEmail.'';
+
+                            $headers = 'From: my email address' . "\r\n"; // headers
+                            $status = mail($to, $subject, $body, $headers); // Sending email
+
+                            if($status)
+                            { 
+                                $verifiedMessage ="A confirmation e-mail including a link has been sent to $eM";
+                            } else { 
+                                echo '<p>Something went wrong, Please try again!</p>'; 
+                            }
+                        }
+                    }}
+
+                //close connection
+                mysqli_close($conn);
+
+                ?>
+            </form>
         </div>
 
         <section class="BlogSection">
