@@ -187,7 +187,7 @@ section {
 section.BlogSection {
     z-index: 0;
     margin: auto;
-/*    padding: 1em;*/
+    /*    padding: 1em;*/
     width: 50%;
     /*    margin-top: -1%;*/
     border-style: ridge;
@@ -265,14 +265,14 @@ ul.Buzz_Words li {
 
 /*
 input[type=submit] {
-    background-color: chocolate;
-    position: relative;
-    color: white;
-    padding: 12px 10px;
-    border-radius: 1em;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+background-color: chocolate;
+position: relative;
+color: white;
+padding: 12px 10px;
+border-radius: 1em;
+border: none;
+cursor: pointer;
+width: 100%;
 
 }
 */
@@ -418,18 +418,40 @@ p a.link:hover{
     background-color: white;
 }
 
+a.link {
+    text-decoration: none;
+}
+ol a.link{
+    color: gray;
+    transition: background-color 0.4s;
+}
+ol a.link:hover{
+    color: black;
+    background-color: white;
+}
+
 .videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
 }
 .videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul.dashList {
+    list-style-type: none;
+}
+
+ul.dashList > li:before {
+    content: '\2014'; 
+    position: absolute;
+    margin-left: -1.1em; 
 }
 
 /* Media Queries */
