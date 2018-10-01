@@ -43,27 +43,15 @@
                 $("#navigation").load("../nav_bar_diff_folders.html");
             });
         </script>
-
-
-        <!--        <script>var numItems = 0;</script>-->
-
-        <!--        //side bar-->
-        <div class="sideSectionBlog">
-
-            <!--            important to auto count divs -->
-            <ul class="sideul">
-                <!--navigation banner-->
-                <li class="sideHeader" ><a class="side" href="../blog.html" title="">Book Reviews</a></li>  
-
-                <li class="sideHeader" ><a class="side" href="blogs/personal_thoughts/personal_thoughts.html" title="">Personal Thoughts</a></li>  
-                <!--
-<li class="sideHeader" ><a class="side" href="blogs/java/java.html" title="">Java(0)</a></li>  
-<li class="sideHeader" ><a class="side" href="blogs/android/android.html" title="">Android(0)</a></li>  
--->
-
-            </ul>
-
+        
+<!--        side bar-->
+         <div id="sideBar">
         </div>
+        <script> $(function() {
+                $("#sideBar").load("side_bar_diff_folders.html");
+            });
+        </script>
+
 
         <section>
 
@@ -101,6 +89,22 @@
                     <li>Upgrade</li>
                 </ul>
                 <p>Posted on 24/09/2018</p>
+            </div>
+
+            <div class="flex">
+
+                <a href="personal_thoughts/how_to_energize_your_body_in_10_minutes.html" target="_blank">
+                    <p class="BoxHeader">How to energize your body in 10 minutes</p>
+                </a>
+                <p class="BoxDescription">If you’re struggling with boosting and maintaining energy, I highly suggest you try the ‘daily bio-energizer’ after you wake up and/or when you are on the way to gym.
+                </p>
+                <ul class="Buzz_Words">
+                    <li>Energy Boost</li>
+                    <li>Stretching</li>
+                    <li>Morning Routine</li>
+                    <li>Warm-up</li>
+                </ul>
+                <p>Posted on 30/09/2018</p>
             </div>
 
         </section>

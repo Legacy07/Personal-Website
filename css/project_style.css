@@ -92,11 +92,18 @@ div.sideSection{
 }
 
 div.sideSectionBlog{
+
     margin: auto;
     float: left;
-    margin-left: 7%;
-    margin-top: 5%;
+    margin-left: 10%;
     border: 0.1em solid black;
+
+    width: 80%;
+    margin-bottom: 2%;
+    /*
+    border-right: 0em;
+    border-left: 0em;
+    */
 }
 
 /*
@@ -152,13 +159,46 @@ li.sideHeader a.side{
 }
 /*user visually can see the mouse hover on the text*/
 li.sideHeader a.side:hover{
-    /*
+    
+/*
     content: '';
     display: block;
     margin: auto;
     height: 0.15em;
     width: 0px;
-    */
+*/
+    
+    text-decoration: underline;
+    /*    background: transparent;*/
+    /*    -webkit-transition: width .35s ease, background-color .35s ease;*/
+    /*    transition: width .35s ease, background-color .35s ease;*/
+}
+
+li.sideHeaderBlog a.side{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding-bottom: 1em;
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+    color: black;
+
+    padding-bottom: 0.5em;
+    float: left;
+    padding: 0.5em;
+    padding-left: 1em;
+    text-decoration: underline;
+}
+/*user visually can see the mouse hover on the text*/
+li.sideHeaderBlog a.side:hover{
+    
+    content: '';
+    display: block;
+    margin: auto;
+    height: 0.15em;
+    width: 0px;
+    
     text-decoration: underline;
     /*    background: transparent;*/
     /*    -webkit-transition: width .35s ease, background-color .35s ease;*/

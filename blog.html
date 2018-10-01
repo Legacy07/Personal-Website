@@ -30,7 +30,7 @@
         <script type="text/javascript" src="js/stats.js"></script>
         <script src="js/rotating_cube.js"></script>
 
-        <title>Blog - Book Reviews | Ahmet Ince</title>
+        <title>Blog | Ahmet Ince</title>
     </head>
 
     <body>
@@ -41,31 +41,17 @@
                 $("#navigation").load("nav_bar.html");
             });
         </script>
-
-
-        <!--        <script>var numItems = 0;</script>-->
-
-        <!--        //side bar-->
-        <div class="sideSectionBlog">
-
-            <!--            important to auto count divs -->
-            <ul class="sideul">
-                <!--navigation banner-->
-                <li class="sideHeader" ><a class="side" href="blog.html" title="">Book Reviews<script>countArticles();</script></a></li>  
-
-                <li class="sideHeader" ><a class="side" href="blogs/personal_thoughts.html" title="">Personal Thoughts</a></li>  
-                <!--
-<li class="sideHeader" ><a class="side" href="blogs/java/java.html" title="">Java(0)</a></li>  
-<li class="sideHeader" ><a class="side" href="blogs/android/android.html" title="">Android(0)</a></li>  
--->
-
-            </ul>
-
+        
+        <div id="sideBar">
         </div>
+        <script> $(function() {
+                $("#sideBar").load("side_bar.html");
+            });
+        </script>
 
         <section>
 
-            <p class="subHeader" id="Book-Reviews">Book Reviews</p>
+            <p class="subHeader" id="All">All Articles</p>
 
             <div class="flex">
 
@@ -84,7 +70,57 @@
                 <p>Posted on 10/09/2018</p>
 
             </div>
+            
+             <div class="flex">
 
+                <a href="blogs/personal_thoughts/simple_programmers_free_blog_course.html" target="_blank">
+                    <p class="BoxHeader">Simple Programmer's Free Blog Course</p>
+                </a>
+                <p class="BoxDescription">This was the first blog related video I watched of John Sonmez that got me committed first of all developing my website and start writing my blog posts.
+                </p>
+                <ul class="Buzz_Words">
+                    <li>Blog</li>
+                    <li>Commitment</li>
+                    <li>Inspiration</li>
+                    <li>Student</li>
+                </ul>
+                <p>Posted on 16/09/2018</p>
+
+            </div>
+
+            <div class="flex">
+
+                <a href="blogs/personal_thoughts/little_adjustments_in_samsung_note_9_that_worth_%C2%A3399_more_than_note_8.html" target="_blank">
+                    <p class="BoxHeader">Little adjustments in Samsung Galaxy Note 9 that worth £400 more than Galaxy Note 8</p>
+                </a>
+                <p class="BoxDescription">First off, I feel like I need to clear off something so I don’t sound like a Samsung hater. I currently own a Samsung Galaxy Note 8 and very much support Samsung’s vision and their mission towards how they trying to innovate for both developing the current technology and satisfying customers. 
+                </p>
+                <ul class="Buzz_Words">
+                    <li>Samsung</li>
+                    <li>Galaxy Note 9</li>
+                    <li>Tech</li>
+                    <li>Criticism</li>
+                    <li>Upgrade</li>
+                </ul>
+                <p>Posted on 24/09/2018</p>
+            </div>
+
+            <div class="flex">
+
+                <a href="blogs/personal_thoughts/how_to_energize_your_body_in_10_minutes.html" target="_blank">
+                    <p class="BoxHeader">How to energize your body in 10 minutes</p>
+                </a>
+                <p class="BoxDescription">If you’re struggling with boosting and maintaining energy, I highly suggest you try the ‘daily bio-energizer’ after you wake up and/or when you are on the way to gym.
+                </p>
+                <ul class="Buzz_Words">
+                    <li>Energy Boost</li>
+                    <li>Stretching</li>
+                    <li>Morning Routine</li>
+                    <li>Warm-up</li>
+                </ul>
+                <p>Posted on 30/09/2018</p>
+            </div>
+            
         </section>
 
         <!--            count how many articles there are-->
