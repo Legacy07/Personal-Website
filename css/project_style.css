@@ -159,15 +159,15 @@ li.sideHeader a.side{
 }
 /*user visually can see the mouse hover on the text*/
 li.sideHeader a.side:hover{
-    
-/*
+
+    /*
     content: '';
     display: block;
     margin: auto;
     height: 0.15em;
     width: 0px;
-*/
-    
+    */
+
     text-decoration: underline;
     /*    background: transparent;*/
     /*    -webkit-transition: width .35s ease, background-color .35s ease;*/
@@ -192,13 +192,13 @@ li.sideHeaderBlog a.side{
 }
 /*user visually can see the mouse hover on the text*/
 li.sideHeaderBlog a.side:hover{
-    
+
     content: '';
     display: block;
     margin: auto;
     height: 0.15em;
     width: 0px;
-    
+
     text-decoration: underline;
     /*    background: transparent;*/
     /*    -webkit-transition: width .35s ease, background-color .35s ease;*/
@@ -467,6 +467,17 @@ ol a.link{
 }
 ol a.link:hover{
     color: black;
+    background-color: white;
+}
+
+ol a.link2{
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid #FF0000;
+    transition: background-color 0.4s;
+}
+ol a.link2:hover{
+    border-bottom: 3px solid #FF0000;
     background-color: white;
 }
 
