@@ -97,13 +97,10 @@ div.sideSectionBlog{
     float: left;
     margin-left: 10%;
     border: 0.1em solid black;
-
     width: 80%;
     margin-bottom: 2%;
-    /*
-    border-right: 0em;
-    border-left: 0em;
-    */
+    padding: 1em;
+
 }
 
 /*
@@ -157,6 +154,8 @@ li.sideHeader a.side{
     padding: 1em;
     color: black;
 }
+
+
 /*user visually can see the mouse hover on the text*/
 li.sideHeader a.side:hover{
 
@@ -175,15 +174,12 @@ li.sideHeader a.side:hover{
 }
 
 li.sideHeaderBlog a.side{
+    padding: 1em;
+    color: black;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.1em;
     padding-bottom: 1em;
-    display: inline-block;
-    margin: 0;
-    padding: 1em;
-    color: black;
-
     padding-bottom: 0.5em;
     float: left;
     padding: 0.5em;
@@ -193,11 +189,13 @@ li.sideHeaderBlog a.side{
 /*user visually can see the mouse hover on the text*/
 li.sideHeaderBlog a.side:hover{
 
+    /*
     content: '';
     display: block;
     margin: auto;
     height: 0.15em;
     width: 0px;
+    */
 
     text-decoration: underline;
     /*    background: transparent;*/
@@ -216,11 +214,30 @@ background: black;
 }
 */
 
+/*
 section {
+z-index: 0;
+margin: auto;
+padding: 1em;
+width: 50%;
+margin-top: -1%;
+}
+*/
+
+section.project
+{
     z-index: 0;
     margin: auto;
     padding: 1em;
     width: 50%;
+    /*    margin-top: -1%;*/
+}
+section {
+    z-index: 0;
+    margin: auto;
+    padding: 1em;
+    width: 80%;
+    /*    margin-left: 10%;*/
     /*    margin-top: -1%;*/
 }
 
@@ -234,19 +251,19 @@ section.BlogSection {
     margin-bottom: 1%;
 }
 
-.flex {
+.flexProject {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 
 }
 
-.flex:nth-of-type(n) {
+.flexProject:nth-of-type(n) {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    /*    width: 50%;*/
+/*    width: 50%;*/
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 1em;
@@ -255,6 +272,29 @@ section.BlogSection {
     border: 0.5em solid gray;
     cursor:pointer;
 }
+
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: inline-flex;
+
+}
+
+.flex:nth-of-type(n) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: row;
+    width: 25%;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 1em;
+    padding: 0.5em;
+    background-color: white;
+    border: 0.5em solid gray;
+    cursor:pointer;
+}
+
 
 ul.Buzz_Words {
     list-style-type: none;
@@ -521,6 +561,10 @@ ul.dashList > li:before {
         width: 100%;
         margin-left: -1%;
     }
+    .flexProject:nth-of-type(n) {
+        width: 175%;
+        margin-left: -1%;
+    }
 
     a:hover p.BoxHeader:after{
         width: 100%;
@@ -580,6 +624,13 @@ ul.dashList > li:before {
         border-right: 0em;
         border-left: 0em;
     }
+    
+    div.sideSectionBlog{
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
     li.sideHeader a.side{
         padding-bottom: 0.5em;
         float: left;
@@ -603,6 +654,9 @@ ul.dashList > li:before {
     }
     .flex:nth-of-type(n) {
         width: 100%;
+    }
+    .flexProject:nth-of-type(n) {
+        width: 175%;
     }
 
     a:hover p.BoxHeader:after{
@@ -643,6 +697,12 @@ ul.dashList > li:before {
         border-right: 0em;
         border-left: 0em;
     }
+    div.sideSectionBlog{
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
     li.sideHeader a.side{
         padding-bottom: 0.5em;
         float: left;
@@ -670,6 +730,12 @@ ul.dashList > li:before {
         border-right: 0em;
         border-left: 0em;
     }
+    div.sideSectionBlog{
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
     li.sideHeader a.side{
         padding-bottom: 0.5em;
         float: left;
@@ -687,6 +753,9 @@ ul.dashList > li:before {
         width: 95%;
         display: inline-block;
         margin-left: 3%;
+    }
+    .flexProject:nth-of-type(n) {
+        width: 175%;
     }
     /*
     .flex:nth-of-type(n) {
