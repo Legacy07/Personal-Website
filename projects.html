@@ -48,7 +48,7 @@
 
         <!--        //side bar-->
 
-        <div class="sideSection">
+        <div class="sideSection" id="sideSection">
             <!--
 <a class="side" href="projects.html#Java-Projects"><p class="sideHeader">Java Projects</p></a>
 <br>
@@ -69,6 +69,28 @@
 
         </div>
 
+        <!--        side section move on scroll horizontally-->
+        <script>$(window).scroll(function () {
+                var winTop = $(this).scrollTop();
+                
+                if (winTop >= '0em') {
+//                    start scrolling after the given height which is 10em
+
+                    $('#sideSection').css({
+                        'position': 'absolute',
+                        'bottom': 'auto',
+                        'top': 'auto'
+                    });
+                } else {
+                    //else revert sideSection position back to fixed
+
+                    $('#sideSection').css({
+                        'position': 'fixed',
+                        'bottom': 'auto',
+                        'top': 'auto'
+                    });
+                }
+            });</script>
 
         <section class="project">
 
