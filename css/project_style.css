@@ -568,7 +568,7 @@ ul.dashList > li:before {
         margin-left: -1%;
     }
     .flexProject:nth-of-type(n) {
-        width: 175%;
+        width: 100%;
         margin-left: -1%;
     }
 
@@ -667,7 +667,7 @@ ul.dashList > li:before {
         width: 100%;
     }
     .flexProject:nth-of-type(n) {
-        width: 175%;
+        width: 100%;
     }
 
     a:hover p.BoxHeader:after{
@@ -766,7 +766,7 @@ ul.dashList > li:before {
         margin-left: 3%;
     }
     .flexProject:nth-of-type(n) {
-        width: 175%;
+        width: 100%;
     }
     section.project
     {
