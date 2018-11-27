@@ -11,25 +11,26 @@
         <link rel="stylesheet" href="../css/magnific-popup.css"/>
         <link rel="stylesheet" href="../css/footer.css"/>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+
         <script src="../js/nav_bar.js"></script>
         <script src="../js/back_to_top.js"></script>
-                <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-          <!--        webgl libraries-->
+        <!--        webgl libraries-->
         <script type="text/javascript" src="../js/three.js"></script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/stats.js"></script>
         <script src="../js/rotating_cube.js"></script>
-        
-        <!--        google analytics-->
-            <script src="../js/google_analytics.js"></script>
 
-        <title>Calorie Counter</title>
+        <!--        google analytics-->
+        <script src="../js/google_analytics.js"></script>
+
+        <title>Interview Revision</title>
     </head>
 
     <body>
         <!--        Navigation bar-->
-      <div id="navigation">
+        <div id="navigation">
 
         </div>
         <script> $(function() {
@@ -38,12 +39,17 @@
         </script>
 
         <section class="project">
-            <p class="Header">Calorie Counter</p>
+            <p class="Header">Interview Revision</p>
 
             <div class="imagesDiv">
                 <!--            images -->
-                <img class="slideShow" href="calorie_counter_img/main.PNG" src="calorie_counter_img/main.PNG" title= "Main Menu" width="710" height="400"> 
-                <img class="slideShow" href="calorie_counter_img/calculate_meals.PNG" src="calorie_counter_img/calculate_meals.PNG" title= "Calculate meals" width="710" height="400"> 
+                <img class="androidSlideShow" href="interview_revision_img/nav_bar.jpg" src="interview_revision_img/nav_bar.jpg" title= "Navigation Bar" width="200" height="400"> 
+                <img class="androidSlideShow" href="interview_revision_img/interview.jpg" src="interview_revision_img/interview.jpg" title= "Interview Menu Screen" width="200" height="400"> 
+                <img class="androidSlideShow" href="interview_revision_img/algorithms.jpg" src="interview_revision_img/algorithms.jpg" title= "Algorithms Menu Screen" width="200" height="400"> 
+                <img class="androidSlideShow" href="interview_revision_img/algorithm_answer.jpg" src="interview_revision_img/algorithm_answer.jpg" title= "Algorithms Answer Screen" width="200" height="400"> 
+                <img class="androidSlideShow" href="interview_revision_img/technical_ques.jpg" src="interview_revision_img/technical_ques.jpg" title= "Technical Questions Screen" width="200" height="400"> 
+                <img class="androidSlideShow" href="interview_revision_img/behavioural_questions.jpg" src="interview_revision_img/behavioural_questions.jpg" title= "Behavioural Questions" width="200" height="400"> 
+                <img class="androidSlideShow" href="interview_revision_img/behavioural_answer.jpg" src="interview_revision_img/behavioural_answer.jpg" title= "Behavioural Answers Screen" width="200" height="400"> 
 
                 <!--            left and right buttons -->
                 <button class="leftArrow" id="left" onclick="plusDivs(-1)"></button>
@@ -52,29 +58,32 @@
 
             <!--            overview-->
             <p class="subHeader">Overview</p>
-
-            <p class="overviewDescription">A desktop application for adding, viewing and searching for foods which display its <b>Nutrition Facts</b>
-                and <b>Calorie Breakdown</b> in text and visual form.<br>
-                Also able to calculate nutrition facts of meals depending on the selection of food from the list,
-                and generate a chart of the total.</p>
+            <p class="overviewDescription">An Android Application mainly for graduates and students who want to revise and have a look at what sorts of questions may be asked generally and in specific IT-related job interviews. Also typical answers are provided to give you a head-start. The application provides the following features;</p>
+            <ul class="overviewList">
+                <li>General <b>Interview-Related</b> Questions and ideal Answers</li>
+                <li><b>Tips</b> on Face-to-Face &amp; Telephone Interview, also Group Discussion and CV Tips</li>
+                <li><b>Technical Questions &amp; Answers</b>; Java and Android are included.</li>
+                <li><b>Algorithms</b>; Data Structures, Searching, Sorting and Graph Algorithms. </li>
+            </ul>
 
             <!--            listing used technologies-->
             <p class="subHeader">Technologies</p>
             <ul class="overviewList">
-                <li>C#</li>
-                <li>SQL</li>
+                <li>JAVA</li>
+                <li>XML</li>
             </ul>
 
-            <!--            github resource-->
             <br><br>
-
+            <!--             resource-->
             <p class="subHeader">Resources</p>
-            <p class="overviewDescription">The project is online at <strong><a class="link" href="https://github.com/Legacy07/Nutrition-Facts">Github</a></strong>.</p>
-
+            <p class="overviewDescription">You can download it via <strong><a class="link" href="https://play.google.com/store/apps/details?id=com.ahmet.interviewapp&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">Google Play Store</a></strong>.</p>
+                
+            <p class="overviewDescription">The project is also online at <strong><a class="link" href="https://github.com/Legacy07/Interview-Revision-Application" target="_blank">Github</a></strong>.</p>
+            
 
         </section>
 
-           <!--footer-->
+        <!--footer-->
         <div id="footer">
         </div>
         <script> 
@@ -95,7 +104,7 @@
 
             function showDivs(n) {
                 var i;
-                var x = document.getElementsByClassName("slideShow");
+                var x = document.getElementsByClassName("androidSlideShow");
                 if (n > x.length) {slideIndex = 1}    
                 if (n < 1) {slideIndex = x.length}
                 for (i = 0; i < x.length; i++) {
@@ -117,6 +126,7 @@
                 $('img').magnificPopup({type:'image'});
             });
         </script>
+
         <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 
     </body>
