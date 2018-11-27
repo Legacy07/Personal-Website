@@ -43,9 +43,9 @@
 
             <div class="imagesDiv">
                 <!--            images -->
-                <img class="sosContactSlideShow" href="sos_contact_img/first_time_screen.jpg" src="sos_contact_img/first_time_screen.jpg" title= "Start Screen at first time use" width="200" height="400"> 
-                <img class="sosContactSlideShow" href="sos_contact_img/permissions_screen.jpg" src="sos_contact_img/permissions_screen.jpg" title= "Permissions screen of why its needed" width="200" height="400">
-                <img class="sosContactSlideShow" href="sos_contact_img/home_screen.jpg" src="sos_contact_img/home_screen.jpg" title= "Home Screen" width="200" height="400"> 
+                <img class="androidSlideShow" href="sos_contact_img/first_time_screen.jpg" src="sos_contact_img/first_time_screen.jpg" title= "Start Screen at first time use" width="200" height="400"> 
+                <img class="androidSlideShow" href="sos_contact_img/permissions_screen.jpg" src="sos_contact_img/permissions_screen.jpg" title= "Permissions screen of why its needed" width="200" height="400">
+                <img class="androidSlideShow" href="sos_contact_img/home_screen.jpg" src="sos_contact_img/home_screen.jpg" title= "Home Screen" width="200" height="400"> 
 
                 <!--            left and right buttons -->
                 <button class="leftArrow" id="left" onclick="plusDivs(-1)"></button>
@@ -98,7 +98,7 @@
 
             function showDivs(n) {
                 var i;
-                var x = document.getElementsByClassName("sosContactSlideShow");
+                var x = document.getElementsByClassName("androidSlideShow");
                 if (n > x.length) {slideIndex = 1}    
                 if (n < 1) {slideIndex = x.length}
                 for (i = 0; i < x.length; i++) {
