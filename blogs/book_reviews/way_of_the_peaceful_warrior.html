@@ -2,16 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
-    <?php
-//declaring variables
-$message = "";
-$verifiedMessage = "";
-// Database Connection 
-$conn = mysqli_connect("http://ahmetince.co.uk","ahmet871_","Mertmert2014","ahmet871_BlogDB");
-if (mysqli_connect_errno($conn)) {
-echo "Failed to connect to MySQL: " . mysqli_connect_error();
-exit();
-} ?>
 
     <head>
         <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
@@ -59,18 +49,6 @@ exit();
             <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
             <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/book_reviews/way_of_the_peaceful_warrior.html"></script>
         </div>
-
-        <!--            Subscribe for blog-->
-<!--
-        <div class="subscribeBox">
-            <p>
-                Subscribe to my Blog posts
-            </p>
-            <input class="subscribeEmail" type="email" id="subscribe" name="subscribe" placeholder="Enter your e-mail" required>
-            <input class="subscribeButton" type="submit" name="subscribeButton" value="Subscribe">
-
-        </div>
--->
 
         <section class="BlogSection">
             <p class="Header">Way of the Peaceful Warrior</p>
