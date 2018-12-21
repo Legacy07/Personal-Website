@@ -67,12 +67,11 @@ div.search {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
-    /*    margin-left: 50%;*/
+    margin-left: 45%;
     /*        margin-right: 50%;*/
 
-    margin-right: auto;
-    /*    margin-bottom: auto;*/
-    margin-left: auto;
+    /*    margin-right: auto;*/
+    /*    margin-left: auto;*/
 
     /*    height: 10em;*/
     /*    width: 10em;*/
@@ -132,8 +131,8 @@ div.search {
 @media(max-width:424px){
 
     .dropdown{
-        /*        left: -7%;*/
-        margin-right: 70%;
+        left: -14%;
+        /*        margin-right: 70%;*/
     }
 
     .dropdown-content {
@@ -145,8 +144,8 @@ div.search {
 @media (min-width:425px) and (max-width:480px){
 
     .dropdown{
-        /*        left: -7%;*/
-        margin-right: 65%;
+        left: -10%;
+        /*        margin-right: 65%;*/
 
     }
 
@@ -158,8 +157,8 @@ div.search {
 
 @media (min-width:481px) and (max-width:768px){
     .dropdown{
-        /*        left: -7%;*/
-        margin-right: 60%;
+        left: -5%;
+        /*        margin-right: 60%;*/
 
     }
     .dropdown-content {
@@ -171,8 +170,9 @@ div.search {
 @media(min-width: 769px) and (max-width: 1024px){
 
     .dropdown{
-/*                left: -7%;*/
-        margin-right: 58%;
+
+        left: -2%;
+
 
     }
 
