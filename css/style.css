@@ -107,7 +107,7 @@ p.boxHeader {
 }
 
 section {
-    width: 57.5%;
+    width: 50%;
     height: 100%;
     margin: auto;
     /*    padding: 1em;*/
@@ -440,7 +440,7 @@ div.graph{
     }
 
     section{
-        width: 80%;
+        width: 75%;
     }
 
     p.boxHeader {

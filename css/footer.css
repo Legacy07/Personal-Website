@@ -94,7 +94,7 @@ li a.contactLinks{
 @media(max-width: 480px){
 
     div.contactMe{
-/*        margin-left: 15%;*/
+        /*        margin-left: 15%;*/
         width: 100%;
     }
     li.email{
@@ -106,42 +106,55 @@ li a.contactLinks{
 
     }
 
-/*
+    /*
     li a.SiteLinks{
-        float: left;
-    }
-*/
+    float: left;
+}
+    */
 
     ul.footerContact{
         /*        margin-left: -1em;*/
         width: 100%;
-/*        float: left;*/
+        /*        float: left;*/
     }
 
     li {
-/*        float: left;*/
+        /*        float: left;*/
     }
-    
+
     li a.SiteLinks{
-        
+
         position: relative;
         padding-right: 2em;
         text-align: left;
     }
-  
+
+}
+
+@media(max-width: 480px){
+    .footer{
+        width: 100%;
+    }
+
 }
 
 @media (min-width:481px) and (max-width:768px){
-    
-    
+    .footer{
+/*        width: 95%;*/
+    }
+
+
 }
 
 @media(min-width: 769px) and (max-width: 1024px){
-     div.contactMe{
-/*        margin-left: 0%;*/
-         
-/*        width: 100%;*/
+    div.contactMe{
+        /*        margin-left: 0%;*/
+
+        /*        width: 100%;*/
     }
-    
+    .footer{
+        width: 100%;
+    }
+
 }
 

@@ -48,13 +48,14 @@ transition-duration: 0.4s;
 */
 
 div.search {
-    display:inline-block;
+    display: inline-block;
     /*    margin-right: auto;*/
-    margin-bottom: auto;
-    margin-top: %0;
-    /*    cursor: pointer;*/
+    /*    margin-bottom: auto;*/
+    /*    margin-top: %0;*/
+    cursor: pointer;
     z-index: 0;
-    margin-left: -10%;
+    /*    margin-left: -10%;
+    */
     position: relative;
 }
 
@@ -66,14 +67,13 @@ div.search {
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
-    margin-left: 45%;
-    /*    margin-right: 50%;*/
-    /*
+    /*    margin-left: 50%;*/
+    /*        margin-right: 50%;*/
+
     margin-right: auto;
-    margin-bottom: auto;
-    */
-
-
+    /*    margin-bottom: auto;*/
+    margin-left: auto;
+    
     /*    height: 10em;*/
     /*    width: 10em;*/
     width:0%;
@@ -90,14 +90,16 @@ div.search {
     background-color: whitesmoke;
     min-width: 15em;
     color: black;
-    margin: auto;
+    /*    margin: auto;*/
     text-align: center;
-    margin-left: -2.5em;
+    margin-left: -3em;
     font-size: 1.1em;
     z-index: 100;
     margin-top: -2em;
     font-family: 'Poppins' sans-serif;
     box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
+
+
 }
 /*//display dropdown menu on hover*/
 .dropdown:hover .dropdown-content {
@@ -111,6 +113,7 @@ div.search {
     text-decoration: none;
     display: block;
     font-family: 'Poppins' sans-serif;
+
 }
 
 /* Change color of dropdown links on hover */
@@ -130,7 +133,7 @@ div.search {
 
     .dropdown{
         margin-left: 27%;
-/*        margin-right: 73%;*/
+        /*        margin-right: 73%;*/
     }
 
     .dropdown-content {
@@ -143,7 +146,7 @@ div.search {
 
     .dropdown{
         margin-left: 30%;
-/*        margin-right: 73%;*/
+        /*        margin-right: 73%;*/
     }
 
     .dropdown-content {
@@ -163,13 +166,15 @@ div.search {
 }
 
 @media(min-width: 769px) and (max-width: 1024px){
+    
     .dropdown{
-        margin-left: 42%;
-    }
+    left: -7%;
+}
 
     .dropdown-content {
-        margin-left: -3em;
-    }
+    margin-left: -3.5em;
+}
+    
 }
 
 

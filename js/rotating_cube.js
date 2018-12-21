@@ -10,7 +10,7 @@ $(function() {
     // create a render and set the size
     var renderer = new THREE.WebGLRenderer({alpha: true});
     renderer.setClearColor(0x000000, 0);
-    renderer.setSize(200, 180);
+    renderer.setSize(150, 180);
 
     var mesh = createMesh(new THREE.CubeGeometry(10, 10, 10));
     // add the mesh to the scene

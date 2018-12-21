@@ -243,9 +243,9 @@ section {
 
 section.BlogSection {
     z-index: 0;
-    margin: auto;
+/*    margin: auto;*/
     /*    padding: 1em;*/
-    width: 50%;
+    width: 60%;
     /*    margin-top: -1%;*/
     border-style: ridge;
     margin-bottom: 1%;
@@ -285,14 +285,14 @@ section.BlogSection {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: row;
-    width: 25%;
+    width: 27%;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 1em;
     padding: 0.5em;
     background-color: white;
     border: 0.5em solid gray;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
@@ -547,53 +547,53 @@ ul.dashList > li:before {
 
 /*
 #white-background{
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #fefefe;
-    opacity: 0.7;
-    z-index: 9999;
+display: none;
+width: 100%;
+height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+background-color: #fefefe;
+opacity: 0.7;
+z-index: 9999;
 }
 
 #dialogBox{
-    display: none;
-    position: fixed;
-    width: 10em;
-    z-index: 9999;
-    border-radius: 1em;
-    background-color: gainsboro;
+display: none;
+position: fixed;
+width: 10em;
+z-index: 9999;
+border-radius: 1em;
+background-color: gainsboro;
 
 }
 #dialogHeader{
-    background-color: black;
-    color: white;
-    font-size: 1em;
-    padding: 1em;
-    margin: 1em 1em 0em, 1em;    
+background-color: black;
+color: white;
+font-size: 1em;
+padding: 1em;
+margin: 1em 1em 0em, 1em;    
 }
 
 #dialogBody{
-    background-color: white;
-    color: black;
-    font-size: 0.8em;
-    padding: 1em;
-    margin: 0em 1em 0em, 1em;   
+background-color: white;
+color: black;
+font-size: 0.8em;
+padding: 1em;
+margin: 0em 1em 0em, 1em;   
 }
 
 #dialogFooter{
-    background-color: gray;
-    text-align: right;
-    padding: 1em;
-    margin: 0em 1em 1em, 1em;   
+background-color: gray;
+text-align: right;
+padding: 1em;
+margin: 0em 1em 1em, 1em;   
 }
 #dialogFooter button{
-    background-color: green;
-    color: white;
-    padding: 0.5em;
-    border: 0em; 
+background-color: green;
+color: white;
+padding: 0.5em;
+border: 0em; 
 }
 */
 
@@ -601,13 +601,13 @@ ul.dashList > li:before {
 @media(max-width: 480px){
 
     section{
-        width: 80%;
+        width: 95%;
         display: inline-block;
     }
     section.BlogSection{
-        width: 93%;
+        width: 90%;
         display: inline-block;
-        margin-left: 3%;
+        margin-left: 5%;
     }
 
     section.project
@@ -616,8 +616,8 @@ ul.dashList > li:before {
         display: inline-block;
     }
     .flex:nth-of-type(n) {
-        width: 100%;
-        margin-left: -1%;
+        width: 90%;
+        margin-left: 1%;
     }
     .flexProject:nth-of-type(n) {
         width: 100%;
@@ -684,7 +684,7 @@ ul.dashList > li:before {
     }
 
     div.sideSectionBlog{
-        width: 100%;
+        width: 95%;
         margin-left: 0%;
         border-right: 0em;
         border-left: 0em;
@@ -703,23 +703,28 @@ ul.dashList > li:before {
 
     section{
         width: 85%;
-        display: inline-block;
+        /*        display: inline-block;*/
     }
     section.BlogSection{
-        width: 92%;
-        display: inline-block;
+        width: 90%;
+/*        display: inline-block;*/
         margin-left: 5%;
     }
     section.project
     {
         width: 85%;
         display: inline-block;
+        margin-left: 5%;
+
     }
     .flex:nth-of-type(n) {
         width: 100%;
+        margin-left: -2.5%;
     }
     .flexProject:nth-of-type(n) {
         width: 100%;
+        margin-left: -2.5%;
+
     }
 
     a:hover p.BoxHeader:after{
@@ -761,7 +766,7 @@ ul.dashList > li:before {
         border-left: 0em;
     }
     div.sideSectionBlog{
-        width: 100%;
+        width: 96%;
         margin-left: 0%;
         border-right: 0em;
         border-left: 0em;
@@ -793,8 +798,9 @@ ul.dashList > li:before {
         border-right: 0em;
         border-left: 0em;
     }
+
     div.sideSectionBlog{
-        width: 100%;
+        width: 97%;
         margin-left: 0%;
         border-right: 0em;
         border-left: 0em;
@@ -809,20 +815,25 @@ ul.dashList > li:before {
     }
 
     section{
-        width: 90%;
-        display: inline-block;
+        width: 85%;
+        /*        display: inline-block;*/
     }
+    .flex:nth-of-type(n) {
+        width: 25%;
+    }
+
     section.BlogSection{
         width: 95%;
-        display: inline-block;
+/*        display: inline-block;*/
         margin-left: 3%;
+      
     }
     .flexProject:nth-of-type(n) {
-        width: 100%;
+        width: 95%;
     }
     section.project
     {
-        width: 90%;
+        width: 95%;
         display: inline-block;
     }
     /*
