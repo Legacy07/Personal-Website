@@ -242,7 +242,7 @@ section {
 }
 
 section.BlogSection {
-    z-index: 0;
+/*    z-index: 0;*/
 /*    margin: auto;*/
     /*    padding: 1em;*/
     width: 60%;

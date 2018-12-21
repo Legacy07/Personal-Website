@@ -73,7 +73,7 @@ div.search {
     margin-right: auto;
     /*    margin-bottom: auto;*/
     margin-left: auto;
-    
+
     /*    height: 10em;*/
     /*    width: 10em;*/
     width:0%;
@@ -129,15 +129,15 @@ div.search {
 
 
 /*Media Queries*/
-@media(max-width:425px){
+@media(max-width:424px){
 
     .dropdown{
-        margin-left: 27%;
-        /*        margin-right: 73%;*/
+        /*        left: -7%;*/
+        margin-right: 70%;
     }
 
     .dropdown-content {
-        margin-left: -2.5em;
+        margin-left: -3.5em;
     }
 
 }
@@ -145,36 +145,41 @@ div.search {
 @media (min-width:425px) and (max-width:480px){
 
     .dropdown{
-        margin-left: 30%;
-        /*        margin-right: 73%;*/
+        /*        left: -7%;*/
+        margin-right: 65%;
+
     }
 
     .dropdown-content {
-        margin-left: -2.5em;
+        margin-left: -3.5em;
     }
 
 }
 
 @media (min-width:481px) and (max-width:768px){
     .dropdown{
-        margin-left: 37%;
+        /*        left: -7%;*/
+        margin-right: 60%;
+
     }
     .dropdown-content {
-        margin-left: -2.5em;
+        margin-left: -3.5em;
     }
 
 }
 
 @media(min-width: 769px) and (max-width: 1024px){
-    
+
     .dropdown{
-    left: -7%;
-}
+/*                left: -7%;*/
+        margin-right: 58%;
+
+    }
 
     .dropdown-content {
-    margin-left: -3.5em;
-}
-    
+        margin-left: -3.5em;
+    }
+
 }
 
 
