@@ -21,13 +21,13 @@ div.contactMe{
 }
 
 section.footerSection{
-    /*    width: 100%;*/
+        width: 50%;
     height: 0;
-    left: 5%;
+/*    left: 5%;*/
     margin: auto;
     /*    padding: 1em;*/
     display: flex;
-    position: relative;
+/*    position: relative;*/
     padding-bottom: 8%;
 }
 ul.footerContact {
@@ -133,7 +133,7 @@ li a.contactLinks{
 
 @media(max-width: 480px){
     .footer{
-        width: 100%;
+/*        width: 100%;*/
     }
 
 }
@@ -153,7 +153,7 @@ li a.contactLinks{
         /*        width: 100%;*/
     }
     .footer{
-        width: 100%;
+/*        width: 100%;*/
     }
 
 }
