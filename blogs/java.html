@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- using the custom css -->    
+        <link rel="stylesheet" href="../css/project_style.css"/>
+        <link rel="stylesheet" href="../css/nav_bar.css"/>
+        <!--        google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--        //navigation bar script-->
+        <script src="../js/nav_bar.js"></script>
+        <!--        back to top script-->
+        <script src="../js/back_to_top.js"></script>
+        <!--        responsive version script -->
+        <script src="../js/responsive-switch.min.js"></script>
+
+        <!--        google analytics-->
+        <script src="../js/google_analytics.js"></script>
+
+        <!--        webgl libraries-->
+        <script type="text/javascript" src="../js/three.js"></script>
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/stats.js"></script>
+        <script src="../js/rotating_cube.js"></script>
+
+        <title>Blog - Java | Ahmet Ince</title>
+    </head>
+
+    <body>
+        <!--        Navigation bar-->
+        <div id="navigation">
+        </div>
+        <script> $(function() {
+                $("#navigation").load("../nav_bar_diff_folders.html");
+            });
+        </script>
+
+        <!--        side bar-->
+        <div id="sideBar">
+        </div>
+        <script> $(function() {
+                $("#sideBar").load("side_bar_diff_folders.html");
+            });
+        </script>
+
+
+        <section>
+
+            <p class="subHeader" id="Java">Java</p>
+
+            <div class="flex">
+
+                <a href="java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html" target="_blank">
+                    <p class="BoxHeader">Manually Calculating Normal Distribution with Various Distribution Functions – Part 1</p>
+                </a>
+                <p class="BoxDescription">If you ever needed to create a program that calculates the normal distribution with various distribution functions and rules, then this post will be a much help to you. There is a <a class="link" href="https://commons.apache.org/proper/commons-math/javadocs/api-3.5/org/apache/commons/math3/distribution/NormalDistribution.html" target="_blank">library</a> to overcome the calculations easily in Java. However, there aren’t many functionalities to satisfy your use perhaps, hence as a University project I developed a program to calculate normal distribution with different methods.</p>
+
+                <ul class="Buzz_Words">
+                    <li>Math</li>
+                    <li>Normal Distribution</li>
+                    <li>Statistics</li>
+                    <li>Distribution Functions</li>
+                </ul>
+                <p>Posted on 06/01/2019</p>
+            </div>
+
+        </section>
+
+        <!--            count how many articles there are-->
+        <script> 
+            function countArticles() {
+                //              count flex classes which contains articles in each of them
+                numItems = $('.flex').length;
+                //get the side header and append it with the amount of articles there are 
+                var x = document.getElementsByClassName("sideHeader");
+                //append it
+                x[0].innerHTML += "(" + numItems + ")";
+            }
+        </script>
+
+
+        <!--footer-->
+        <div id="footer">
+        </div>
+        <script> 
+            $(function() {
+                $("#footer").load("../footer_diff_folders.html");
+            });
+        </script>
+
+
+        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
+    </body>
+</html>
