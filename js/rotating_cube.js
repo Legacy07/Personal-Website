@@ -33,13 +33,16 @@ $(function() {
     function createMesh(geom) {
 
         // assign two materials
-        var meshMaterial = new THREE.MeshNormalMaterial();
+        var meshMaterial = new THREE.MeshBasicMaterial({color: 0xe5b82});
         meshMaterial.side = THREE.DoubleSide;
-        var wireFrameMat = new THREE.MeshBasicMaterial();
+        var wireFrameMat = new THREE.MeshBasicMaterial({color: 0xffffff});
         wireFrameMat.wireframe = true;
 
         // create a multimaterial
         var mesh = THREE.SceneUtils.createMultiMaterialObject(geom, [meshMaterial, wireFrameMat]);
+
+//        var material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true, wireframeLinewidth: 10 } );
+//        var mesh = new THREE.Mesh( geom, material );
 
         return mesh;
     }
