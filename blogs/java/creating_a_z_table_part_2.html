@@ -55,11 +55,11 @@
             <p><i>Posted on 20/01/2019</i></p>
 
             <p>In my previous article, I demonstrated <a class="link" href="http://ahmetince.co.uk/blogs/java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html" target="_blank">how to calculate the standard normal distribution using various distribution functions</a>. So this is a follow up to extending the application in creating the Z-Table.</p>
-            
+
             <p><i>“The z-table is short for the <a class="link" href="https://www.statisticshowto.datasciencecentral.com/tables/z-table/" target="_blank">“Standard Normal z-table”</a>. The Standard Normal model is used in hypothesis testing, including tests on proportions and on the difference between two means. The area under the whole of a normal distribution curve is 1, or 100 percent. The z-table helps by telling us what percentage is under the curve at any particular point.”</i></p>
-            
+
             <p>Firstly, we need to <i>extend JFrame, implement ActionListener</i> then instantiate swing objects. </p>
-            
+
             <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">extends</span> JFrame <span style="color: #008800; font-weight: bold">implements</span> ActionListener
 
 <span style="color: #888888">//TextField</span>
@@ -78,9 +78,9 @@
     JScrollPane scrollPane<span style="color: #333333">;</span>
 </pre></div>
 
-            
+
             <p>In your constructor;</p>
-            
+
             <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">//setting the frame </span>
         setBounds<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">300</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">200</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">950</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">500</span><span style="color: #333333">);</span>
         setTitle<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Statistical Model - Z Table&quot;</span><span style="color: #333333">);</span>
@@ -156,9 +156,9 @@
         west<span style="color: #333333">.</span><span style="color: #0000CC">setBackground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">gray</span><span style="color: #333333">);</span>
 </pre></div>
 
-            
+
             <p>Under actionPerformed(ActionEvent e) method;</p>
-            
+
             <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>startTexF<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">().</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">)</span> <span style="color: #333333">||</span> endTextF<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">().</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">))</span> <span style="color: #333333">{</span>
             JOptionPane<span style="color: #333333">.</span><span style="color: #0000CC">showMessageDialog</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;Fill out both of the Fields!&quot;</span><span style="color: #333333">);</span>
         <span style="color: #333333">}</span>
@@ -190,7 +190,7 @@
                         array<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>decimalFormat<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">(</span>Calculations<span style="color: #333333">.</span><span style="color: #0000CC">aboveSimpsons</span><span style="color: #333333">((</span>start <span style="color: #333333">+</span> addRowValue <span style="color: #333333">+</span> column<span style="color: #333333">),</span> <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">)));</span>
                         column <span style="color: #333333">+=</span> <span style="color: #6600EE; font-weight: bold">0.1</span><span style="color: #333333">;</span>
                     <span style="color: #333333">}</span>
-                    
+
 <span style="color: #888888">//                    add the calculations to table, each row</span>
                     tableM<span style="color: #333333">.</span><span style="color: #0000CC">addRow</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">[]{</span>startPoint<span style="color: #333333">,</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">),</span>
                         array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">7</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">8</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">9</span><span style="color: #333333">)});</span>
@@ -199,9 +199,9 @@
                 addRowValue <span style="color: #333333">+=</span> <span style="color: #6600EE; font-weight: bold">0.1</span><span style="color: #333333">;</span> <span style="color: #333333">}}</span>
 </pre></div>
 
-            
-            <p>So, the ‘above cumulative calculation with Simpsons rule’ <i>(Calculations.aboveSimpsons())</i> was already implemented in Part 1 (link), hence we’re using this to produce the result. You can use the other distribution functions like below, outside or between too with selected combo boxes, so you only need to copy the code within the <i>‘if (caseComboBox.getSelectedItem().equals("Upper Cumulative")) {‘</i> and paste it into relative combo boxes and change the calculation method. </p>
-            
+
+            <p>So, the ‘above cumulative calculation with Simpsons rule’ <i>(Calculations.aboveSimpsons())</i> was already implemented in <a class="link" href="manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html" target="_blank">Part 1</a>, hence we’re using this to produce the result. You can use the other distribution functions like below, outside or between too with selected combo boxes, so you only need to copy the code within the <i>‘if (caseComboBox.getSelectedItem().equals("Upper Cumulative")) {‘</i> and paste it into relative combo boxes and change the calculation method. </p>
+
             <p>Now, you will be able to generate a table of results based on the range you set.</p>
 
             <ul class="Buzz_Words">
@@ -210,6 +210,10 @@
                 <li>Distribution Functions</li>
                 <li>Z-Table</li>
             </ul>
+
+            <div class="previousArticle">
+                <b>Previous Article: </b><a class="link" href="manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html" target="_blank">Manually Calculating Normal Distribution with Various Distribution Functions – Part 1</a>
+            </div>
 
             <!--        Commenting-->
 
