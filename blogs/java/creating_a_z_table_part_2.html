@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- using the custom css -->    
+        <link rel="stylesheet" href="../../css/project_style.css"/>
+        <link rel="stylesheet" href="../../css/nav_bar.css"/>
+        <link rel="stylesheet" href="../../css/magnific-popup.css"/>
+        <link rel="stylesheet" href="../../css/footer.css"/>
+        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+        <script src="../../js/back_to_top.js"></script>
+
+        <!--        webgl libraries-->
+        <script type="text/javascript" src="../../js/three.js"></script>
+        <script type="text/javascript" src="../../js/jquery.js"></script>
+        <script type="text/javascript" src="../../js/stats.js"></script>
+        <script src="../../js/rotating_cube.js"></script>
+
+        <!--        google analytics-->
+        <script src="../../js/google_analytics.js"></script>
+
+        <link rel="stylesheet" href="../../css/share.css" />
+
+        <title>Java: Creating a Z-Table – Part 2</title>
+    </head>
+
+    <body>
+        <!--        Navigation bar-->
+        <div id="navigation">
+
+        </div>
+        <script> $(function() {
+                $("#navigation").load("../nav_bar_diff_folders.html");
+            });
+        </script>
+
+        <!--        share-->
+        <div class="share"> 
+
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fpersonal_thoughts%2Fcreating_a_z_table_part_2.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+            <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/java/creating_a_z_table_part_2.html"></script>
+
+        </div>
+
+        <section class="BlogSection">
+            <p class="Header">Creating a Z-Table – Part 2 </p>
+            <p><i>Posted on 20/01/2019</i></p>
+
+            <p>In my previous article, I demonstrated <a class="link" href="http://ahmetince.co.uk/blogs/java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html" target="_blank">how to calculate the standard normal distribution using various distribution functions</a>. So this is a follow up to extending the application in creating the Z-Table.</p>
+            
+            <p><i>“The z-table is short for the <a class="link" href="https://www.statisticshowto.datasciencecentral.com/tables/z-table/" target="_blank">“Standard Normal z-table”</a>. The Standard Normal model is used in hypothesis testing, including tests on proportions and on the difference between two means. The area under the whole of a normal distribution curve is 1, or 100 percent. The z-table helps by telling us what percentage is under the curve at any particular point.”</i></p>
+            
+            <p>Firstly, we need to <i>extend JFrame, implement ActionListener</i> then instantiate swing objects. </p>
+            
+            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">extends</span> JFrame <span style="color: #008800; font-weight: bold">implements</span> ActionListener
+
+<span style="color: #888888">//TextField</span>
+    JTextField startTexF <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JTextField<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">);</span>
+    JTextField endTextF <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JTextField<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">);</span>
+    JLabel areaLabel <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JLabel<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Not yet calculated the area!&quot;</span><span style="color: #333333">);</span>
+    JLabel startLabel <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JLabel<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Start point:&quot;</span><span style="color: #333333">);</span>
+    JLabel endLabel <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JLabel<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;End point:&quot;</span><span style="color: #333333">);</span>
+    <span style="color: #888888">//Button</span>
+    JButton produceButton <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JButton<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Produce&quot;</span><span style="color: #333333">);</span>
+    <span style="color: #888888">//combo box</span>
+    JComboBox caseComboBox <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JComboBox<span style="color: #333333">();</span>
+    <span style="color: #888888">//Table</span>
+    DefaultTableModel tableM <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DefaultTableModel<span style="color: #333333">();</span>
+    JTable table <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JTable<span style="color: #333333">(</span>tableM<span style="color: #333333">);</span>
+    JScrollPane scrollPane<span style="color: #333333">;</span>
+</pre></div>
+
+            
+            <p>In your constructor;</p>
+            
+            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">//setting the frame </span>
+        setBounds<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">300</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">200</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">950</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">500</span><span style="color: #333333">);</span>
+        setTitle<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Statistical Model - Z Table&quot;</span><span style="color: #333333">);</span>
+        setDefaultCloseOperation<span style="color: #333333">(</span>JFrame<span style="color: #333333">.</span><span style="color: #0000CC">DISPOSE_ON_CLOSE</span><span style="color: #333333">);</span>
+        setLocationRelativeTo<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">);</span>
+        setResizable<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">);</span>
+        setVisible<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//adding panels </span>
+        JPanel bottom <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JPanel<span style="color: #333333">();</span>
+        JPanel middle <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JPanel<span style="color: #333333">();</span>
+        JPanel west <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JPanel<span style="color: #333333">();</span>
+        JPanel east <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JPanel<span style="color: #333333">();</span>
+        JPanel top <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JPanel<span style="color: #333333">();</span>
+        <span style="color: #888888">//Setting the size of the table with scroll pane </span>
+        scrollPane <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> JScrollPane<span style="color: #333333">(</span>table<span style="color: #333333">);</span>
+        scrollPane<span style="color: #333333">.</span><span style="color: #0000CC">setPreferredSize</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Dimension<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">900</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">400</span><span style="color: #333333">));</span>
+        middle<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>scrollPane<span style="color: #333333">);</span>
+        <span style="color: #888888">//table settings</span>
+        table<span style="color: #333333">.</span><span style="color: #0000CC">setGridColor</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">blue</span><span style="color: #333333">);</span>
+        scrollPane<span style="color: #333333">.</span><span style="color: #0000CC">getViewport</span><span style="color: #333333">().</span><span style="color: #0000CC">setBackground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">gray</span><span style="color: #333333">);</span>
+        table<span style="color: #333333">.</span><span style="color: #0000CC">setForeground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">white</span><span style="color: #333333">);</span>
+        table<span style="color: #333333">.</span><span style="color: #0000CC">setBackground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">gray</span><span style="color: #333333">);</span>
+        table<span style="color: #333333">.</span><span style="color: #0000CC">setFont</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Font<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Cambria&quot;</span><span style="color: #333333">,</span> Font<span style="color: #333333">.</span><span style="color: #0000CC">BOLD</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">15</span><span style="color: #333333">));</span>
+        <span style="color: #888888">//adding area label</span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>areaLabel<span style="color: #333333">);</span>
+        areaLabel<span style="color: #333333">.</span><span style="color: #0000CC">setFont</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> Font<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Cambria&quot;</span><span style="color: #333333">,</span> Font<span style="color: #333333">.</span><span style="color: #0000CC">BOLD</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">15</span><span style="color: #333333">));</span>
+        areaLabel<span style="color: #333333">.</span><span style="color: #0000CC">setForeground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">white</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//adding combo boxes </span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>caseComboBox<span style="color: #333333">);</span>
+        caseComboBox<span style="color: #333333">.</span><span style="color: #0000CC">addItem</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Upper Cumulative&quot;</span><span style="color: #333333">);</span>
+        caseComboBox<span style="color: #333333">.</span><span style="color: #0000CC">addItem</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Lower Cumulative&quot;</span><span style="color: #333333">);</span>
+        caseComboBox<span style="color: #333333">.</span><span style="color: #0000CC">addItem</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Inner Cumulative&quot;</span><span style="color: #333333">);</span>
+        caseComboBox<span style="color: #333333">.</span><span style="color: #0000CC">addItem</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Outer Cumulative&quot;</span><span style="color: #333333">);</span>
+        caseComboBox<span style="color: #333333">.</span><span style="color: #0000CC">setToolTipText</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Choose one of the cases to Produce Z Table&quot;</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//adding the textFields and labels</span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>startLabel<span style="color: #333333">);</span>
+        startLabel<span style="color: #333333">.</span><span style="color: #0000CC">setForeground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">white</span><span style="color: #333333">);</span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>startTexF<span style="color: #333333">);</span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>endLabel<span style="color: #333333">);</span>
+        endLabel<span style="color: #333333">.</span><span style="color: #0000CC">setForeground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">white</span><span style="color: #333333">);</span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>endTextF<span style="color: #333333">);</span>
+        startTexF<span style="color: #333333">.</span><span style="color: #0000CC">setText</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0&quot;</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//adding button </span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>produceButton<span style="color: #333333">);</span>
+        produceButton<span style="color: #333333">.</span><span style="color: #0000CC">addActionListener</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//adding columns to the table  </span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Z&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.00&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.01&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.02&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.03&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.04&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.05&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.06&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.07&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.08&quot;</span><span style="color: #333333">);</span>
+        tableM<span style="color: #333333">.</span><span style="color: #0000CC">addColumn</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;0.09&quot;</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//Cells are not editable</span>
+        table<span style="color: #333333">.</span><span style="color: #0000CC">setEnabled</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//columns are not moveable nor resizable </span>
+        table<span style="color: #333333">.</span><span style="color: #0000CC">getTableHeader</span><span style="color: #333333">().</span><span style="color: #0000CC">setReorderingAllowed</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">);</span>
+        table<span style="color: #333333">.</span><span style="color: #0000CC">getTableHeader</span><span style="color: #333333">().</span><span style="color: #0000CC">setResizingAllowed</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">);</span>
+        <span style="color: #888888">//adding panels </span>
+        add<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Center&quot;</span><span style="color: #333333">,</span> middle<span style="color: #333333">);</span>
+        add<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;South&quot;</span><span style="color: #333333">,</span> bottom<span style="color: #333333">);</span>
+        add<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;North&quot;</span><span style="color: #333333">,</span> top<span style="color: #333333">);</span>
+        add<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;East&quot;</span><span style="color: #333333">,</span> east<span style="color: #333333">);</span>
+        add<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;West&quot;</span><span style="color: #333333">,</span> west<span style="color: #333333">);</span>
+        <span style="color: #888888">//background colour of the panels </span>
+        bottom<span style="color: #333333">.</span><span style="color: #0000CC">setBackground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">gray</span><span style="color: #333333">);</span>
+        top<span style="color: #333333">.</span><span style="color: #0000CC">setBackground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">gray</span><span style="color: #333333">);</span>
+        east<span style="color: #333333">.</span><span style="color: #0000CC">setBackground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">gray</span><span style="color: #333333">);</span>
+        west<span style="color: #333333">.</span><span style="color: #0000CC">setBackground</span><span style="color: #333333">(</span>Color<span style="color: #333333">.</span><span style="color: #0000CC">gray</span><span style="color: #333333">);</span>
+</pre></div>
+
+            
+            <p>Under actionPerformed(ActionEvent e) method;</p>
+            
+            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>startTexF<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">().</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">)</span> <span style="color: #333333">||</span> endTextF<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">().</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">))</span> <span style="color: #333333">{</span>
+            JOptionPane<span style="color: #333333">.</span><span style="color: #0000CC">showMessageDialog</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;Fill out both of the Fields!&quot;</span><span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+
+        <span style="color: #888888">//parsing String to double to get the values within textfields</span>
+        <span style="color: #333399; font-weight: bold">double</span> start <span style="color: #333333">=</span> Double<span style="color: #333333">.</span><span style="color: #0000CC">parseDouble</span><span style="color: #333333">(</span>startTexF<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">());</span>
+        <span style="color: #333399; font-weight: bold">double</span> end <span style="color: #333333">=</span> Double<span style="color: #333333">.</span><span style="color: #0000CC">parseDouble</span><span style="color: #333333">(</span>endTextF<span style="color: #333333">.</span><span style="color: #0000CC">getText</span><span style="color: #333333">());</span>
+        <span style="color: #333399; font-weight: bold">double</span> mean <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">0.0</span><span style="color: #333333">;</span>
+        <span style="color: #333399; font-weight: bold">double</span> standardD <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">1.0</span><span style="color: #333333">;</span>
+        <span style="color: #888888">//addRowValue for Z column to represent the x value </span>
+        <span style="color: #333399; font-weight: bold">double</span> addRowValue <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">0.0</span><span style="color: #333333">;</span>
+        <span style="color: #888888">//Number format for decimal representation</span>
+        NumberFormat decimalFormat <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DecimalFormat<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;#0.000000&quot;</span><span style="color: #333333">);</span>
+
+<span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>e<span style="color: #333333">.</span><span style="color: #0000CC">getSource</span><span style="color: #333333">()</span> <span style="color: #333333">==</span> produceButton<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+            tableM<span style="color: #333333">.</span><span style="color: #0000CC">setRowCount</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+            <span style="color: #888888">//loop for the Z Column to start from the start variable which the user inputs and the rows are added by 0.1 . </span>
+            <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> i <span style="color: #333333">=</span> start<span style="color: #333333">;</span> i <span style="color: #333333">&lt;=</span> end<span style="color: #333333">;</span> i <span style="color: #333333">+=</span> <span style="color: #6600EE; font-weight: bold">0.1</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                <span style="color: #888888">//will be added in z column rows that will only add by 0.1</span>
+                String startPoint <span style="color: #333333">=</span> Double<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">(((</span><span style="color: #333399; font-weight: bold">double</span><span style="color: #333333">)</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">round</span><span style="color: #333333">((</span>start <span style="color: #333333">+</span> addRowValue<span style="color: #333333">)</span> <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">));</span>
+
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>caseComboBox<span style="color: #333333">.</span><span style="color: #0000CC">getSelectedItem</span><span style="color: #333333">().</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Upper Cumulative&quot;</span><span style="color: #333333">))</span> <span style="color: #333333">{</span>
+                    ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> array <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;&gt;();</span>
+
+                    <span style="color: #333399; font-weight: bold">int</span> column <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+                    <span style="color: #888888">//calculations for upper cumulative using simpsons rule</span>
+                    <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> j <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">;</span> j<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+
+                        array<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>decimalFormat<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">(</span>Calculations<span style="color: #333333">.</span><span style="color: #0000CC">aboveSimpsons</span><span style="color: #333333">((</span>start <span style="color: #333333">+</span> addRowValue <span style="color: #333333">+</span> column<span style="color: #333333">),</span> <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">)));</span>
+                        column <span style="color: #333333">+=</span> <span style="color: #6600EE; font-weight: bold">0.1</span><span style="color: #333333">;</span>
+                    <span style="color: #333333">}</span>
+                    
+<span style="color: #888888">//                    add the calculations to table, each row</span>
+                    tableM<span style="color: #333333">.</span><span style="color: #0000CC">addRow</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">[]{</span>startPoint<span style="color: #333333">,</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">),</span>
+                        array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">6</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">7</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">8</span><span style="color: #333333">),</span> array<span style="color: #333333">.</span><span style="color: #0000CC">get</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">9</span><span style="color: #333333">)});</span>
+
+<span style="color: #333333">}</span>
+                addRowValue <span style="color: #333333">+=</span> <span style="color: #6600EE; font-weight: bold">0.1</span><span style="color: #333333">;</span> <span style="color: #333333">}}</span>
+</pre></div>
+
+            
+            <p>So, the ‘above cumulative calculation with Simpsons rule’ <i>(Calculations.aboveSimpsons())</i> was already implemented in Part 1 (link), hence we’re using this to produce the result. You can use the other distribution functions like below, outside or between too with selected combo boxes, so you only need to copy the code within the <i>‘if (caseComboBox.getSelectedItem().equals("Upper Cumulative")) {‘</i> and paste it into relative combo boxes and change the calculation method. </p>
+            
+            <p>Now, you will be able to generate a table of results based on the range you set.</p>
+
+            <ul class="Buzz_Words">
+                <li>Normal Distribution</li>
+                <li>Statistics</li>
+                <li>Distribution Functions</li>
+                <li>Z-Table</li>
+            </ul>
+
+            <!--        Commenting-->
+
+            <div id="disqus_thread"></div>
+            <script>
+
+                /**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                var disqus_config = function () {
+                    this.page.url = 'http://ahmetince.co.uk/blogs/java/creating_a_z_table_part_2.html';  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = 'creating_a_z_table_part_2'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </section>
+
+        <!--footer-->
+        <div id="footer">
+        </div>
+        <script> 
+            $(function() {
+                $("#footer").load("../footer_diff_folders.html");
+            });
+        </script>
+
+        <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
+    </body>
+</html>
