@@ -3,53 +3,59 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
 
-    <head>
-        <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="css/project_style.css"/>
-        <link rel="stylesheet" href="css/nav_bar.css"/>
-        <!--        google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-        <link rel="stylesheet" href="css/footer.css">
-        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+<head>
+    <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- using the custom css -->
+    <link rel="stylesheet" href="css/project_style.css" />
+    <link rel="stylesheet" href="css/nav_bar.css" />
+    <!--        google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!--        //navigation bar script-->
-        <script src="js/nav_bar.js"></script>
-        <!--        back to top script-->
-        <script src="js/back_to_top.js"></script>
-        <!--        responsive version script -->
-        <script src="js/responsive-switch.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--        //navigation bar script-->
+    <script src="js/nav_bar.js"></script>
+    <!--        back to top script-->
+    <script src="js/back_to_top.js"></script>
+    <!--        responsive version script -->
+    <script src="js/responsive-switch.min.js"></script>
 
-        <!--        google analytics-->
-        <script src="js/google_analytics.js"></script>
+    <!--        google analytics-->
+    <script src="js/google_analytics.js"></script>
 
-        <!--        webgl libraries-->
-        <script type="text/javascript" src="js/three.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/stats.js"></script>
-        <script src="js/rotating_cube.js"></script>
+    <!--        webgl libraries-->
+    <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/stats.js"></script>
+    <script src="js/rotating_cube.js"></script>
 
-        <title>Projects | Ahmet Ince</title>
-    </head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <body>
-        <!--        Navigation bar-->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <div id="navigation">
+    <title>Projects | Ahmet Ince</title>
+</head>
 
-        </div>
+<body>
+    <!--        Navigation bar-->
 
-        <script> $(function() {
-                $("#navigation").load("nav_bar.html");
-            });
-        </script>
+    <div id="navigation">
 
-        <!--        //side bar-->
+    </div>
 
-        <div class="sideSection" id="sideSection">
-            <!--
+    <script> $(function () {
+            $("#navigation").load("nav_bar.html");
+        });
+    </script>
+
+    <!--        //side bar-->
+
+    <div class="sideSection" id="sideSection">
+        <!--
 <a class="side" href="projects.html#Java-Projects"><p class="sideHeader">Java Projects</p></a>
 <br>
 <a class="side" href="projects.html#C#-Projects"><p class="sideHeader">C# Projects</p></a>
@@ -59,18 +65,19 @@
 <a class="side" href="projects.html#Android-Projects"><p class="sideHeader">Android Projects</p></a>
 -->
 
-            <ul class="sideul">
-                <!--navigation banner-->
-                <li class="sideHeader" ><a class="side" href="projects.html#Java-Projects" title="">Java Projects</a></li>  
-                <li class="sideHeader" ><a class="side" href="projects.html#C#-Projects" title="">C# Projects</a></li>  
-                <li class="sideHeader" ><a class="side" href="projects.html#Web-Projects" title="">Web Projects</a></li>  
-                <li class="sideHeader" ><a class="side" href="projects.html#Android-Projects" title="">Android Projects</a></li>  
-            </ul>
+        <ul class="sideul">
+            <!--navigation banner-->
+            <li class="sideHeader"><a class="side" href="projects.html#Java-Projects" title="">Java Projects</a></li>
+            <li class="sideHeader"><a class="side" href="projects.html#C#-Projects" title="">C# Projects</a></li>
+            <li class="sideHeader"><a class="side" href="projects.html#Web-Projects" title="">Web Projects</a></li>
+            <li class="sideHeader"><a class="side" href="projects.html#Android-Projects" title="">Android Projects</a>
+            </li>
+        </ul>
 
-        </div>
+    </div>
 
-        <!--        side section move on scroll horizontally-->
-<!--
+    <!--        side section move on scroll horizontally-->
+    <!--
         <script>$(window).scroll(function () {
                 var winTop = $(this).scrollTop();
                 
@@ -94,15 +101,19 @@
             });</script>
 -->
 
-        <section class="project">
+    <section class="project">
+        <p class="subHeader" id="Java-Projects">Java Projects</p>
 
-            <p class="subHeader" id="Java-Projects">Java Projects</p>
-
-            <div class="flexProject">
-                <a href="java_projects/stock_control_simulation.html" target="_blank">
-                    <p class="BoxHeader">Stock Control Simulation</p>
+        <div class="card">
+            <div class="card-header">
+                Desktop Application
+            </div>
+            <div class="card-body">
+                <!-- <a href="java_projects/stock_control_simulation.html" target="_blank"> -->
+                <p class="BoxHeader">Stock Control Simulation</p>
                 </a>
-                <p class="BoxDescription">The program is a simulation of a small <b>Stock Control System</b> for a store. 
+                <p class="BoxDescription">The program is a simulation of a small <b>Stock Control System</b> for a
+                    store.
                 </p>
                 <ul class="Buzz_Words">
                     <li>JAVA</li>
@@ -110,15 +121,19 @@
                     <li>DERBYDB</li>
                     <li>SQL</li>
                 </ul>
-
             </div>
+        </div>
+        <br>
 
-            <div class="flexProject">
-                <a href="java_projects/statistical_model.html" target="_blank">
-
-                    <p class="BoxHeader">Statistical Model using Numerical Integration</p>
+        <div class="card">
+            <div class="card-header">
+                Desktop Application
+            </div>
+            <div class="card-body">
+                <!-- <a href="java_projects/statistical_model.html" target="_blank"> -->
+                <p class="BoxHeader">Statistical Model using Numerical Integration</p>
                 </a>
-                <p class="BoxDescription">The program provides calculations of <b>Normal Distribution</b>.                
+                <p class="BoxDescription">The program provides calculations of <b>Normal Distribution</b>.
                 </p>
 
                 <ul class="Buzz_Words">
@@ -126,40 +141,43 @@
                     <li>SWING</li>
                     <li>JFREECHART</li>
                 </ul>
-
             </div>
+        </div>
+    </section>
 
+    <section class="project">
+        <p class="subHeader" id="C#-Projects">C# Projects</p>
 
-        </section>
-
-        <section class="project">
-
-            <p class="subHeader" id="C#-Projects">C# Projects</p>
-
-            <div class="flexProject">
-                <a href="csharp_projects/calorie_counter.html" target="_blank">
-                    <p class="BoxHeader">Calorie Counter with Nutrition Facts</p>
+        <div class="card">
+            <div class="card-header">
+                Desktop Application
+            </div>
+            <div class="card-body">
+                <!-- <a href="csharp_projects/calorie_counter.html" target="_blank"> -->
+                <p class="BoxHeader">Calorie Counter with Nutrition Facts</p>
                 </a>
-                <p class="BoxDescription">A desktop application for adding, viewing and searching for foods which display its <b>Nutrition Facts</b>
+                <p class="BoxDescription">A desktop application for adding, viewing and searching for foods which
+                    display its <b>Nutrition Facts</b>
                     and <b>Calorie Breakdown</b> in text and visual form.<br></p>
                 <ul class="Buzz_Words">
                     <li>C#</li>
                     <li>SQL</li>
                 </ul>
-
             </div>
+        </div>
+    </section>
 
-        </section>
+    <section class="project">
+        <p class="subHeader" id="Web-Projects">Web Projects</p>
 
+        <div class="card">
+            <div class="card-header">
+                Website
+            </div>
+            <div class="card-body">
+                <!-- <a href="web_projects/local_commuter_carpool.html" target="_blank"> -->
 
-        <section class="project">
-
-            <p class="subHeader" id="Web-Projects">Web Projects</p>
-
-            <div class="flexProject">
-                <a href="web_projects/local_commuter_carpool.html" target="_blank">
-
-                    <p class="BoxHeader">Local Commuter Carpool</p>
+                <p class="BoxHeader">Local Commuter Carpool</p>
                 </a>
                 <p class="BoxDescription">It is a website for local residents to find <b>Carpool to Commute</b>.</p>
                 <ul class="Buzz_Words">
@@ -171,44 +189,57 @@
                 </ul>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <section class="project">
+        <p class="subHeader" id="Android-Projects">Android Projects</p>
 
-        <section class="project">
+        <div class="card">
+            <div class="card-header">
+                Mobile Application
+            </div>
+            <div class="card-body">
+                <!-- <a href="android_projects/sos_contact.html" target="_blank"> -->
 
-            <p class="subHeader" id="Android-Projects">Android Projects</p>
-
-            <div class="flexProject">
-                <a href="android_projects/sos_contact.html" target="_blank">
-
-                    <p class="BoxHeader">SOS Contact</p>
+                <p class="BoxHeader">SOS Contact</p>
                 </a>
-                <p class="BoxDescription">An Android application that allows users to send an <b>SOS message</b> via SMS automatically integrated with a <b>Fall-Back Mechanism</b>.</p>
+                <p class="BoxDescription">An Android application that allows users to send an <b>SOS message</b> via SMS
+                    automatically integrated with a <b>Fall-Back Mechanism</b>.</p>
                 <ul class="Buzz_Words">
                     <li>JAVA</li>
                     <li>XML</li>
                     <li>SQLITE</li>
 
                 </ul>
-
             </div>
-            
-            <div class="flexProject">
-                <a href="android_projects/interview_revision_app.html" target="_blank">
+        </div>
+        <br>
 
-                    <p class="BoxHeader">Interview Revision</p>
+        <div class="card">
+            <div class="card-header">
+                Mobile Application
+            </div>
+            <div class="card-body">
+                <!-- <a href="android_projects/interview_revision_app.html" target="_blank"> -->
+
+                <p class="BoxHeader">Interview Revision</p>
                 </a>
-                <p class="BoxDescription">An Android Application mainly for graduates and students who want to revise and have a look at what sorts of questions may be asked generally and in specific IT-related job interviews. Also typical answers are provided to give you a head-start.</p>
+                <p class="BoxDescription">An Android Application mainly for graduates and students who want to revise
+                    and have a look at what sorts of questions may be asked generally and in specific IT-related job
+                    interviews. Also typical answers are provided to give you a head-start.</p>
                 <ul class="Buzz_Words">
                     <li>JAVA</li>
                     <li>XML</li>
                 </ul>
-                 
+
             </div>
+        </div>
 
-        </section>
+    </section>
 
-        <!--
+
+    <!--
 <a href="#"
 class="rs-link"
 data-link-desktop="Switch to desktop version to view the graph"
@@ -216,15 +247,16 @@ data-link-responsive="Switch to responsive / mobile version"
 data-always-visible="false"></a>
 -->
 
-        <!--        footer-->
-        <div id="footer">
-        </div>
-        <script> $(function() {
-                $("#footer").load("footer.html");
-            });
-        </script>
+    <!--        footer-->
+    <div id="footer">
+    </div>
+    <script> $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
 
-        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+    <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 
-    </body>
+</body>
+
 </html>
