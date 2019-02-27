@@ -1,11 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
+<!doctype html>
+<html lang="en">
 
 <head>
     <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <!-- using the custom css -->
     <link rel="stylesheet" href="css/project_style.css" />
     <link rel="stylesheet" href="css/nav_bar.css" />
@@ -14,7 +17,6 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--        //navigation bar script-->
     <script src="js/nav_bar.js"></script>
     <!--        back to top script-->
@@ -31,12 +33,19 @@
     <script type="text/javascript" src="js/stats.js"></script>
     <script src="js/rotating_cube.js"></script>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
-    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <title>Projects | Ahmet Ince</title>
 </head>
 
@@ -109,8 +118,8 @@
                 Desktop Application
             </div>
             <div class="card-body">
-                <!-- <a href="java_projects/stock_control_simulation.html" target="_blank"> -->
-                <p class="BoxHeader">Stock Control Simulation</p>
+                <a href="java_projects/stock_control_simulation.modal.html" data-toggle="modal" data-target="#theModal">
+                    <p class="BoxHeader">Stock Control Simulation</p>
                 </a>
                 <p class="BoxDescription">The program is a simulation of a small <b>Stock Control System</b> for a
                     store.
@@ -124,6 +133,13 @@
             </div>
         </div>
         <br>
+
+        <div id="theModal" class="modal fade bd-example-modal-lg">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                </div>
+            </div>
+        </div>
 
         <div class="card">
             <div class="card-header">
