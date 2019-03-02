@@ -1,0 +1,131 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="modal-header">
+        <p class="Header">SOS Contact</p>
+        <button type="button" class="close" data-dismiss="modal">Close</button>
+    </div>
+    <div class="container">
+        <!-- Carousel images -->
+        <div id="carouselIndicators" class="carousel slide mt-2" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselIndicators" data-slide-to="5"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                        src="http://ahmetince.co.uk/android_projects/sos_contact_img/first_time_screen.jpg"
+                        alt="Start Screen at first time use" width="200" height="400">
+                    <div class="carousel-caption">
+                        <h3>Start Screen at first time use</h3>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="d-block w-100"
+                        src="http://ahmetince.co.uk/android_projects/sos_contact_img/permissions_screen.jpg"
+                        alt="Permissions Screen" width="200" height="400">
+                    <div class="carousel-caption">
+                        <h3>Permissions Screen</h3>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="d-block w-100"
+                        src="http://ahmetince.co.uk/android_projects/sos_contact_img/home_screen.jpg"
+                        alt="Home Screen" width="710" height="400">
+                    <div class="carousel-caption">
+                        <h3>Home Screen</h3>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- collapse cards -->
+        <div id="accordion" class="mt-1 mb-1">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            Overview
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <p class="overviewDescription">This is an Android application that allows users to send an SOS
+                            message via SMS automatically integrated with a Fall-Back Mechanism. The application
+                            contains such services;</p>
+                        <ul class="overviewList">
+                            <li>Allows the user to send the SOS message by clicking on a notification</li>
+                            <li>Once the initial message is sent, update messages within every interval will be sent
+                                including updated location as suppose to 'tracking'</li>
+                            <li>Initiate Fall-Back Mechanism if the initial message couldn't be sent for such reasons
+                                using Wi-Fi to send via Whatsapp or P2P connection to build notification on peer's
+                                device. </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-1">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            Technologies
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="overviewList">
+                            <li>JAVA</li>
+                            <li>XML</li>
+                            <li>SQLITE</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-1">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            Resources
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <p class="overviewDescription">The project is online at <strong><a class="link"
+                                    href="https://github.com/Legacy07/SOS_Contact">Github</a></strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
