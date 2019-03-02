@@ -61,241 +61,217 @@
         });
     </script>
 
-    <!--        //side bar-->
-
-    <div class="sideSection" id="sideSection">
-        <!--
-<a class="side" href="projects.html#Java-Projects"><p class="sideHeader">Java Projects</p></a>
-<br>
-<a class="side" href="projects.html#C#-Projects"><p class="sideHeader">C# Projects</p></a>
-<br>
-<a class="side" href="projects.html#Web-Projects"><p class="sideHeader">Web Projects</p></a>
-<br>
-<a class="side" href="projects.html#Android-Projects"><p class="sideHeader">Android Projects</p></a>
--->
-
-        <ul class="sideul">
-            <!--navigation banner-->
-            <li class="sideHeader"><a class="side" href="projects.html#Java-Projects" title="">Java Projects</a></li>
-            <li class="sideHeader"><a class="side" href="projects.html#C#-Projects" title="">C# Projects</a></li>
-            <li class="sideHeader"><a class="side" href="projects.html#Web-Projects" title="">Web Projects</a></li>
-            <li class="sideHeader"><a class="side" href="projects.html#Android-Projects" title="">Android Projects</a>
-            </li>
-        </ul>
-
+    <!-- modals -->
+    <div id="stock-control-simulation-modal" class="modal fade bd-example-modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            </div>
+        </div>
     </div>
 
-    <!--        side section move on scroll horizontally-->
-    <!--
-        <script>$(window).scroll(function () {
-                var winTop = $(this).scrollTop();
-                
-                if (winTop >= '0em') {
-//                    start scrolling after the given height which is 10em
+    <div id="statistical-model-modal" class="modal fade bd-example-modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
 
-                    $('#sideSection').css({
-                        'position': 'absolute',
-                        'bottom': 'auto',
-                        'top': 'auto'
-                    });
-                } else {
-                    //else revert sideSection position back to fixed
+    <div id="calorie-counter-modal" class="modal fade bd-example-modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
 
-                    $('#sideSection').css({
-                        'position': 'fixed',
-                        'bottom': 'auto',
-                        'top': 'auto'
-                    });
-                }
-            });</script>
--->
+    <div id="local-commuter-carpool-modal" class="modal fade bd-example-modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
 
-    <section class="project">
-        <!-- modals -->
-        <div id="stock-control-simulation-modal" class="modal fade bd-example-modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
+    <div id="sos-contact-modal" class="modal fade bd-example-modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div id="interview-revision-app-modal" class="modal fade bd-example-modal-lg">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <!-- Projects -->
+        <div class="row">
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-java-projects-tab" data-toggle="pill"
+                        href="#v-pills-java-projects" role="tab" aria-controls="v-pills-java-projects"
+                        aria-selected="true">Java Projects</a>
+                    <a class="nav-link" id="v-pills-csharp-projects-tab" data-toggle="pill"
+                        href="#v-pills-csharp-projects" role="tab" aria-controls="v-pills-csharp-projects"
+                        aria-selected="false">C# Projects</a>
+                    <a class="nav-link" id="v-pills-web-projects-tab" data-toggle="pill" href="#v-pills-web-projects"
+                        role="tab" aria-controls="v-pills-web-projects" aria-selected="false">Web Projects</a>
+                    <a class="nav-link" id="v-pills-android-projects-tab" data-toggle="pill"
+                        href="#v-pills-android-projects" role="tab" aria-controls="v-pills-android-projects"
+                        aria-selected="false">Android Projects</a>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-java-projects" role="tabpanel"
+                        aria-labelledby="v-pills-java-projects-tab">
+
+                        <div class="card">
+                            <div class="card-header">
+                                Desktop Application
+                            </div>
+                            <div class="card-body">
+                                <a href="java_projects/stock_control_simulation.modal.html" data-toggle="modal"
+                                    data-target="#stock-control-simulation-modal">
+                                    <p class="BoxHeader">Stock Control Simulation</p>
+                                </a>
+                                <p class="BoxDescription">The program is a simulation of a small <b>Stock Control
+                                        System</b> for a
+                                    store.
+                                </p>
+                                <ul class="Buzz_Words">
+                                    <li>JAVA</li>
+                                    <li>SWING</li>
+                                    <li>DERBYDB</li>
+                                    <li>SQL</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card mt-3">
+                            <div class="card-header">
+                                Desktop Application
+                            </div>
+                            <div class="card-body">
+                                <a href="java_projects/statistical_model_modal.html" data-toggle="modal"
+                                    data-target="#statistical-model-modal">
+                                    <p class="BoxHeader">Statistical Model using Numerical Integration</p>
+                                </a>
+                                <p class="BoxDescription">The program provides calculations of <b>Normal
+                                        Distribution</b>.
+                                </p>
+
+                                <ul class="Buzz_Words">
+                                    <li>JAVA</li>
+                                    <li>SWING</li>
+                                    <li>JFREECHART</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-csharp-projects" role="tabpanel"
+                        aria-labelledby="v-pills-csharp-projects-tab">
+
+                        <div class="card">
+                            <div class="card-header">
+                                Desktop Application
+                            </div>
+                            <div class="card-body">
+                                <a href="csharp_projects/calorie-counter-modal.html" data-toggle="modal"
+                                    data-target="#calorie-counter-modal">
+                                    <p class="BoxHeader">Calorie Counter with Nutrition Facts</p>
+                                </a>
+                                <p class="BoxDescription">A desktop application for adding, viewing and searching
+                                    for
+                                    foods which
+                                    display its <b>Nutrition Facts</b>
+                                    and <b>Calorie Breakdown</b> in text and visual form.<br></p>
+                                <ul class="Buzz_Words">
+                                    <li>C#</li>
+                                    <li>SQL</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-web-projects" role="tabpanel"
+                        aria-labelledby="v-pills-web-projects-tab">
+
+                        <div class="card">
+                            <div class="card-header">
+                                Website
+                            </div>
+                            <div class="card-body">
+                                <a href="web_projects/local-commuter-carpool-modal.html" data-toggle="modal"
+                                    data-target="#local-commuter-carpool-modal">
+                                    <p class="BoxHeader">Local Commuter Carpool</p>
+                                </a>
+                                <p class="BoxDescription">It is a website for local residents to find <b>Carpool to
+                                        Commute</b>.</p>
+                                <ul class="Buzz_Words">
+                                    <li>XHTML</li>
+                                    <li>PHP</li>
+                                    <li>CSS</li>
+                                    <li>MySQL</li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-android-projects" role="tabpanel"
+                        aria-labelledby="v-pills-android-projects-tab">
+
+                        <div class="card">
+                            <div class="card-header">
+                                Mobile Application
+                            </div>
+                            <div class="card-body">
+                                <a href="android_projects/sos-contact-modal.html" data-toggle="modal"
+                                    data-target="#sos-contact-modal">
+                                    <p class="BoxHeader">SOS Contact</p>
+                                </a>
+                                <p class="BoxDescription">An Android application that allows users to send an <b>SOS
+                                        message</b> via SMS
+                                    automatically integrated with a <b>Fall-Back Mechanism</b>.</p>
+                                <ul class="Buzz_Words">
+                                    <li>JAVA</li>
+                                    <li>XML</li>
+                                    <li>SQLITE</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="card">
+                            <div class="card-header">
+                                Mobile Application
+                            </div>
+                            <div class="card-body">
+                                <a href="android_projects/interview-revision-app-modal.html" data-toggle="modal"
+                                    data-target="#interview-revision-app-modal">
+                                    <p class="BoxHeader">Interview Revision</p>
+                                </a>
+                                <p class="BoxDescription">An Android Application mainly for graduates and students
+                                    who
+                                    want to revise
+                                    and have a look at what sorts of questions may be asked generally and in
+                                    specific
+                                    IT-related job
+                                    interviews. Also typical answers are provided to give you a head-start.</p>
+                                <ul class="Buzz_Words">
+                                    <li>JAVA</li>
+                                    <li>XML</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div id="statistical-model-modal" class="modal fade bd-example-modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                </div>
-            </div>
-        </div>
-
-        <div id="calorie-counter-modal" class="modal fade bd-example-modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                </div>
-            </div>
-        </div>
-
-        <div id="local-commuter-carpool-modal" class="modal fade bd-example-modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                </div>
-            </div>
-        </div>
-
-        <div id="sos-contact-modal" class="modal fade bd-example-modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                </div>
-            </div>
-        </div>
-
-        <div id="interview-revision-app-modal" class="modal fade bd-example-modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                </div>
-            </div>
-        </div>
-        <p class="subHeader" id="Java-Projects">Java Projects</p>
-
-        <div class="card">
-            <div class="card-header">
-                Desktop Application
-            </div>
-            <div class="card-body">
-                <a href="java_projects/stock_control_simulation.modal.html" data-toggle="modal"
-                    data-target="#stock-control-simulation-modal">
-                    <p class="BoxHeader">Stock Control Simulation</p>
-                </a>
-                <p class="BoxDescription">The program is a simulation of a small <b>Stock Control System</b> for a
-                    store.
-                </p>
-                <ul class="Buzz_Words">
-                    <li>JAVA</li>
-                    <li>SWING</li>
-                    <li>DERBYDB</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card mt-3">
-            <div class="card-header">
-                Desktop Application
-            </div>
-            <div class="card-body">
-                <a href="java_projects/statistical_model_modal.html" data-toggle="modal"
-                    data-target="#statistical-model-modal">
-                    <p class="BoxHeader">Statistical Model using Numerical Integration</p>
-                </a>
-                <p class="BoxDescription">The program provides calculations of <b>Normal Distribution</b>.
-                </p>
-
-                <ul class="Buzz_Words">
-                    <li>JAVA</li>
-                    <li>SWING</li>
-                    <li>JFREECHART</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="project">
-        <p class="subHeader" id="C#-Projects">C# Projects</p>
-
-        <div class="card">
-            <div class="card-header">
-                Desktop Application
-            </div>
-            <div class="card-body">
-                <a href="csharp_projects/calorie-counter-modal.html" data-toggle="modal"
-                    data-target="#calorie-counter-modal">
-                    <p class="BoxHeader">Calorie Counter with Nutrition Facts</p>
-                </a>
-                <p class="BoxDescription">A desktop application for adding, viewing and searching for foods which
-                    display its <b>Nutrition Facts</b>
-                    and <b>Calorie Breakdown</b> in text and visual form.<br></p>
-                <ul class="Buzz_Words">
-                    <li>C#</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="project">
-        <p class="subHeader" id="Web-Projects">Web Projects</p>
-
-        <div class="card">
-            <div class="card-header">
-                Website
-            </div>
-            <div class="card-body">
-                <a href="web_projects/local-commuter-carpool-modal.html" data-toggle="modal"
-                    data-target="#local-commuter-carpool-modal">
-                    <p class="BoxHeader">Local Commuter Carpool</p>
-                </a>
-                <p class="BoxDescription">It is a website for local residents to find <b>Carpool to Commute</b>.</p>
-                <ul class="Buzz_Words">
-                    <li>XHTML</li>
-                    <li>PHP</li>
-                    <li>CSS</li>
-                    <li>MySQL</li>
-
-                </ul>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="project">
-        <p class="subHeader" id="Android-Projects">Android Projects</p>
-
-        <div class="card">
-            <div class="card-header">
-                Mobile Application
-            </div>
-            <div class="card-body">
-                <a href="android_projects/sos-contact-modal.html" data-toggle="modal" data-target="#sos-contact-modal">
-                    <p class="BoxHeader">SOS Contact</p>
-                </a>
-                <p class="BoxDescription">An Android application that allows users to send an <b>SOS message</b> via SMS
-                    automatically integrated with a <b>Fall-Back Mechanism</b>.</p>
-                <ul class="Buzz_Words">
-                    <li>JAVA</li>
-                    <li>XML</li>
-                    <li>SQLITE</li>
-
-                </ul>
-            </div>
-        </div>
-        <br>
-
-        <div class="card">
-            <div class="card-header">
-                Mobile Application
-            </div>
-            <div class="card-body">
-                <a href="android_projects/interview-revision-app-modal.html" data-toggle="modal"
-                    data-target="#interview-revision-app-modal">
-                    <p class="BoxHeader">Interview Revision</p>
-                </a>
-                <p class="BoxDescription">An Android Application mainly for graduates and students who want to revise
-                    and have a look at what sorts of questions may be asked generally and in specific IT-related job
-                    interviews. Also typical answers are provided to give you a head-start.</p>
-                <ul class="Buzz_Words">
-                    <li>JAVA</li>
-                    <li>XML</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <!--
-<a href="#"
-class="rs-link"
-data-link-desktop="Switch to desktop version to view the graph"
-data-link-responsive="Switch to responsive / mobile version"
-data-always-visible="false"></a>
--->
+    </div>
 
     <!--        footer-->
     <div id="footer">
