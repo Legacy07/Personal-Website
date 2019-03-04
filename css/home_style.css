@@ -1,36 +1,6 @@
 html {
-
-    background-image: url("b2.jpg");
-}
-
-/* ---- Navigation Bar ----
-defining unordered list, with a banner using overflow etc*/
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-/*custom list items, text size and alignment*/
-li a{
-    font-family: 'Poppins' sans-serif;
-    font-size: 1.5em;
-    display: flow-root;
-    color: white;
-    text-align: center;
-    padding: 0.9em 0.7em;
-    text-decoration: none;
-    /*    border-right:1px solid #bbb;*/
-}
-/*user visually can see the mouse hover on the text*/
-li a:hover:not(.active) {
-    /*    background-image: url(b3.jpg);*/
-    color: darkgray;
-    font-family: 'Poppins' sans-serif;
-    font-size: 1.5em;
-    transition-duration: 0.4s;
-
+    height: 100%;
+    width: 100%;
 }
 
 /*header customisation*/
@@ -45,11 +15,27 @@ body {
     font-size: 0.9em;
     line-height: 1.5;
     margin: 0 auto;
+    height: 100%;
+    width: 100%;
+
 }
 /* text tyle */
 .text{
     text-align: justify;
     color: black;
+}
+
+.background{
+    height: 100%; 
+    width: 50%;
+
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.right-nav-bar{
+    float: right;
 }
 
 div.Description{
