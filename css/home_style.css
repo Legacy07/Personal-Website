@@ -17,8 +17,26 @@ body {
     margin: 0 auto;
     height: 100%;
     width: 100%;
-
 }
+.nav-div a.link {
+    text-decoration: none;
+    /* background-color: red; */
+}
+.nav-div p a.link{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2em;
+    /* line-height: 1.5; */
+    color: gray;
+    font-weight: bold;
+    transition: background-color 0.4s;
+}
+.nav-div p a.link:hover{
+    /* border-bottom: 3px solid #FF0000; */
+    background-color: gray;
+    color: blanchedalmond;
+    padding: 0.5em;
+}
+
 /* text tyle */
 .text{
     text-align: justify;
@@ -32,6 +50,13 @@ body {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.nav-div{
+    display: inline-block;
+    margin-left: 22.5%;
+    position: absolute;
+    margin-top: 15%;
 }
 
 .right-nav-bar{

@@ -97,8 +97,6 @@ div.search {
     margin-top: -2em;
     font-family: 'Poppins' sans-serif;
     box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
-
-
 }
 /*//display dropdown menu on hover*/
 .dropdown:hover .dropdown-content {
