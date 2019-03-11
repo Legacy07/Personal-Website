@@ -2,92 +2,100 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
-    <head>
-        <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="css/nav_bar.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-        <link rel="stylesheet" href="css/footer.css">
-                <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
+<head>
+    <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-        <script src="js/nav_bar.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- using the custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/nav_bar.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <!--        webgl libraries-->
-        <script type="text/javascript" src="js/three.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/stats.js"></script>
-        <script src="js/rotating_cube.js"></script>
+    <script src="js/nav_bar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--        google analytics-->
-        <script src="js/google_analytics.js"></script>
+    <!--        webgl libraries-->
+    <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/stats.js"></script>
+    <script src="js/rotating_cube.js"></script>
 
-        <title>Contact | Ahmet Ince</title>
-    </head>
+    <!--        google analytics-->
+    <script src="js/google_analytics.js"></script>
 
-    <body>
+    <title>Contact | Ahmet Ince</title>
+</head>
 
-        <!--        Navigation bar-->
-        <div id="navigation">
+<body>
 
-        </div>
-        <script> $(function() {
-                $("#navigation").load("nav_bar.html");
-            });
-        </script>
+    <!--        Navigation bar-->
+    <div id="navigation">
 
-        <p class="boxHeader">Contact Me</p>
+    </div>
+    <script> $(function () {
+            $("#navigation").load("nav_bar.html");
+        });
+    </script>
 
-        <section>
-            <a href="https://github.com/Legacy07" target="_blank">
-                <div class="githubBox"> 
+    <!-- card on hover -->
+    <script>
+        $(document).ready(function () {
+            // executes when HTML-Document is loaded and DOM is ready
+            console.log("Document is ready");
 
-                    <p class="Header">Github</p>
+            $(".card").hover(
+                function () {
+                    $(this).addClass('shadow-lg').css('cursor', 'pointer');
+                }, function () {
+                    $(this).removeClass('shadow-lg');
+                }
+            );
+        });
 
-                    <p>If you wish to see the full source of my projects or ask anything related to any issues, you can use Github.</p>
+    </script>
+
+    <p class="boxHeader">Contact Me</p>
+    <div class="jumbotron d-flex justify-content-center" style="margin-left: 10%; margin-right: 10%;">
+        <div class="card-deck">
+            <a class="card border-dark text-dark mb-3 nav-link" style="max-width: 18rem; height: 20rem;">
+                <div class="card-header">Github</div>
+                <div class="card-body">
+                    <p>If you wish to see the full source of my projects or ask anything related to any issues,
+                        you can use Github.</p>
                 </div>
             </a>
-
-            <a href="mailto:ahmetince771@gmail.com">
-                <div class="githubBox"> 
-
-                    <p class="Header">E-mail</p>
-
-                    <p>If you have any queries or wish to contact me, you can e-mail me for a quicker communication.</p>
+            <a class="card border-dark text-dark mb-3 nav-link" style="max-width: 18rem;"
+                href="mailto:ahmetince771@gmail.com">
+                <div class="card-header">E-Mail</div>
+                <div class="card-body">
+                    <p>If you have any queries or wish to contact me, you can e-mail me for a quicker
+                        communication.
+                    </p>
                 </div>
             </a>
-
-            <a href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank">
-                <div class="linkedinBox"> 
-
-                    <p class="linkedInHeader">LinkedIn</p>
-
+            <a class="card border-dark text-dark mb-3 nav-link" style="max-width: 18rem;"
+                href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank">
+                <div class="card-header">LinkedIn</div>
+                <div class="card-body">
                     <p>You can also message me from this platform.</p>
-
                 </div>
             </a>
-        </section>
-        <br><br>
-
-        <!--        footer-->
-
-        <div id="footer">
         </div>
-        <script> $(function() {
-                $("#footer").load("footer.html");
-            });
-        </script>
-    </body>
+    </div>
+
+    <!--        footer-->
+
+    <div id="footer">
+    </div>
+    <script> $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+</body>
+
 </html>
-
-
-
-
-
-
-
-
-

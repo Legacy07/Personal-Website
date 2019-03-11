@@ -1,31 +1,43 @@
-
 html {
-
     background: white;
-
+    height: 100%;
+    width: 100%;
 }
 
 body {
     color: #000000;
     font-family: 'Poppins', sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: 1.5;
     margin: 0 auto;
-}
-/*header customisation*/
-h1 { color: #000000; font-family: "Helvetica"; font-size: 30px; font-weight: 700; line-height: 0px; margin: 0 0 0; padding: 0px 0px; text-align: right; text-transform: none; transform: translate(23%, 0px);
+    height: 100%;
+    width: 100%;
 }
 
-div.Description{
+/*header customisation*/
+
+h1 {
+    color: #000000;
+    font-family: "Helvetica";
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 0px;
+    margin: 0 0 0;
+    padding: 0px 0px;
+    text-align: right;
+    text-transform: none;
+    transform: translate(23%, 0px);
+}
+
+div.Description {
     height: 100%;
-    margin-top: 1%; 
+    margin-top: 1%;
     font-size: 1.2em;
     width: 75%;
     position: relative;
     display: block;
-
-
 }
+
 div.Description p {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -34,7 +46,6 @@ div.Description p {
     margin-right: -25%;
     margin-left: -25%;
     width: 100%;
-
 }
 
 p.subHeader {
@@ -74,18 +85,19 @@ p.highlight {
 a {
     text-decoration: none;
 }
-p a{
+
+p a {
     color: black;
     font-weight: bold;
     border-bottom: 0.1em solid #FF0000;
     transition: background-color 0.4s;
 }
-p a:hover{
+
+p a:hover {
     border-bottom: 0.2em solid #FF0000;
     background-color: bisque;
     /*    color: white;*/
 }
-
 
 p.boxHeader {
     font-family: 'Montserrat', sans-serif;
@@ -103,7 +115,6 @@ p.boxHeader {
     position: relative;
     /*    margin-right: 15%;*/
     margin-left: 25%;
-
 }
 
 section {
@@ -115,102 +126,11 @@ section {
     position: relative;
 }
 
-div.githubBox {
-    /*    border-radius: 1px;*/
-    background-color: #f2f2f2;
-
-    height: 20em;
-    position: relative;
-    /*    margin-top: 1%;*/
-    width: 15em;
-    /*
-    margin-right: 60%;
-    margin-left: 25%;
-    */
-    float: left;
-    border: 0.5em solid white;
-    cursor:pointer;
-    display: block;
-}
-.githubBox:hover {
-    background-color:darkgray;
-    text-decoration:none;
-    color:white;
+.no-underline {
+    text-decoration: none !important
 }
 
-div.githubBox p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
-    padding-top: 0.5em;
-    top: 1%;
-    text-align: center;
-    color: black;
-    position: absolute;
-}
-
-div.emailBox {
-    /*    border-radius: 1px;*/
-    background-color: #f2f2f2;
-    height: 20em;
-    position: relative;
-    width: 15em;
-    /*    margin-right: 40%;*/
-    margin-left: 50%;
-
-    cursor:pointer;
-    display: block;
-}
-.emailBox:hover {
-    background-color:darkgray;
-    text-decoration:none;
-    color:white;
-}
-
-div.emailBox p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
-    padding-top: 0.5em;
-    top: 1%;
-    text-align: center;
-    color: black;
-    position: absolute;
-}
-div.linkedinBox {
-    /*    border-radius: 1px;*/
-    background-color: #f2f2f2;
-    height: 20em;
-    position: relative;
-    width: 15em;
-    /*    left: 15%; */
-
-    /*
-    margin-right: 40%;
-    margin-left: 45%;
-    */
-    border: 0.5em solid white;
-
-    /*    float: right;*/
-
-    cursor: pointer;
-    display: block;
-}
-.linkedinBox:hover {
-    background-color:darkgray;
-    text-decoration:none;
-    color:white;
-}
-
-div.linkedinBox p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
-    padding-top: 0.5em;
-    top: 1%;
-    text-align: center;
-    color: black;
-    position: absolute;
-}
-
-p.Header{    
+p.Header {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
@@ -220,7 +140,8 @@ p.Header{
     text-align: center;
     text-decoration: underline;
 }
-p.linkedInHeader{    
+
+p.linkedInHeader {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
@@ -229,9 +150,7 @@ p.linkedInHeader{
     position: absolute;
     text-align: center;
     text-decoration: underline;
-
 }
-
 
 /*
 input[type=submit] {
@@ -247,6 +166,7 @@ input[type=submit] {
 */
 
 /*close button */
+
 .closeButton {
     margin-left: 15px;
     color: white;
@@ -268,6 +188,7 @@ input[type=submit] {
     width: 50%;
     height: 500px;
 }
+
 #autoScrollButton {
     display: none;
     position: fixed;
@@ -276,18 +197,14 @@ input[type=submit] {
     /*left: 50%;*/
     z-index: 99;
     font-size: 1em;
-
     border: none;
     outline: none;
-
     background-color: coral;
     color: white;
     cursor: pointer;
     padding: 1em;
     border-radius: 0.5em;
-
     transition: background-color 0.4s;
-
 }
 
 #autoScrollButton:hover {
@@ -295,23 +212,22 @@ input[type=submit] {
     color: white;
 }
 
-div.graph{
+div.graph {
     position: relative;
     width: 100%;
     max-width: 100%;
     height: 100%;
     margin-left: -29%;
     /*    display: inline-block;*/
-
 }
 
-#desktopVersion{
+#desktopVersion {
     visibility: hidden;
 }
 
 /* Media Queries */
-@media(max-width: 480px){
 
+@media(max-width: 480px) {
     section {
         width: 80%;
         height: 0%;
@@ -319,138 +235,106 @@ div.graph{
         display: inline-block;
         position: relative;
     }
-
     div.githubBox {
         float: none;
         width: 120%;
         left: 1%;
         height: 16em;
-
     }
     div.linkedinBox {
         float: none;
         width: 120%;
         left: 1%;
         height: 16em;
-
     }
-
-
-    p.Header{
+    p.Header {
         margin-left: 40%;
         margin-top: -3%;
     }
     p.boxHeader {
         /*        text-align: center;*/
-        margin-left: 2%;        
+        margin-left: 2%;
     }
-
-    p.linkedInHeader{
+    p.linkedInHeader {
         margin-left: 38%;
         margin-top: -3%;
     }
-
-    div.Description{
+    div.Description {
         width: 85%;
     }
-
     div.Description p {
         /*        margin-right: 25%;*/
         margin-left: -35%;
     }
-
-    #desktopVersion{
+    #desktopVersion {
         margin-left: 10%;
         visibility: visible;
     }
-
 }
 
-@media (min-width:481px) and (max-width:768px){
-
-    section{
+@media (min-width:481px) and (max-width:768px) {
+    section {
         width: 90%;
         height: 0%;
         margin: 0;
         display: inline-block;
         /*        position: relative;*/
     }
-
     p.boxHeader {
-        margin-left: 5%;        
-    } 
-
+        margin-left: 5%;
+    }
     div.githubBox {
         float: none;
         width: 100%;
         left: 5%;
         height: 10em;
     }
-
     div.linkedinBox {
-
         float: none;
         width: 100%;
         left: 5%;
         height: 10em;
     }
-
     p.Header {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
         margin-top: -2%;
-
     }
-
-    p.linkedInHeader{
+    p.linkedInHeader {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
         margin-top: -2%;
     }
-
-
-    div.graph{
+    div.graph {
         margin-left: -40%;
         /*        width: 100%;*/
     }
-
-    div.Description{
+    div.Description {
         width: 90%;
     }
     div.Description p {
         margin-left: -40%;
     }
-
 }
 
-@media(min-width: 769px) and (max-width: 1024px){
-
-    div.graph{
+@media(min-width: 769px) and (max-width: 1024px) {
+    div.graph {
         margin-left: -40%;
         /*        width: 100%;*/
-
     }
-    div.Description{
+    div.Description {
         width: 90%;
     }
     div.Description p {
         margin-left: -40%;
     }
-
-    section{
+    section {
         width: 75%;
     }
-
     p.boxHeader {
         /*        text-align: center;*/
-        margin-left: 11%;        
-    }    
-
+        margin-left: 11%;
+    }
 }
-
-
-
-
-

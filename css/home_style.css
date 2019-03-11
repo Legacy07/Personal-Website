@@ -4,11 +4,28 @@ html {
 }
 
 /*header customisation*/
-h1 { color: #000000; font-family: "Helvetica"; font-size: 30px; font-weight: 700; line-height: 0px; margin: 0 0 0; padding: 0px 0px; text-align: right; text-transform: none; transform: translate(23%, 0px);
+
+h1 {
+    color: #000000;
+    font-family: "Helvetica";
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 0px;
+    margin: 0 0 0;
+    padding: 0px 0px;
+    text-align: right;
+    text-transform: none;
+    transform: translate(23%, 0px);
 }
-h1.logo {text-align: left; text-transform: none;  transform: translate(-23%, -50px);
+
+h1.logo {
+    text-align: left;
+    text-transform: none;
+    transform: translate(-23%, -50px);
 }
+
 /*body style*/
+
 body {
     color: #000000;
     font-family: 'Poppins', sans-serif;
@@ -18,11 +35,13 @@ body {
     height: 100%;
     width: 100%;
 }
+
 .nav-div a.link {
     text-decoration: none;
     /* background-color: red; */
 }
-.nav-div p a.link{
+
+.nav-div p a.link {
     font-family: 'Poppins', sans-serif;
     font-size: 2em;
     /* line-height: 1.5; */
@@ -30,7 +49,8 @@ body {
     font-weight: bold;
     transition: background-color 0.4s;
 }
-.nav-div p a.link:hover{
+
+.nav-div p a.link:hover {
     /* border-bottom: 3px solid #FF0000; */
     background-color: gray;
     color: blanchedalmond;
@@ -38,32 +58,32 @@ body {
 }
 
 /* text tyle */
-.text{
+
+.text {
     text-align: justify;
     color: black;
 }
 
-.background{
-    height: 100%; 
+.background {
+    height: 100%;
     width: 50%;
-
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.nav-div{
+.nav-div {
     display: inline-block;
     margin-left: 22.5%;
     position: absolute;
     margin-top: 15%;
 }
 
-.right-nav-bar{
+.right-nav-bar {
     float: right;
 }
 
-div.Description{
+div.Description {
     height: 0;
     font-size: 1.3em;
     width: 50%;
@@ -71,6 +91,7 @@ div.Description{
     margin-top: 10%;
     display: inline-block;
 }
+
 div.Description p {
     font-family: 'Montserrat', sans-serif;
     height: 0;
@@ -81,7 +102,6 @@ div.Description p {
     margin-top: 1%;
     display: inline-block;
     /*    margin-right: -110%;*/
-
 }
 
 p.FirstLine {
@@ -117,6 +137,7 @@ p.ThirdLine {
 }
 
 /* button custom */
+
 input[type=submit] {
     font-weight: 700;
     font-size: 1em;
@@ -133,21 +154,20 @@ input[type=submit] {
     cursor: pointer;
     display: inline-block;
     float: left;
-
 }
 
 /*check for animated button -- https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate1*/
+
 input[type=submit]:hover {
     text-decoration: none;
     background: #282828;
     color: white;
-
     transition-duration: 0.4s;
 }
 
 /* Media Queries */
-@media (min-width:390px) and (max-width: 480px){
 
+@media (min-width:390px) and (max-width: 480px) {
     li {
         /*
         float:none;
@@ -156,127 +176,89 @@ input[type=submit]:hover {
         */
         display: inline-grid;
     }
-    li a{
+    li a {
         padding: 0.9em 0.5em;
         display: inline-grid;
-
     }
     div.Description p {
         display: inline-block;
         text-align: center;
     }
-    p.FirstLine, p.SecondLine, p.ThirdLine
-    {
+    p.FirstLine, p.SecondLine, p.ThirdLine {
         left: 0%;
         right: 0%;
         width: 200%;
-
     }
-    p.FirstLine{
+    p.FirstLine {
         font-size: 2.1em;
         padding-bottom: 1em;
-
     }
-    p.SecondLine{
+    p.SecondLine {
         font-size: 0.8em;
-
     }
-    p.ThirdLine{
+    p.ThirdLine {
         font-size: 1em;
-
     }
     input[type=submit] {
         left: 10%;
         right: 0;
         margin-right: 0;
-
     }
-
 }
-@media (max-width:479px){
 
-    li{
+@media (max-width:479px) {
+    li {
         /*        margin-left: 10%;*/
         float: right;
         /*        display: flex;*/
     }
-    li a{
+    li a {
         padding: 0.9em 0.5em;
         /*        margin-left: 35%;*/
         display: inline-block;
     }
-
     div.Description p {
         display: inline-block;
         text-align: center;
     }
-    p.FirstLine, p.SecondLine, p.ThirdLine
-    {
+    p.FirstLine, p.SecondLine, p.ThirdLine {
         left: 0%;
         right: 0%;
         width: 200%;
     }
-    p.FirstLine{
+    p.FirstLine {
         font-size: 2.1em;
         padding-bottom: 1em;
-
     }
-    p.SecondLine{
+    p.SecondLine {
         font-size: 0.8em;
-
     }
-    p.ThirdLine{
+    p.ThirdLine {
         font-size: 1em;
-
     }
     input[type=submit] {
         left: 10%;
         right: 0;
         margin-right: 0;
-
     }
 }
 
-@media (min-width:480px) and (max-width:768px){
-    
-     div.Description p {
+@media (min-width:480px) and (max-width:768px) {
+    div.Description p {
         display: inline-block;
         text-align: center;
     }
-    p.FirstLine, p.SecondLine, p.ThirdLine
-    {
+    p.FirstLine, p.SecondLine, p.ThirdLine {
         left: 0%;
         right: 0%;
         width: 200%;
     }
-    
 }
 
-@media (min-width:769px) and (max-width:1023px){
-
-    p.FirstLine{
+@media (min-width:769px) and (max-width:1023px) {
+    p.FirstLine {
         left: 50%;
         right: 0%;
         width: 200%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
