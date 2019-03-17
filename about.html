@@ -2,192 +2,202 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
-    <head>
-        <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="css/nav_bar.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <script src="js/nav_bar.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- using the custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/nav_bar.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <link rel="stylesheet" href="css/graph.css"/>
-        <link rel="stylesheet" href="css/footer.css"/>
-        <script src="js/back_to_top.js"></script>
+    <script src="js/nav_bar.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--        responsive version script -->
-        <script src="js/responsive-switch.min.js"></script>
+    <link rel="stylesheet" href="css/graph.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <script src="js/back_to_top.js"></script>
 
-        <!--        webgl libraries-->
-        <script type="text/javascript" src="js/three.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/stats.js"></script>
-        <script src="js/rotating_cube.js"></script>
+    <!--        responsive version script -->
+    <script src="js/responsive-switch.min.js"></script>
 
-        <!--        google analytics-->
-        <script src="js/google_analytics.js"></script>
+    <!--        webgl libraries-->
+    <script type="text/javascript" src="js/three.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/stats.js"></script>
+    <script src="js/rotating_cube.js"></script>
 
-        <title>About | Ahmet Ince</title>
-    </head>
+    <!--        google analytics-->
+    <script src="js/google_analytics.js"></script>
 
-    <body>
-        <!--        Navigation bar-->
-        <div id="navigation">
+    <title>About | Ahmet Ince</title>
+</head>
 
+<body>
+    <!--        Navigation bar-->
+    <div id="navigation">
+
+    </div>
+    <script> $(function () {
+            $("#navigation").load("nav_bar.html");
+        });
+    </script>
+
+
+    <div class="Description">
+
+        <p class="subHeader"><strong>Who is Ahmet Ince?</strong></p>
+
+        <p class="highlight">Born in a beautiful city, <b>Istanbul</b>.<img src="turkeyflag.png" width="30" height="30"
+                alt="Turkey Flag"> Graduated in BSc (Hons) Computer Science from <b>University of Greenwich</b>.<img
+                src="css/uni_gre_logo.png" width="30" height="30" alt="University of Greenwich Logo"> Based in
+            <b>London</b>.<img src="united-kingdomflag.png" width="30" height="30" alt="United Kingdom Flag"></p>
+        <br><br>
+        <p class="Paragraph">Fortunately enough, I built a passion around computers in my teen era and slowly progressed
+            into desiring to create programs but shamefully had no motivation to do so until the beginning of my study
+            in University.</p>
+        <br><br>
+        <p class="Paragraph">Luckily, i kept creating programs throughout that led to experiencing the feeling of
+            <b>success, worthiness and most importantly building the logical mindset and thinking</b>.
+            When it comes to programming languages, <b>Java is my favourite</b>.<br> I reckon it's purely because of the
+            fact that it was my first and you cannot detract yourself from it even though i tried a few others. As the
+            time went by, even though i created some <b>desktop applications</b>, i started to be more interested in
+            <b>Android development</b> because it's just more fun to be honest.</p>
+        <br><br>
+        <p class="Paragraph">Thus, for the past three years of my study,
+            I have designed and built projects in various programming languages &amp; technologies.<br>Hence i decided
+            to publish it all here and more will be coming soon.</p>
+        <br><br>
+        <p class="Paragraph">Side note: I love to hit gym regularly to relieve stress and feel good about myself. Also
+            beat my friends in snooker just for hobby. Ah and to not forget, i'm a competent Fifa and Battlefield
+            player.</p>
+        <br><br>
+        <p class="Paragraph">If you wish to contact me or have any queries, just head to <strong><a
+                    href="contact.html">Contact Page</a></strong>.</p>
+        <br><br>
+
+        <p class="subHeader">Technical Skills</p>
+        <div id="desktopVersion">
+            <a href="#" class="rs-link" data-link-desktop="Switch to desktop version to view the graph"
+                data-always-visible="false"></a>
         </div>
-        <script> $(function() {
-                $("#navigation").load("nav_bar.html");
-            });
-        </script>
+    </div>
 
+    <!--            <br><br><p>http://www.goslingo.com/, http://www.ryan-hwang.com/about.php, http://sergiopedercini.com/#/about-me</p>-->
 
-        <div class="Description" >
+    <!--            https://foundation.zurb.com/building-blocks/blocks/bar-graph.html-->
 
-            <p class="subHeader" ><strong>Who is Ahmet Ince?</strong></p>
+    <!--https://speckyboy.com/code-snippets-css3-bar-graphs/-->
 
-            <p class="highlight">Born in a beautiful city, <b>Istanbul</b>.<img src="turkeyflag.png" width="30" height="30" alt="Turkey Flag"> Graduated in BSc (Hons) Computer Science from <b>University of Greenwich</b>.<img src="css/uni_gre_logo.png" width="30" height="30" alt="University of Greenwich Logo"> Based in <b>London</b>.<img src="united-kingdomflag.png" width="30" height="30" alt="United Kingdom Flag"></p>
-            <br><br>
-            <p class="Paragraph">Fortunately enough, I built a passion around computers in my teen era and slowly progressed into desiring to create programs but shamefully had no motivation to do so until the beginning of my study in University.</p>
-            <br><br>
-            <p class="Paragraph">Luckily, i kept creating programs throughout that led to experiencing the feeling of <b>success, worthiness and most importantly building the logical mindset and thinking</b>.
-                When it comes to programming languages, <b>Java is my favourite</b>.<br> I reckon it's purely because of the fact that it was my first and you cannot detract yourself from it even though i tried a few others. As the time went by, even though i created some <b>desktop applications</b>, i started to be more interested in <b>Android development</b> because it's just more fun to be honest.</p>
-            <br><br>
-            <p class="Paragraph">Thus, for the past three years of my study,
-                I have designed and built projects in various programming languages &amp; technologies.<br>Hence i decided to publish it all here and more will be coming soon.</p>
-            <br><br>
-            <p class="Paragraph">Side note: I love to hit gym regularly to relieve stress and feel good about myself. Also beat my friends in snooker just for hobby. Ah and to not forget, i'm a competent Fifa and Battlefield player.</p>
-            <br><br>
-            <p class="Paragraph">If you wish to contact me or have any queries, just head to <strong><a href="contact.html">Contact Page</a></strong>.</p>
-            <br><br>
+    <!--        //technical skills graph-->
 
-            <p class="subHeader">Technical Skills</p>
-            <div id="desktopVersion">
-                <a href="#"
-                   class="rs-link"
-                   data-link-desktop="Switch to desktop version to view the graph"
-                   data-always-visible="false"></a>
-            </div>
-        </div>
+    <div class="graph">
 
-        <!--            <br><br><p>http://www.goslingo.com/, http://www.ryan-hwang.com/about.php, http://sergiopedercini.com/#/about-me</p>-->
+        <div class="skills">
+            <ul class="lines">
 
-        <!--            https://foundation.zurb.com/building-blocks/blocks/bar-graph.html-->
+                <li class="line l--20">
+                    <span class="line__label">
+                        Newbie
+                    </span>
+                </li>
 
-        <!--https://speckyboy.com/code-snippets-css3-bar-graphs/-->
+                <li class="line l--40">
+                    <span class="line__label">
+                        Working my way up
+                    </span>
+                </li>
+                <li class="line l--60">
+                    <span class="line__label">
+                        Intermediate
+                    </span>
+                </li>
+                <li class="line l--80">
+                    <span class="line__label">
+                        Expert
+                    </span>
+                </li>
+                <li class="line l--100">
+                    <span class="line__label">
+                        Specialised
+                    </span>
+                </li>
 
-        <!--        //technical skills graph-->
+                <li class="line l--0">
+                    <span class="line__label">
 
-        <div class="graph">
+                    </span>
+                </li>
 
-            <div class="skills">
-                <ul class="lines">
+            </ul>
 
-                    <li class="line l--20">
-                        <span class="line__label">
-                            Newbie
-                        </span>
-                    </li>
+            <div class="charts">
+                <div class="chart chart--dev">
+                    <!--                    <span class="chart__title">Technical Skills</span>-->
+                    <ul class="chart--horiz">
+                        <li class="chart__bar" style="width: 63%;">
+                            <span class="chart__label">
+                                Java
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 63%;">
+                            <span class="chart__label">
+                                Android Development
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                C#
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                XHTML/CSS
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 21%;">
+                            <span class="chart__label">
+                                PHP/JS
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                MySQL/SQLite
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 21%;">
+                            <span class="chart__label">
+                                ASP.NET
+                            </span>
+                        </li>
+                        <li class="chart__bar" style="width: 42%;">
+                            <span class="chart__label">
+                                Github
+                            </span>
+                        </li>
 
-                    <li class="line l--40">
-                        <span class="line__label">
-                            Working my way up
-                        </span>
-                    </li>
-                    <li class="line l--60">
-                        <span class="line__label">
-                            Intermediate
-                        </span>
-                    </li>
-                    <li class="line l--80">
-                        <span class="line__label">
-                            Expert
-                        </span>
-                    </li>
-                    <li class="line l--100">
-                        <span class="line__label">
-                            Specialised
-                        </span>
-                    </li>
-
-                    <li class="line l--0">
-                        <span class="line__label">
-
-                        </span>
-                    </li>
-
-                </ul>
-
-                <div class="charts">
-                    <div class="chart chart--dev">
-                        <!--                    <span class="chart__title">Technical Skills</span>-->
-                        <ul class="chart--horiz">
-                            <li class="chart__bar" style="width: 63%;">
-                                <span class="chart__label">
-                                    Java
-                                </span>
-                            </li>
-                            <li class="chart__bar" style="width: 63%;">
-                                <span class="chart__label">
-                                    Android Development
-                                </span>
-                            </li>
-                            <li class="chart__bar" style="width: 42%;">
-                                <span class="chart__label">
-                                    C#
-                                </span>
-                            </li>
-                            <li class="chart__bar" style="width: 42%;">
-                                <span class="chart__label">
-                                    XHTML/CSS
-                                </span>
-                            </li>
-                            <li class="chart__bar" style="width: 21%;">
-                                <span class="chart__label">
-                                    PHP/JS
-                                </span>
-                            </li>
-                            <li class="chart__bar" style="width: 42%;">
-                                <span class="chart__label">
-                                    MySQL/SQLite
-                                </span>
-                            </li>
-                            <li class="chart__bar" style="width: 21%;">
-                                <span class="chart__label">
-                                    ASP.NET
-                                </span>
-                            </li>
-                            <li class="chart__bar" style="width: 42%;">
-                                <span class="chart__label">
-                                    Github
-                                </span>
-                            </li>
-
-                        </ul>
-                    </div>
-
+                    </ul>
                 </div>
+
             </div>
-
         </div>
 
-        <a href="#"
-           class="rs-link"
-           data-link-responsive="Switch to mobile version"
-           data-always-visible="false"></a>
+    </div>
+
+    <a href="#" class="rs-link" data-link-responsive="Switch to mobile version" data-always-visible="false"></a>
 
 
-<!--        footer-->
-         <div id="footer">
-        </div>
-        <script> $(function() {
-                $("#footer").load("footer.html");
-            });
-        </script>
-        
-        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+    <!--        footer-->
+    <div id="footer">
+    </div>
+    <script> $(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
 
-    </body>
+    <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
+</body>
+
 </html>
