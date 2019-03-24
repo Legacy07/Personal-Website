@@ -36,6 +36,13 @@ body {
     width: 100%;
 }
 
+.nav-div {
+    display: inline-block;
+    margin-left: 22.5%;
+    position: absolute;
+    margin-top: 15%;
+}
+
 .nav-div a.link {
     text-decoration: none;
     /* background-color: red; */
@@ -70,13 +77,6 @@ body {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.nav-div {
-    display: inline-block;
-    margin-left: 22.5%;
-    position: absolute;
-    margin-top: 15%;
 }
 
 .right-nav-bar {
@@ -184,25 +184,17 @@ input[type=submit]:hover {
         display: inline-block;
         text-align: center;
     }
-    p.FirstLine, p.SecondLine, p.ThirdLine {
-        left: 0%;
-        right: 0%;
-        width: 200%;
-    }
-    p.FirstLine {
-        font-size: 2.1em;
-        padding-bottom: 1em;
-    }
-    p.SecondLine {
-        font-size: 0.8em;
-    }
-    p.ThirdLine {
-        font-size: 1em;
-    }
     input[type=submit] {
         left: 10%;
         right: 0;
         margin-right: 0;
+    }
+    .nav-div {
+        margin: 10% 32.5%;
+    }
+    .background {
+        height: 50%;
+        width: 100%;
     }
 }
 
@@ -221,25 +213,17 @@ input[type=submit]:hover {
         display: inline-block;
         text-align: center;
     }
-    p.FirstLine, p.SecondLine, p.ThirdLine {
-        left: 0%;
-        right: 0%;
-        width: 200%;
-    }
-    p.FirstLine {
-        font-size: 2.1em;
-        padding-bottom: 1em;
-    }
-    p.SecondLine {
-        font-size: 0.8em;
-    }
-    p.ThirdLine {
-        font-size: 1em;
-    }
     input[type=submit] {
         left: 10%;
         right: 0;
         margin-right: 0;
+    }
+    .nav-div {
+        margin: 10% 37.5%;
+    }
+    .background {
+        height: 50%;
+        width: 100%;
     }
 }
 
@@ -248,17 +232,28 @@ input[type=submit]:hover {
         display: inline-block;
         text-align: center;
     }
-    p.FirstLine, p.SecondLine, p.ThirdLine {
-        left: 0%;
-        right: 0%;
-        width: 200%;
+    .nav-div {
+        margin: 10% 42.5%;
     }
+    .background {
+        height: 50%;
+        width: 100%;
+    }
+   
 }
 
 @media (min-width:769px) and (max-width:1023px) {
-    p.FirstLine {
-        left: 50%;
-        right: 0%;
-        width: 200%;
+    .nav-div {
+        margin: 10% 47.5%;
+    }
+    .background {
+        height: 50%;
+        width: 100%;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1439px) {
+    .nav-div {
+        margin-top: 30%;
     }
 }
