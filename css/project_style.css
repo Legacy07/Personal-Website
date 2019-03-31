@@ -36,6 +36,10 @@ p.Paragraph {
     display: inline-block;
 }
 
+.card-deck {
+    margin-top: 1em;
+}
+
 p.subHeader{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
