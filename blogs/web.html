@@ -5,14 +5,17 @@
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="../css/project_style.css"/>
-        <link rel="stylesheet" href="../css/nav_bar.css"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+        <!-- using the custom css -->
+        <link rel="stylesheet" href="../css/project_style.css" />
+        <link rel="stylesheet" href="../css/nav_bar.css" />
         <!--        google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
         <link rel="stylesheet" href="../css/footer.css">
         <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
-
+    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!--        //navigation bar script-->
         <script src="../js/nav_bar.js"></script>
@@ -20,16 +23,30 @@
         <script src="../js/back_to_top.js"></script>
         <!--        responsive version script -->
         <script src="../js/responsive-switch.min.js"></script>
-
+    
         <!--        google analytics-->
         <script src="../js/google_analytics.js"></script>
-
+    
         <!--        webgl libraries-->
         <script type="text/javascript" src="../js/three.js"></script>
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/stats.js"></script>
         <script src="../js/rotating_cube.js"></script>
-
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    
         <title>Blog - Web | Ahmet Ince</title>
     </head>
 
@@ -55,21 +72,31 @@
 
             <p class="subHeader" id="Web">Web</p>
 
-            <div class="flex">
-
-                <a href="web/the_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html" target="_blank">
-                    <p class="BoxHeader">The Use of Cross-Origin Resource Sharing (CORS) in Web API</p>
-                </a>
-                <p class="BoxDescription">Cross-Origin Resource Sharing is an additional tool to help your website access to resources in a different origin (domain, protocol or port). Without the use of CORS or <a class="link" href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank">JSONP</a>, it’s not possible to make AJAX calls for this instance to a Web API from the website.</p>
-                <ul class="Buzz_Words">
-                    <li>Web API</li>
-                    <li>CORS</li>
-                    <li>AJAX</li>
-                    <li>HTTP</li>
-                </ul>
-                <p>Posted on 12/11/2018</p>
+            
+        <div class="card-deck">
+            <div class="card" style="max-width: 30%;">
+                <img class="card-img-top" src="web/images/cors-web-api.png"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="web/the_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html" target="_blank">
+                        <p class="BoxHeader">The Use of Cross-Origin Resource Sharing (CORS) in Web API</p>
+                    </a>
+                    <p class="BoxDescription">Cross-Origin Resource Sharing is an additional tool to help your website access to resources in a different origin (domain, protocol or port). Without the use of CORS or <a class="link" href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank">JSONP</a>, it’s not possible to make AJAX calls for this instance to a Web API from the website.</p>
+                    <ul class="Buzz_Words">
+                        <li>Web API</li>
+                        <li>CORS</li>
+                        <li>AJAX</li>
+                        <li>HTTP</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        Posted on 12/11/2018
+                    </small>
+                </div>
             </div>
 
+        </div>
         </section>
 
         <!--            count how many articles there are-->
