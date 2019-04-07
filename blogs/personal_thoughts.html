@@ -6,6 +6,9 @@
 <head>
     <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <!-- using the custom css -->
     <link rel="stylesheet" href="../css/project_style.css" />
     <link rel="stylesheet" href="../css/nav_bar.css" />
@@ -32,6 +35,21 @@
     <!--        google analytics-->
     <script src="../js/google_analytics.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+
     <title>Blog - Personal Thoughts | Ahmet Ince</title>
 </head>
 
@@ -57,244 +75,355 @@
 
         <p class="subHeader" id="Personal-Thoughts">Personal Thoughts</p>
 
-        <div class="flex">
-
-            <a href="personal_thoughts/simple_programmers_free_blog_course.html" target="_blank">
-                <p class="BoxHeader">Simple Programmer's Free Blog Course</p>
-            </a>
-            <p class="BoxDescription">This was the first blog related video I watched of John Sonmez that got me
-                committed first of all developing my website and start writing my blog posts.
-            </p>
-            <ul class="Buzz_Words">
-                <li>Blog</li>
-                <li>Commitment</li>
-                <li>Inspiration</li>
-                <li>Student</li>
-            </ul>
-            <p>Posted on 16/09/2018</p>
-
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/simple_programmer_free_blog_course.png"
+                    alt="Simple Programmer Blog Course">
+                <div class="card-body">
+                    <a href="personal_thoughts/simple_programmers_free_blog_course.html" target="_blank">
+                        <p class="BoxHeader">Simple Programmer's Free Blog Course</p>
+                    </a>
+                    <p class="BoxDescription">This was the first blog related video I watched of John Sonmez
+                        that got me
+                        committed first of all developing my website and start writing my blog posts.
+                    </p>
+                    <ul class="Buzz_Words">
+                        <li>Blog</li>
+                        <li>Commitment</li>
+                        <li>Inspiration</li>
+                        <li>Student</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 16/09/2018</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/galaxy_note_9.jpg"
+                    style="margin-top: 1em;" alt="Galaxy note 9">
+                <div class="card-body">
+                    <a href="personal_thoughts/little_adjustments_in_samsung_note_9_that_worth_%C2%A3399_more_than_note_8.html"
+                        target="_blank">
+                        <p class="BoxHeader">Little adjustments in Samsung Galaxy Note 9 that worth £400 more
+                            than Galaxy Note 8
+                        </p>
+                    </a>
+                    <p class="BoxDescription">First off, I feel like I need to clear off something so I don’t
+                        sound like a Samsung hater. I currently own a Samsung Galaxy Note 8 and very much support
+                        Samsung’s
+                        vision and their mission towards how they trying to innovate for both developing the current
+                        technology
+                        and satisfying customers.
+                    </p>
+                    <ul class="Buzz_Words">
+                        <li>Samsung</li>
+                        <li>Galaxy Note 9</li>
+                        <li>Tech</li>
+                        <li>Criticism</li>
+                        <li>Upgrade</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 24/09/2018</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/energizing-body.jpg" alt="Energizing body">
+                <div class="card-body">
+                    <a href="personal_thoughts/how_to_energize_your_body_in_10_minutes.html" target="_blank">
+                        <p class="BoxHeader">How to energize your body in 10 minutes</p>
+                    </a>
+                    <p class="BoxDescription">If you’re struggling with boosting and maintaining energy, I
+                        highly suggest you try the ‘daily bio-energizer’ after you wake up and/or when you are on the
+                        way to gym.
+                    </p>
+                    <ul class="Buzz_Words">
+                        <li>Energy Boost</li>
+                        <li>Stretching</li>
+                        <li>Morning Routine</li>
+                        <li>Warm-up</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 30/09/2018</small>
+                </div>
+            </div>
         </div>
 
-        <div class="flex">
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/quick-links-to-stay-in-touch.jpg"
+                    alt="News">
+                <div class="card-body">
+                    <a href="personal_thoughts/quick_links_to_stay_in_touch_with_the_tech_world.html"
+                        target="_blank">
+                        <p class="BoxHeader">Quick Links to stay in touch with the Tech World</p>
+                    </a>
+                    <p class="BoxDescription">It’s hard to keep up with the advancement of technology. Every
+                        single day,
+                        there
+                        is quite interesting news that a technical person should be interested in and be aware
+                        of; from
+                        industrial to developer news. Hence I wanted to share couple of links of websites and
+                        mention
+                        some
+                        Android applications that provide daily tech news so you are always up-to-date.
+                    </p>
+                    <ul class="Buzz_Words">
+                        <li>Tech News</li>
+                        <li>Subscriptions</li>
+                        <li>Up-to-date</li>
+                        <li>Android</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 07/10/2018</small>
+                </div>
+            </div>
 
-            <a href="personal_thoughts/little_adjustments_in_samsung_note_9_that_worth_%C2%A3399_more_than_note_8.html"
-                target="_blank">
-                <p class="BoxHeader">Little adjustments in Samsung Galaxy Note 9 that worth £400 more than Galaxy Note
-                    8</p>
-            </a>
-            <p class="BoxDescription">First off, I feel like I need to clear off something so I don’t sound like a
-                Samsung hater. I currently own a Samsung Galaxy Note 8 and very much support Samsung’s vision and their
-                mission towards how they trying to innovate for both developing the current technology and satisfying
-                customers.
-            </p>
-            <ul class="Buzz_Words">
-                <li>Samsung</li>
-                <li>Galaxy Note 9</li>
-                <li>Tech</li>
-                <li>Criticism</li>
-                <li>Upgrade</li>
-            </ul>
-            <p>Posted on 24/09/2018</p>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/spotify-img.jpg" alt="Spotify">
+                <div class="card-body">
+                    <a href="personal_thoughts/my_playlist_for_gym.html" target="_blank">
+                        <p class="BoxHeader">My Playlist for Gym</p>
+                    </a>
+                    <p class="BoxDescription">I wanted to share my playlist that I listen to in gym and will be
+                        updating
+                        with
+                        new tracks in the future. These tracks really boost my performance in both the strength
+                        and
+                        cardio
+                        training.</p>
+                    <ul class="Buzz_Words">
+                        <li>Gym</li>
+                        <li>Tunes</li>
+                        <li>Pump-up</li>
+                        <li>Motivation</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 15/10/2018</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/dirty-bulking.jpg" alt="Dirty Bulking">
+                <div class="card-body">
+                    <a href="personal_thoughts/my_experience_with_dirty_bulking.html" target="_blank">
+                        <p class="BoxHeader">My Experience with Dirty Bulking</p>
+                    </a>
+                    <p class="BoxDescription">First of all, we need to understand what bulking is. In simple
+                        terms,
+                        bulking is a
+                        process of gaining both muscle mass and body fat by consuming caloric surplus every day
+                        which
+                        should be
+                        around 250-500 calories more than your maintenance calorie intake.</p>
+                    <ul class="Buzz_Words">
+                        <li>Gym</li>
+                        <li>Health</li>
+                        <li>Bulking</li>
+                        <li>Nutrients</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 18/11/2018</small>
+                </div>
+            </div>
         </div>
 
-        <div class="flex">
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/legendary-movies.png"
+                    alt="Godfather">
+                <div class="card-body">
+                    <a href="personal_thoughts/legendary_movies_of_all_time.html" target="_blank">
+                        <p class="BoxHeader">Legendary Movies of All Time</p>
+                    </a>
+                    <p class="BoxDescription">Everybody have their top movies that they can recall whenever it’s
+                        asked
+                        around
+                        hence I wanted to list my favourite movies of all time (without spoiling) which I
+                        believe most
+                        of the
+                        people will agree to. In this list, majority of the movies aren’t going to be recent as
+                        I don’t
+                        know if
+                        this is a psychological thing towards me liking the ‘nostalgia’ or the fact that movies
+                        in the
+                        modern
+                        era aren’t trying to portray a message/lesson and/or haven’t got their story plot up to
+                        a par as
+                        the
+                        movies in late 1900s and early 2000s.</p>
 
-            <a href="personal_thoughts/how_to_energize_your_body_in_10_minutes.html" target="_blank">
-                <p class="BoxHeader">How to energize your body in 10 minutes</p>
-            </a>
-            <p class="BoxDescription">If you’re struggling with boosting and maintaining energy, I highly suggest you
-                try the ‘daily bio-energizer’ after you wake up and/or when you are on the way to gym.
-            </p>
-            <ul class="Buzz_Words">
-                <li>Energy Boost</li>
-                <li>Stretching</li>
-                <li>Morning Routine</li>
-                <li>Warm-up</li>
-            </ul>
-            <p>Posted on 30/09/2018</p>
+                    <ul class="Buzz_Words">
+                        <li>Movies</li>
+                        <li>Legendary</li>
+                        <li>Top-10</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 26/11/2018</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/top-meals-i-consume.jpg"
+                    alt="Healthy Meal">
+                <div class="card-body">
+                    <a href="personal_thoughts/top_meals_i_consume_in_cutting_season.html" target="_blank">
+                        <p class="BoxHeader">Top Meals I Consume in Cutting Season</p>
+                    </a>
+                    <p class="BoxDescription">When cutting season begins (usually between spring and summer
+                        term), in
+                        order to
+                        lose weight and get into a better-defined shape, it’s essential to count your calories
+                        and be in
+                        a
+                        caloric deficit where you finish your day with 250-500 calories less than your <a class="link"
+                            href="https://www.active.com/fitness/calculators/bmr">maintenance
+                            calorie intake</a>.</p>
+
+                    <ul class="Buzz_Words">
+                        <li>Gym</li>
+                        <li>Cutting</li>
+                        <li>Lifestyle</li>
+                        <li>Weightlifting</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 16/12/2018</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/hackerrank.png" alt="HackerRank logo">
+                <div class="card-body">
+                    <a href="personal_thoughts/how_hackerrank_helped_me.html" target="_blank">
+                        <p class="BoxHeader">How HackerRank helped me</p>
+                    </a>
+                    <p class="BoxDescription">I was fresh out of University, got my degree in my hand and
+                        wondering if I
+                        was
+                        capable enough for a
+                        developer job. At that time, I didn’t feel like I was ready to start working hence I
+                        took some
+                        time off
+                        focusing on my programming skills. Before I found out <a class="link"
+                            href="https://www.hackerrank.com/" target="_blank">HackerRank</a>, I worked on
+                        personal projects and deployed my website to showcase my portfolio so I stand out from
+                        other
+                        candidates
+                        where the competition in this industry for a graduate is very high.</p>
+
+                    <ul class="Buzz_Words">
+                        <li>Algorithms</li>
+                        <li>Data Structures</li>
+                        <li>Interview Revision</li>
+                        <li>Commitment</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 27/01/2019</small>
+                </div>
+            </div>
         </div>
 
-        <div class="flex">
+        <!-- should be page 2  -->
+        <div class="card-deck">
 
-            <a href="personal_thoughts/quick_links_to_stay_in_touch_with_the_tech_world.html" target="_blank">
-                <p class="BoxHeader">Quick Links to stay in touch with the Tech World</p>
-            </a>
-            <p class="BoxDescription">It’s hard to keep up with the advancement of technology. Every single day, there
-                is quite interesting news that a technical person should be interested in and be aware of; from
-                industrial to developer news. Hence I wanted to share couple of links of websites and mention some
-                Android applications that provide daily tech news so you are always up-to-date.
-            </p>
-            <ul class="Buzz_Words">
-                <li>Tech News</li>
-                <li>Subscriptions</li>
-                <li>Up-to-date</li>
-                <li>Android</li>
-            </ul>
-            <p>Posted on 07/10/2018</p>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/why-universities-waste-of-time.jpg"
+                    alt="University graduates">
+                <div class="card-body">
+                    <a href="personal_thoughts/why_i_think_universities_are_a_waste_of_time_and_money_for_most_courses.html"
+                        target="_blank">
+                        <p class="BoxHeader">Why I think Universities are a Waste of Time and Money for Most Courses</p>
+                    </a>
+                    <p class="BoxDescription">Before I start my rant, I would like to specify that I base this opinion
+                        of off my
+                        personal university experience which I had some great time in and from my friends who were and
+                        are in
+                        university. Thus I wouldn’t want to talk about subjects that I have no knowledge or experience.
+                        Hence
+                        why I’m posting this. </p>
+
+                    <ul class="Buzz_Words">
+                        <li>University</li>
+                        <li>Time</li>
+                        <li>Money</li>
+                        <li>Waste</li>
+                        <li>Computer Science</li>
+                        <li>Vision</li>
+                    </ul>
+
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 12/02/2019</small>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="personal_thoughts/images/one-of-the-quickest-cash-earning-job.jpg"
+                    alt="Security">
+                <div class="card-body">
+                    <a href="personal_thoughts/one_of_the_quickest_cash_earning_job_for_students.html"
+                        target="_blank">
+                        <p class="BoxHeader">One of the Quickest Cash-Earning Job for Students</p>
+                    </a>
+                    <p class="BoxDescription">As a University student, it can be difficult to keep hold of your money in
+                        your
+                        pocket. I understand the
+                        needs
+                        and urges as it comes costly and this makes it harder for a young person to manage their
+                        spending even
+                        if
+                        you’re
+                        receiving student finance. Consequently, the more money you have the more you spend hence you
+                        become
+                        broke
+                        within 2 weeks. So, most likely, you will probably look for a job to earn extra cash so you
+                        survive for
+                        the
+                        month.</p>
+
+                    <ul class="Buzz_Words">
+                        <li>Jobs</li>
+                        <li>Students</li>
+                        <li>Security</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 18/02/2019</small>
+                </div>
+            </div>
+            <div class="card" style="max-width: 31.3%;">
+                <img class="card-img-top" src="personal_thoughts/images/from-two-cheat-days-to-one-cheat-day.png"
+                    alt="No cheat days">
+                <div class="card-body">
+                    <a href="personal_thoughts/from_two_cheat_days_a_week_to_one_cheat_day_a_month.html"
+                        target="_blank">
+                        <p class="BoxHeader">From Two Cheat Days a Week to One Cheat Day a Month</p>
+                    </a>
+                    <p class="BoxDescription">Who doesn’t like cheat days in a cutting season? I certainly do. It’s one
+                        of those
+                        pleasures that no one
+                        should know of. To be honest, you wouldn’t even have the need to cheat on your diet or your
+                        healthy
+                        lifestyle if you consume just enough of everything in a healthy fashion. Unless you have serious
+                        goals
+                        and
+                        determination, it’s essential not to cheat often or ever during the season.</p>
+
+                    <ul class="Buzz_Words">
+                        <li>Gym</li>
+                        <li>Healthy Lifestyle</li>
+                        <li>Cutting</li>
+                        <li>Cheat</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Posted on 18/03/2019</small>
+                </div>
+            </div>
         </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/my_playlist_for_gym.html" target="_blank">
-                <p class="BoxHeader">My PlayList for Gym</p>
-            </a>
-            <p class="BoxDescription">I wanted to share my playlist that I listen to in gym and will be updating with
-                new tracks in the future. These tracks really boost my performance in both the strength and cardio
-                training.</p>
-            <ul class="Buzz_Words">
-                <li>Gym</li>
-                <li>Tunes</li>
-                <li>Pump-up</li>
-                <li>Motivation</li>
-            </ul>
-            <p>Posted on 15/10/2018</p>
-        </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/my_experience_with_dirty_bulking.html" target="_blank">
-                <p class="BoxHeader">My Experience with Dirty Bulking</p>
-            </a>
-            <p class="BoxDescription">First of all, we need to understand what bulking is. In simple terms, bulking is
-                a process of gaining both muscle mass and body fat by consuming caloric surplus every day which should
-                be around 250-500 calories more than your maintenance calorie intake.</p>
-            <ul class="Buzz_Words">
-                <li>Gym</li>
-                <li>Health</li>
-                <li>Bulking</li>
-                <li>Nutrients</li>
-            </ul>
-            <p>Posted on 18/11/2018</p>
-        </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/legendary_movies_of_all_time.html" target="_blank">
-                <p class="BoxHeader">Legendary Movies of All Time</p>
-            </a>
-            <p class="BoxDescription">Everybody have their top movies that they can recall whenever it’s asked around
-                hence I wanted to list my favourite movies of all time (without spoiling) which I believe most of the
-                people will agree to. In this list, majority of the movies aren’t going to be recent as I don’t know if
-                this is a psychological thing towards me liking the ‘nostalgia’ or the fact that movies in the modern
-                era aren’t trying to portray a message/lesson and/or haven’t got their story plot up to a par as the
-                movies in late 1900s and early 2000s.</p>
-
-            <ul class="Buzz_Words">
-                <li>Movies</li>
-                <li>Legendary</li>
-                <li>Top-10</li>
-            </ul>
-            <p>Posted on 26/11/2018</p>
-        </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/top_meals_i_consume_in_cutting_season.html" target="_blank">
-                <p class="BoxHeader">Top Meals I Consume in Cutting Season</p>
-            </a>
-            <p class="BoxDescription">When cutting season begins (usually between spring and summer term), in order to
-                lose weight and get into a better-defined shape, it’s essential to count your calories and be in a
-                caloric deficit where you finish your day with 250-500 calories less than your <a class="link"
-                    href="https://www.active.com/fitness/calculators/bmr">maintenance
-                    calorie intake</a>.</p>
-
-            <ul class="Buzz_Words">
-                <li>Gym</li>
-                <li>Cutting</li>
-                <li>Lifestyle</li>
-                <li>Weightlifting</li>
-            </ul>
-            <p>Posted on 16/12/2018</p>
-        </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/how_hackerrank_helped_me.html" target="_blank">
-                <p class="BoxHeader">How HackerRank helped me</p>
-            </a>
-            <p class="BoxDescription">I was fresh out of University, got my degree in my hand and wondering if I was
-                capable enough for a
-                developer job. At that time, I didn’t feel like I was ready to start working hence I took some time off
-                focusing on my programming skills. Before I found out <a class="link" href="https://www.hackerrank.com/"
-                    target="_blank">HackerRank</a>, I worked on
-                personal projects and deployed my website to showcase my portfolio so I stand out from other candidates
-                where the competition in this industry for a graduate is very high.</p>
-
-            <ul class="Buzz_Words">
-                <li>Algorithms</li>
-                <li>Data Structures</li>
-                <li>Interview Revision</li>
-                <li>Commitment</li>
-            </ul>
-            <p>Posted on 27/01/2018</p>
-        </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/why_i_think_universities_are_a_waste_of_time_and_money_for_most_courses.html"
-                target="_blank">
-                <p class="BoxHeader">Why I think Universities are a Waste of Time and Money for Most Courses</p>
-            </a>
-            <p class="BoxDescription">Before I start my rant, I would like to specify that I base this opinion of off my
-                personal university experience which I had some great time in and from my friends who were and are in
-                university. Thus I wouldn’t want to talk about subjects that I have no knowledge or experience. Hence
-                why I’m posting this. </p>
-
-            <ul class="Buzz_Words">
-                <li>University</li>
-                <li>Time</li>
-                <li>Money</li>
-                <li>Waste</li>
-                <li>Computer Science</li>
-                <li>Vision</li>
-            </ul>
-            <p>Posted on 12/02/2019</p>
-        </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/one_of_the_quickest_cash_earning_job_for_students.html" target="_blank">
-                <p class="BoxHeader">One of the Quickest Cash-Earning Job for Students</p>
-            </a>
-            <p class="BoxDescription">As a University student, it can be difficult to keep hold of your money in your
-                pocket. I understand the
-                needs
-                and urges as it comes costly and this makes it harder for a young person to manage their spending even
-                if
-                you’re
-                receiving student finance. Consequently, the more money you have the more you spend hence you become
-                broke
-                within 2 weeks. So, most likely, you will probably look for a job to earn extra cash so you survive for
-                the
-                month.</p>
-
-            <ul class="Buzz_Words">
-                <li>Jobs</li>
-                <li>Students</li>
-                <li>Security</li>
-            </ul>
-            <p>Posted on 18/02/2019</p>
-        </div>
-
-        <div class="flex">
-
-            <a href="personal_thoughts/from_two_cheat_days_a_week_to_one_cheat_day_a_month.html" target="_blank">
-                <p class="BoxHeader">From Two Cheat Days a Week to One Cheat Day a Month</p>
-            </a>
-            <p class="BoxDescription">Who doesn’t like cheat days in a cutting season? I certainly do. It’s one of those pleasures that no one
-                should know of. To be honest, you wouldn’t even have the need to cheat on your diet or your healthy
-                lifestyle if you consume just enough of everything in a healthy fashion. Unless you have serious goals and
-                determination, it’s essential not to cheat often or ever during the season.</p>
-
-            <ul class="Buzz_Words">
-                <li>Gym</li>
-                <li>Healthy Lifestyle</li>
-                <li>Cutting</li>
-                <li>Cheat</li>
-            </ul>
-            <p>Posted on 18/03/2019</p>
-        </div>
-
     </section>
 
     <!--            count how many articles there are-->
