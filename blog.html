@@ -47,6 +47,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
+    <!-- <script src="js/count_articles.js"></script> -->
+
     <title>Blog | Ahmet Ince</title>
 </head>
 
@@ -59,586 +61,113 @@
         });
     </script>
 
-    <div id="sideBar">
+    <div class="sideSectionBlog">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-all-blog-articles-tab" data-toggle="pill"
+                    href="#pills-all-blog-articles" role="tab" aria-controls="pills-all-blog-articles"
+                    aria-selected="true">All Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-book-reviews-tab" data-toggle="pill" href="#pills-book-reviews" role="tab"
+                    aria-controls="pills-book-reviews" aria-selected="false">Book Reviews</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-personal-thoughts-tab" data-toggle="pill" href="#pills-personal-thoughts"
+                    role="tab" aria-controls="pills-personal-thoughts" aria-selected="false">Personal Thoughts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-java-tab" data-toggle="pill" href="#pills-java" role="tab"
+                    aria-controls="pills-java" aria-selected="false">Java</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-android-tab" data-toggle="pill" href="#pills-android" role="tab"
+                    aria-controls="pills-android" aria-selected="false">Android</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-web-tab" data-toggle="pill" href="#pills-web" role="tab"
+                    aria-controls="pills-web" aria-selected="false">Web</a>
+            </li>
+            <!-- subscription list -->
+            <li class="sideHeaderBlog"><a class="side" href="phplist/?p=subscribe" title="">Subscribe</a></li>
+            <li class="sideHeaderBlog"><a class="side" href="phplist/?p=unsubscribe" title="">Unsubscribe</a></li>
+        </ul>
     </div>
-    <script> $(function () {
-            $("#sideBar").load("side_bar.html");
-        });
-    </script>
-
 
     <section>
+        <div class="tab-content" id="v-pills-tabContent">
+            <!-- All Articles -->
+            <div class="tab-pane fade show active" id="pills-all-blog-articles" role="tabpanel"
+                aria-labelledby="pills-all-blog-articles-tab">
 
-        <p class="subHeader" id="All">All Articles</p>
+                <div id="all-articles">
+                </div>
+                <script>
+                    $(function () {
+                        $("#all-articles").load("blogs/all_blog_articles.html");
+                    });
+                </script>
+            </div>
+            <!-- Book Reviews -->
+            <div class="tab-pane fade show" id="pills-book-reviews" role="tabpanel"
+                aria-labelledby="pills-book-reviews-tab">
 
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="blogs/book_reviews/images/way-of-the-peaceful-warrior.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/book_reviews/way_of_the_peaceful_warrior.html" target="_blank">
-                        <p class="BoxHeader">The Way of the Peaceful Warrior by Dan Millman</p>
-                    </a>
-                    <p class="BoxDescription"><i>“Warriors, warriors we call ourselves. We fight for splendid
-                            virtue, for high endeavour, for sublime wisdom, therefore we call ourselves warriors”</i> –
-                        Aunguttara Nikaya.
-                    </p>
-                    <ul class="Buzz_Words">
-                        <li>Philosophy</li>
-                        <li>Spiritual</li>
-                        <li>Inspirational</li>
-                        <li>Journey</li>
-                        <li>Being a Warrior</li>
-                    </ul>
+                <div id="book-reviews">
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">
-                        Posted on 10/09/2018
-                    </small>
-                </div>
+                <script>
+                    $(function () {
+                        $("#book-reviews").load("blogs/book_reviews.html");
+                    });
+                </script>
             </div>
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/simple_programmer_free_blog_course.png"
-                    alt="Simple Programmer Blog Course">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/simple_programmers_free_blog_course.html" target="_blank">
-                        <p class="BoxHeader">Simple Programmer's Free Blog Course</p>
-                    </a>
-                    <p class="BoxDescription">This was the first blog related video I watched of John Sonmez
-                        that got me
-                        committed first of all developing my website and start writing my blog posts.
-                    </p>
-                    <ul class="Buzz_Words">
-                        <li>Blog</li>
-                        <li>Commitment</li>
-                        <li>Inspiration</li>
-                        <li>Student</li>
-                    </ul>
+            <!-- Personal thoughts -->
+            <div class="tab-pane fade show" id="pills-personal-thoughts" role="tabpanel"
+                aria-labelledby="pills-personal-thoughts-tab">
+
+                <div id="personal-thoughts">
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 16/09/2018</small>
-                </div>
+                <script>
+                    $(function () {
+                        $("#personal-thoughts").load("blogs/personal_thoughts.html");
+                    });
+                </script>
             </div>
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/galaxy_note_9.jpg"
-                    style="margin-top: 1em;" alt="Galaxy note 9">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/little_adjustments_in_samsung_note_9_that_worth_%C2%A3399_more_than_note_8.html"
-                        target="_blank">
-                        <p class="BoxHeader">Little adjustments in Samsung Galaxy Note 9 that worth £400 more
-                            than Galaxy Note 8
-                        </p>
-                    </a>
-                    <p class="BoxDescription">First off, I feel like I need to clear off something so I don’t
-                        sound like a Samsung hater. I currently own a Samsung Galaxy Note 8 and very much support
-                        Samsung’s
-                        vision and their mission towards how they trying to innovate for both developing the current
-                        technology
-                        and satisfying customers.
-                    </p>
-                    <ul class="Buzz_Words">
-                        <li>Samsung</li>
-                        <li>Galaxy Note 9</li>
-                        <li>Tech</li>
-                        <li>Criticism</li>
-                        <li>Upgrade</li>
-                    </ul>
+            <!-- Java -->
+            <div class="tab-pane fade show" id="pills-java" role="tabpanel" aria-labelledby="pills-java-tab">
+
+                <div id="java">
                 </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 24/09/2018</small>
+                <script>
+                    $(function () {
+                        $("#java").load("blogs/java.html");
+                    });
+                </script>
+            </div>
+            <!-- Android -->
+            <div class="tab-pane fade show" id="pills-android" role="tabpanel"
+                aria-labelledby="pills-android-tab">
+
+                <div id="android">
                 </div>
+                <script>
+                    $(function () {
+                        $("#android").load("blogs/android.html");
+                    });
+                </script>
+            </div>
+            <!-- Web -->
+            <div class="tab-pane fade show" id="pills-web" role="tabpanel" aria-labelledby="pills-web-tab">
+
+                <div id="web">
+                </div>
+                <script>
+                    $(function () {
+                        $("#web").load("blogs/web.html");
+                    });
+                </script>
             </div>
         </div>
-
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/energizing-body.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/how_to_energize_your_body_in_10_minutes.html" target="_blank">
-                        <p class="BoxHeader">How to energize your body in 10 minutes</p>
-                    </a>
-                    <p class="BoxDescription">If you’re struggling with boosting and maintaining energy, I
-                        highly suggest you try the ‘daily bio-energizer’ after you wake up and/or when you are on the
-                        way to gym.
-                    </p>
-                    <ul class="Buzz_Words">
-                        <li>Energy Boost</li>
-                        <li>Stretching</li>
-                        <li>Morning Routine</li>
-                        <li>Warm-up</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 30/09/2018</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/quick-links-to-stay-in-touch.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/quick_links_to_stay_in_touch_with_the_tech_world.html"
-                        target="_blank">
-                        <p class="BoxHeader">Quick Links to stay in touch with the Tech World</p>
-                    </a>
-                    <p class="BoxDescription">It’s hard to keep up with the advancement of technology. Every
-                        single day,
-                        there
-                        is quite interesting news that a technical person should be interested in and be aware
-                        of; from
-                        industrial to developer news. Hence I wanted to share couple of links of websites and
-                        mention
-                        some
-                        Android applications that provide daily tech news so you are always up-to-date.
-                    </p>
-                    <ul class="Buzz_Words">
-                        <li>Tech News</li>
-                        <li>Subscriptions</li>
-                        <li>Up-to-date</li>
-                        <li>Android</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 07/10/2018</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/spotify-img.jpg" alt="Spotify">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/my_playlist_for_gym.html" target="_blank">
-                        <p class="BoxHeader">My Playlist for Gym</p>
-                    </a>
-                    <p class="BoxDescription">I wanted to share my playlist that I listen to in gym and will be
-                        updating
-                        with
-                        new tracks in the future. These tracks really boost my performance in both the strength
-                        and
-                        cardio
-                        training.</p>
-                    <ul class="Buzz_Words">
-                        <li>Gym</li>
-                        <li>Tunes</li>
-                        <li>Pump-up</li>
-                        <li>Motivation</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 15/10/2018</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="blogs/android/images/json-parsing-using-volley-android.jpg"
-                    alt="JSON parsing using Volley in Android">
-                <div class="card-body">
-                    <a href="blogs/android/a_complete_process_of_parsing_json_in_android_from_a_web_server.html"
-                        target="_blank">
-                        <p class="BoxHeader">A complete process of parsing JSON in Android from a Web Server</p>
-                    </a>
-                    <p class="BoxDescription">If you are looking a way of sending your data from your server to
-                        your
-                        Android
-                        application, one of the good ways of achieving this will be converting your data from
-                        the
-                        database into
-                        <b>JSON object</b> and parsing that JSON to your Android application with the help of a
-                        third-party
-                        library ‘<b>Volley</b>’ to speed things up.</p>
-                    <ul class="Buzz_Words">
-                        <li>JSON Parsing</li>
-                        <li>Volley</li>
-                        <li>Android</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 29/10/2018</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/web/images/cors-web-api.png" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/web/the_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html" target="_blank">
-                        <p class="BoxHeader">The Use of Cross-Origin Resource Sharing (CORS) in Web API</p>
-                    </a>
-                    <p class="BoxDescription">Cross-Origin Resource Sharing is an additional tool to help your
-                        website
-                        access to
-                        resources in a different origin (domain, protocol or port). Without the use of CORS or
-                        <a class="link" href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank">JSONP</a>,
-                        it’s not possible
-                        to make AJAX calls for this instance to a Web API from the website.</p>
-                    <ul class="Buzz_Words">
-                        <li>Web API</li>
-                        <li>CORS</li>
-                        <li>AJAX</li>
-                        <li>HTTP</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 12/11/2018</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/dirty-bulking.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/my_experience_with_dirty_bulking.html" target="_blank">
-                        <p class="BoxHeader">My Experience with Dirty Bulking</p>
-                    </a>
-                    <p class="BoxDescription">First of all, we need to understand what bulking is. In simple
-                        terms,
-                        bulking is a
-                        process of gaining both muscle mass and body fat by consuming caloric surplus every day
-                        which
-                        should be
-                        around 250-500 calories more than your maintenance calorie intake.</p>
-                    <ul class="Buzz_Words">
-                        <li>Gym</li>
-                        <li>Health</li>
-                        <li>Bulking</li>
-                        <li>Nutrients</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 18/11/2018</small>
-                </div>
-            </div>
-        </div>
-
-        <!-- should be page 2  -->
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/legendary-movies.png" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/legendary_movies_of_all_time.html" target="_blank">
-                        <p class="BoxHeader">Legendary Movies of All Time</p>
-                    </a>
-                    <p class="BoxDescription">Everybody have their top movies that they can recall whenever it’s
-                        asked
-                        around
-                        hence I wanted to list my favourite movies of all time (without spoiling) which I
-                        believe most
-                        of the
-                        people will agree to. In this list, majority of the movies aren’t going to be recent as
-                        I don’t
-                        know if
-                        this is a psychological thing towards me liking the ‘nostalgia’ or the fact that movies
-                        in the
-                        modern
-                        era aren’t trying to portray a message/lesson and/or haven’t got their story plot up to
-                        a par as
-                        the
-                        movies in late 1900s and early 2000s.</p>
-
-                    <ul class="Buzz_Words">
-                        <li>Movies</li>
-                        <li>Legendary</li>
-                        <li>Top-10</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 26/11/2018</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/book_reviews/images/the_complete_software_developers_career_guide.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/book_reviews/the_complete_software_developers_career_guide.html" target="_blank">
-                        <p class="BoxHeader">The Complete Software Developer’s Career Guide by John Sonmez</p>
-                    </a>
-                    <p class="BoxDescription">As I’ve mentioned John Sonmez earlier in a different <a class="link"
-                            href="http://ahmetince.co.uk/blogs/personal_thoughts/simple_programmers_free_blog_course.html"
-                            target="_blank">blog post </a>on how he inspired me to start my own blog. I cannot
-                        stop but
-                        mention
-                        his book too.
-                    </p>
-                    <ul class="Buzz_Words">
-                        <li>Developer</li>
-                        <li>Career</li>
-                        <li>Guide</li>
-                        <li>Interview</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 01/12/2018</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/top-meals-i-consume.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/top_meals_i_consume_in_cutting_season.html" target="_blank">
-                        <p class="BoxHeader">Top Meals I Consume in Cutting Season</p>
-                    </a>
-                    <p class="BoxDescription">When cutting season begins (usually between spring and summer
-                        term), in
-                        order to
-                        lose weight and get into a better-defined shape, it’s essential to count your calories
-                        and be in
-                        a
-                        caloric deficit where you finish your day with 250-500 calories less than your <a class="link"
-                            href="https://www.active.com/fitness/calculators/bmr">maintenance
-                            calorie intake</a>.</p>
-
-                    <ul class="Buzz_Words">
-                        <li>Gym</li>
-                        <li>Cutting</li>
-                        <li>Lifestyle</li>
-                        <li>Weightlifting</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 16/12/2018</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="blogs/android/images/storing-custom-objects-using-gson.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/android/how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html"
-                        target="_blank">
-                        <p class="BoxHeader">How to Store a List of Custom Objects using Gson with Shared
-                            Preferences
-                        </p>
-                    </a>
-                    <p class="BoxDescription">Storing a list of custom objects is pretty simple when used with
-                        <b>Gson</b>
-                        library because it converts objects to JSON and this helps with saving its state in
-                        Shared
-                        Preferences.
-                        So, if you need to save some data from your list and display it after the app is
-                        restarted or
-                        another
-                        activity is opened then this will help you achieve the desired feature.<p>
-                            <ul class="Buzz_Words">
-                                <li>GSON</li>
-                                <li>JSON</li>
-                                <li>ArrayList</li>
-                                <li>Shared Preferences</li>
-                                <li>Android</li>
-                            </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 30/12/2018</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/java/images/calculating-normal-distribution-part-1.png" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html"
-                        target="_blank">
-                        <p class="BoxHeader">Manually Calculating Normal Distribution with Various Distribution
-                            Functions – Part
-                            1</p>
-                    </a>
-                    <p class="BoxDescription">If you ever needed to create a program that calculates the normal
-                        distribution
-                        with various distribution functions and rules, then this post will be a much help to
-                        you. There
-                        is a <a class="link"
-                            href="https://commons.apache.org/proper/commons-math/javadocs/api-3.5/org/apache/commons/math3/distribution/NormalDistribution.html"
-                            target="_blank">library</a> to overcome the calculations easily in Java. However,
-                        there
-                        aren’t many
-                        functionalities to satisfy your use perhaps, hence as a University project I developed a
-                        program
-                        to
-                        calculate normal distribution with different methods.</p>
-
-                    <ul class="Buzz_Words">
-                        <li>Math</li>
-                        <li>Normal Distribution</li>
-                        <li>Statistics</li>
-                        <li>Distribution Functions</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 06/01/2019</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/java/images/creating-a-z-table-part-2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/java/creating_a_z_table_part_2.html" target="_blank">
-                        <p class="BoxHeader">Creating a Z-Table - Part 2</p>
-                    </a>
-                    <p class="BoxDescription">In my previous article, I demonstrated how to calculate the
-                        standard
-                        normal
-                        distribution using various distribution functions. So this is a follow up to extending
-                        the
-                        application
-                        in creating the Z-Table.</p>
-
-                    <ul class="Buzz_Words">
-                        <li>Normal Distribution</li>
-                        <li>Statistics</li>
-                        <li>Distribution Functions</li>
-                        <li>Z-Table</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 20/01/2019</small>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/hackerrank.png" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/how_hackerrank_helped_me.html" target="_blank">
-                        <p class="BoxHeader">How HackerRank helped me</p>
-                    </a>
-                    <p class="BoxDescription">I was fresh out of University, got my degree in my hand and
-                        wondering if I
-                        was
-                        capable enough for a
-                        developer job. At that time, I didn’t feel like I was ready to start working hence I
-                        took some
-                        time off
-                        focusing on my programming skills. Before I found out <a class="link"
-                            href="https://www.hackerrank.com/" target="_blank">HackerRank</a>, I worked on
-                        personal projects and deployed my website to showcase my portfolio so I stand out from
-                        other
-                        candidates
-                        where the competition in this industry for a graduate is very high.</p>
-
-                    <ul class="Buzz_Words">
-                        <li>Algorithms</li>
-                        <li>Data Structures</li>
-                        <li>Interview Revision</li>
-                        <li>Commitment</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 27/01/2019</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts//images/why-universities-waste-of-time.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/why_i_think_universities_are_a_waste_of_time_and_money_for_most_courses.html"
-                        target="_blank">
-                        <p class="BoxHeader">Why I think Universities are a Waste of Time and Money for Most Courses</p>
-                    </a>
-                    <p class="BoxDescription">Before I start my rant, I would like to specify that I base this opinion
-                        of off my
-                        personal university experience which I had some great time in and from my friends who were and
-                        are in
-                        university. Thus I wouldn’t want to talk about subjects that I have no knowledge or experience.
-                        Hence
-                        why I’m posting this. </p>
-
-                    <ul class="Buzz_Words">
-                        <li>University</li>
-                        <li>Time</li>
-                        <li>Money</li>
-                        <li>Waste</li>
-                        <li>Computer Science</li>
-                        <li>Vision</li>
-                    </ul>
-
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 12/02/2019</small>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/one-of-the-quickest-cash-earning-job.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/one_of_the_quickest_cash_earning_job_for_students.html"
-                        target="_blank">
-                        <p class="BoxHeader">One of the Quickest Cash-Earning Job for Students</p>
-                    </a>
-                    <p class="BoxDescription">As a University student, it can be difficult to keep hold of your money in
-                        your
-                        pocket. I understand the
-                        needs
-                        and urges as it comes costly and this makes it harder for a young person to manage their
-                        spending even
-                        if
-                        you’re
-                        receiving student finance. Consequently, the more money you have the more you spend hence you
-                        become
-                        broke
-                        within 2 weeks. So, most likely, you will probably look for a job to earn extra cash so you
-                        survive for
-                        the
-                        month.</p>
-
-                    <ul class="Buzz_Words">
-                        <li>Jobs</li>
-                        <li>Students</li>
-                        <li>Security</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 18/02/2019</small>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- should be page 3  -->
-
-        <div class="card-deck">
-            <div class="card" style="max-width: 31.3%;">
-                <img class="card-img-top" src="blogs/personal_thoughts/images/from-two-cheat-days-to-one-cheat-day.png" alt="Card image cap">
-                <div class="card-body">
-                    <a href="blogs/personal_thoughts/from_two_cheat_days_a_week_to_one_cheat_day_a_month.html"
-                        target="_blank">
-                        <p class="BoxHeader">From Two Cheat Days a Week to One Cheat Day a Month</p>
-                    </a>
-                    <p class="BoxDescription">Who doesn’t like cheat days in a cutting season? I certainly do. It’s one
-                        of those
-                        pleasures that no one
-                        should know of. To be honest, you wouldn’t even have the need to cheat on your diet or your
-                        healthy
-                        lifestyle if you consume just enough of everything in a healthy fashion. Unless you have serious
-                        goals
-                        and
-                        determination, it’s essential not to cheat often or ever during the season.</p>
-
-                    <ul class="Buzz_Words">
-                        <li>Gym</li>
-                        <li>Healthy Lifestyle</li>
-                        <li>Cutting</li>
-                        <li>Cheat</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Posted on 18/03/2019</small>
-                </div>
-            </div>
-        </div>
-
-
     </section>
-
-    <!--            count how many articles there are-->
-    <script>
-        function countArticles() {
-            //              count flex classes which contains articles in each of them
-            numItems = $('.flex').length;
-            //get the side header and append it with the amount of articles there are 
-            var x = document.getElementsByClassName("sideHeader");
-            //append it
-            x[0].innerHTML += "(" + numItems + ")";
-        }
-    </script>
-
-
     <!--footer-->
     <div id="footer">
     </div>
@@ -647,7 +176,6 @@
             $("#footer").load("footer.html");
         });
     </script>
-
 
     <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 
