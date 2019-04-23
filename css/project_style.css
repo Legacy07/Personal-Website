@@ -36,6 +36,10 @@ p.Paragraph {
     display: inline-block;
 }
 
+h3.image-alt {
+    color: #000000;
+}
+
 .card-deck {
     margin-top: 1em;
 }
@@ -98,13 +102,12 @@ div.sideSection{
 div.sideSectionBlog{
 
     margin: auto;
-    float: left;
-    margin-left: 10%;
-    border: 0.1em solid black;
+    /* float: left; */
+    /* margin-left: 10%; */
+    border: 0.05em solid gray;
     width: 80%;
     margin-bottom: 2%;
     padding: 1em;
-
 }
 
 /*
