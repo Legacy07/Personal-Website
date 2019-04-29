@@ -52,15 +52,15 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 2em;
     /* line-height: 1.5; */
-    color: gray;
+    color: #070826;
     font-weight: bold;
     transition: background-color 0.4s;
 }
 
 .nav-div p a.link:hover {
     /* border-bottom: 3px solid #FF0000; */
-    background-color: gray;
-    color: blanchedalmond;
+    background-color: #070826;
+    color: #C2F2E5;
     padding: 0.5em;
 }
 
