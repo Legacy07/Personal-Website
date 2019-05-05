@@ -62,8 +62,10 @@ li.email{
     background-size:contain;
     height: 2em;
     width: 2em;
-    padding-right: 0.5em;
+    /* padding-right: 0.5em; */
+    /* margin-right: 0.5em; */
     background-repeat: no-repeat;
+    float: left;
 }
 
 li.github{
@@ -71,7 +73,9 @@ li.github{
     background-size:contain;
     height: 2em;
     width: 2em;
+    margin-right: 0.5em;
     background-repeat: no-repeat;
+    display: inline-block;
 }
 
 li.linkedIn{
@@ -79,8 +83,10 @@ li.linkedIn{
     background-size:contain;
     height: 2em;
     width: 2em;
-    padding-right: 0.5em;
+    /* padding-right: 0.5em; */
+    margin-right: 0.5em;
     background-repeat: no-repeat;
+    float: left;
 }
 li a.contactLinks{
     display: flow-root;
