@@ -36,6 +36,8 @@ div.Description {
     width: 75%;
     position: relative;
     display: block;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 div.Description p {
@@ -190,13 +192,12 @@ input[type=submit] {
     position: fixed;
     bottom: 1em;
     right: 1em;
-    /*left: 50%;*/
     z-index: 99;
     font-size: 1em;
     border: none;
     outline: none;
-    background-color: coral;
-    color: white;
+    background-color: #C2F2E5;
+    color: black;
     cursor: pointer;
     padding: 1em;
     border-radius: 0.5em;
@@ -204,16 +205,17 @@ input[type=submit] {
 }
 
 #autoScrollButton:hover {
-    background-color: #555;
-    color: white;
+    background-color: #070826;
+    color: #C2F2E5;
 }
 
 div.graph {
     position: relative;
     width: 100%;
     max-width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin-left: -29%;
+    margin-top: -7%;
     /*    display: inline-block;*/
 }
 

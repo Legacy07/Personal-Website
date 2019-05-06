@@ -113,8 +113,11 @@ div.search {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: black;
-    color: white;}
+.dropdown-content a:hover {
+    background-color: #070826;
+    color: #C2F2E5;
+    /* font-size: 1.2em; */
+}
 
 /* Show the dropdown menu (used in nav_bar.js) */
 .show {display:block;}
