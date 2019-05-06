@@ -70,6 +70,7 @@ p.Paragraph {
     position: relative;
     max-width: 100%;
     display: inline-block;
+    text-align: justify;
 }
 
 p.highlight {
@@ -105,11 +106,11 @@ p.boxHeader {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2em;
-    width: 60%;
+    width: 64%;
     margin: 0;
     color: black;
     position: relative;
-    margin-left: 20%;
+    margin-left: 18%;
     margin-bottom: 1%;
     border-bottom: 0.1em solid gray;
     border-bottom-width: thin;
@@ -213,9 +214,9 @@ div.graph {
     position: relative;
     width: 100%;
     max-width: 100%;
-    /* height: 100%; */
+    /* height: 60%; */
     margin-left: -29%;
-    margin-top: -7%;
+    margin-top: -6%;
     /*    display: inline-block;*/
 }
 
@@ -251,7 +252,8 @@ div.graph {
     }
     p.boxHeader {
         /*        text-align: center;*/
-        margin-left: 2%;
+        margin-left: 16%;
+        margin-bottom: 2%;
     }
     p.linkedInHeader {
         margin-left: 38%;
@@ -267,6 +269,13 @@ div.graph {
     #desktopVersion {
         margin-left: 10%;
         visibility: visible;
+        /* position: relative; */
+    }
+    div.graph {
+        /* height: 100%; */
+        /* display: block; */
+        margin-left: -41%;
+        margin-top: 200%;
     }
 }
 
@@ -279,7 +288,8 @@ div.graph {
         /*        position: relative;*/
     }
     p.boxHeader {
-        margin-left: 5%;
+        margin-left: 10%;
+        width: 80%;
     }
     div.githubBox {
         float: none;
@@ -306,7 +316,8 @@ div.graph {
         margin-top: -2%;
     }
     div.graph {
-        margin-left: -40%;
+        margin-left: -41%;
+        margin-top: 25%;
         /*        width: 100%;*/
     }
     div.Description {
@@ -320,6 +331,7 @@ div.graph {
 @media(min-width: 769px) and (max-width: 1024px) {
     div.graph {
         margin-left: -40%;
+        margin-top: 5%;
         /*        width: 100%;*/
     }
     div.Description {
@@ -333,6 +345,7 @@ div.graph {
     }
     p.boxHeader {
         /*        text-align: center;*/
-        margin-left: 11%;
+        margin-left: 10%;
+        width: 80%;
     }
 }

@@ -348,6 +348,9 @@ ul.Buzz_Words li {
     color: #C2F2E5;
 }
 
+.card-width {
+    max-width: 30%;
+}
 /*
 input[type=submit] {
 background-color: chocolate;
@@ -624,7 +627,7 @@ border: 0em;
 
 @media(max-width: 480px) {
     section {
-        width: 95%;
+        width: 100%;
         display: inline-block;
     }
     section.BlogSection {
@@ -695,7 +698,7 @@ border: 0em;
         border-left: 0em;
     }
     div.sideSectionBlog {
-        width: 95%;
+        width: 100%;
         margin-left: 0%;
         border-right: 0em;
         border-left: 0em;
@@ -706,6 +709,9 @@ border: 0em;
         padding: 0.5em;
         padding-left: 1em;
         text-decoration: underline;
+    }
+    .card-width {
+        max-width: 100%;
     }
 }
 
