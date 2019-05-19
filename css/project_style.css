@@ -351,6 +351,7 @@ ul.Buzz_Words li {
 .card-width {
     max-width: 30%;
 }
+
 /*
 input[type=submit] {
 background-color: chocolate;
@@ -563,6 +564,12 @@ div.previousArticle {
 div.nextArticle {
     float: right;
     width: 50%;
+}
+
+.image-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 /* Make the image fully responsive
