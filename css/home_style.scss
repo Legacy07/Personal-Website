@@ -1,0 +1,99 @@
+@import './dimens.scss';
+
+@mixin height_weight {
+    height: 100%;
+    width: 100%;
+}
+html {
+    @include height_weight
+}
+
+body {
+    color: $accent-colour;
+    font-family: $text-font;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0 auto;
+    @include height_weight;
+}
+
+.nav-div {
+    display: inline-block;
+    margin-left: 22.5%;
+    position: absolute;
+    margin-top: 15%;
+}
+
+.nav-div a.link {
+    text-decoration: none;
+}
+
+.nav-div p a.link {
+    font-family: $text-font;
+    font-size: $nav-text-size;
+    color: $nav-link-hover-background-colour;
+    font-weight: bold;
+    transition: background-color 0.4s;
+}
+
+.nav-div p a.link:hover {
+    background-color: $nav-link-hover-background-colour;
+    color: $nav-link-hover-text-colour;
+    padding: 0.5em;
+}
+
+.background {
+    height: 100%;
+    width: 50%;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Media Queries */
+@media (min-width:390px) and (max-width: 480px) {
+    .nav-div {
+        margin: 10% 32.5%;
+    }
+    .background {
+        height: 50%;
+        width: 100%;
+    }
+}
+
+@media (max-width:479px) {
+    .nav-div {
+        margin: 10% 37.5%;
+    }
+    .background {
+        height: 50%;
+        width: 100%;
+    }
+}
+
+@media (min-width:480px) and (max-width:768px) {
+    .nav-div {
+        margin: 10% 42.5%;
+    }
+    .background {
+        height: 50%;
+        width: 100%;
+    }
+   
+}
+
+@media (min-width:769px) and (max-width:1023px) {
+    .nav-div {
+        margin: 10% 47.5%;
+    }
+    .background {
+        height: 50%;
+        width: 100%;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1439px) {
+    .nav-div {
+        margin-top: 30%;
+    }
+}
