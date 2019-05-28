@@ -1,0 +1,471 @@
+@import './dimens.scss';
+
+html {
+    background: $primary-colour;
+}
+
+@mixin body-text {
+    font-family: $text-font;
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+body {
+    color: $accent-colour;
+    @include body-text;
+}
+
+
+p.Header {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: $nav-text-size;
+    display: block;
+    margin-bottom: 0;
+}
+
+p.Paragraph {
+    font-family: $text-font;
+    font-size: $text-size;
+    margin: 0;
+    left: 45%;
+    color: $accent-colour;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+}
+
+h3.image-alt {
+    color: $accent-colour;
+}
+
+.card-deck {
+    margin-top: 1em;
+}
+
+p.subHeader {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: $nav-text-size;
+    border-bottom: 0.1em solid gray;
+    border-bottom-width: thin;
+    display: block;
+}
+
+p.BoxHeader {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: $accent-colour;
+    display: inline-block;
+    margin: 0;
+}
+
+p.BoxHeader:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 0.15em;
+    width: 0px;
+    -webkit-transition: width .35s ease, background-color .35s ease;
+    transition: width .35s ease, background-color .35s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover p.BoxHeader:after {
+    width: 100%;
+    background: $accent-colour;
+}
+
+p.BoxDescription {
+    font-family: $text-font;
+    font-size: $text-size;
+    width: 100%;
+    color: $accent-colour;
+}
+
+div.sideSection {
+    margin: auto;
+    float: left;
+    margin-left: 10%;
+    margin-top: 5%;
+    border: 0.1em solid black;
+}
+
+div.sideSectionBlog {
+    margin: auto;
+    border: 0.05em solid gray;
+    width: 80%;
+    margin-bottom: 2%;
+    padding: 1em;
+}
+
+ul.sideul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li.sideHeader a.side {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding-bottom: 1em;
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+    color: $accent-colour;
+}
+
+li.sideHeader a.side:hover {
+    text-decoration: underline;
+}
+
+li.sideHeaderBlog a.side {
+    padding: 1em;
+    color: $accent-colour;
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding-bottom: 1em;
+    padding-bottom: 0.5em;
+    float: left;
+    padding: 0.5em;
+    padding-left: 1em;
+    text-decoration: underline;
+}
+
+li.sideHeaderBlog a.side:hover {
+    text-decoration: underline;
+}
+
+section.project {
+    z-index: 0;
+    margin: auto;
+    padding: 1em;
+    width: 50%;
+}
+
+section {
+    z-index: 0;
+    margin: auto;
+    padding: 1em;
+    width: 80%;
+}
+
+section.BlogSection {
+    margin: auto;
+    width: 60%;
+    border-style: ridge;
+    margin-bottom: 1%;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-left: 20%;
+}
+
+ul.Buzz_Words {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+ul.Buzz_Words li {
+    display: inline-block;
+    background-color: $primary-dark-colour;
+    border: 0.2em solid $primary-dark-colour;
+    border-radius: 0.6em;
+    margin-right: 0.1em;
+    margin-top: 0.2em;
+    color: $primary-colour;
+    padding: 0 0.1em;
+}
+
+#autoScrollButton {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 99;
+    font-size: $text-size;
+    border: none;
+    outline: none;
+    background-color: $nav-link-hover-text-colour;
+    color: $accent-colour;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 0.5em;
+    transition: background-color 0.4s;
+}
+
+#autoScrollButton:hover {
+    background-color: $nav-link-hover-background-colour;
+    color: $nav-link-hover-text-colour;
+}
+
+.card-width {
+    max-width: 30%;
+}
+
+p.overviewDescription {
+    font-family: $text-font;
+    font-size: $text-size;
+    width: 100%;
+    color: black;
+}
+
+ul.overviewList {
+    display: block;
+    font-family: $text-font;
+    font-size: $text-size;
+    list-style-type: circle;
+    margin-top: -1em;
+    float: left;
+}
+
+ul.overviewList li {
+    color: $accent-colour;
+}
+
+a.link {
+    text-decoration: none;
+}
+
+p a.link {
+    color: $accent-colour;
+    font-weight: bold;
+    border-bottom: 1px solid Red;
+    transition: background-color 0.4s;
+}
+
+p a.link:hover {
+    border-bottom: 3px solid Red;
+    background-color: $primary-colour;
+}
+
+ol a.link {
+    color: gray;
+    transition: background-color 0.4s;
+}
+
+ol a.link:hover {
+    color: $accent-colour;
+    background-color: $primary-colour;
+}
+
+ol a.link2 {
+    color: $accent-colour;
+    font-weight: bold;
+    border-bottom: 1px solid Red;
+    transition: background-color 0.4s;
+}
+
+ol a.link2:hover {
+    border-bottom: 3px solid Red;
+    background-color: $primary-colour;
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul.dashList {
+    list-style-type: none;
+}
+
+ul.dashList>li:before {
+    content: '\2014';
+    position: absolute;
+    margin-left: -1.1em;
+}
+
+div.previousArticle {
+    float: left;
+    width: 50%;
+}
+
+div.nextArticle {
+    float: right;
+    width: 50%;
+}
+
+.image-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Media Queries */
+@media(max-width: 480px) {
+    section {
+        width: 100%;
+        display: inline-block;
+    }
+
+    section.BlogSection {
+        width: 90%;
+        display: inline-block;
+        margin-left: 5%;
+    }
+
+    section.project {
+        width: 80%;
+        display: inline-block;
+    }
+
+    a:hover p.BoxHeader:after {
+        width: 100%;
+        background: none;
+        background: none;
+    }
+
+    p.BoxHeader {
+        text-decoration: underline;
+    }
+
+    div.imagesDiv {
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    div.sideSection {
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+
+    div.sideSectionBlog {
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+
+    li.sideHeader a.side {
+        padding-bottom: 0.5em;
+        float: left;
+        padding: 0.5em;
+        padding-left: 1em;
+        text-decoration: underline;
+    }
+
+    .card-width {
+        max-width: 100%;
+    }
+}
+
+@media (min-width:481px) and (max-width:768px) {
+    section {
+        width: 85%;
+    }
+
+    section.BlogSection {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    section.project {
+        width: 85%;
+        display: inline-block;
+        margin-left: 5%;
+    }
+
+    a:hover p.BoxHeader:after {
+        width: 100%;
+        background: none;
+        background: none;
+    }
+
+    p.BoxHeader {
+        text-decoration: underline;
+    }
+
+    div.imagesDiv {
+        width: 100%;
+    }
+
+    div.sideSection {
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+
+    div.sideSectionBlog {
+        width: 96%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+
+    li.sideHeader a.side {
+        padding-bottom: 0.5em;
+        float: left;
+        padding: 0.5em;
+        padding-left: 1em;
+        text-decoration: underline;
+    }
+}
+
+@media(min-width:769px) and (max-width:1024px) {
+    div.sideSection {
+        width: 100%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+
+    div.sideSectionBlog {
+        width: 97%;
+        margin-left: 0%;
+        border-right: 0em;
+        border-left: 0em;
+    }
+
+    li.sideHeader a.side {
+        padding-bottom: 0.5em;
+        float: left;
+        margin-left: 5%;
+        padding: 0.5em;
+        padding-left: 1em;
+        text-decoration: underline;
+    }
+
+    section {
+        width: 85%;
+    }
+
+    .flex:nth-of-type(n) {
+        width: 25%;
+    }
+
+    section.BlogSection {
+        width: 95%;
+        margin-left: 3%;
+    }
+
+    section.project {
+        width: 95%;
+        display: inline-block;
+    }
+
+    div.imagesDiv {
+        width: 100%;
+    }
+}

@@ -1,0 +1,296 @@
+@import './dimens.scss';
+
+@mixin height_weight {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    background: $primary-colour;
+    @include height_weight;
+}
+
+body {
+    color: $accent-colour;
+    font-family: $text-font;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0 auto;
+    @include height_weight;
+}
+
+div.Description {
+    height: 100%;
+    margin-top: 1%;
+    font-size: $text-size;
+    width: 75%;
+    position: relative;
+    display: block;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+div.Description p {
+    font-family: $text-font;
+    margin: 0;
+    position: relative;
+    text-align: left;
+    margin-right: -25%;
+    margin-left: -25%;
+    width: 100%;
+}
+
+p.subHeader {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: $text-header-size;
+    left: 44%;
+    width: 100%;
+    margin: 0;
+    color: $accent-colour;
+    position: relative;
+}
+
+p.Paragraph {
+    font-family: $header-font;
+    font-size: 1em;
+    margin: 0;
+    left: 45%;
+    color: $accent-colour;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    text-align: justify;
+}
+
+p.highlight {
+    font-family: $header-font;
+    font-size: $text-header-size;
+    margin: 0;
+    left: 45%;
+    color: dimgrey;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+}
+
+p a {
+    color: $accent-colour;
+    font-weight: bold;
+    border-bottom: 0.1em solid Red;
+    transition: background-color 0.4s;
+}
+
+p a:hover {
+    border-bottom: 0.2em solid Red;
+    background-color: bisque;
+}
+
+p.boxHeader {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: $nav-text-size;
+    width: 64%;
+    margin: 0;
+    color: $accent-colour;
+    position: relative;
+    margin-left: 18%;
+    margin-bottom: 1%;
+    border-bottom: 0.1em solid gray;
+    border-bottom-width: thin;
+}
+
+section {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    position: relative;
+}
+
+.no-underline {
+    text-decoration: none !important
+}
+
+p.Header {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: $text-header-size;
+    margin-left: 35%;
+    margin-top: -5%;
+    position: relative;
+    text-align: center;
+    text-decoration: underline;
+}
+
+p.linkedInHeader {
+    font-family: $header-font;
+    font-weight: 700;
+    font-size: $text-header-size;
+    margin-left: 30%;
+    margin-top: -5%;
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#chartdiv {
+    position: relative;
+    top: 50%;
+    width: 50%;
+    height: 500px;
+}
+
+#autoScrollButton {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 99;
+    font-size: $text-size;
+    border: none;
+    outline: none;
+    background-color: $nav-link-hover-text-colour;
+    color: $accent-colour;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 0.5em;
+    transition: background-color 0.4s;
+}
+
+#autoScrollButton:hover {
+    background-color: $nav-link-hover-background-colour;
+    color: $nav-link-hover-text-colour;
+}
+
+div.graph {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-left: -29%;
+    margin-top: -6%;
+}
+
+#desktopVersion {
+    visibility: hidden;
+}
+
+/* Media Queries */
+@media(max-width: 480px) {
+    section {
+        width: 80%;
+        height: 0%;
+        margin: 0;
+        display: inline-block;
+        position: relative;
+    }
+    div.githubBox {
+        float: none;
+        width: 120%;
+        left: 1%;
+        height: 16em;
+    }
+    div.linkedinBox {
+        float: none;
+        width: 120%;
+        left: 1%;
+        height: 16em;
+    }
+    p.Header {
+        margin-left: 40%;
+        margin-top: -3%;
+    }
+    p.boxHeader {
+        margin-left: 16%;
+        margin-bottom: 2%;
+    }
+    p.linkedInHeader {
+        margin-left: 38%;
+        margin-top: -3%;
+    }
+    div.Description {
+        width: 85%;
+    }
+    div.Description p {
+        margin-left: -35%;
+    }
+    #desktopVersion {
+        margin-left: 10%;
+        visibility: visible;
+    }
+    div.graph {
+        margin-left: -41%;
+        margin-top: 200%;
+    }
+}
+
+@media (min-width:481px) and (max-width:768px) {
+    section {
+        width: 90%;
+        height: 0%;
+        margin: 0;
+        display: inline-block;
+    }
+    p.boxHeader {
+        margin-left: 10%;
+        width: 80%;
+    }
+    div.githubBox {
+        float: none;
+        width: 100%;
+        left: 5%;
+        height: 10em;
+    }
+    div.linkedinBox {
+        float: none;
+        width: 100%;
+        left: 5%;
+        height: 10em;
+    }
+    p.Header {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: -2%;
+    }
+    p.linkedInHeader {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: -2%;
+    }
+    div.graph {
+        margin-left: -41%;
+        margin-top: 25%;
+    }
+    div.Description {
+        width: 90%;
+    }
+    div.Description p {
+        margin-left: -40%;
+    }
+}
+
+@media(min-width: 769px) and (max-width: 1024px) {
+    div.graph {
+        margin-left: -40%;
+        margin-top: 5%;
+    }
+    div.Description {
+        width: 90%;
+    }
+    div.Description p {
+        margin-left: -40%;
+    }
+    section {
+        width: 75%;
+    }
+    p.boxHeader {
+        margin-left: 10%;
+        width: 80%;
+    }
+}
