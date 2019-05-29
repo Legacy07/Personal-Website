@@ -1,9 +1,22 @@
 {
-  "devDependencies": {
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.12.0"
-  },
+  "name": "ahmet",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "index.html",
   "scripts": {
-    "scss": "node-sass style.scss style.css"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Legacy07/Personal-Website.git"
+  },
+  "author": "ahmet ince",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Legacy07/Personal-Website/issues"
+  },
+  "homepage": "https://github.com/Legacy07/Personal-Website#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
