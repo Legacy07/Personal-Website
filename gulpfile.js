@@ -1,41 +1,70 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+// var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
-var useref = require('gulp-useref');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var cssnano = require('gulp-cssnano');
+// var useref = require('gulp-useref');
+// var uglify = require('gulp-uglify');
+// var gulpIf = require('gulp-if');
+// var cssnano = require('gulp-cssnano');
 
-// get all the scss files from app/sass, compile them in css and placed in build/css
-gulp.task('sass', function(){
-    return gulp.src('app/sass/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('build/css'))
-});
+var gulp = require('gulp');
+var runSequence = require('run-sequence');
+var $ = require('gulp-load-plugins')({ lazy: true });
+var browserSync = require('browser-sync').create();
 
-//watch for files if they have been changed. 
-gulp.task('watch', function(){
-    gulp.watch('app/scss/*.scss', ['sass']); 
-    // Other watchers
-});
+// gulp.task('default', ['copy-html']);
 
-// will go through every html files under the tags - <!--build:js js/main.min.js --> 
-// <!-- endbuild -->
-// so it will put every js file in a min.js file when built so we dont keep include any js file in html pages.
-// this also works with files in different folders too. 
-gulp.task('useref', function(){
-    return gulp.src('app/*.html')
-    .pipe(useref())
-    .pipe(gulp.dest('build'))
-});
+gulp.task('clean-build', require('./gulpTasks/clean-build'));
+// gulp.task('copy-html', require('./gulpTasks/copy-html'));
+// gulp.task('inject', require('./gulpTasks/inject'));
+// gulp.task('move-index-to-build', require('./gulpTasks/move-index-to-build'));
+// gulp.task('move-js-to-build', require('./gulpTasks/move-js-to-build'));
+// gulp.task('optimise-dev', require('./gulpTasks/optimise-dev'));
+gulp.task('styles', require('./gulpTasks/styles'));
+gulp.task('copy-js-files', require('./gulpTasks/copy-js-files'));
+gulp.task('watch-for-changes', require('./gulpTasks/watch-for-changes'));
 
-// Css files will be seperated from html files just like how its done with js files.
-gulp.task('useref', function(){
-    return gulp.src('app/*.html')
-    .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
-    // Minifies only if it's a CSS file
-    .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('build'))
-});
+gulp.task('serve-dev', function () {
 
+    runSequence('clean-build',
+        'styles',
+        'copy-js-files',
+        'watch-for-changes',
+        function () {
+            serve(true);
+        }
+    );
+
+})
+
+///////////////////////////////////////////////////////////////////////////////////// Functions /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function serve(isDev) {
+
+    startBrowserSync(isDev);
+}
+
+function startBrowserSync(isDev) {
+
+    if (browserSync.active) {
+        return;
+    }
+
+    var options = {
+        proxy: 'http://www.ahmetince.co.uk',
+        browser: ["chrome"],
+        ghostMode: { // these are the defaults t,f,t,t
+            clicks: true,
+            location: false,
+            forms: true,
+            scroll: true
+        },
+        injectChanges: true,
+        logFileChanges: true,
+        logLevel: 'info',
+        logPrefix: 'gulp-patterns',
+        notify: true,
+        reloadDelay: 1000
+    };
+    
+    browserSync.init(options);
+}
