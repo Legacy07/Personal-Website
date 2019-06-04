@@ -18,3 +18,5 @@ technical_iq_test/connection.php
 technical_iq_test/db_functions.php
 technical_iq_test/login.php
 technical_iq_test/register.php
+node_modules
+build
