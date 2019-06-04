@@ -1,14 +1,15 @@
 var clean = require('./helperFunctions/clean');
 
 /**
- * Remove all js, css and html from the build and temp folders
+ * Remove everything in build folder
  * @param  {Function} done - callback when complete
  */
 module.exports = function(done) {
     var files = [].concat(
-        "build/index.html",
-        "build/js/**",
-        "build/css/**"        
+        // "build/*.html",
+        // "build/js/**",
+        // "build/css/**"       
+        "build/*"
     );
 
     clean(files, done);

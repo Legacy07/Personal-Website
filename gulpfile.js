@@ -6,20 +6,20 @@ var browserSync = require('browser-sync').create();
 // var gulpIf = require('gulp-if');
 // var cssnano = require('gulp-cssnano');
 
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
-var $ = require('gulp-load-plugins')({ lazy: true });
-var browserSync = require('browser-sync').create();
+var runSequence = require('run-sequence').use(gulp);
+var $ = require('gulp-load-plugins')({
+    lazy: true
+});
 
 // gulp.task('default', ['copy-html']);
 
 gulp.task('clean-build', require('./gulpTasks/clean-build'));
-// gulp.task('copy-html', require('./gulpTasks/copy-html'));
 // gulp.task('inject', require('./gulpTasks/inject'));
 // gulp.task('move-index-to-build', require('./gulpTasks/move-index-to-build'));
 // gulp.task('move-js-to-build', require('./gulpTasks/move-js-to-build'));
 // gulp.task('optimise-dev', require('./gulpTasks/optimise-dev'));
 gulp.task('styles', require('./gulpTasks/styles'));
+gulp.task('copy-all-files', require('./gulpTasks/copy-all-files'));
 gulp.task('copy-js-files', require('./gulpTasks/copy-js-files'));
 gulp.task('watch-for-changes', require('./gulpTasks/watch-for-changes'));
 
@@ -27,13 +27,12 @@ gulp.task('serve-dev', function () {
 
     runSequence('clean-build',
         'styles',
-        'copy-js-files',
-        'watch-for-changes',
-        function () {
-            serve(true);
-        }
+        'copy-all-files'
+        // 'copy-js-files'
+        // function () {
+        //     serve(true);
+        // }
     );
-
 })
 
 ///////////////////////////////////////////////////////////////////////////////////// Functions /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,6 +64,6 @@ function startBrowserSync(isDev) {
         notify: true,
         reloadDelay: 1000
     };
-    
+
     browserSync.init(options);
 }
