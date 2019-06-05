@@ -1,22 +1,19 @@
 var gulp = require('gulp');
 var log = require('./helperFunctions/log');
 
+var paths = {
+    everything: ['app/**'],
+    excluding: ['!app/sass/**', '!app/Website logos/**', '!app/WebGL/**', '!app/README.md', "!app/images/**"], 
+    build: 'build/'
+};
+
 module.exports = function () {    
-    var paths = {
-        everything: ['app/**'],
-        excluding: ['!app/sass/**', '!app/Website logos/**', '!app/WebGL/**', '!app/README.md'], 
-        build: ['build/']
-    };
+    copyFiles(paths);
+};
+
+function copyFiles(paths){
     log('Copying files to build excluding ' + paths.excluding.toString());
     return gulp
             .src(paths.everything.concat(paths.excluding))
-            .pipe(gulp.dest(paths.build));     
-};
-
-// function copyFiles(paths){
-//     var paths = {
-//         everything: ['app/**'],
-//         excluding: ['!app/js/**', '!app/sass/**', '!app/Website logos/**'], 
-//         dist: ['dist/']
-//     };
-// }
+            .pipe(gulp.dest(paths.build));
+}
