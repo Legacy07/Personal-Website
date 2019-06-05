@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-    <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- using the custom css -->
+
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+    <!-- build:css css/styles.min.css -->
     <link rel="stylesheet" href="css/common-files.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+    <!-- endbuild -->
 
+    <!-- build:js js/main.min.js -->
     <script src="js/nav_bar.js"></script>
-
-    <!--        webgl libraries-->
     <script type="text/javascript" src="js/three.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/stats.js"></script>
     <script src="js/rotating_cube.js"></script>
-
+    <!-- endbuild -->
+    
     <!--        google analytics-->
     <script src="js/google_analytics.js"></script>
 
@@ -30,7 +30,8 @@
     <div id="navigation">
 
     </div>
-    <script> $(function () {
+    <script>
+        $(function () {
             $("#navigation").load("nav_bar.html");
         });
     </script>
@@ -44,18 +45,19 @@
             $(".card").hover(
                 function () {
                     $(this).addClass('shadow-lg').css('cursor', 'pointer');
-                }, function () {
+                },
+                function () {
                     $(this).removeClass('shadow-lg');
                 }
             );
         });
-
     </script>
 
     <p class="boxHeader">Contact Me</p>
     <div class="d-flex justify-content-center" style="margin-left: 10%; margin-right: 10%;">
         <div class="card-deck">
-            <a class="card border-dark text-dark mb-3 nav-link" href="https://github.com/Legacy07" style="max-width: 18rem; height: 20rem;" tar>
+            <a class="card border-dark text-dark mb-3 nav-link" href="https://github.com/Legacy07"
+                style="max-width: 18rem; height: 20rem;" tar>
                 <div class="card-header">Github</div>
                 <div class="card-body">
                     <p>If you wish to see the full source of my projects or ask anything related to any issues,
@@ -85,7 +87,8 @@
 
     <div id="footer">
     </div>
-    <script> $(function () {
+    <script>
+        $(function () {
             $("#footer").load("footer.html");
         });
     </script>

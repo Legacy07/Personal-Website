@@ -9,7 +9,7 @@ window.onclick = function(event) {
     for (var i = 0; i < dropdowns.length; i++) {
         var match = false, dropdown = dropdowns[i];
         if (event.target.classList.contains('#dropbtn')) {
-            for (var c of dropdown.classList.values()) {
+            for (var c in dropdown.classList.values()) {
                 if (c.indexOf('menu-') == 0 && event.target.classList.contains(c)) {
                     match = true; break;
                 }

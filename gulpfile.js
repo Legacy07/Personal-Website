@@ -20,15 +20,15 @@ gulp.task('clean-build', require('./gulpTasks/clean-build'));
 // gulp.task('optimise-dev', require('./gulpTasks/optimise-dev'));
 gulp.task('styles', require('./gulpTasks/styles'));
 gulp.task('copy-all-files', require('./gulpTasks/copy-all-files'));
-gulp.task('copy-js-files', require('./gulpTasks/copy-js-files'));
+gulp.task('optimise-dev', require('./gulpTasks/optimise-dev'));
 gulp.task('watch-for-changes', require('./gulpTasks/watch-for-changes'));
 
 gulp.task('serve-dev', function () {
 
     runSequence('clean-build',
         'styles',
-        'copy-all-files'
-        // 'copy-js-files'
+        'copy-all-files',
+        'optimise-dev'
         // function () {
         //     serve(true);
         // }
