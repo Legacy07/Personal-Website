@@ -13,6 +13,6 @@ module.exports = function () {
         .src('app/sass/*.scss')
         .pipe($.plumber())
         .pipe($.sass())
-        // .pipe($.autoprefixer())
+        .pipe($.autoprefixer())
         .pipe(gulp.dest('build/css'));
 };
