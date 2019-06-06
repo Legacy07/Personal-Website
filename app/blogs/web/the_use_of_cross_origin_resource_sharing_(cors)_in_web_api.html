@@ -1,128 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!doctype html>
 <html lang="en">
-    <head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
 
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="../../css/blog-common-files.css"/>
-        <link rel="stylesheet" href="../../css/project_style.css"/>
-        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <script src="../../js/back_to_top.js"></script>
+    <!-- build:css ../../css/styles.min.css -->
+    <link rel="stylesheet" href="../../css/blog-common-files.css" />
+    <link rel="stylesheet" href="../../css/project_style.css" />
+    <!-- endbuild -->
 
-        <!--        webgl libraries-->
-        <script type="text/javascript" src="../../js/three.js"></script>
-        <script type="text/javascript" src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/stats.js"></script>
-        <script src="../../js/rotating_cube.js"></script>
+    <!-- build:js ../../js/main.min.js -->
+    <script src="../../js/back_to_top.js"></script>
+    <script type="text/javascript" src="../../js/three.js"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/stats.js"></script>
+    <script src="../../js/rotating_cube.js"></script>
+    <!-- endbuild -->
 
-        <!--        google analytics-->
-        <script src="../../js/google_analytics.js"></script>
+    <!--        google analytics-->
+    <script src="../../js/google_analytics.js"></script>
 
-        <title>Web: The Use of Cross-Origin Resource Sharing (CORS) in Web API</title>
-    </head>
+    <title>Web: The Use of Cross-Origin Resource Sharing (CORS) in Web API</title>
+</head>
 
-    <body>
-        <!--        Navigation bar-->
-        <div id="navigation">
+<body>
+    <!--        Navigation bar-->
+    <div id="navigation">
 
-        </div>
-        <script> $(function() {
-                $("#navigation").load("../nav_bar_diff_folders.html");
-            });
+    </div>
+    <script>
+        $(function () {
+            $("#navigation").load("../nav_bar_diff_folders.html");
+        });
+    </script>
+
+    <!--        share-->
+    <div class="share">
+
+        <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fweb%2Fthe_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+            width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowTransparency="true" allow="encrypted-media"></iframe>
+
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">
+            lang: en_US
         </script>
+        <script type="IN/Share"
+            data-url="http://ahmetince.co.uk/blogs/web/the_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html">
+        </script>
+    </div>
 
-        <!--        share-->
-        <div class="share"> 
+    <section class="BlogSection">
+        <p class="Header">The Use of Cross-Origin Resource Sharing (CORS) in Web API</p>
+        <p><i>Posted on 12/11/2018</i></p>
 
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fweb%2Fthe_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        <p>Cross-Origin Resource Sharing is an additional tool to help your website access to resources in a different
+            origin (domain, protocol or port). Without the use of CORS or <a class="link"
+                href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank">JSONP</a>, it’s not possible to
+            make AJAX calls for this instance to a Web API from the website. This is not allowed because of security
+            reasons as browsers restrict cross-origin HTTP requests initiated from within scripts hence you need to
+            explicitly allow certain or all origins in order to communicate with them. </p>
 
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-            <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/web/the_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html"></script>
+        <p>For instance; if you have a solution on visual studio consisting 2 projects, one for your Website and the
+            other for your Web API, they will have their own specific port numbers. So, if you try to call one of the
+            controllers within your API from the Website, an error will occur;</p>
+
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #FF0000; background-color: #FFAAAA">XMLHttpRequest cannot load http://localhost:1234/api/people. Origin http://localhost:1235 is not allowed by Access-Control-Allow-Origin</span>
+            </pre>
         </div>
 
-        <section class="BlogSection">
-            <p class="Header">The Use of Cross-Origin Resource Sharing (CORS) in Web API</p>
-            <p><i>Posted on 12/11/2018</i></p>
+        <p>In order to resolve this issue, you need 2 lines of code in <i>WebApiConfig.cs</i> file under
+            <i>Register(HttpConfiguration config)</i>.</p>
+        <p>However, first, you need to install the package for CORS.
+            To achieve this, click on <i>Tools > NuGet Package Manager > Package Manager Console</i> and within the
+            console, copy &amp; paste; <b><i>Install-Package Microsoft.AspNet.WebApi.Cors</i></b>. This should
+            successfully install the package within your solution.
+        </p>
 
-            <p>Cross-Origin Resource Sharing is an additional tool to help your website access to resources in a different origin (domain, protocol or port). Without the use of CORS or <a class="link" href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank">JSONP</a>, it’s not possible to make AJAX calls for this instance to a Web API from the website. This is not allowed because of security reasons as browsers restrict cross-origin HTTP requests initiated from within scripts hence you need to explicitly allow certain or all origins in order to communicate with them. </p>
+        <p>Once that’s done, now you can import CORS library in <i>WebApiConfig.cs</i>;</p>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Web.Http.Cors</span>; 
+            </pre>
+        </div>
 
-            <p>For instance; if you have a solution on visual studio consisting 2 projects, one for your Website and the other for your Web API, they will have their own specific port numbers. So, if you try to call one of the controllers within your API from the Website, an error will occur;</p>
+        <p>Then add these lines of code under <i>Register(HttpConfiguration config)</i>;</p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #FF0000; background-color: #FFAAAA">XMLHttpRequest cannot load http://localhost:1234/api/people. Origin http://localhost:1235 is not allowed by Access-Control-Allow-Origin</span>
-            </pre></div>
-
-            <p>In order to resolve this issue, you need 2 lines of code in <i>WebApiConfig.cs</i> file under <i>Register(HttpConfiguration config)</i>.</p>
-            <p>However, first, you need to install the package for CORS. 
-                To achieve this, click on <i>Tools > NuGet Package Manager > Package Manager Console</i> and within the console, copy &amp; paste; <b><i>Install-Package Microsoft.AspNet.WebApi.Cors</i></b>. This should successfully install the package within your solution. 
-            </p>
-
-            <p>Once that’s done, now you can import CORS library in <i>WebApiConfig.cs</i>;</p>
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">using</span> <span style="color: #0e84b5; font-weight: bold">System.Web.Http.Cors</span>; 
-            </pre></div>
-
-            <p>Then add these lines of code under <i>Register(HttpConfiguration config)</i>;</p>
-
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">EnableCorsAttribute cors = <span style="color: #008800; font-weight: bold">new</span> EnableCorsAttribute(<span style="background-color: #fff0f0">&quot;*&quot;</span>, <span style="background-color: #fff0f0">&quot;*&quot;</span>, <span style="background-color: #fff0f0">&quot;*&quot;</span>);
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">EnableCorsAttribute cors = <span style="color: #008800; font-weight: bold">new</span> EnableCorsAttribute(<span style="background-color: #fff0f0">&quot;*&quot;</span>, <span style="background-color: #fff0f0">&quot;*&quot;</span>, <span style="background-color: #fff0f0">&quot;*&quot;</span>);
 config.EnableCors(cors); 
-</pre></div>    
-
-            <p>So the first line of code, <i>EnableCorsAttribute()</i> contains 3 parameters; first parameter is allowing <b>all origins</b> in this case, so any website can access to the Web API but you can obviously input list of specific domains too instead. Second parameter is to allow <b>all the headers</b> which you can also list specific headers like ‘<i>Content-Type</i>’ etc... Lastly the third parameter is the <b>type of methods</b> that is allowed from the resource, this is set to allow all but you can set specific methods like ‘<i>GET</i> and <i>POST</i>’ only. </p>
-
-            <p>Moreover, the second line of code enables CORS with specific attributes that we defined in the first line. </p>
-            
-            <p>As a result, this should enable Cross-Origin Resource Sharing and allow you to make AJAX calls from your Website to a Web API.</p>
-            
-            <p>For more detailed information, you can check out the <a class="link" href="https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api" target="_blank">Microsoft docs</a>.</p>
-
-            <ul class="Buzz_Words">
-                <li>Web API</li>
-                <li>CORS</li>
-                <li>AJAX</li>
-                <li>HTTP</li>
-            </ul>
-
-            <!--        Commenting-->
-
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-                var disqus_config = function () {
-                    this.page.url = 'http://ahmetince.co.uk/blogs/web/the_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html';  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = 'the_use_of_cross_origin_resource_sharing_(cors)_in_web_api'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-        </section>
-
-        <!--footer-->
-        <div id="footer">
+</pre>
         </div>
-        <script> 
-            $(function() {
-                $("#footer").load("../footer_diff_folders.html");
-            });
+
+        <p>So the first line of code, <i>EnableCorsAttribute()</i> contains 3 parameters; first parameter is allowing
+            <b>all origins</b> in this case, so any website can access to the Web API but you can obviously input list
+            of specific domains too instead. Second parameter is to allow <b>all the headers</b> which you can also list
+            specific headers like ‘<i>Content-Type</i>’ etc... Lastly the third parameter is the <b>type of methods</b>
+            that is allowed from the resource, this is set to allow all but you can set specific methods like
+            ‘<i>GET</i> and <i>POST</i>’ only. </p>
+
+        <p>Moreover, the second line of code enables CORS with specific attributes that we defined in the first line.
+        </p>
+
+        <p>As a result, this should enable Cross-Origin Resource Sharing and allow you to make AJAX calls from your
+            Website to a Web API.</p>
+
+        <p>For more detailed information, you can check out the <a class="link"
+                href="https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api"
+                target="_blank">Microsoft docs</a>.</p>
+
+        <ul class="Buzz_Words">
+            <li>Web API</li>
+            <li>CORS</li>
+            <li>AJAX</li>
+            <li>HTTP</li>
+        </ul>
+
+        <!--        Commenting-->
+
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+            var disqus_config = function () {
+                this.page.url =
+                    'http://ahmetince.co.uk/blogs/web/the_use_of_cross_origin_resource_sharing_(cors)_in_web_api.html'; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier =
+                    'the_use_of_cross_origin_resource_sharing_(cors)_in_web_api'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
         </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+
+    </section>
+
+    <!--footer-->
+    <div id="footer">
+    </div>
+    <script>
+        $(function () {
+            $("#footer").load("../footer_diff_folders.html");
+        });
+    </script>
 
 
-        <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+    <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 
-    </body>
+</body>
+
 </html>

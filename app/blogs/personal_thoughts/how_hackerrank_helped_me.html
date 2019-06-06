@@ -5,19 +5,20 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- using the custom css -->
-    <link rel="stylesheet" href="../../css/blog-common-files.css"/>
-    <link rel="stylesheet" href="../../css/project_style.css" />
     <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-    <script src="../../js/back_to_top.js"></script>
+    <!-- build:css ../../css/styles.min.css -->
+    <link rel="stylesheet" href="../../css/blog-common-files.css" />
+    <link rel="stylesheet" href="../../css/project_style.css" />
+    <!-- endbuild -->
 
-    <!--        webgl libraries-->
+    <!-- build:js ../../js/main.min.js -->
+    <script src="../../js/back_to_top.js"></script>
     <script type="text/javascript" src="../../js/three.js"></script>
     <script type="text/javascript" src="../../js/jquery.js"></script>
     <script type="text/javascript" src="../../js/stats.js"></script>
     <script src="../../js/rotating_cube.js"></script>
+    <!-- endbuild -->
 
     <!--        google analytics-->
     <script src="../../js/google_analytics.js"></script>
@@ -30,7 +31,8 @@
     <div id="navigation">
 
     </div>
-    <script> $(function () {
+    <script>
+        $(function () {
             $("#navigation").load("../nav_bar_diff_folders.html");
         });
     </script>
@@ -43,9 +45,11 @@
             width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
             allowTransparency="true" allow="encrypted-media"></iframe>
 
-        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-        <script type="IN/Share"
-            data-url="http://ahmetince.co.uk/blogs/personal_thoughts/how_hackerrank_helped_me.html"></script>
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">
+            lang: en_US
+        </script>
+        <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/personal_thoughts/how_hackerrank_helped_me.html">
+        </script>
     </div>
 
     <section class="BlogSection">
@@ -115,18 +119,20 @@
 
         <div id="disqus_thread"></div>
         <script>
-
             /**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
             var disqus_config = function () {
-                this.page.url = 'http://ahmetince.co.uk/blogs/personal_thoughts/how_hackerrank_helped_me.html';  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = 'how_hackerrank_helped_me'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.url =
+                'http://ahmetince.co.uk/blogs/personal_thoughts/how_hackerrank_helped_me.html'; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier =
+                'how_hackerrank_helped_me'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
 
             (function () { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
+                var d = document,
+                    s = d.createElement('script');
                 s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);

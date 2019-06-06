@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!doctype html>
 <html lang="en">
-    <head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
 
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="../../css/blog-common-files.css"/>
-        <link rel="stylesheet" href="../../css/project_style.css"/>
-        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <script src="../../js/back_to_top.js"></script>
+    <!-- build:css ../../css/styles.min.css -->
+    <link rel="stylesheet" href="../../css/blog-common-files.css" />
+    <link rel="stylesheet" href="../../css/project_style.css" />
+    <!-- endbuild -->
 
-        <!--        webgl libraries-->
-        <script type="text/javascript" src="../../js/three.js"></script>
-        <script type="text/javascript" src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/stats.js"></script>
-        <script src="../../js/rotating_cube.js"></script>
+    <!-- build:js ../../js/main.min.js -->
+    <script src="../../js/back_to_top.js"></script>
+    <script type="text/javascript" src="../../js/three.js"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/stats.js"></script>
+    <script src="../../js/rotating_cube.js"></script>
+    <!-- endbuild -->
 
-        <!--        google analytics-->
-        <script src="../../js/google_analytics.js"></script>
+    <!--        google analytics-->
+    <script src="../../js/google_analytics.js"></script>
 
-        <title>Java: Manually Calculating Normal Distribution with Various Distribution Functions – Part 1</title>
-    </head>
+    <title>Java: Manually Calculating Normal Distribution with Various Distribution Functions – Part 1</title>
+</head>
 
-    <body>
-        <!--        Navigation bar-->
-        <div id="navigation">
+<body>
+    <!--        Navigation bar-->
+    <div id="navigation">
 
-        </div>
-        <script> $(function() {
-                $("#navigation").load("../nav_bar_diff_folders.html");
-            });
+    </div>
+    <script>
+        $(function () {
+            $("#navigation").load("../nav_bar_diff_folders.html");
+        });
+    </script>
+
+    <!--        share-->
+    <div class="share">
+
+        <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fpersonal_thoughts%2Fmanually_calculating_normal_distribution_with_various_distribution_functions_part_1.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+            width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowTransparency="true" allow="encrypted-media"></iframe>
+
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">
+            lang: en_US
+        </script>
+        <script type="IN/Share"
+            data-url="http://ahmetince.co.uk/blogs/java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html">
         </script>
 
-        <!--        share-->
-        <div class="share"> 
+    </div>
 
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fpersonal_thoughts%2Fmanually_calculating_normal_distribution_with_various_distribution_functions_part_1.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <section class="BlogSection">
+        <p class="Header">Manually Calculating Normal Distribution with Various Distribution Functions – Part 1 </p>
+        <p><i>Posted on 06/01/2019</i></p>
 
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-            <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html"></script>
+        <p>If you ever needed to create a program that calculates the normal distribution with various distribution
+            functions and rules, then this post will be a much help to you. There is a <a class="link"
+                href="https://commons.apache.org/proper/commons-math/javadocs/api-3.5/org/apache/commons/math3/distribution/NormalDistribution.html"
+                target="_blank">library</a> to overcome the calculations easily in Java. However, there aren’t many
+            functionalities to satisfy your use perhaps, hence as a University project I developed a program to
+            calculate normal distribution with different methods.</p>
 
-        </div>
+        <p>Firstly we need to have a <i>Probability Density Function</i> so it can be used in one of the rules e.g.
+            <i>Simpsons Rule</i> in order to calculate the area. </p>
 
-        <section class="BlogSection">
-            <p class="Header">Manually Calculating Normal Distribution with Various Distribution Functions – Part 1 </p>
-            <p><i>Posted on 06/01/2019</i></p>
-
-            <p>If you ever needed to create a program that calculates the normal distribution with various distribution functions and rules, then this post will be a much help to you. There is a <a class="link" href="https://commons.apache.org/proper/commons-math/javadocs/api-3.5/org/apache/commons/math3/distribution/NormalDistribution.html" target="_blank">library</a> to overcome the calculations easily in Java. However, there aren’t many functionalities to satisfy your use perhaps, hence as a University project I developed a program to calculate normal distribution with different methods.</p>
-
-            <p>Firstly we need to have a <i>Probability Density Function</i> so it can be used in one of the rules e.g. <i>Simpsons Rule</i> in order to calculate the area. </p>
-
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">probabilityDensity</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">probabilityDensity</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #888888">//probability density function&#39;s formula breakdown</span>
         <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">/</span> <span style="color: #333333">(</span>standardD <span style="color: #333333">*</span> <span style="color: #333333">(</span>Math<span style="color: #333333">.</span><span style="color: #0000CC">sqrt</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">*</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">PI</span><span style="color: #333333">)));</span>
         <span style="color: #888888">//calculate the first exponent</span>
@@ -63,13 +82,19 @@
         answer <span style="color: #333333">=</span> answer <span style="color: #333333">*</span> exponent3<span style="color: #333333">;</span>
         <span style="color: #008800; font-weight: bold">return</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
-            <p>Then we need one of the rules or you can have all three of the rules to calculate the probability density function. Each rule has a precision rate hence we will want to use <b>Simpsons</b> rule rather than <b>Trapezodial</b> or the <b>Rectangular</b> rule.</p>
+        <p>Then we need one of the rules or you can have all three of the rules to calculate the probability density
+            function. Each rule has a precision rate hence we will want to use <b>Simpsons</b> rule rather than
+            <b>Trapezodial</b> or the <b>Rectangular</b> rule.</p>
 
-            <b><i>Rectangular Rule;</i></b>
+        <b><i>Rectangular Rule;</i></b>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">   <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">rectangularRule</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> first<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> last<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">   <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">rectangularRule</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> first<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> last<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #888888">//value of delta</span>
         <span style="color: #333399; font-weight: bold">double</span> delta <span style="color: #333333">=</span> <span style="color: #333333">(</span>last <span style="color: #333333">-</span> first<span style="color: #333333">)</span> <span style="color: #333333">/</span> strips<span style="color: #333333">;</span>
         <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">0.0</span><span style="color: #333333">;</span>
@@ -82,12 +107,16 @@
 
         <span style="color: #008800; font-weight: bold">return</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
-            <br>
-            <b><i>Trapezodial Rule;</i></b>
+        <br>
+        <b><i>Trapezodial Rule;</i></b>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">trapezodialRule</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> first<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> last<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">trapezodialRule</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> first<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> last<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #888888">//value of delta</span>
         <span style="color: #333399; font-weight: bold">double</span> delta <span style="color: #333333">=</span> <span style="color: #333333">(</span>last <span style="color: #333333">-</span> first<span style="color: #333333">)</span> <span style="color: #333333">/</span> strips<span style="color: #333333">;</span>
         <span style="color: #888888">//store the calculated first and last , to be added in answer</span>
@@ -105,12 +134,16 @@
 
         <span style="color: #008800; font-weight: bold">return</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
-            <br>
-            <b><i>Simpsons Rule;</i></b>
+        <br>
+        <b><i>Simpsons Rule;</i></b>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">simpsonsRule</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> first<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> last<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">simpsonsRule</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> first<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> last<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #888888">//value of delta</span>
         <span style="color: #333399; font-weight: bold">double</span> delta <span style="color: #333333">=</span> <span style="color: #333333">(</span>last <span style="color: #333333">-</span> first<span style="color: #333333">)</span> <span style="color: #333333">/</span> strips<span style="color: #333333">;</span>
         <span style="color: #888888">//getting the value for first and last intervals</span>
@@ -134,135 +167,180 @@
         answer <span style="color: #333333">=</span> <span style="color: #333333">(</span>delta <span style="color: #333333">/</span> <span style="color: #6600EE; font-weight: bold">3.0</span><span style="color: #333333">)</span> <span style="color: #333333">*</span> <span style="color: #333333">(</span>answer <span style="color: #333333">+</span> even <span style="color: #333333">+</span> odd<span style="color: #333333">);</span>
         <span style="color: #008800; font-weight: bold">return</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
 
-            <p>Consequently, you only need one of the rules, more specifically Simpsons rule to acquire the most precise results.</p>
+        <p>Consequently, you only need one of the rules, more specifically Simpsons rule to acquire the most precise
+            results.</p>
 
-            <p>Furthermore, now we need to get the inputs; <b>mean</b> and <b>standard deviation</b> plus values for 4 different cases; <b>upper</b>, <b>lower</b>, <b>between</b> or <b>outside</b> cumulative. So we can calculate one of the cumulative distribution functions using one of the rules with probability density function.</p>
+        <p>Furthermore, now we need to get the inputs; <b>mean</b> and <b>standard deviation</b> plus values for 4
+            different cases; <b>upper</b>, <b>lower</b>, <b>between</b> or <b>outside</b> cumulative. So we can
+            calculate one of the cumulative distribution functions using one of the rules with probability density
+            function.</p>
 
-            <p><i>Calculate upper cumulative distribution function using Simpsons rule;</i></p>
+        <p><i>Calculate upper cumulative distribution function using Simpsons rule;</i></p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">aboveSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">aboveSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #333399; font-weight: bold">double</span> y <span style="color: #333333">=</span> mean <span style="color: #333333">-</span> <span style="color: #6600EE; font-weight: bold">4.1</span> <span style="color: #333333">*</span> standardD<span style="color: #333333">;</span>
         <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> simpsonsRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
         <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">-</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
-            <p><i>Calculate lower cumulative distribution function using Simpsons rule;</i></p>
+        <p><i>Calculate lower cumulative distribution function using Simpsons rule;</i></p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">belowSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">belowSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #333399; font-weight: bold">double</span> y <span style="color: #333333">=</span> mean <span style="color: #333333">+</span> <span style="color: #6600EE; font-weight: bold">4.1</span> <span style="color: #333333">*</span> standardD<span style="color: #333333">;</span>
         <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> simpsonsRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
         <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">+</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
 
-            <p><i>Calculate outside cumulative distribution function using Simpsons rule;</i></p>
+        <p><i>Calculate outside cumulative distribution function using Simpsons rule;</i></p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">outsideSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> y<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">outsideSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> y<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">+</span> simpsonsRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
         <span style="color: #008800; font-weight: bold">return</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
 
-            <p><i>Calculate between cumulative distribution function using Simpsons rule; </i></p>
+        <p><i>Calculate between cumulative distribution function using Simpsons rule; </i></p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">betweenSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> y<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">double</span> <span style="color: #0066BB; font-weight: bold">betweenSimpsons</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> y<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> x<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> strips<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> mean<span style="color: #333333">,</span> <span style="color: #333399; font-weight: bold">double</span> standardD<span style="color: #333333">)</span> <span style="color: #333333">{</span>
         <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> simpsonsRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
         <span style="color: #008800; font-weight: bold">return</span> answer<span style="color: #333333">;</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+        </div>
 
 
-            <p>These are the methods for using Simpsons rule but can be modified easily by using other rules too by changing this line only for selected cumulative functions; </p>
+        <p>These are the methods for using Simpsons rule but can be modified easily by using other rules too by changing
+            this line only for selected cumulative functions; </p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"> <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> simpsonsRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
-</pre></div>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"> <span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> simpsonsRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
+</pre>
+        </div>
 
-            <p>Modify to - </p>
+        <p>Modify to - </p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> trapezodialRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
-</pre></div>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> trapezodialRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
+</pre>
+        </div>
 
-            <p>Or - </p>
+        <p>Or - </p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> rectangularRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
-</pre></div>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> answer <span style="color: #333333">=</span> rectangularRule<span style="color: #333333">(</span>y<span style="color: #333333">,</span> x<span style="color: #333333">,</span> strips<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">);</span>
+</pre>
+        </div>
 
-            <p>Finally, in order to output the results, head to your main method and output the results; </p>
+        <p>Finally, in order to output the results, head to your main method and output the results; </p>
 
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> stripsValue <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">;</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">double</span> stripsValue <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">;</span>
 <span style="color: #333399; font-weight: bold">double</span> above <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">,</span> mean <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> standard <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
 System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>Calculations<span style="color: #333333">.</span><span style="color: #0000CC">aboveSimpsons</span><span style="color: #333333">(</span>above<span style="color: #333333">,</span> stripsValue<span style="color: #333333">,</span> mean<span style="color: #333333">,</span> standardD<span style="color: #333333">));</span>
-</pre></div>
-
-
-            <p>Result will be; </p>
-
-            <p><i>0.15867591143657012</i></p>
-
-            <p>You can confirm the result with a website that calculates this on <a class="link" href="https://keisan.casio.com/exec/system/1180573188" target="_blank">keisan</a> - which the output is – </p>
-
-            <p><i>0.15865525393145705</i></p>
-
-            <p>So, we can see that our program has a %99.9987 accuracy.</p>
-
-            <p><b>Part 2 will include the ability of outputting the result in a Z-Table.</b></p>
-
-            <ul class="Buzz_Words">
-                <li>Math</li>
-                <li>Normal Distribution</li>
-                <li>Statistics</li>
-                <li>Distribution Functions</li>
-            </ul>
-
-            <div class="nextArticle">
-                <b>Next Article: </b><a class="link" href="creating_a_z_table_part_2.html" target="_blank">Creating a Z-Table - Part 2</a>
-            </div>
-
-            <!--        Commenting-->
-
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-                var disqus_config = function () {
-                    this.page.url = 'http://ahmetince.co.uk/blogs/java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html';  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = 'manually_calculating_normal_distribution_with_various_distribution_functions_part_1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-        </section>
-
-        <!--footer-->
-        <div id="footer">
+</pre>
         </div>
-        <script> 
-            $(function() {
-                $("#footer").load("../footer_diff_folders.html");
-            });
+
+
+        <p>Result will be; </p>
+
+        <p><i>0.15867591143657012</i></p>
+
+        <p>You can confirm the result with a website that calculates this on <a class="link"
+                href="https://keisan.casio.com/exec/system/1180573188" target="_blank">keisan</a> - which the output is
+            – </p>
+
+        <p><i>0.15865525393145705</i></p>
+
+        <p>So, we can see that our program has a %99.9987 accuracy.</p>
+
+        <p><b>Part 2 will include the ability of outputting the result in a Z-Table.</b></p>
+
+        <ul class="Buzz_Words">
+            <li>Math</li>
+            <li>Normal Distribution</li>
+            <li>Statistics</li>
+            <li>Distribution Functions</li>
+        </ul>
+
+        <div class="nextArticle">
+            <b>Next Article: </b><a class="link" href="creating_a_z_table_part_2.html" target="_blank">Creating a
+                Z-Table - Part 2</a>
+        </div>
+
+        <!--        Commenting-->
+
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+            var disqus_config = function () {
+                this.page.url =
+                    'http://ahmetince.co.uk/blogs/java/manually_calculating_normal_distribution_with_various_distribution_functions_part_1.html'; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier =
+                    'manually_calculating_normal_distribution_with_various_distribution_functions_part_1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
         </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
 
-        <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </section>
 
-        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+    <!--footer-->
+    <div id="footer">
+    </div>
+    <script>
+        $(function () {
+            $("#footer").load("../footer_diff_folders.html");
+        });
+    </script>
 
-    </body>
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
+</body>
+
 </html>

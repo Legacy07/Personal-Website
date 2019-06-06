@@ -5,20 +5,21 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- using the custom css -->
-    <link rel="stylesheet" href="../../css/blog-common-files.css"/>
-    <link rel="stylesheet" href="../../css/project_style.css" />
     <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-    <script src="../../js/back_to_top.js"></script>
+    <!-- build:css ../../css/styles.min.css -->
+    <link rel="stylesheet" href="../../css/blog-common-files.css" />
+    <link rel="stylesheet" href="../../css/project_style.css" />
+    <!-- endbuild -->
 
-    <!--        webgl libraries-->
+    <!-- build:js ../../js/main.min.js -->
+    <script src="../../js/back_to_top.js"></script>
     <script type="text/javascript" src="../../js/three.js"></script>
     <script type="text/javascript" src="../../js/jquery.js"></script>
     <script type="text/javascript" src="../../js/stats.js"></script>
     <script src="../../js/rotating_cube.js"></script>
-
+    <!-- endbuild -->
+    
     <!--        google analytics-->
     <script src="../../js/google_analytics.js"></script>
 
@@ -39,14 +40,17 @@
     <!--        share-->
     <div class="share">
 
-        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fpersonal_thoughts%2Ffrom_two_cheat_days_a_week_to_one_cheat_day_a_month.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
-            width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
-            allow="encrypted-media"></iframe>
+        <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fpersonal_thoughts%2Ffrom_two_cheat_days_a_week_to_one_cheat_day_a_month.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+            width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowTransparency="true" allow="encrypted-media"></iframe>
 
         <script src="//platform.linkedin.com/in.js" type="text/javascript">
             lang: en_US
         </script>
-        <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/personal_thoughts/from_two_cheat_days_a_week_to_one_cheat_day_a_month.html"></script>
+        <script type="IN/Share"
+            data-url="http://ahmetince.co.uk/blogs/personal_thoughts/from_two_cheat_days_a_week_to_one_cheat_day_a_month.html">
+        </script>
     </div>
 
     <section class="BlogSection">
@@ -127,7 +131,8 @@
             var disqus_config = function () {
                 this.page.url =
                     'http://ahmetince.co.uk/blogs/personal_thoughts/one_of_the_quickest_cash_earning_job_for_students.html'; // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = 'one_of_the_quickest_cash_earning_job_for_students'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                this.page.identifier =
+                    'one_of_the_quickest_cash_earning_job_for_students'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
 
             (function () { // DON'T EDIT BELOW THIS LINE

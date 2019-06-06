@@ -23,14 +23,13 @@ module.exports = function () {
 function minifyScripts() {
     log('Minifying js and css');
 
-    return gulp.src('build/*.html', {
+    return gulp.src('build/**/*.html', {
             allowEmpty: true
         })
         .pipe(useref())
         // Minifies only if it's a JS file
         .pipe(gulpIf('*.js', uglify()))
         // Minifies only if it's a CSS file
-        .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulp.dest('build'));
 }
 

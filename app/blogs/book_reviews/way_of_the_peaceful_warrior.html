@@ -3,21 +3,21 @@
 <html lang="en">
 
 <head>
-    <!--     adapted to have a responsive design but not 100% of a mobile view from - https://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- using the custom css -->
-    <link rel="stylesheet" href="../../css/blog-common-files.css" />
-    <link rel="stylesheet" href="../../css/project_style.css" />
     <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
+    <!-- build:css ../../css/styles.min.css -->
+    <link rel="stylesheet" href="../../css/blog-common-files.css" />
+    <link rel="stylesheet" href="../../css/project_style.css" />
+    <!-- endbuild -->
+    
+    <!-- build:js ../../js/main.min.css -->
     <script src="../../js/back_to_top.js"></script>
-
-    <!--        webgl libraries-->
     <script type="text/javascript" src="../../js/three.js"></script>
     <script type="text/javascript" src="../../js/jquery.js"></script>
     <script type="text/javascript" src="../../js/stats.js"></script>
     <script src="../../js/rotating_cube.js"></script>
-
+    <!-- endbuild -->
 
     <!--        google analytics-->
     <script src="../../js/google_analytics.js"></script>
@@ -111,9 +111,9 @@
 
             var disqus_config = function () {
                 this.page.url =
-                'http://ahmetince.co.uk/blogs/book_reviews/way_of_the_peaceful_warrior.html'; // Replace PAGE_URL with your page's canonical URL variable
+                    'http://ahmetince.co.uk/blogs/book_reviews/way_of_the_peaceful_warrior.html'; // Replace PAGE_URL with your page's canonical URL variable
                 this.page.identifier =
-                'Way_of_the_peaceful_warrior'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    'Way_of_the_peaceful_warrior'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
 
             (function () { // DON'T EDIT BELOW THIS LINE

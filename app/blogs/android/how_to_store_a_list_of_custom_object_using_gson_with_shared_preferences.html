@@ -1,69 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!doctype html>
 <html lang="en">
-    <head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
 
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="../../css/blog-common-files.css"/>
-        <link rel="stylesheet" href="../../css/project_style.css"/>
-        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <script src="../../js/back_to_top.js"></script>
+    <!-- build:css ../../css/styles.min.css -->
+    <link rel="stylesheet" href="../../css/blog-common-files.css" />
+    <link rel="stylesheet" href="../../css/project_style.css" />
+    <!-- endbuild -->
 
-        <!--        webgl libraries-->
-        <script type="text/javascript" src="../../js/three.js"></script>
-        <script type="text/javascript" src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/stats.js"></script>
-        <script src="../../js/rotating_cube.js"></script>
+    <!-- build:js ../../js/main.min.js -->
+    <script src="../../js/back_to_top.js"></script>
+    <script type="text/javascript" src="../../js/three.js"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/stats.js"></script>
+    <script src="../../js/rotating_cube.js"></script>
+    <!-- endbuild -->
 
-        <!--        google analytics-->
-        <script src="../../js/google_analytics.js"></script>
+    <!--        google analytics-->
+    <script src="../../js/google_analytics.js"></script>
 
+    <title>Android: How to Store a List of Custom Objects using Gson with Shared Preferences</title>
+</head>
 
-        <title>Android: How to Store a List of Custom Objects using Gson with Shared Preferences</title>
-    </head>
+<body>
+    <!--        Navigation bar-->
+    <div id="navigation">
 
-    <body>
-        <!--        Navigation bar-->
-        <div id="navigation">
+    </div>
+    <script>
+        $(function () {
+            $("#navigation").load("../nav_bar_diff_folders.html");
+        });
+    </script>
 
-        </div>
-        <script> $(function() {
-                $("#navigation").load("../nav_bar_diff_folders.html");
-            });
+    <!--        share-->
+    <div class="share">
+
+        <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fandroid%2Fhow_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+            width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowTransparency="true" allow="encrypted-media"></iframe>
+
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">
+            lang: en_US
         </script>
+        <script type="IN/Share"
+            data-url="http://ahmetince.co.uk/blogs/android/how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html">
+        </script>
+    </div>
 
-        <!--        share-->
-        <div class="share"> 
+    <section class="BlogSection">
+        <p class="Header">How to Store a List of Custom Objects using Gson with Shared Preferences</p>
+        <p><i>Posted on 30/12/2018</i></p>
 
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fandroid%2Fhow_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        <p>Storing a list of custom objects is pretty simple when used with <b>Gson</b> library because it converts
+            objects to JSON and this helps with saving its state in Shared Preferences. So, if you need to save some
+            data from your list and display it after the app is restarted or another activity is opened then this will
+            help you achieve the desired feature.<p>
 
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-            <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/android/how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html"></script>
-        </div>
+                <p>Firstly, you need to install Gson library into your app; </p>
 
-        <section class="BlogSection">
-            <p class="Header">How to Store a List of Custom Objects using Gson with Shared Preferences</p>
-            <p><i>Posted on 30/12/2018</i></p>
+                <!-- HTML generated using hilite.me -->
+                <div
+                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <pre style="margin: 0; line-height: 125%">implementation <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>com<span style="color: #333333">.</span><span style="color: #0000CC">google</span><span style="color: #333333">.</span><span style="color: #0000CC">code</span><span style="color: #333333">.</span><span style="color: #0000CC">gson</span><span style="color: #333333">:</span><span style="color: #997700; font-weight: bold">gson:</span><span style="color: #6600EE; font-weight: bold">2.8</span><span style="color: #333333">.</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>
+</pre>
+                </div>
 
-            <p>Storing a list of custom objects is pretty simple when used with <b>Gson</b> library because it converts objects to JSON and this helps with saving its state in Shared Preferences. So, if you need to save some data from your list and display it after the app is restarted or another activity is opened then this will help you achieve the desired feature.<p>
+                <p>Then import the libraries in your class; </p>
 
-            <p>Firstly, you need to install Gson library into your app; </p>
-            
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">implementation <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>com<span style="color: #333333">.</span><span style="color: #0000CC">google</span><span style="color: #333333">.</span><span style="color: #0000CC">code</span><span style="color: #333333">.</span><span style="color: #0000CC">gson</span><span style="color: #333333">:</span><span style="color: #997700; font-weight: bold">gson:</span><span style="color: #6600EE; font-weight: bold">2.8</span><span style="color: #333333">.</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>
-</pre></div>
-
-            <p>Then import the libraries in your class; </p>
-            
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.google.gson.Gson</span><span style="color: #333333">;</span>
+                <!-- HTML generated using hilite.me -->
+                <div
+                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.google.gson.Gson</span><span style="color: #333333">;</span>
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.google.gson.reflect.TypeToken</span><span style="color: #333333">;</span>
-</pre></div>
+</pre>
+                </div>
 
-            <p>Now, you can store the list; </p>
-            
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"> <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">storeList</span><span style="color: #333333">()</span> 
+                <p>Now, you can store the list; </p>
+
+                <!-- HTML generated using hilite.me -->
+                <div
+                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <pre style="margin: 0; line-height: 125%"> <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">storeList</span><span style="color: #333333">()</span> 
     <span style="color: #333333">{</span>
         <span style="color: #888888">//shared preferences</span>
         sharedPreferences <span style="color: #333333">=</span> getActivity<span style="color: #333333">().</span><span style="color: #0000CC">getSharedPreferences</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;shared preferences&quot;</span><span style="color: #333333">,</span> Context<span style="color: #333333">.</span><span style="color: #0000CC">MODE_PRIVATE</span><span style="color: #333333">);</span>
@@ -75,14 +98,20 @@
         editor<span style="color: #333333">.</span><span style="color: #0000CC">putString</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;list&quot;</span><span style="color: #333333">,</span> json<span style="color: #333333">);</span>
         editor<span style="color: #333333">.</span><span style="color: #0000CC">apply</span><span style="color: #333333">();</span>
     <span style="color: #333333">}</span>
-</pre></div>
+</pre>
+                </div>
 
 
-            <p>So you’re able to store you the list in any way you want; with a click of a button or call in a constructor so it’s saved automatically. </p>
-            
-            <p>In order to load the list, you reverse-engineer the process where you pull the data out of the shared preferences and convert back to a list using Gson. </p>
-            
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loadList</span><span style="color: #333333">()</span> 
+                <p>So you’re able to store you the list in any way you want; with a click of a button or call in a
+                    constructor so it’s saved automatically. </p>
+
+                <p>In order to load the list, you reverse-engineer the process where you pull the data out of the shared
+                    preferences and convert back to a list using Gson. </p>
+
+                <!-- HTML generated using hilite.me -->
+                <div
+                    style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loadList</span><span style="color: #333333">()</span> 
 <span style="color: #333333">{</span>
     sharedPreferences <span style="color: #333333">=</span> getActivity<span style="color: #333333">().</span><span style="color: #0000CC">getSharedPreferences</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;shared preferences&quot;</span><span style="color: #333333">,</span> Context<span style="color: #333333">.</span><span style="color: #0000CC">MODE_PRIVATE</span><span style="color: #333333">);</span>
     Gson gson <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Gson<span style="color: #333333">();</span>
@@ -100,63 +129,72 @@
 
     <span style="color: #333333">}</span>
 <span style="color: #333333">}</span>
-</pre></div>
-
-            
-            <p>In my case I used these methods in my constructor to load the list first then store it again because it will most likely be updated. </p>
-            
-            <p>In conclusion, Gson is a good tool to serialize and de-serialize objects to JSON and can be very helpful to save states of custom objects in this manner. </p>
-            
-            <ul class="Buzz_Words">
-                <li>GSON</li>
-                <li>JSON</li>
-                <li>ArrayList</li>
-                <li>Shared Preferences</li>
-                <li>Android</li>
-            </ul>
-
-            <div class="previousArticle">
-            <b>Previous Article: </b><a class="link" href="a_complete_process_of_parsing_json_in_android_from_a_web_server.html" target="_blank">A complete process of parsing JSON in Android from a Web Server</a>
-            </div>
-            <!--        Commenting-->
-
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-                var disqus_config = function () {
-                    this.page.url = 'http://ahmetince.co.uk/blogs/android/how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html';  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = 'how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-        </section>
-
-        <!--footer-->
-        <div id="footer">
-        </div>
-        <script> 
-            $(function() {
-                $("#footer").load("../footer_diff_folders.html");
-            });
-        </script>
+</pre>
+                </div>
 
 
-        <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <p>In my case I used these methods in my constructor to load the list first then store it again because
+                    it will most likely be updated. </p>
 
-        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+                <p>In conclusion, Gson is a good tool to serialize and de-serialize objects to JSON and can be very
+                    helpful to save states of custom objects in this manner. </p>
 
-    </body>
+                <ul class="Buzz_Words">
+                    <li>GSON</li>
+                    <li>JSON</li>
+                    <li>ArrayList</li>
+                    <li>Shared Preferences</li>
+                    <li>Android</li>
+                </ul>
+
+                <div class="previousArticle">
+                    <b>Previous Article: </b><a class="link"
+                        href="a_complete_process_of_parsing_json_in_android_from_a_web_server.html" target="_blank">A
+                        complete process of parsing JSON in Android from a Web Server</a>
+                </div>
+                <!--        Commenting-->
+
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                    var disqus_config = function () {
+                        this.page.url =
+                            'http://ahmetince.co.uk/blogs/android/how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html'; // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier =
+                            'how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+
+                    (function () { // DON'T EDIT BELOW THIS LINE
+                        var d = document,
+                            s = d.createElement('script');
+                        s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                        powered by Disqus.</a></noscript>
+
+    </section>
+
+    <!--footer-->
+    <div id="footer">
+    </div>
+    <script>
+        $(function () {
+            $("#footer").load("../footer_diff_folders.html");
+        });
+    </script>
+
+
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+
+</body>
+
 </html>

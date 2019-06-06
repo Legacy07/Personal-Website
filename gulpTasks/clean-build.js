@@ -9,7 +9,8 @@ module.exports = function(done) {
         // "build/*.html",
         // "build/js/**",
         // "build/css/**"       
-        "build/*"
+        "build/*",
+        "!build/js/**"
     );
 
     clean(files, done);

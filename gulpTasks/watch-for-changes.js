@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var log = require('./helperFunctions/log');
 
 module.exports = function () {
-    log('Compiling SASS to CSS');
+    log('Watching for changes.');
 
     //watch for files if they have been changed. 
     return gulp
