@@ -4,6 +4,12 @@
     height: 100%;
     width: 100%;
 }
+@mixin body_text{
+    font-family: $text-font;
+    font-size: $text-size;
+    line-height: 1.5;
+    margin: 0 auto;
+}
 
 html {
     background: $primary-colour;
@@ -12,11 +18,8 @@ html {
 
 body {
     color: $accent-colour;
-    font-family: $text-font;
-    font-size: 0.9em;
-    line-height: 1.5;
-    margin: 0 auto;
     @include height_weight;
+    @include body_text;
 }
 
 div.Description {
@@ -172,7 +175,7 @@ div.graph {
     width: 100%;
     max-width: 100%;
     margin-left: -29%;
-    margin-top: -6%;
+    margin-top: -8%;
 }
 
 #desktopVersion {

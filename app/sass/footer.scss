@@ -41,7 +41,7 @@ li a.SiteLinks {
     font-family: $text-font;
     font-size: $text-size;
     display: flow-root;
-    color: $primary-colour;
+    color: $accent-colour;
     text-align: center;
     padding-right: 0.7em;
     padding: 0.9em;
@@ -58,7 +58,7 @@ li a.SiteLinks:hover:not(.active) {
 }
 
 li.email {
-    background: url(../gmail.png);
+    background: url(../images/gmail.png);
     background-size: contain;
     height: 2em;
     width: 2em;
@@ -67,7 +67,7 @@ li.email {
 }
 
 li.github {
-    background: url(../github-sign.png);
+    background: url(../images/github-sign.png);
     background-size: contain;
     height: 2em;
     width: 2em;
@@ -76,7 +76,7 @@ li.github {
 }
 
 li.linkedIn {
-    background: url(../linkedin.png);
+    background: url(../images/linkedin.png);
     background-size: contain;
     height: 2em;
     width: 2em;

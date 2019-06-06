@@ -6,7 +6,7 @@ html {
 
 @mixin body-text {
     font-family: $text-font;
-    font-size: 1em;
+    font-size: $text-size;
     line-height: 1.5;
     margin: 0 auto;
 }
@@ -176,8 +176,8 @@ ul.Buzz_Words {
 
 ul.Buzz_Words li {
     display: inline-block;
-    background-color: $primary-dark-colour;
-    border: 0.2em solid $primary-dark-colour;
+    background-color: $primary-darker-colour;
+    border: 0.2em solid $primary-darker-colour;
     border-radius: 0.6em;
     margin-right: 0.1em;
     margin-top: 0.2em;
