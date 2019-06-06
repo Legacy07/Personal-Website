@@ -2,59 +2,90 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb">
-    <head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
 
-        <!-- using the custom css -->    
-        <link rel="stylesheet" href="../../css/blog-common-files.css"/>
-        <link rel="stylesheet" href="../../css/project_style.css"/>
-        <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
-        <script src="../../js/back_to_top.js"></script>
+    <!-- using the custom css -->
+    <link rel="stylesheet" href="../../css/blog-common-files.css" />
+    <link rel="stylesheet" href="../../css/project_style.css" />
+    <link rel="stylesheet" href="../../css/related_articles.css" />
+    <link rel="shortcut icon" href="http://ahmetince.co.uk/logo.png" type="image/png" />
 
-        <!--        webgl libraries-->
-        <script type="text/javascript" src="../../js/three.js"></script>
-        <script type="text/javascript" src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/stats.js"></script>
-        <script src="../../js/rotating_cube.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins" rel="stylesheet">
+    <script src="../../js/back_to_top.js"></script>
 
-        <!--        google analytics-->
-        <script src="../../js/google_analytics.js"></script>
+    <!--        webgl libraries-->
+    <script type="text/javascript" src="../../js/three.js"></script>
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/stats.js"></script>
+    <script src="../../js/rotating_cube.js"></script>
 
-        <title>Android: A complete process of parsing JSON in Android from a Web Server</title>
-    </head>
+    <!--        google analytics-->
+    <script src="../../js/google_analytics.js"></script>
 
-    <body>
-        <!--        Navigation bar-->
-        <div id="navigation">
+    <title>Android: A complete process of parsing JSON in Android from a Web Server</title>
+</head>
 
-        </div>
-        <script> $(function() {
-                $("#navigation").load("../nav_bar_diff_folders.html");
-            });
+<body>
+    <!--        Navigation bar-->
+    <div id="navigation">
+
+    </div>
+    <script>
+        $(function () {
+            $("#navigation").load("../nav_bar_diff_folders.html");
+        });
+    </script>
+
+    <!--        share-->
+    <div class="share">
+
+        <iframe
+            src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fandroid%2Fa_complete_process_of_parsing_json_in_android_from_a_web_server.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId"
+            width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowTransparency="true" allow="encrypted-media"></iframe>
+
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">
+            lang: en_US
         </script>
+        <script type="IN/Share"
+            data-url="http://ahmetince.co.uk/blogs/android/a_complete_process_of_parsing_json_in_android_from_a_web_server.html">
+        </script>
+    </div>
 
-        <!--        share-->
-        <div class="share"> 
+    <nav class="nav-growpop">
+        <a class="next" href="how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html">
+            <span class="icon-wrap">
+                <img src="../../css/right-arrow.png">
+            </span>
+            <div>
+                <span>How to Store a List of Custom Objects using Gson with Shared Preferences</span>
+                <h3>Storing a list of custom objects is pretty simple when used with <b>Gson</b> library because it converts
+                    objects to JSON...
+                </h3>
+                <p>Posted on 30/12/2018</p>
+            </div>
+        </a>
+    </nav>
 
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fahmetince.co.uk%2Fblogs%2Fandroid%2Fa_complete_process_of_parsing_json_in_android_from_a_web_server.html&layout=button_count&size=small&mobile_iframe=true&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <section class="BlogSection">
+        <p class="Header">A complete process of parsing JSON in Android from a Web Server</p>
+        <p><i>Posted on 29/10/2018</i></p>
 
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-            <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/android/a_complete_process_of_parsing_json_in_android_from_a_web_server.html"></script>
-        </div>
+        <p>If you are looking a way of sending your data from your server to your Android application, one of the good
+            ways of achieving this will be converting your data from the database into <b>JSON object</b> and parsing
+            that JSON to your Android application with the help of a third-party library ‘<b>Volley</b>’ to speed things
+            up.</p>
 
-        <section class="BlogSection">
-            <p class="Header">A complete process of parsing JSON in Android from a Web Server</p>
-            <p><i>Posted on 29/10/2018</i></p>
+        <p>Assuming that you have your web server and a database already, we have to first convert the data into JSON
+            objects;</p>
 
-            <p>If you are looking a way of sending your data from your server to your Android application, one of the good ways of achieving this will be converting your data from the database into <b>JSON object</b> and parsing that JSON to your Android application with the help of a third-party library ‘<b>Volley</b>’ to speed things up.</p>
-
-            <p>Assuming that you have your web server and a database already, we have to first convert the data into JSON objects;</p>
-
-            <!-- HTML generated using hilite.me -->
-            <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;?php</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #557799">&lt;?php</span>
 <span style="color: #888888">//Connection Setup</span>
 <span style="color: #008800; font-weight: bold">require</span> <span style="background-color: #fff0f0">&quot;connection.php&quot;</span>;
 <span style="color: #996633">$sql</span> <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;select * from Table;&quot;</span>;
@@ -69,23 +100,39 @@
 <span style="color: #008800; font-weight: bold">echo</span> <span style="color: #007020">json_encode</span>(<span style="color: #008800; font-weight: bold">array</span>(<span style="background-color: #fff0f0">&#39;Table&#39;</span><span style="color: #333333">=&gt;</span><span style="color: #996633">$response</span>));
 mysqli_close(<span style="color: #996633">$conn</span>);
 <span style="color: #557799">?&gt;</span>
-</pre></div>
+</pre>
+        </div>
 
-            <p>Once we added this file including the php code for the conversion, you can try to open the file on your server and check if it outputs the data correctly then we can now start with the parsing. Also you can copy and paste the JSON from the output of your webpage to check the validity on <a class="link" href="http://myjson.com" target="_blank"><b>MyJson</b></a>.</p>
-
-
-            <p>Before we begin, in Android Studio, add the Volley library in your <i>build.gradle</i> file - </p>
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">implementation <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>com<span style="color: #333333">.</span><span style="color: #0000CC">android</span><span style="color: #333333">.</span><span style="color: #0000CC">volley</span><span style="color: #333333">:</span><span style="color: #997700; font-weight: bold">volley:</span><span style="color: #6600EE; font-weight: bold">1.0</span><span style="color: #333333">.</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>
-</pre></div>
-
-
-            <p>Also add the Internet permission in <i>AndroidManifest.xml</i> file to allow your application to send request to your online server - </p>
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span>uses<span style="color: #333333">-</span>permission <span style="color: #997700; font-weight: bold">android:</span>name<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;android.permission.INTERNET&quot;</span><span style="color: #333333">/&gt;</span>
-</pre></div>
+        <p>Once we added this file including the php code for the conversion, you can try to open the file on your
+            server and check if it outputs the data correctly then we can now start with the parsing. Also you can copy
+            and paste the JSON from the output of your webpage to check the validity on <a class="link"
+                href="http://myjson.com" target="_blank"><b>MyJson</b></a>.</p>
 
 
-            <p>Now open your class and add the following imports;</p>
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.android.volley.Request</span><span style="color: #333333">;</span>
+        <p>Before we begin, in Android Studio, add the Volley library in your <i>build.gradle</i> file - </p>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">implementation <span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>com<span style="color: #333333">.</span><span style="color: #0000CC">android</span><span style="color: #333333">.</span><span style="color: #0000CC">volley</span><span style="color: #333333">:</span><span style="color: #997700; font-weight: bold">volley:</span><span style="color: #6600EE; font-weight: bold">1.0</span><span style="color: #333333">.</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #FF0000; background-color: #FFAAAA">&#39;</span>
+</pre>
+        </div>
+
+
+        <p>Also add the Internet permission in <i>AndroidManifest.xml</i> file to allow your application to send request
+            to your online server - </p>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #333333">&lt;</span>uses<span style="color: #333333">-</span>permission <span style="color: #997700; font-weight: bold">android:</span>name<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;android.permission.INTERNET&quot;</span><span style="color: #333333">/&gt;</span>
+</pre>
+        </div>
+
+
+        <p>Now open your class and add the following imports;</p>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.android.volley.Request</span><span style="color: #333333">;</span>
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.android.volley.RequestQueue</span><span style="color: #333333">;</span>
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.android.volley.Response</span><span style="color: #333333">;</span>
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">com.android.volley.VolleyError</span><span style="color: #333333">;</span>
@@ -94,22 +141,37 @@ mysqli_close(<span style="color: #996633">$conn</span>);
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.json.JSONArray</span><span style="color: #333333">;</span>
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.json.JSONException</span><span style="color: #333333">;</span>
 <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.json.JSONObject</span><span style="color: #333333">;</span>
-</pre></div>
+</pre>
+        </div>
 
-            <p>Declare a request queue so the application can send the request asynchronously and deliver the parsed data.</p>
+        <p>Declare a request queue so the application can send the request asynchronously and deliver the parsed data.
+        </p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> RequestQueue requestQueue<span style="color: #333333">;</span>
-</pre></div>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> RequestQueue requestQueue<span style="color: #333333">;</span>
+</pre>
+        </div>
 
-            <p>Then instantiate the request queue by creating a new request queue and add the <i>parseJSON</i> method which will be implemented in a bit;</p>
+        <p>Then instantiate the request queue by creating a new request queue and add the <i>parseJSON</i> method which
+            will be implemented in a bit;</p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">requestQueue <span style="color: #333333">=</span> Volley<span style="color: #333333">.</span><span style="color: #0000CC">newRequestQueue</span><span style="color: #333333">(</span>getActivity<span style="color: #333333">());</span>
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">requestQueue <span style="color: #333333">=</span> Volley<span style="color: #333333">.</span><span style="color: #0000CC">newRequestQueue</span><span style="color: #333333">(</span>getActivity<span style="color: #333333">());</span>
 parseJSON<span style="color: #333333">();</span>
-</pre></div>
+</pre>
+        </div>
 
-            <p>So, <i>parseJSON()</i> will be gathering the data from the php file we created earlier and parse the data into our application; </p>
+        <p>So, <i>parseJSON()</i> will be gathering the data from the php file we created earlier and parse the data
+            into our application; </p>
 
-            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">parseJSON</span><span style="color: #333333">()</span> 
+        <!-- HTML generated using hilite.me -->
+        <div
+            style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">parseJSON</span><span style="color: #333333">()</span> 
 <span style="color: #333333">{</span>
     <span style="color: #888888">//get the data from the php file</span>
     String url <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;https://yourwebsite.com/json_data.php&quot;</span><span style="color: #333333">;</span>
@@ -155,59 +217,63 @@ parseJSON<span style="color: #333333">();</span>
    <span style="color: #888888">//add the request in request queue</span>
     requestQueue<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>request<span style="color: #333333">);</span>
 <span style="color: #333333">}</span>
-</pre></div>
-
-            <p>So you can use <i>parseJSON()</i> to output the data using a button or call it under your constructor method to start the process as soon as the user is on the Activity. However, I would suggest you to use a progress dialog or progress bar if the parsed data is quite large, so in this case the user will be aware of some data being loaded rather than staring on a white screen.</p>
-
-            <ul class="Buzz_Words">
-                <li>JSON Parsing</li>
-                <li>Volley</li>
-                <li>Android</li>
-            </ul>
-            
-            <div class="nextArticle">
-            <b>Next Article: </b><a class="link" href="how_to_store_a_list_of_custom_object_using_gson_with_shared_preferences.html" target="_blank">How to Store a List of Custom Objects using Gson with Shared Preferences</a>
-            </div>
-
-            <!--        Commenting-->
-
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-                var disqus_config = function () {
-                    this.page.url = 'http://ahmetince.co.uk/blogs/android/a_complete_process_of_parsing_json_in_android_from_a_web_server.html';  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = 'a_complete_process_of_parsing_json_in_android_from_a_web_server'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-        </section>
-
-        <!--footer-->
-        <div id="footer">
+</pre>
         </div>
-        <script> 
-            $(function() {
-                $("#footer").load("../footer_diff_folders.html");
-            });
+
+        <p>So you can use <i>parseJSON()</i> to output the data using a button or call it under your constructor method
+            to start the process as soon as the user is on the Activity. However, I would suggest you to use a progress
+            dialog or progress bar if the parsed data is quite large, so in this case the user will be aware of some
+            data being loaded rather than staring on a white screen.</p>
+
+        <ul class="Buzz_Words">
+            <li>JSON Parsing</li>
+            <li>Volley</li>
+            <li>Android</li>
+        </ul>
+
+        <!--        Commenting-->
+
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+            var disqus_config = function () {
+                this.page.url =
+                    'http://ahmetince.co.uk/blogs/android/a_complete_process_of_parsing_json_in_android_from_a_web_server.html'; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier =
+                    'a_complete_process_of_parsing_json_in_android_from_a_web_server'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://http-ahmetince-co-uk.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
         </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+
+    </section>
+
+    <!--footer-->
+    <div id="footer">
+    </div>
+    <script>
+        $(function () {
+            $("#footer").load("../footer_diff_folders.html");
+        });
+    </script>
 
 
-        <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-        <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
+    <button onclick="autoScrollFunction()" id="autoScrollButton">Back to top</button>
 
-    </body>
+</body>
+
 </html>
