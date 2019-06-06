@@ -10,6 +10,7 @@
     <!-- build:css ../../css/styles.min.css -->
     <link rel="stylesheet" href="../../css/blog-common-files.css" />
     <link rel="stylesheet" href="../../css/project_style.css" />
+    <link rel="stylesheet" href="../../css/related_articles.css" />
     <!-- endbuild -->
 
     <!-- build:js ../../js/main.min.js -->
@@ -51,6 +52,32 @@
         <script type="IN/Share" data-url="http://ahmetince.co.uk/blogs/personal_thoughts/how_hackerrank_helped_me.html">
         </script>
     </div>
+
+    <nav class="nav-growpop">
+        <a class="prev" href="top_meals_i_consume_in_cutting_season.html">
+            <span class="icon-wrap">
+                <img src="../../css/left-arrow.png">
+            </span>
+            <div>
+                <span>Top Meals I Consume in Cutting Season</span>
+                <h3>When cutting season begins (usually between spring and summer term), in order to lose weight and get
+                    into a better-defined shape...</h3>
+                <p>Posted on 16/12/2018</p>
+            </div>
+        </a>
+
+        <a class="next" href="why_i_think_universities_are_a_waste_of_time_and_money_for_most_courses.html">
+            <span class="icon-wrap">
+                <img src="../../css/right-arrow.png">
+            </span>
+            <div>
+                <span>Why I think Universities Are a Waste of Time and Money for Most Courses</span>
+                <h3>Before I start my rant, I would like to specify that I base this opinion off my personal university
+                    experience which I had some great time in...</h3>
+                <p>Posted on 12/02/2019</p>
+            </div>
+        </a>
+    </nav>
 
     <section class="BlogSection">
         <p class="Header">How HackerRank helped me</p>
@@ -101,20 +128,6 @@
             <li>Commitment</li>
         </ul>
 
-        <div class="previousArticle">
-            <b>Previous Article: </b><a class="link" href="top_meals_i_consume_in_cutting_season.html"
-                target="_blank">Top
-                Meals i Consume in Cutting Season</a>
-        </div>
-
-        <div class="nextArticle">
-            <b>Next Article: </b><a class="link"
-                href="why_i_think_universities_are_a_waste_of_time_and_money_for_most_courses.html" target="_blank">
-                Why I think Universities are a Waste of Money and Time
-            </a>
-        </div>
-
-
         <!--        Commenting-->
 
         <div id="disqus_thread"></div>
@@ -125,9 +138,9 @@
 
             var disqus_config = function () {
                 this.page.url =
-                'http://ahmetince.co.uk/blogs/personal_thoughts/how_hackerrank_helped_me.html'; // Replace PAGE_URL with your page's canonical URL variable
+                    'http://ahmetince.co.uk/blogs/personal_thoughts/how_hackerrank_helped_me.html'; // Replace PAGE_URL with your page's canonical URL variable
                 this.page.identifier =
-                'how_hackerrank_helped_me'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    'how_hackerrank_helped_me'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
 
             (function () { // DON'T EDIT BELOW THIS LINE

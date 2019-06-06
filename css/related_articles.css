@@ -1,0 +1,97 @@
+/* credits to - view-source:https://blog.karumi.com/react-native-the-road-to-cross-platform-native-apps/ */
+
+.nav-growpop a {
+    position: fixed;
+    top: 50%;
+    display: block;
+    outline: 0;
+    text-align: left;
+    z-index: 1000;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.nav-growpop a.prev {
+    left: 0;
+}
+.nav-growpop a.next {
+    right: 0;
+}
+
+.nav-growpop .icon-wrap {
+    position: relative;
+    z-index: 100;
+    display: block;
+    padding: 20px 10px;
+    border: 0 solid #1F2531;
+    background: #1F2531;
+    -webkit-transition: border-width .3s .15s;
+    transition: border-width .3s .15s;
+}
+
+.nav-growpop div {
+    position: absolute;
+    top: 50%;
+    padding: 1em;
+    width: 25em;
+    height: 79%;
+    background: #f5f5f5;
+    opacity: 0;
+    -webkit-transition: -webkit-transform .2s, opacity .3s;
+    transition: transform .2s, opacity .3s;
+}
+
+.nav-growpop a.prev div {
+    left: 0;
+    padding-left: 5em;
+    text-align: justify;
+    -webkit-transform: translateY(-50%) translateX(-100%) scale(.75);
+    transform: translateY(-50%) translateX(-100%) scale(.75);
+}
+
+.nav-growpop a.next div {
+    right: 0;
+    padding-right: 5em;
+    -webkit-transform: translateY(-50%) translateX(100%) scale(.75);
+    transform: translateY(-50%) translateX(100%) scale(.75);
+}
+
+.nav-growpop span {
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    color: #000000;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.2;
+}
+
+.nav-growpop h3 {
+    margin: 0;
+    padding: 8px 0 10px;
+    color: #818181;
+    font-weight: 300;
+    font-size: 0.8em;
+    line-height: 1.2;
+}
+
+.nav-growpop div p {
+    margin: 0;
+    color: #1F2531;
+    font-style: italic;
+    font-size: 75%
+}
+
+.nav-growpop a:hover .icon-wrap {
+    border-top-width: 40px;
+    border-bottom-width: 40px;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.nav-growpop a:hover div {
+    opacity: 1;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+    -webkit-transform: translateY(-50%) translateX(0) scale(1);
+    transform: translateY(-50%) translateX(0) scale(1);
+}
