@@ -10,7 +10,7 @@ var cache = require('gulp-cache');
 module.exports = function () {
     log('Optimising files.');
 
-    minifyScripts();
+    // minifyScripts();
     optimiseImgs();
 };
 

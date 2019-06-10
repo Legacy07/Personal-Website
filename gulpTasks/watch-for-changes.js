@@ -6,6 +6,5 @@ module.exports = function () {
 
     //watch for files if they have been changed. 
     return gulp
-                .watch('app/scss/**/*.scss', ['sass'])
-                .watch('app/**/*.html', []);
+                .watch('app/sass/**/*.scss', ['sass']);
 }
