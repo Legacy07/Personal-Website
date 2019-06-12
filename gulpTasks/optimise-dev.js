@@ -11,7 +11,7 @@ module.exports = function () {
     log('Optimising files.');
 
     // minifyScripts();
-    optimiseImgs();
+    // optimiseImgs();
 };
 
 // will go through every html files under the tags - <!--build:js js/main.min.js --> 

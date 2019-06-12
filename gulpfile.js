@@ -15,8 +15,8 @@ gulp.task("test-gulp", function () {
 gulp.task('serve-dev', function () {
     runSequence('clean-build',
         'styles',
-        'copy-all-files',
-        'watch-for-changes',
-        'optimise-dev'
+        'copy-all-files'
+        // 'watch-for-changes',
+        // 'optimise-dev'
     );
 });

@@ -3,7 +3,7 @@ var log = require('./helperFunctions/log');
 
 var paths = {
     everything: ['app/**'],
-    excluding: ['!app/sass/**', '!app/Website logos/**', '!app/WebGL/**', '!app/README.md', '!app/images/**'], 
+    excluding: ['!app/sass/**', '!app/Website logos/**', '!app/WebGL/**', '!app/README.md'/*, '!app/images/**'*/], 
     build: 'build/'
 };
 
