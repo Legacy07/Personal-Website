@@ -12,11 +12,20 @@ gulp.task("test-gulp", function () {
     return gulp;
 });
 
+gulp.task('browserSync', function () {
+    browserSync.init({
+        server: {
+            baseDir: 'app'
+        },
+    })
+});
+
 gulp.task('serve-dev', function () {
     runSequence('clean-build',
         'styles',
-        'copy-all-files'
+        'copy-all-files',
         // 'watch-for-changes',
-        // 'optimise-dev'
+        'optimise-dev',
+        'watch-for-changes'
     );
 });
