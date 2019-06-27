@@ -25,7 +25,7 @@ gulp.task('serve-dev', function () {
         'styles',
         'copy-all-files',
         // 'watch-for-changes',
-        'optimise-dev',
-        'watch-for-changes'
+        'optimise-dev'
+        // 'watch-for-changes'
     );
 });
