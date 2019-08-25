@@ -312,26 +312,24 @@ div.nextArticle {
 
 .top-banner {
     position: relative;
-    margin-left: 15%;
     height: 15em;
     background: $nav-link-hover-background-colour;
     transform-origin: bottom right;
-    transform: skewY(1deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
+    z-index: 0;
 }
 
 .top-banner p.header {
     color: $primary-colour;
-    font-size: $text-header-size;
+    font-size: $large-nav-text-size;
     font-family: $header-font;
     text-align: center;
-    position: absolute;
-    // left: 0;
-    // right: 0;
-    // margin-right: 10%;
-    margin-left: 40%;
-    margin-top: 5%;
+    position: relative;
+    top: 25%;
 }
 
+// background: linear-gradient(to right, #C2F2E5, #134E5E)
+// background: linear-gradient(to right, #134E5E, #203A43)
 /* Media Queries */
 @media(max-width: 480px) {
     section {

@@ -2,12 +2,16 @@
 /* <!--            check it out -- https://envato.com/blog/css-snippets-responsive-menus/-->*/
 
 .navigation-container {
-    background: $nav-link-hover-text-colour;
-    width: 15%;
+    background: $nav-banner-color;
+    width: 10%;
     float: left;
     height: 100%;
     //change this later to relative and make sure its relative to the top of footer which you can keep the height 100%
     position: absolute;
+    z-index: 100;
+    border-right-width: thin;
+    border-right-color: black;
+    border-right-style: solid;
 }
 
 div.iconPosition {
@@ -28,7 +32,6 @@ div.iconPosition {
     position: relative;
     margin: auto;
     cursor: pointer;
-    margin-left: 20%;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -56,7 +59,7 @@ div.iconPosition {
     text-decoration: none;
     display: block;
     font-family: $text-font;
-    text-align: center;
+    margin-right: 10%;
 }
 
 /* Change color of dropdown links on hover */
@@ -67,17 +70,20 @@ div.iconPosition {
 
 /* Show the dropdown menu (used in nav_bar.js) */
 .show {
-    display: block;
+    // display: block;
 }
 
 /* Define menu positions */
 .dropdown-content.menu-one {
     top: 0;
-    left: 0;
+    left: 10%;
     right: 0;
     bottom: 0;
     position: fixed;
     z-index: 100500;
+    opacity: .9;
+    background: $primary-colour;
+    text-align: center;
 }
 
 /*Media Queries*/
