@@ -315,6 +315,7 @@ div.nextArticle {
     height: 15em;
     background: $nav-link-hover-background-colour;
     transform-origin: bottom right;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
     z-index: 0;
 }
@@ -330,6 +331,58 @@ div.nextArticle {
 
 // background: linear-gradient(to right, #C2F2E5, #134E5E)
 // background: linear-gradient(to right, #134E5E, #203A43)
+
+.project__image {
+    display: block;
+    position: relative;
+    width: 30em;
+    height: 20em;
+    padding: calc(32px/2) 32px;
+    padding-bottom: 66%;
+    // background-color: #16ADE3;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: hard-light;
+    box-shadow: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 150ms ease-out;
+    outline: none;
+}
+
+.project__image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 220;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 173, 227, 0);
+    pointer-events: none;
+    transition: 250ms ease-out;
+}
+
+.project__image,
+.project__image:after {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.project__image:hover {
+    box-shadow: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 32px $box-shadow-color;
+    text-decoration: none;
+}
+
+.project__image:hover:after {
+    background-color: rgba(22, 173, 227, 0.25);
+}
+
+p.title {
+    font-size: $nav-text-size;
+    font-family: $title-font;
+    position: relative;
+    color: $primary-colour;
+}
+
 /* Media Queries */
 @media(max-width: 480px) {
     section {

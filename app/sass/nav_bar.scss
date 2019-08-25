@@ -1,5 +1,6 @@
 @import './dimens.scss';
 /* <!--            check it out -- https://envato.com/blog/css-snippets-responsive-menus/-->*/
+// multi colors - https://blog.prototypr.io/css-only-multi-color-backgrounds-4d96a5569a20
 
 .navigation-container {
     background: $nav-banner-color;
@@ -7,7 +8,7 @@
     float: left;
     height: 100%;
     //change this later to relative and make sure its relative to the top of footer which you can keep the height 100%
-    position: absolute;
+    position: fixed;
     z-index: 100;
     border-right-width: thin;
     border-right-color: black;
@@ -55,7 +56,7 @@ div.iconPosition {
 /* Links inside the dropdown */
 .dropdown-content a {
     color: $accent-colour;
-    padding: 0.9em 1.1em;
+    padding: 0.5em;
     text-decoration: none;
     display: block;
     font-family: $text-font;
@@ -81,7 +82,7 @@ div.iconPosition {
     bottom: 0;
     position: fixed;
     z-index: 100500;
-    opacity: .9;
+    opacity: .96;
     background: $primary-colour;
     text-align: center;
 }
