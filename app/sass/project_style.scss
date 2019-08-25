@@ -312,9 +312,8 @@ div.nextArticle {
 
 .top-banner {
     position: relative;
-    width: 100%;
     margin-left: 15%;
-    height: 20em;
+    height: 15em;
     background: $nav-link-hover-background-colour;
     transform-origin: bottom right;
     transform: skewY(1deg);
@@ -330,7 +329,7 @@ div.nextArticle {
     // right: 0;
     // margin-right: 10%;
     margin-left: 40%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 /* Media Queries */
