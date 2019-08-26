@@ -10,9 +10,11 @@
     //change this later to relative and make sure its relative to the top of footer which you can keep the height 100%
     position: fixed;
     z-index: 100;
-    border-right-width: thin;
-    border-right-color: black;
-    border-right-style: solid;
+    // border-right-width: thin;
+    // border-right-color: black;
+    // border-right-style: solid;
+
+    background: linear-gradient(110deg, #070826 60%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #302b63 4%, #24243e 70%);
 }
 
 div.iconPosition {
@@ -71,7 +73,7 @@ div.iconPosition {
 
 /* Show the dropdown menu (used in nav_bar.js) */
 .show {
-    // display: block;
+    // dispslay: block;
 }
 
 /* Define menu positions */

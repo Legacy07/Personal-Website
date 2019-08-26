@@ -33,9 +33,9 @@ $(function() {
     function createMesh(geom) {
 
         // assign two materials
-        var meshMaterial = new THREE.MeshBasicMaterial({color: 0xe5b82});
+        var meshMaterial = new THREE.MeshBasicMaterial({color: 0xA9A9A9});
         meshMaterial.side = THREE.DoubleSide;
-        var wireFrameMat = new THREE.MeshBasicMaterial({color: 0xffffff});
+        var wireFrameMat = new THREE.MeshBasicMaterial({color: 0x000000});
         wireFrameMat.wireframe = true;
 
         // create a multimaterial

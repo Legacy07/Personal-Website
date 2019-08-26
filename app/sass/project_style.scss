@@ -45,9 +45,9 @@ h3.image-alt {
 }
 
 p.subHeader {
-    font-family: $header-font;
+    font-family: $title-font;
     font-weight: 700;
-    font-size: $nav-text-size;
+    font-size: $large-title-text-size;
     border-bottom: 0.1em solid gray;
     border-bottom-width: thin;
     display: block;
@@ -312,7 +312,7 @@ div.nextArticle {
 
 .top-banner {
     position: relative;
-    height: 15em;
+    height: 20em;
     background: $nav-link-hover-background-colour;
     transform-origin: bottom right;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
@@ -323,7 +323,7 @@ div.nextArticle {
 .top-banner p.header {
     color: $primary-colour;
     font-size: $large-nav-text-size;
-    font-family: $header-font;
+    font-family: $banner-title-font;
     text-align: center;
     position: relative;
     top: 25%;
@@ -332,10 +332,15 @@ div.nextArticle {
 // background: linear-gradient(to right, #C2F2E5, #134E5E)
 // background: linear-gradient(to right, #134E5E, #203A43)
 
+.projects-wrapper {
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
 .project__image {
     display: block;
     position: relative;
-    width: 30em;
+    width: 25em;
     height: 20em;
     padding: calc(32px/2) 32px;
     padding-bottom: 66%;
@@ -381,6 +386,11 @@ p.title {
     font-family: $title-font;
     position: relative;
     color: $primary-colour;
+}
+
+.card-margin {
+    margin-right: 1rem!important;
+    margin-bottom: 1.5rem!important;
 }
 
 /* Media Queries */
