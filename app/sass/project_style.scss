@@ -393,6 +393,15 @@ p.title {
     margin-bottom: 1.5rem!important;
 }
 
+.custom-modal {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.model-content {
+    background-color: none;
+}
+
 /* Media Queries */
 @media(max-width: 480px) {
     section {
