@@ -182,6 +182,25 @@ div.graph {
     visibility: hidden;
 }
 
+.top-banner {
+    position: relative;
+    height: 20em;
+    background: $nav-link-hover-background-colour;
+    transform-origin: bottom right;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
+    z-index: 0;
+}
+
+.top-banner p.header {
+    color: $primary-colour;
+    font-size: $large-nav-text-size;
+    font-family: $banner-title-font;
+    text-align: center;
+    position: relative;
+    top: 25%;
+}
+
 /* Media Queries */
 @media(max-width: 480px) {
     section {
