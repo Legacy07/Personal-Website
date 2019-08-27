@@ -175,6 +175,14 @@ ul.Buzz_Words {
     list-style-type: none;
     padding: 0;
     margin-left: 0;
+
+    &_Projects {
+        @extend ul.Buzz_Words;
+        opacity: 0;
+        bottom: 0;
+        position: absolute;
+        transition: opacity .25s ease-in-out;
+    }
 }
 
 ul.Buzz_Words li {
@@ -186,6 +194,19 @@ ul.Buzz_Words li {
     margin-top: 0.2em;
     color: $primary-colour;
     padding: 0 0.1em;
+}
+
+ul.Buzz_Words_Projects li {
+    @extend ul.Buzz_Words;
+    font-family: $title-font;
+    color: $accent-colour;
+    background-color: $primary-colour;
+    border: 0.2em solid $accent-colour;
+}
+
+a:hover ul.Buzz_Words_Projects {
+    opacity: 1;
+    max-height: inherit;
 }
 
 #autoScrollButton {
@@ -381,7 +402,7 @@ div.nextArticle {
 }
 
 .project__image:hover:after {
-    background-color: rgba(22, 173, 227, 0.25);
+    // background-color: rgba(22, 173, 227, 0.25);
 }
 
 p.title {
@@ -392,8 +413,8 @@ p.title {
 }
 
 .card-margin {
-    margin-right: 1rem!important;
-    margin-bottom: 1.5rem!important;
+    margin-right: 1rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .custom-modal {
