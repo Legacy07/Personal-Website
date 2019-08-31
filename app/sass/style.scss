@@ -4,7 +4,8 @@
     height: 100%;
     width: 100%;
 }
-@mixin body_text{
+
+@mixin body_text {
     font-family: $text-font;
     font-size: $text-size;
     line-height: 1.5;
@@ -34,7 +35,7 @@ div.Description {
 }
 
 div.Description p {
-    font-family: $text-font;
+    // font-family: $text-font;
     margin: 0;
     position: relative;
     text-align: left;
@@ -44,9 +45,9 @@ div.Description p {
 }
 
 p.subHeader {
-    font-family: $header-font;
+    font-family: $title-font;
     font-weight: 700;
-    font-size: $text-header-size;
+    font-size: $large-title-text-size;
     left: 44%;
     width: 100%;
     margin: 0;
@@ -55,7 +56,7 @@ p.subHeader {
 }
 
 p.Paragraph {
-    font-family: $header-font;
+    font-family: $text-font;
     font-size: 1em;
     margin: 0;
     left: 45%;
@@ -67,7 +68,7 @@ p.Paragraph {
 }
 
 p.highlight {
-    font-family: $header-font;
+    font-family: $text-font;
     font-size: $text-header-size;
     margin: 0;
     left: 45%;
@@ -91,20 +92,44 @@ p a {
 p a:hover {
     border-bottom: 0.2em solid Red;
     background-color: bisque;
+    color: $accent-colour;
+    text-decoration: none;
 }
 
 p.boxHeader {
-    font-family: $header-font;
+    font-family: $title-font;
     font-weight: 700;
-    font-size: $nav-text-size;
-    width: 64%;
+    font-size: $large-title-text-size;
     margin: 0;
     color: $accent-colour;
     position: relative;
-    margin-left: 18%;
+    margin-left: 25%;
     margin-bottom: 1%;
-    border-bottom: 0.1em solid gray;
-    border-bottom-width: thin;
+}
+
+div.polygon-shape {
+    height: 7em;
+    width: 10em;
+    float: left;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+#email-background {
+    background: url(../images/gmail.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#github-background {
+    background: url(../images/github-sign.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#linkedin-background {
+    background: url(../images/linkedin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 section {
@@ -175,7 +200,7 @@ div.graph {
     width: 100%;
     max-width: 100%;
     margin-left: -29%;
-    margin-top: -8%;
+    margin-top: -4%;
 }
 
 #desktopVersion {
@@ -210,40 +235,49 @@ div.graph {
         display: inline-block;
         position: relative;
     }
+
     div.githubBox {
         float: none;
         width: 120%;
         left: 1%;
         height: 16em;
     }
+
     div.linkedinBox {
         float: none;
         width: 120%;
         left: 1%;
         height: 16em;
     }
+
     p.Header {
         margin-left: 40%;
         margin-top: -3%;
     }
+
     p.boxHeader {
         margin-left: 16%;
         margin-bottom: 2%;
     }
+
     p.linkedInHeader {
         margin-left: 38%;
         margin-top: -3%;
     }
+
     div.Description {
         width: 85%;
     }
+
     div.Description p {
         margin-left: -35%;
     }
+
     #desktopVersion {
         margin-left: 10%;
         visibility: visible;
     }
+
     div.graph {
         margin-left: -41%;
         margin-top: 200%;
@@ -257,41 +291,49 @@ div.graph {
         margin: 0;
         display: inline-block;
     }
+
     p.boxHeader {
         margin-left: 10%;
         width: 80%;
     }
+
     div.githubBox {
         float: none;
         width: 100%;
         left: 5%;
         height: 10em;
     }
+
     div.linkedinBox {
         float: none;
         width: 100%;
         left: 5%;
         height: 10em;
     }
+
     p.Header {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
         margin-top: -2%;
     }
+
     p.linkedInHeader {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
         margin-top: -2%;
     }
+
     div.graph {
         margin-left: -41%;
         margin-top: 25%;
     }
+
     div.Description {
         width: 90%;
     }
+
     div.Description p {
         margin-left: -40%;
     }
@@ -302,15 +344,19 @@ div.graph {
         margin-left: -40%;
         margin-top: 5%;
     }
+
     div.Description {
         width: 90%;
     }
+
     div.Description p {
         margin-left: -40%;
     }
+
     section {
         width: 75%;
     }
+
     p.boxHeader {
         margin-left: 10%;
         width: 80%;

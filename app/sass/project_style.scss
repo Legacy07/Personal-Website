@@ -361,7 +361,7 @@ div.nextArticle {
     margin-top: 2%;
 }
 
-.project__image {
+.card-project {
     display: block;
     position: relative;
     width: 25em;
@@ -373,11 +373,11 @@ div.nextArticle {
     background-position: center center;
     background-blend-mode: hard-light;
     box-shadow: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 16px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 150ms ease-out;
+    transition: box-shadow 100ms ease-out;
     outline: none;
 }
 
-.project__image:after {
+.card-project:after {
     content: "";
     position: absolute;
     top: 0;
@@ -390,19 +390,15 @@ div.nextArticle {
     transition: 250ms ease-out;
 }
 
-.project__image,
-.project__image:after {
+.card-project,
+.card-project:after {
     border-radius: 4px;
     overflow: hidden;
 }
 
-.project__image:hover {
+.card-project:hover {
     box-shadow: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 32px $box-shadow-color;
     text-decoration: none;
-}
-
-.project__image:hover:after {
-    // background-color: rgba(22, 173, 227, 0.25);
 }
 
 p.title {

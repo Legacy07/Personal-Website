@@ -40,55 +40,22 @@
         <p class="header">Contact</p>
     </div>
 
-    <!-- card on hover -->
-    <script>
-        $(document).ready(function () {
-            // executes when HTML-Document is loaded and DOM is ready
-            console.log("Document is ready");
-
-            $(".card").hover(
-                function () {
-                    $(this).addClass('shadow-lg').css('cursor', 'pointer');
-                },
-                function () {
-                    $(this).removeClass('shadow-lg');
-                }
-            );
-        });
-    </script>
-
-    <p class="boxHeader">Contact Me</p>
-    <div class="d-flex justify-content-center" style="margin-left: 10%; margin-right: 10%;">
+    <p class="boxHeader">You can contact me through these platforms</p>
+    <div class="d-flex justify-content-center mb-3">
         <div class="card-deck">
-            <a class="card border-dark text-dark mb-3 nav-link" href="https://github.com/Legacy07"
-                style="max-width: 18rem; height: 20rem;" tar>
-                <div class="card-header">Github</div>
-                <div class="card-body">
-                    <p>If you wish to see the full source of my projects or ask anything related to any issues,
-                        you can use Github.</p>
-                </div>
+            <a class="mr-2 " href="mailto:ahmetince771@gmail.com" target="_blank">
+                <div class="polygon-shape" id="email-background"></div>
             </a>
-            <a class="card border-dark text-dark mb-3 nav-link" style="max-width: 18rem;"
-                href="mailto:ahmetince771@gmail.com">
-                <div class="card-header">E-Mail</div>
-                <div class="card-body">
-                    <p>If you have any queries or wish to contact me, you can e-mail me for a quicker
-                        communication.
-                    </p>
-                </div>
+            <a class="mr-2" href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank">
+                <div class="polygon-shape" id="linkedin-background"></div>
             </a>
-            <a class="card border-dark text-dark mb-3 nav-link" style="max-width: 18rem;"
-                href="https://www.linkedin.com/in/ahmet-ince-8a8054150/" target="_blank">
-                <div class="card-header">LinkedIn</div>
-                <div class="card-body">
-                    <p>You can also message me from this platform.</p>
-                </div>
+            <a class="mr-2" href="https://github.com/Legacy07" target="_blank">
+                <div class="polygon-shape" id="github-background"></div>
             </a>
         </div>
     </div>
 
     <!--        footer-->
-
     <div id="footer">
     </div>
     <script>
