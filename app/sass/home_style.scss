@@ -20,9 +20,12 @@ body {
 
 .nav-div {
     display: inline-block;
-    margin-left: 22.5%;
     position: absolute;
     margin-top: 15%;
+    right: 0;
+    top: 0;
+    margin-right: 25%;
+    z-index: 100;
 }
 
 .nav-div a.link {
@@ -32,20 +35,22 @@ body {
 .nav-div p a.link {
     font-family: $text-font;
     font-size: $nav-text-size;
-    color: $nav-link-hover-background-colour;
+    color: $primary-colour;
     font-weight: bold;
     transition: background-color 0.4s;
 }
 
 .nav-div p a.link:hover {
     background-color: $nav-link-hover-background-colour;
-    color: $nav-link-hover-text-colour;
-    padding: 0.5em;
+    // border-radius doesnt work on hover.
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 32px $box-shadow-color;
+    transition: box-shadow 100ms ease-out;
 }
 
 .background {
     height: 100%;
-    width: 50%;
+    width: 100%;
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,6 +61,7 @@ body {
     .nav-div {
         margin: 10% 32.5%;
     }
+
     .background {
         height: 50%;
         width: 100%;
@@ -66,6 +72,7 @@ body {
     .nav-div {
         margin: 10% 37.5%;
     }
+
     .background {
         height: 50%;
         width: 100%;
@@ -76,17 +83,19 @@ body {
     .nav-div {
         margin: 10% 42.5%;
     }
+
     .background {
         height: 50%;
         width: 100%;
     }
-   
+
 }
 
 @media (min-width:769px) and (max-width:1023px) {
     .nav-div {
         margin: 10% 47.5%;
     }
+
     .background {
         height: 50%;
         width: 100%;
