@@ -57,9 +57,36 @@ body {
 }
 
 /* Media Queries */
-@media (min-width:390px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 375px) {
     .nav-div {
-        margin: 10% 32.5%;
+        margin: 100% 30%;
+    }
+
+    .nav-div p a.link {
+        font-family: $text-font;
+        font-size: $nav-text-size;
+        color: $accent-colour;
+        font-weight: bold;
+        transition: background-color 0.4s;
+    }
+
+    .background {
+        height: 50%;
+        width: 100%;
+    }
+}
+@media (min-width: 375px) and (max-width: 425px) {
+    .nav-div {
+        margin: 10% 35%;
+        top: auto;
+    }
+
+    .nav-div p a.link {
+        font-family: $text-font;
+        font-size: $nav-text-size;
+        color: $accent-colour;
+        font-weight: bold;
+        transition: background-color 0.4s;
     }
 
     .background {
@@ -68,9 +95,17 @@ body {
     }
 }
 
-@media (max-width:479px) {
+@media (min-width: 425px) and (max-width:480px) {
     .nav-div {
-        margin: 10% 37.5%;
+        margin: 80% 35%;
+    }
+
+    .nav-div p a.link {
+        font-family: $text-font;
+        font-size: $nav-text-size;
+        color: $accent-colour;
+        font-weight: bold;
+        transition: background-color 0.4s;
     }
 
     .background {
@@ -79,16 +114,19 @@ body {
     }
 }
 
-@media (min-width:480px) and (max-width:768px) {
+@media (min-width:481px) and (max-width:768px) {
     .nav-div {
-        margin: 10% 42.5%;
+        margin: 50% 42%;
+    }
+
+    .nav-div p a.link {
+        color: $accent-colour;
     }
 
     .background {
         height: 50%;
         width: 100%;
     }
-
 }
 
 @media (min-width:769px) and (max-width:1023px) {
@@ -103,7 +141,4 @@ body {
 }
 
 @media (min-width:1024px) and (max-width:1439px) {
-    .nav-div {
-        margin-top: 30%;
-    }
 }
