@@ -27,6 +27,7 @@
     color: white;
     bottom: 4%;
     position: fixed;
+    margin-left: -4%;
 }
 
 div.iconPosition {
@@ -144,7 +145,18 @@ div.iconPosition {
     }
 
     .dropdown-content {
-        margin-left: -3.5em;
+        margin-left: -3.2em;
     }
 
+    .navigation-container {
+        width: 13%;
+    }
+
+    .navigation-container p a {
+        margin-left: -6%;
+    }
+
+    .dropdown-content.menu-one {
+        margin-left: 2%;
+    }
 }
