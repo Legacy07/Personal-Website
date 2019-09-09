@@ -136,6 +136,27 @@ div.iconPosition {
         margin-left: -3.5em;
     }
 
+    .dropdown-content a {
+        margin-right: 0%;
+    }
+
+    .dropdown:hover .dropdown-content{
+        margin-left: -10%;
+    }
+
+    .navigation-container {
+        width: 0%;
+        position: relative;
+        margin-top: 5%;
+    }
+
+    .navigation-container p a{
+        visibility: hidden;
+    }
+
+    .navigation-container p b {
+        visibility: hidden;
+    }
 }
 
 @media(min-width: 769px) and (max-width: 1024px) {

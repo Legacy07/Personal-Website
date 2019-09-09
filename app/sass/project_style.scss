@@ -474,7 +474,8 @@ p.title {
 
 @media (min-width:481px) and (max-width:768px) {
     section {
-        width: 85%;
+        width: 100%;
+        margin-left: 0%;
     }
 
     section.BlogSection {
@@ -510,7 +511,7 @@ p.title {
     }
 
     div.sideSectionBlog {
-        width: 96%;
+        width: 100%;
         margin-left: 0%;
         border-right: 0em;
         border-left: 0em;
@@ -523,6 +524,16 @@ p.title {
         padding-left: 1em;
         text-decoration: underline;
     }
+
+    .projects-wrapper {
+        margin-left: 8%;
+    }
+
+    .card-project,
+    .card-project:after {
+        width: 20em;
+        height: 15em;
+    }
 }
 
 @media(min-width:769px) and (max-width:1024px) {
@@ -534,10 +545,8 @@ p.title {
     }
 
     div.sideSectionBlog {
-        width: 97%;
-        margin-left: 0%;
-        border-right: 0em;
-        border-left: 0em;
+        width: 80%;
+        margin-left: 15%;
     }
 
     li.sideHeader a.side {
