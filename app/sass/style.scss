@@ -256,7 +256,7 @@ div.graph {
     }
 
     p.boxHeader {
-        margin-left: 16%;
+        margin-left: 10%;
         margin-bottom: 2%;
     }
 
@@ -281,6 +281,10 @@ div.graph {
     div.graph {
         margin-left: -41%;
         margin-top: 200%;
+    }
+
+    .top-banner p.header {
+        top: 50%;
     }
 }
 

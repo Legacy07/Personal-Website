@@ -417,6 +417,7 @@ p.title {
     section {
         width: 100%;
         display: inline-block;
+        margin-left: 0%;
     }
 
     section.BlogSection {
@@ -469,6 +470,14 @@ p.title {
 
     .card-width {
         max-width: 100%;
+    }
+
+    .projects-wrapper {
+        margin-left: 3%;
+    }
+
+    .top-banner p.header {
+        top: 50%;
     }
 }
 
