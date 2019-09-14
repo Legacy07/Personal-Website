@@ -102,7 +102,6 @@ li a.contactLinks {
 
     section.footerSection {
         left: -5%;
-
     }
 
     ul.footerContact {
@@ -115,4 +114,13 @@ li a.contactLinks {
         text-align: left;
     }
 
+    .blog-footer {
+        width: 107%;
+    }
+}
+
+@media(min-width:769px) and (max-width:1024px) {
+    .blog-footer {
+        width: 105%;
+    }
 }

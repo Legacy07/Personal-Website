@@ -77,16 +77,16 @@ body {
 }
 @media (min-width: 375px) and (max-width: 425px) {
     .nav-div {
-        margin: 10% 35%;
+        margin: 90% 30%;
         top: auto;
     }
 
     .nav-div p a.link {
-        font-family: $text-font;
-        font-size: $nav-text-size;
         color: $accent-colour;
-        font-weight: bold;
-        transition: background-color 0.4s;
+    } 
+
+    .nav-div p a.link:hover {
+        color: $primary-colour;
     }
 
     .background {
@@ -101,11 +101,11 @@ body {
     }
 
     .nav-div p a.link {
-        font-family: $text-font;
-        font-size: $nav-text-size;
         color: $accent-colour;
-        font-weight: bold;
-        transition: background-color 0.4s;
+    } 
+
+    .nav-div p a.link:hover {
+        color: $primary-colour;
     }
 
     .background {
@@ -121,6 +121,10 @@ body {
 
     .nav-div p a.link {
         color: $accent-colour;
+    }    
+
+    .nav-div p a.link:hover {
+        color: $primary-colour;
     }
 
     .background {

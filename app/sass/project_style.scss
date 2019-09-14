@@ -334,6 +334,10 @@ ul.dashList>li:before {
     z-index: 0;
 }
 
+.blog-banner {
+    margin-top: -4.3%;
+}
+
 .top-banner p.header {
     color: $primary-colour;
     font-size: $large-nav-text-size;
@@ -479,6 +483,12 @@ p.title {
     .top-banner p.header {
         top: 50%;
     }
+
+    .card-project,
+    .card-project:after {
+        width: 22em;
+        height: 15em;
+    }
 }
 
 @media (min-width:481px) and (max-width:768px) {
@@ -543,6 +553,15 @@ p.title {
         width: 20em;
         height: 15em;
     }
+
+    .top-banner p.header {
+        top: 50%;
+    }
+
+    .blog-banner {
+        margin-top: -8.2%;
+        width: 107%;
+    }
 }
 
 @media(min-width:769px) and (max-width:1024px) {
@@ -576,8 +595,9 @@ p.title {
     }
 
     section.BlogSection {
-        width: 95%;
-        margin-left: 3%;
+        width: 80%;
+        margin-left: 17%;
+        margin-top: 2%;
     }
 
     section.project {
@@ -587,5 +607,13 @@ p.title {
 
     div.imagesDiv {
         width: 100%;
+    }
+
+    .top-banner {
+        width: 105%;
+    }
+
+    .blog-banner {
+        margin-top: -6%;
     }
 }
