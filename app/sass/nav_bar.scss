@@ -102,6 +102,10 @@ div.iconPosition {
     text-align: center;
 }
 
+.margin-top {
+    margin-top: 10%;
+}
+
 /*Media Queries*/
 @media screen and (max-width:426px) {
     .dropdown {
@@ -246,5 +250,9 @@ div.iconPosition {
 
     .dropdown-content.menu-one {
         margin-left: 2%;
+    }
+
+    .margin-top {
+        margin-top: 10%;
     }
 }
