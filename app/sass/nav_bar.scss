@@ -86,7 +86,7 @@ div.iconPosition {
 
 /* Show the dropdown menu (used in nav_bar.js) */
 .show {
-    // dispslay: block;
+    display: block;
 }
 
 /* Define menu positions */
@@ -103,41 +103,7 @@ div.iconPosition {
 }
 
 /*Media Queries*/
-@media(max-width:424px) {
-    .dropdown {
-        left: -10%;
-    }
-
-    .dropdown-content {
-        margin-left: -3.5em;
-    }
-
-    .dropdown-content a {
-        margin-right: 0%;
-    }
-
-    .dropdown:hover .dropdown-content{
-        margin-left: -10%;
-    }
-    
-    .navigation-container {
-        width: 0%;
-        position: absolute;
-        margin-top: 0%;
-        margin-left: 30%;
-    }
-
-    .navigation-container p a{
-        visibility: hidden;
-    }
-
-    .navigation-container p b {
-        visibility: hidden;
-    }
-
-}
-
-@media (min-width:425px) and (max-width:480px) {
+@media screen and (max-width:426px) {
     .dropdown {
         left: -10%;
     }
@@ -171,6 +137,51 @@ div.iconPosition {
 
     .container-blog {
         margin-left: 40%;
+    }
+
+    .margin-top {
+        margin-top: 35%;
+    }
+}
+
+@media (min-width:426px) and (max-width:480px) {
+    .dropdown {
+        left: -10%;
+    }
+
+    .dropdown-content {
+        margin-left: -3.5em;
+    }
+
+    .dropdown-content a {
+        margin-right: 0%;
+    }
+
+    .dropdown:hover .dropdown-content{
+        margin-left: -10%;
+    }
+    
+    .navigation-container {
+        width: 0%;
+        position: absolute;
+        margin-top: 0%;
+        margin-left: 35%;
+    }
+
+    .navigation-container p a{
+        visibility: hidden;
+    }
+
+    .navigation-container p b {
+        visibility: hidden;
+    }
+
+    .container-blog {
+        margin-left: 40%;
+    }
+
+    .margin-top {
+        margin-top: 30%;
     }
 }
 
@@ -208,6 +219,10 @@ div.iconPosition {
 
     .navigation-container p b {
         visibility: hidden;
+    }
+
+    .margin-top {
+        margin-top: 20%;
     }
 }
 
