@@ -425,9 +425,9 @@ p.title {
     }
 
     section.BlogSection {
-        width: 90%;
+        width: 99%;
         display: inline-block;
-        margin-left: 5%;
+        margin-left: 1%;
     }
 
     section.project {
@@ -486,8 +486,20 @@ p.title {
 
     .card-project,
     .card-project:after {
-        width: 22em;
+        width: 25em;
         height: 15em;
+    }
+
+    ul.Buzz_Words {
+
+        &_Projects {
+            opacity: 1;
+        }
+    }
+
+    .blog-banner {
+        margin-top: -15%;
+        width: 110%;
     }
 }
 
@@ -498,8 +510,8 @@ p.title {
     }
 
     section.BlogSection {
-        width: 90%;
-        margin-left: 5%;
+        width: 100%;
+        margin-left: 1%;
     }
 
     section.project {

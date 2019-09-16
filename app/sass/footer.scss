@@ -115,6 +115,12 @@ li a.contactLinks {
     }
 
     .blog-footer {
+        width: 110%;
+    }
+}
+
+@media(min-width:480px) and (max-width: 768px){
+    .blog-footer {
         width: 107%;
     }
 }

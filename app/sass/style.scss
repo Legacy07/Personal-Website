@@ -402,6 +402,10 @@ div.graph {
     div.Description p {
         margin-left: -40%;
     }
+
+    .top-banner p.header {
+        top: 50%;
+    }
 }
 
 @media(min-width: 769px) and (max-width: 1024px) {
