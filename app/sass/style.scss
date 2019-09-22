@@ -227,6 +227,67 @@ div.graph {
 }
 
 /* Media Queries */
+@media screen and (max-width: 375px) {
+    section {
+        width: 80%;
+        height: 0%;
+        margin: 0;
+        display: inline-block;
+        position: relative;
+    }
+
+    div.githubBox {
+        float: none;
+        width: 120%;
+        left: 1%;
+        height: 16em;
+    }
+
+    div.linkedinBox {
+        float: none;
+        width: 120%;
+        left: 1%;
+        height: 16em;
+    }
+
+    p.Header {
+        margin-left: 40%;
+        margin-top: -3%;
+    }
+
+    p.boxHeader {
+        margin-left: 10%;
+        margin-bottom: 2%;
+    }
+
+    p.linkedInHeader {
+        margin-left: 38%;
+        margin-top: -3%;
+    }
+
+    div.Description {
+        width: 85%;
+    }
+
+    div.Description p {
+        margin-left: -35%;
+    }
+
+    #desktopVersion {
+        margin-left: 10%;
+        visibility: visible;
+    }
+
+    div.graph {
+        margin-left: -41%;
+        margin-top: 380%;
+    }
+
+    .top-banner p.header {
+        top: 50%;
+    }
+}
+
 @media (min-width: 375px) and (max-width: 425px) {
     section {
         width: 80%;
