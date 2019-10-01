@@ -418,8 +418,16 @@ p.title {
     background-color: none;
 }
 
+.page {
+    display: none;
+}
+
+.page-active {
+    display: block;
+}
+
 @media screen and (max-width: 375px) {
-    
+
     section {
         width: 100%;
         display: inline-block;
@@ -505,6 +513,7 @@ p.title {
         width: 110%;
     }
 }
+
 @media (min-width: 375px) and (max-width: 425px) {
     section {
         width: 100%;
